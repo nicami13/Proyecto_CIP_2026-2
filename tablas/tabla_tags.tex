@@ -1,0 +1,10 @@
+\begin{longtable}{L{2.6cm}L{3.3cm}L{1.3cm}L{1.2cm}L{2cm}L{2cm}L{1.5cm}}
+\caption{Mapa inicial de variables o etiquetas.}\label{tab:tags}\\\toprule
+\textbf{Etiqueta}&\textbf{Descripción}&\textbf{Tipo}&\textbf{Ud.}&\textbf{Origen}&\textbf{Destino}&\textbf{Acceso}\\\midrule\endfirsthead
+\toprule\textbf{Etiqueta}&\textbf{Descripción}&\textbf{Tipo}&\textbf{Ud.}&\textbf{Origen}&\textbf{Destino}&\textbf{Acceso}\\\midrule\endhead
+Temp\_PV&Temperatura medida&REAL&$^{\circ}$C&PLC&HMI/IoT&Lectura\\
+Temp\_SP&Consigna&REAL&$^{\circ}$C&PLC/HMI&PLC/IoT&\campo{R/W}\\
+Heater\_MV&Acción de control&REAL&\%&PLC&HMI/IoT&Lectura\\
+CIP\_Phase&Fase activa&INT&--&PLC&HMI/IoT&Lectura\\
+\campo{Tag}&\campo{Descripción}&\campo{Tipo}&\campo{Ud.}&\campo{Origen}&\campo{Destino}&\campo{R/W}\\\bottomrule
+\end{longtable}

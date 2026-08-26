@@ -1,0 +1,11 @@
+\begin{figure}[H]\centering
+\begin{tikzpicture}[node distance=1cm and 0.8cm,b/.style={draw,rounded corners,align=center,text width=2.7cm,minimum height=0.8cm},f/.style={-{Stealth},thick}]
+\node[b] (tanque) {Tanque y preparación};
+\node[b,right=of tanque] (bomba) {Bomba};
+\node[b,right=of bomba] (equipo) {Equipo de prueba};
+\node[b,below=of bomba] (retorno) {Retorno o\\recuperación};
+\node[b,above=of bomba] (control) {PLC, control y supervisión};
+\draw[f] (tanque)--(bomba);\draw[f] (bomba)--(equipo);\draw[f] (equipo)|-(retorno);\draw[f] (retorno)-|(tanque);\draw[f] (control)--(bomba);
+\end{tikzpicture}
+\caption{Diagrama general de bloques del PMV.}\label{fig:bloques}
+\end{figure}

@@ -1,0 +1,41 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,provide=*]{babel}
+\usepackage[margin=2.25cm]{geometry}
+\usepackage{lmodern,microtype}
+\usepackage{graphicx}
+\usepackage{array,booktabs,longtable,tabularx,multirow}
+\usepackage{enumitem,float,xcolor,fancyhdr,lastpage}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\graphicspath{{figuras/}}
+\definecolor{AzulUSTA}{HTML}{003B71}
+\definecolor{DoradoUSTA}{HTML}{E8A713}
+\definecolor{GrisGuia}{HTML}{F1F3F5}
+\hypersetup{colorlinks=true,hypertexnames=false,linkcolor=AzulUSTA,citecolor=AzulUSTA,urlcolor=AzulUSTA,
+ pdftitle={Plantilla del primer corte - Proyecto Integrador CIP}}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.2}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\newtcolorbox{orientacion}{colback=GrisGuia,colframe=AzulUSTA,title=Orientación para diligenciar,fonttitle=\bfseries,breakable}
+\newtcolorbox{verificacion}{colback=white,colframe=DoradoUSTA,title=Verificación antes de entregar,fonttitle=\bfseries,breakable}
+\newcommand{\campo}[1]{\textcolor{AzulUSTA}{\textit{[#1]}}}
+\newcommand{\insertarfigura}[3]{%
+\begin{figure}[H]\centering
+\IfFileExists{figuras/#1}{\includegraphics[width=0.88\textwidth]{#1}}{\fbox{\parbox[c][5cm][c]{0.82\textwidth}{\centering \textcolor{AzulUSTA}{\textit{Inserte en la carpeta figuras el archivo:}}\\[2mm]\texttt{\detokenize{#1}}}}}
+\caption{#2}\label{#3}\end{figure}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Proyecto Integrador -- Primer corte}
+\fancyhead[R]{\small Ingeniería Mecatrónica}
+\fancyfoot[C]{\small Página \thepage\ de \pageref{LastPage}}

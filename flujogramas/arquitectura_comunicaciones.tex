@@ -1,0 +1,12 @@
+\begin{figure}[H]\centering
+\begin{tikzpicture}[node distance=1.05cm and 1cm,b/.style={draw,rounded corners,align=center,text width=2.8cm,minimum height=0.8cm},f/.style={-{Stealth},thick}]
+\node[b] (campo) {Sensores y actuadores};
+\node[b,below=of campo] (plc) {PLC\\Control local};
+\node[b,below=of plc] (sw) {\textit{Switch} Ethernet};
+\node[b,below left=of sw] (hmi) {HMI local};
+\node[b,below right=of sw] (gw) {Computador o\\\textit{gateway}};
+\node[b,below=of gw] (iot) {Supervisión y registro};
+\draw[f] (campo)--(plc);\draw[thick] (plc)--(sw);\draw[thick] (sw)--(hmi);\draw[thick] (sw)--(gw);\draw[f] (gw)--(iot);
+\end{tikzpicture}
+\caption{Plantilla de arquitectura de comunicaciones. Reemplace o ajuste según la propuesta.}\label{fig:comunicaciones}
+\end{figure}
