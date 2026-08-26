@@ -28,13 +28,13 @@ pdflatex --version
 1. Clone el repositorio:
 
 ```bash
-git clone https://github.com/fabianruizma2404-cmyk/Bit-cora-Sistemas-Embebidos
+git clone https://github.com/nicami13/Proyecto_CIP_2026-2
 ```
 
 2. Abra la carpeta en VS Code:
 
 ```bash
-code Bit-cora-Sistemas-Embebidos
+code Proyecto_CIP_2026-2
 ```
 
 3. Abra el archivo `main.tex`.
