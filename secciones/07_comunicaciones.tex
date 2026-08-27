@@ -27,6 +27,33 @@ Dentro de este mismo campo se resalta la implementación de MQTT para el envió 
 
 \subsection{Evidencia mínima de comunicación}
 \input{tablas/tabla_prueba_comunicacion}
-\campo{Incluya capturas o trazas que demuestren el intercambio de dos señales entre dos dispositivos. No presente una simulación como señal real sin declararlo.}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{figuras/HMIACCIONADO.JPG}
+\caption{Accionamiento e interfaz del panel HMI.}
+\label{fig:hmi_accionado}
+\end{figure}
+
+En esta figura se observa el accionamiento del pulsador como entrada analogica en el PLC, sacando una salida analogica en el led indicador y siendo visible dentro del HMI este cambio, como forma de simulación del volumen.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/RESETEARESTADO.JPG}
+\caption{Reinicio y reseteo de estados del sistema.}
+\label{fig:resetear_estado}
+\end{figure}
+
+Reseteo del sistema para volver a contar desde 0, con otra entrada de pulsador, como forma de reinicio del sistema y volver a simular el llenado del tanque.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/SIM_TANQUE_LLENO.JPG}
+\caption{Simulación de la condición de tanque lleno.}
+\label{fig:sim_tanque_lleno}
+\end{figure}
+
+Muestra la condición de tanque lleno, con la activación de la salida del led indicador y el cambio en el HMI, como forma de simulación de la condición de llenado del tanque.
 
 

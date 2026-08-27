@@ -21,7 +21,7 @@ Finalmente, la instrumentación de seguridad incorpora sensores de nivel tanto e
 \insertarfigura[0.5\textwidth]{GENERAL CIP.jpeg}{CAD general del sistema CIP.}{fig:general}
 
 \subsection{Diagrama general de bloques}
-\insertarfigura{Cade_Pi.pdf}{Diagrama general del sistema.}{fig:general-bloques}
+\insertarfigura{diagrama_general.pdf}{Diagrama general del sistema.}{fig:general-bloques}
 
 <<<<<<< HEAD
 Esta configuración responde directamente a las especificaciones 
@@ -38,33 +38,34 @@ desagüe cumple con el manejo seguro de efluentes en paso directo.
 =======
 >>>>>>> 2f80130e732559f38aa3f8361f0892d141014b79
 \subsection{Arquitectura funcional}
-\insertarfigura{arquitectura_funcional.pdf}{Arquitectura funcional del sistema.}{fig:arquitectura}
+\insertarfigura{Cade_Pi.png}{Arquitectura funcional del sistema.}{fig:arquitectura}
 
-La arquitectura funcional del sistema CIP organiza la operación como una secuencia controlada de etapas, desde la preparación de la solución hasta la descarga final. En cada etapa, la lógica de control coordina el ingreso de agua, la dosificación de jabón, la agitación, el calentamiento, la impulsión del fluido y la supervisión de los niveles para garantizar una limpieza segura y repetible de la tubería.
+La arquitectura funcional del sistema CIP organiza la operación como una secuencia controlada de etapas, desde la preparación de la solución hasta la descarga final. En cada etapa, la lógica de control coordina el ingreso de agua, la dosificación de jabón, la agitación, el calentamiento, la impulsión del fluido y la supervisión de los niveles para garantizar una limpieza segura y repetible de la tubería
+esto se desea mostrar en una CadeSimu el cual permite ver la integracion de un Grafcet preliminar no sera el usado de manera definiticva pero permite ver el funcionamiento del sistema.
 
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 1. Inicio y verificación de condiciones}\\[2mm]
-\IfFileExists{figuras/etapa-01.png}{\includegraphics[width=\textwidth]{etapa-01.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 1}}}
-\captionof{figure}{Etapa 1: inicio del ciclo y verificación de condiciones.}\label{fig:etapa-01}
+\raggedright\textbf{Etapa 1. El proceso inicia al darle la señal de arranque el cual permite el accionamiento de la electrovalvula 1 la cual permite el llenado de la cabina con agua}\\[2mm]
+\IfFileExists{figuras/etapa-01.png}{\includegraphics[width=\textwidth]{etapa-01.png}}{\fbox{\parbox[c][4cm][c]{1.0\textwidth}{\centering Inserte la imagen de la etapa 1}}}
+\captionof{figure}{Etapa 1: Llenado de la cabina de operaciones.}\label{fig:etapa-01}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 2. Llenado de la cabina}\\[2mm]
+\raggedright\textbf{Etapa 2. Al llegar al nivel de referencia se acciona la resistencia de inmersión para calentamiento del agua hasta una temperatura determinada por el controlador PID}\\[2mm]
 \IfFileExists{figuras/etapa-02.png}{\includegraphics[width=\textwidth]{etapa-02.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 2}}}
-\captionof{figure}{Etapa 2: llenado de la cabina de operaciones.}\label{fig:etapa-02}
+\captionof{figure}{Etapa 2: Calentamiento del agua mediante resistencia de inmersión.}\label{fig:etapa-02}
 \end{minipage}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 3. Calentamiento del agua}\\[2mm]
+\raggedright\textbf{Etapa 3. Al cumplirse la condición de calentamiento se acciona la bomba de drenado de la cabina de operacion llevado el agua de prejuagado a la tuberia a limpiar (esto solo puede suceder si el tanque de agua resifual se encuentra en el nivel optimo para no desbordar y generar derramamiento)}\\[2mm]
 \IfFileExists{figuras/etapa-03.png}{\includegraphics[width=\textwidth]{etapa-03.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 3}}}
 \captionof{figure}{Etapa 3: calentamiento mediante resistencia de inmersión.}\label{fig:etapa-03}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 4. Dosificación de jabón}\\[2mm]
+\raggedright\textbf{Etapa 4. Dosificación de jabón}\\[2mm]
 \IfFileExists{figuras/etapa-04.png}{\includegraphics[width=\textwidth]{etapa-04.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 4}}}
 \captionof{figure}{Etapa 4: dosificación controlada del agente de limpieza.}\label{fig:etapa-04}
 \end{minipage}
@@ -73,12 +74,12 @@ La arquitectura funcional del sistema CIP organiza la operación como una secuen
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 5. Agitación de la mezcla}\\[2mm]
+\raggedright\textbf{Etapa 5. Agitación de la mezcla}\\[2mm]
 \IfFileExists{figuras/etapa-05.png}{\includegraphics[width=\textwidth]{etapa-05.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 5}}}
 \captionof{figure}{Etapa 5: homogeneización de la solución mediante agitación.}\label{fig:etapa-05}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 6. Impulsión hacia la tubería}\\[2mm]
+\raggedright\textbf{Etapa 6. Impulsión hacia la tubería}\\[2mm]
 \IfFileExists{figuras/etapa-06.png}{\includegraphics[width=\textwidth]{etapa-06.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 6}}}
 \captionof{figure}{Etapa 6: envío de la solución hacia la línea de limpieza.}\label{fig:etapa-06}
 \end{minipage}
@@ -87,12 +88,12 @@ La arquitectura funcional del sistema CIP organiza la operación como una secuen
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 7. Lavado de la tubería}\\[2mm]
+\raggedright\textbf{Etapa 7. Lavado de la tubería}\\[2mm]
 \IfFileExists{figuras/etapa-07.png}{\includegraphics[width=\textwidth]{etapa-07.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 7}}}
 \captionof{figure}{Etapa 7: circulación de la solución de limpieza en la tubería.}\label{fig:etapa-07}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 8. Recuperación de efluentes}\\[2mm]
+\raggedright\textbf{Etapa 8. Recuperación de efluentes}\\[2mm]
 \IfFileExists{figuras/etapa-08.png}{\includegraphics[width=\textwidth]{etapa-08.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 8}}}
 \captionof{figure}{Etapa 8: recolección del agua residual en el tanque de efluentes.}\label{fig:etapa-08}
 \end{minipage}
@@ -101,12 +102,12 @@ La arquitectura funcional del sistema CIP organiza la operación como una secuen
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 9. Enjuague final}\\[2mm]
+\raggedright\textbf{Etapa 9. Enjuague final}\\[2mm]
 \IfFileExists{figuras/etapa-09.png}{\includegraphics[width=\textwidth]{etapa-09.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 9}}}
 \captionof{figure}{Etapa 9: enjuague con agua para eliminar residuos remanentes.}\label{fig:etapa-09}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\centering\textbf{Etapa 10. Finalización y restablecimiento}\\[2mm]
+\raggedright\textbf{Etapa 10. Finalización y restablecimiento}\\[2mm]
 \IfFileExists{figuras/etapa-10.png}{\includegraphics[width=\textwidth]{etapa-10.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 10}}}
 \captionof{figure}{Etapa 10: cierre del ciclo y preparación para una nueva operación.}\label{fig:etapa-10}
 \end{minipage}
