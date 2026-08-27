@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.26)  27 AUG 2026 14:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.26)  27 AUG 2026 14:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -758,8 +758,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count368
-)
-No file main.aux.
+) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -780,6 +779,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -854,12 +854,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count375
 Package hyperref Info: Link coloring ON on input line 4.
+ (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 Package babel Info: Main language set to 'spanish'.
  (secciones/00_portada.tex
-<figuras/logo_ustabuca.png, id=42, 306.14375pt x 165.61874pt>
+<figuras/logo_ustabuca.png, id=246, 306.14375pt x 165.61874pt>
 File: figuras/logo_ustabuca.png Graphic file (type png)
 <use figuras/logo_ustabuca.png>
 Package pdftex.def Info: figuras/logo_ustabuca.png  used on input line 3.
@@ -900,31 +901,19 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)))
-No file main.toc.
+))) (main.toc [1] [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-No file main.lof.
+ (main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
-No file main.lot.
+ (main.lot [3])
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
-
-LaTeX Warning: Reference `LastPage' on page i undefined on input line 11.
-
-[1] (secciones/02_problema_objetivos.tex
-
-LaTeX Warning: Citation `pi_institucional' on page 1 undefined on input line 3.
-
-) (secciones/03_caracterizacion_cip.tex
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 4.
-
-[1
+ [4] (secciones/02_problema_objetivos.tex) (secciones/03_caracterizacion_cip.tex [1
 
 ] (tablas/tabla_fases_cip.tex
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
@@ -936,11 +925,7 @@ Overfull \hbox (172.55702pt too wide) in paragraph at lines 38--39
  [][] 
  []
 
-)
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 15.
-
-[2]) (secciones/04_ingenieria_requisitos.tex (tablas/tabla_requisitos.tex
+) [2]) (secciones/04_ingenieria_requisitos.tex (tablas/tabla_requisitos.tex
 \colID=\skip79
 \colCat=\skip80
 \colReq=\skip81
@@ -1105,18 +1090,7 @@ Overfull \hbox (36.00735pt too wide) in alignment at lines 47--89
  [] [] [] [] [] [] 
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 89.
-
-[3]
-
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 89.
-
-[4{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}])
-
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 18.
-
-[5{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+[3] [4{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]) [5{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 21.
  (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1125,181 +1099,478 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 31.
-
-[6]
-<figuras/matriz_qfd.png, id=121, 1372.12625pt x 1258.7025pt>
+ [6]
+<figuras/matriz_qfd.png, id=444, 1372.12625pt x 1258.7025pt>
 File: figuras/matriz_qfd.png Graphic file (type png)
 <use figuras/matriz_qfd.png>
 Package pdftex.def Info: figuras/matriz_qfd.png  used on input line 35.
 (pdftex.def)             Requested size: 486.25761pt x 446.06467pt.
+ [7 <./figuras/matriz_qfd.png>] (tablas/tabla_pugh.tex)) (secciones/05_diseno_conceptual.tex [8]
+<figuras/GENERAL CIP.jpeg, id=458, 944.52875pt x 869.2475pt>
+File: figuras/GENERAL CIP.jpeg Graphic file (type jpg)
+<use figuras/GENERAL CIP.jpeg>
+Package pdftex.def Info: figuras/GENERAL CIP.jpeg  used on input line 12.
+(pdftex.def)             Requested size: 243.1288pt x 223.7442pt.
 
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 45.
-
-[7 <./figuras/matriz_qfd.png>] (tablas/tabla_pugh.tex)) (secciones/05_diseno_conceptual.tex
-
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 6.
-
-[8]
-
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 24.
-
-[9]
 
 pdfTeX warning: pdflatex (file ./figuras/diagrama_general.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/diagrama_general.pdf, id=142, 597.19106pt x 421.575pt>
+<figuras/diagrama_general.pdf, id=459, 597.19106pt x 421.575pt>
 File: figuras/diagrama_general.pdf Graphic file (type pdf)
 <use figuras/diagrama_general.pdf>
-Package pdftex.def Info: figuras/diagrama_general.pdf  used on input line 26.
+Package pdftex.def Info: figuras/diagrama_general.pdf  used on input line 15.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 31.
-
-[10 <./figuras/diagrama_general.pdf>]
+[9 <./figuras/GENERAL CIP.jpeg>]
 
 pdfTeX warning: pdflatex (file ./figuras/pid_conceptual (2).pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/pid_conceptual (2).pdf, id=159, 597.19106pt x 421.575pt>
+<figuras/pid_conceptual (2).pdf, id=465, 597.19106pt x 421.575pt>
 File: figuras/pid_conceptual (2).pdf Graphic file (type pdf)
 <use figuras/pid_conceptual (2).pdf>
-Package pdftex.def Info: figuras/pid_conceptual (2).pdf  used on input line 33.
+Package pdftex.def Info: figuras/pid_conceptual (2).pdf  used on input line 21.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-(tablas/tabla_pid.tex)
+(tablas/tabla_pid.tex [10 <./figuras/diagrama_general.pdf>])
 
 pdfTeX warning: pdflatex (file ./figuras/recorrido_fluidos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/recorrido_fluidos.pdf, id=160, 597.19106pt x 421.575pt>
+<figuras/recorrido_fluidos.pdf, id=480, 597.19106pt x 421.575pt>
 File: figuras/recorrido_fluidos.pdf Graphic file (type pdf)
 <use figuras/recorrido_fluidos.pdf>
-Package pdftex.def Info: figuras/recorrido_fluidos.pdf  used on input line 35.
+Package pdftex.def Info: figuras/recorrido_fluidos.pdf  used on input line 23.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 35.
-
-[11 <./figuras/pid_conceptual (2).pdf>]
-
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 36.
-
-[12]
-
-LaTeX Warning: Reference `fig:secuencia-cip' on page 13 undefined on input line 41.
-
-(tablas/tabla_requisitos.tex
-
-tablas/tabla_requisitos.tex:7: LaTeX Error: Command \colID already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 \newlength{\colID}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-tablas/tabla_requisitos.tex:8: LaTeX Error: Command \colCat already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 \newlength{\colCat}
-                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-tablas/tabla_requisitos.tex:9: LaTeX Error: Command \colReq already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9 \newlength{\colReq}
-                       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-tablas/tabla_requisitos.tex:10: LaTeX Error: Command \colCrit already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.10 \newlength{\colCrit}
-                         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-tablas/tabla_requisitos.tex:11: LaTeX Error: Command \colPrio already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 \newlength{\colPrio}
-                         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-tablas/tabla_requisitos.tex:12: LaTeX Error: Command \colVer already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 \newlength{\colVer}
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (5.92383pt too wide) in paragraph at lines 32--32
-[]|\T1/lmr/bx/n/8 (-20) Prioridad| 
+[11 <./figuras/pid_conceptual (2).pdf>] [12]) (secciones/06_control_preliminar.tex [13 <./figuras/recorrido_fluidos.pdf>] [14{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] (tablas/tabla_variables_control.tex
+Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
+[]|\T1/lmr/bx/n/9 (-20) Unidad/rango|  
  []
 
 
-Overfull \hbox (36.00735pt too wide) in alignment at lines 28--34
+Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
+[]|\T1/lmr/bx/n/9 (-20) Unidad/rango|  
+ []
+
+)
+<figuras/diagrama_bloques_control.pdf, id=544, 951.22675pt x 211.81433pt>
+File: figuras/diagrama_bloques_control.pdf Graphic file (type pdf)
+<use figuras/diagrama_bloques_control.pdf>
+Package pdftex.def Info: figuras/diagrama_bloques_control.pdf  used on input line 39.
+(pdftex.def)             Requested size: 427.90907pt x 95.28323pt.
+ [15] [16 <./figuras/diagrama_bloques_control.pdf>]
+<figuras/respuesta_lazo_abierto.pdf, id=605, 715.7798pt x 354.10231pt>
+File: figuras/respuesta_lazo_abierto.pdf Graphic file (type pdf)
+<use figuras/respuesta_lazo_abierto.pdf>
+Package pdftex.def Info: figuras/respuesta_lazo_abierto.pdf  used on input line 81.
+(pdftex.def)             Requested size: 427.90907pt x 211.69576pt.
+ [17 <./figuras/respuesta_lazo_abierto.pdf>] (tablas/tabla_especificaciones_control.tex)) (secciones/07_comunicaciones.tex
+<figuras/Topologia_y_flujo_de_informacion.png, id=665, 813.0375pt x 1656.1875pt>
+File: figuras/Topologia_y_flujo_de_informacion.png Graphic file (type png)
+<use figuras/Topologia_y_flujo_de_informacion.png>
+Package pdftex.def Info: figuras/Topologia_y_flujo_de_informacion.png  used on input line 9.
+(pdftex.def)             Requested size: 97.25003pt x 198.10214pt.
+ [18 <./figuras/Topologia_y_flujo_de_informacion.png (PNG copy)>] (tablas/tabla_nodos_ip.tex) (tablas/tabla_protocolos.tex) (tablas/tabla_tags.tex
+Overfull \hbox (2.16583pt too wide) in paragraph at lines 5--6
+[]|\T1/lmr/bx/n/10 (-20) Acceso|  
+ []
+
+
+Overfull \hbox (2.16583pt too wide) in paragraph at lines 9--10
+[]|\T1/lmr/bx/n/10 (-20) Acceso|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 13--14
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 14--15
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 15--16
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (11.55365pt too wide) in paragraph at lines 16--16
+[]|\T1/lmr/m/n/10 (-20) SSR/Actuador|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 16--17
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (4.34549pt too wide) in paragraph at lines 21--21
+[]|\T1/lmr/m/n/10 (-20) Secuenciador|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 23--24
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 24--25
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 25--26
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 26--27
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 27--28
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 28--29
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (10.87274pt too wide) in paragraph at lines 29--29
+[]|\T1/lmr/m/n/10 (-20) DWORD|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 29--30
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+
+Overfull \hbox (4.34549pt too wide) in paragraph at lines 30--30
+[]|\T1/lmr/m/n/10 (-20) Secuenciador|  
+ []
+
+
+Overfull \hbox (1.53198pt too wide) in paragraph at lines 30--31
+[]|\T1/lmr/m/n/10 (-20) Lectura|  
+ []
+
+[19]
+pdfTeX warning (ext4): destination with the same identifier (name{table.18}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.32 \end{longtable}
+                     [20]) (tablas/tabla_prueba_comunicacion.tex
+pdfTeX warning (ext4): destination with the same identifier (name{table.20}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.10 \end{tabularx}
+                   \end{table})) (secciones/08_plan_validacion.tex (tablas/tabla_matriz_validacion.tex
+Overfull \hbox (11.1401pt too wide) in paragraph at lines 5--5
+[]|\T1/lmr/bx/n/10.95 (-20) Requisito| 
+ []
+
+
+Overfull \hbox (23.9146pt too wide) in alignment at lines 1--7
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (5.92383pt too wide) in paragraph at lines 38--38
-[]|\T1/lmr/bx/n/8 (-20) Prioridad| 
+Overfull \hbox (11.1401pt too wide) in paragraph at lines 11--11
+[]|\T1/lmr/bx/n/10.95 (-20) Requisito| 
  []
 
 
-Overfull \hbox (36.00735pt too wide) in alignment at lines 34--40
+Overfull \hbox (23.9146pt too wide) in alignment at lines 7--13
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (36.00735pt too wide) in alignment at lines 40--44
+Overfull \hbox (23.9146pt too wide) in alignment at lines 13--17
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (36.00735pt too wide) in alignment at lines 44--47
+Overfull \hbox (23.9146pt too wide) in alignment at lines 17--20
  [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
-[]|\T1/lmr
+Underfull \hbox (badness 5105) in paragraph at lines 24--24
+[]|\T1/lmr/m/n/10.95 (+20) Secuencia co-rrec-ta
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 24--24
+\T1/lmr/m/n/10.95 (+20) sin tras-la-pes en 3
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 26--26
+[]|\T1/lmr/m/n/10.95 (+20) Consignar SP = 50\TS1/lmr/m/n/10.95 (+20) °\T1/lmr/m/n/10.95 (+20) C
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+\T1/lmr/m/n/10.95 (+20) 0 SM1231),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+\T1/lmr/m/n/10.95 (+20) ter-mó-me-tro
+ []
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 26.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 26.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+[]|\T1/lmr/m/n/10.95 (+20) Gráfica $\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (+20) )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[]|\T1/lmr/m/n/10.95 (+20) Registro de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+\T1/lmr/m/n/10.95 (+20) even-tos del
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+[]|\T1/lmr/m/n/10.95 (+20) Registro de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+\T1/lmr/m/n/10.95 (+20) even-to y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+\T1/lmr/m/n/10.95 (+20) cap-tu-ra de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[]|\T1/lmr/m/n/10.95 (+20) Dosificar, me-dian-te la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--32
+[]|\T1/lmr/m/n/10.95 (+20) Inspección
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+[]|\T1/lmr/m/n/10.95 (+20) Registro de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+\T1/lmr/m/n/10.95 (+20) vo-lú-me-nes y
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 38--38
+[]|\T1/lmr/m/n/10.95 (+20) Simular las 3 con-di-cio-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]|\T1/lmr/m/n/10.95 (+20) Inspección
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 38--38
+[]|\T1/lmr/m/n/10.95 (+20) Aviso ac-ti-va-do co-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]|\T1/lmr/m/n/10.95 (+20) REQ15,
+ []
+
+
+Underfull \hbox (badness 7415) in paragraph at lines 40--40
+[]|\T1/lmr/m/n/10.95 (+20) Verificar, du-ran-te una
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 42--42
+\T1/lmr/m/n/10.95 (+20) ins-ta-la-do en el tan-que
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 42--42
+[]|\T1/lmr/m/n/10.95 (+20) LIT-101, re-gla
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]|\T1/lmr/m/n/10.95 (+20) REQ01
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\T1/lmr/m/n/10.95 (+20) (PMV,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\T1/lmr/m/n/10.95 (+20) Sec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]|\T1/lmr/m/n/10.95 (+20) Inspección
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 44--44
+\T1/lmr/m/n/10.95 (+20) vi-sual di-rec-ta,
+ []
+
+
+Overfull \hbox (23.9146pt too wide) in alignment at lines 20--46
+ [] [] [] [] [] [] 
+ []
+
+[21] [22]) [23] (tablas/tabla_metricas_validacion.tex
+Overfull \hbox (0.89442pt too wide) in paragraph at lines 33--33
+[]|\T1/lmr/m/n/10.95 (-20) Comunicaciones| 
+ []
+
+
+Overfull \hbox (2.41487pt too wide) in paragraph at lines 36--36
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentación| 
+ []
+
+)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex) [24] (tablas/tabla_presupuesto.tex
+Overfull \hbox (28.22174pt too wide) in alignment at lines 4--10
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 10--16
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 16--20
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 20--23
+ [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 28--28
+\T1/lmr/m/n/10.95 (+20) Pe-dro-llo CPm 620 o Ber-cat-ti
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 31--31
+[]|\T1/lmr/m/n/10.95 (+20) Tubería/manguera CPVC
+ []
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 37--37
+[]|\T1/lmr/m/n/10.95 (+20) Estructura por-tá-til, se-gún MEC-
+ []
+
+
+Underfull \hbox (badness 7722) in paragraph at lines 38--38
+[]|\T1/lmr/m/n/10.95 (+20) Ruedas in-dus-tria-les con
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]|\T1/lmr/m/n/10.95 (+20) Soldadura --- elec-tro-
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 49--49
+[]|\T1/lmr/m/n/10.95 (+20) Disyuntor Chint NXB-63
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 54--54
+[]|\T1/lmr/m/n/10.95 (+20) LEDs pi-lo-to 24V, 22mm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]|\T1/lmr/m/n/10.95 (+20) Módulo de en-tra-da
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\T1/lmr/m/n/10.95 (+20) RTD/analógica pa-ra el
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 61--61
+[]|\T1/lmr/m/n/10.95 (+20) Resistencia de in-mer-sión
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
+[]|\T1/lmr/m/n/10.95 (+20) ESP32 Dev-Kit (Wi-
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 71--71
+[]|\T1/lmr/m/n/10.95 (+20) Módulo Ether-net W5500
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 71--71
+[]|\T1/lmr/m/n/10.95 (+20) Conectividad ca-blea-da más es-ta-
+ []
+
+
+Underfull \hbox (badness 4899) in paragraph at lines 71--71
+\T1/lmr/m/n/10.95 (+20) ble que Wi-Fi cer-ca de mo-to-
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 23--75
+ [] [] [] [] [] 
+ []
+
+[25] [26]) (tablas/tabla_riesgos.tex) (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex [27]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex
+pdfTeX warning (ext4): destination with the same identifier (name{table.31}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.9 \end{tabularx}
+                  \end{table}) [28]) (main.bbl [29]) [30] 
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(main.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 49441CEC4AA570E278621223DF2EA1F2;10436.
+ ) 
+Here is how much of TeX's memory you used:
+ 34242 strings out of 467501
+ 697042 string characters out of 5408550
+ 1196437 words of memory out of 5000000
+ 62352 multiletter control sequences out of 15000+600000
+ 733263 words of font info for 246 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 97i,13n,99p,1401b,1000s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (35 pages, 1898440 bytes).
+PDF statistics:
+ 893 PDF objects out of 1000 (max. 8388607)
+ 153 named destinations out of 1000 (max. 500000)
+ 58466 words of extra memory for PDF output out of 61914 (max. 10000000)
+
