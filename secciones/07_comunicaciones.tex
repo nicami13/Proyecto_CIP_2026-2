@@ -11,7 +11,7 @@
 \label{fig:comunicaciones} 
 \end{figure} 
 
-\campo{La Figura~\ref{fig:comunicaciones} muestra la topología de comunicaciones implementada, en este caso, se considera la implementación de una topología mixta entre estrella y árbol, donde la topología estrella es aplicada en la sección control con el PLC y la topología tipo árbol es requerida al momento de supervisar y redirigir los datos con el Gateway y el servidor. Los medios físicos utilizados para el intercambio de datos será por medio de Ethernet industrial, comunicados a través de PROFINET por compatibilidad con los dispositivos de control y visualización. La disposición propuesta se fundamenta en la centralización del manejo y control de los datos recibidos y transmitidos por el PLC, dejándolo como eje central en la disposición estrella, entrando a un árbol para la visualización en el HMI, la obtención de los datos de un GATEWAY que serán enviados a un servidor para mostrarlos gráficamente como segmento de IoT, cumpliendo con la condición propuesta de no realizar una conexión directa del PLC a internet, esto con el fin de mejorar la ciberseguridad del proceso, siendo un problema comúnmente ignorado pero sumamente relevante para el correcto funcionamiento, así como es mencionado por Hajda, Jakuszewski, y Ogonowski \cite{hajda2021security}.}
+{La Figura~\ref{fig:comunicaciones} muestra la topología de comunicaciones implementada, en este caso, se considera la implementación de una topología mixta entre estrella y árbol, donde la topología estrella es aplicada en la sección control con el PLC y la topología tipo árbol es requerida al momento de supervisar y redirigir los datos con el Gateway y el servidor. Los medios físicos utilizados para el intercambio de datos será por medio de Ethernet industrial, comunicados a través de PROFINET por compatibilidad con los dispositivos de control y visualización. La disposición propuesta se fundamenta en la centralización del manejo y control de los datos recibidos y transmitidos por el PLC, dejándolo como eje central en la disposición estrella, entrando a un árbol para la visualización en el HMI, la obtención de los datos de un GATEWAY que serán enviados a un servidor para mostrarlos gráficamente como segmento de IoT, cumpliendo con la condición propuesta de no realizar una conexión directa del PLC a internet, esto con el fin de mejorar la ciberseguridad del proceso, siendo un problema comúnmente ignorado pero sumamente relevante para el correcto funcionamiento, así como es mencionado por Hajda, Jakuszewski, y Ogonowski \cite{hajda2021security}.}
 
 \subsection{Equipos y direccionamiento IP}
 \input{tablas/tabla_nodos_ip}
@@ -26,3 +26,5 @@
 \subsection{Evidencia mínima de comunicación}
 \input{tablas/tabla_prueba_comunicacion}
 \campo{Incluya capturas o trazas que demuestren el intercambio de dos señales entre dos dispositivos. No presente una simulación como señal real sin declararlo.}
+
+
