@@ -32,8 +32,6 @@ la bomba P-102 garantiza el dinamismo hidráulico para la limpieza
 de la tubería, mientras que la disposición final en TK-103 o 
 desagüe cumple con el manejo seguro de efluentes en paso directo.
 
-\subsection{Diagrama general de bloques}
-\insertarfigura{diagrama_general.pdf}{Diagrama general del sistema.}{fig:diagrama}
 \subsection{Arquitectura funcional}
 
 La arquitectura funcional del sistema CIP organiza la operación como una secuencia controlada de etapas, desde la preparación de la solución hasta la descarga final. En cada etapa, la lógica de control coordina el ingreso de agua, la dosificación de jabón, la agitación, el calentamiento, la impulsión del fluido y la supervisión de los niveles para garantizar una limpieza segura y repetible de la tubería
@@ -109,8 +107,58 @@ esto se desea mostrar en una CadeSimu el cual permite ver la integracion de un G
 \insertarfigura{recorrido_fluidos.pdf}{Recorrido preliminar de fluidos.}{fig:fluidos}
 
 \subsection{Distribución preliminar y diseño CAD}
-\insertarfigura{cad_prototipo.png}{Vista del diseño CAD preliminar.}{fig:cad}
-\campo{Indique dimensiones, masa estimada, ubicación de tanque, bomba, calentador, válvulas y sensores, conexiones externas y criterios de portabilidad.}
+\begin{itemize}
+    \item \textbf{Tanque principal}: recipiente cilíndrico de acero inoxidable donde se preparan y recirculan las soluciones de limpieza. Incorpora un agitador de tres aspas para homogenizar la solución.
+    \item \textbf{Sistema de agitación}: motor eléctrico acoplado al agitador, ubicado en la parte superior del tanque.
+    \item \textbf{Bomba de recirculación}: ubicada en la parte inferior del bastidor, responsable de enviar la solución CIP hacia el equipo a limpiar y de retornarla al tanque.
+    \item \textbf{Tanque de dosificación de químicos} (color rojo): contenedor destinado a la solución detergente, álcali o ácido.
+    \item \textbf{Tanque auxiliar} (color verde): utilizado para agua de enjuague, recuperación de solución o almacenamiento temporal.
+    \item \textbf{Instrumentación}:
+    \begin{itemize}
+        \item Transmisor de temperatura con display digital.
+        \item Sonda de conductividad / nivel instalada en el tanque.
+    \end{itemize}
+    \item \textbf{Tuberías y accesorios}: líneas de impulsión, retorno y drenaje en material compatible con soluciones CIP.
+\end{itemize}
 
+\subsection{Vistas del sistema}
+
+A continuación se presentan las diferentes vistas del diseño CAD del sistema CIP:
+
+\insertarfigura[0.55\textwidth]{cip_vista_superior.jpeg}{Vista superior del sistema CIP. Se observa el tanque principal con el agitador, el sensor de temperatura, la sonda lateral y el tanque de químicos (rojo).}{fig:cip_vista_superior}
+
+\insertarfigura[0.35\textwidth]{cip_isometrica_1.jpeg}{Vista isométrica general del sistema CIP. Se aprecia la estructura con ruedas, el tanque principal, el motor del agitador, la bomba inferior y los contenedores de químicos (rojo) y auxiliar (verde).}{fig:cip_isometrica_1}
+
+\insertarfigura[0.55\textwidth]{cip_isometrica_2.jpeg}{Vista isométrica lateral del sistema CIP. Destaca la disposición de la bomba de recirculación en la parte inferior y las líneas de tubería de impulsión y retorno.}{fig:cip_isometrica_2}
+
+\insertarfigura[0.55\textwidth]{cip_vista_lateral.jpeg}{Vista lateral detallada del tanque CIP. Se observa el impulsor de tres aspas, el sensor de temperatura, la sonda y la conexión del motor del agitador.}{fig:cip_detalle_tanque}
+
+\subsection{Funcionamiento general}
+
+El sistema opera de la siguiente manera:
+
+\begin{enumerate}
+    \item Se prepara la solución de limpieza en el tanque principal (agua + químico dosificado desde el contenedor rojo).
+    \item El agitador homogeniza la solución y, si aplica, se calienta hasta la temperatura de proceso.
+    \item La bomba recircula la solución hacia el equipo a limpiar (tanque, tubería, intercambiador, etc.).
+    \item La solución retorna al tanque CIP para continuar el ciclo durante el tiempo programado.
+    \item Posteriormente se realizan los enjuagues con agua limpia almacenada en el tanque auxiliar (verde).
+\end{enumerate}
+
+Este diseño permite realizar ciclos CIP de forma flexible, con bajo consumo de agua y químicos, y con la ventaja de ser una unidad móvil.
 \subsection{Equipo o circuito de prueba}
-\campo{Identifique el equipo que será sometido al ciclo y describa sus conexiones de entrada, retorno y drenaje.}
+El circuito de prueba estará conformado por una tubería de una pulgada de diámetro nominal, seleccionada por ser representativa de una línea de proceso de pequeña escala. Antes de cada ensayo, la superficie interna de la tubería se contaminará de manera controlada con tinta. Este fluido permitirá evidenciar visualmente la remoción de suciedad y comparar el estado interno de la línea antes y después de cada ciclo de limpieza.
+
+La entrada de la tubería se conectará a la línea de impulsión del sistema CIP mediante una conexión desmontable y sellada. La salida se dirigirá hacia la línea de retorno o drenaje y, posteriormente, al tanque de agua residual. Esta disposición permite conducir de forma controlada el agua de preenjuague, la solución de limpieza y el agua de enjuague final, evitando vertimientos sobre el área de trabajo.
+
+La prueba se realizará siguiendo la secuencia operativa definida para el sistema:
+
+\begin{enumerate}
+    \item \textbf{Preenjuague térmico:} se llenará la cabina de operaciones con agua, se calentará hasta la temperatura de consigna y se impulsará hacia la tubería para desprender la mayor cantidad posible de tinta adherida.
+    \item \textbf{Lavado químico y mecánico:} se preparará una solución de agua y jabón mediante dosificación controlada, calentamiento y agitación. La solución se circulará por la tubería durante el tiempo definido para favorecer la remoción de los residuos restantes.
+    \item \textbf{Enjuague final:} se hará circular agua limpia por la tubería para retirar los restos de jabón y tinta. El efluente será recolectado en el tanque de agua residual o conducido al drenaje dispuesto para la prueba.
+\end{enumerate}
+
+La efectividad del ciclo se evaluará mediante inspección visual de la tubería y del efluente descargado. Se registrarán la presencia de tinta residual, el color del agua de salida, el tiempo de cada etapa, la temperatura alcanzada durante los ciclos térmicos y el estado de los sensores de nivel. La prueba se considerará satisfactoria cuando no se observen residuos visibles de tinta en el interior de la tubería y el agua del enjuague final presente una apariencia clara, sin restos apreciables de detergente o colorante.
+
+Durante el ensayo se verificará la estanqueidad de las conexiones, el funcionamiento de las electroválvulas, la operación de las bombas y el nivel del tanque de agua residual. Ante una condición de rebose, fuga o parada de emergencia, el sistema deberá interrumpir el llenado y la impulsión del fluido de manera segura.
