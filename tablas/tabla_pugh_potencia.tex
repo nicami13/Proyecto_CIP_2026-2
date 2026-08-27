@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\caption{Matriz de decisión Pugh --- Topología de la etapa de potencia de la resistencia. Referencia: K1, contactor 120\,VAC de 40\,A.}
+\label{tab:pugh-potencia}
+\begin{tabularx}{\textwidth}{Xccccc}
+\toprule
+\textbf{Criterio} & \textbf{Peso} & \textbf{K1 (ref.)} & \textbf{K2 SSR} & \textbf{K3 SSR + bimetálico} & \textbf{K4 Relé directo} \\
+\midrule
+Cumplimiento funcional        & 0,15 & 0 & $+1$ & $+1$ & $-1$ \\
+Compatibilidad con el sistema & 0,15 & 0 & 0    & 0    & $-1$ \\
+Seguridad                     & 0,30 & 0 & $-1$ & $+1$ & $-1$ \\
+Costo y disponibilidad        & 0,15 & 0 & 0    & $-1$ & $+1$ \\
+Mantenibilidad                & 0,15 & 0 & $+1$ & $+1$ & $-1$ \\
+Facilidad de implementación   & 0,10 & 0 & 0    & $-1$ & $+1$ \\
+\midrule
+\textbf{Total ponderado}      & \textbf{1,00} & \textbf{0,00} & \textbf{0,00} & \textbf{+0,35} & \textbf{$-$0,50} \\
+\bottomrule
+\end{tabularx}
+\end{table}

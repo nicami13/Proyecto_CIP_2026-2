@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\caption{Matriz de decisión Pugh --- Sistema de calentamiento. Referencia: H1, resistencia de inmersión en configuración base.}
+\label{tab:pugh-calentamiento}
+\begin{tabularx}{\textwidth}{Xccccc}
+\toprule
+\textbf{Criterio} & \textbf{Peso} & \textbf{H1 (ref.)} & \textbf{H2 Inline} & \textbf{H3 Intercambiador} & \textbf{H4 H1 mejorada} \\
+\midrule
+Cumplimiento funcional        & 0,20 & 0 & 0    & 0    & 0 \\
+Compatibilidad con el sistema & 0,15 & 0 & $-1$ & $-1$ & 0 \\
+Seguridad                     & 0,30 & 0 & $+1$ & $+1$ & $+1$ \\
+Costo y disponibilidad        & 0,15 & 0 & $-1$ & $-1$ & $-1$ \\
+Mantenibilidad                & 0,10 & 0 & 0    & $-1$ & 0 \\
+Facilidad de implementación   & 0,10 & 0 & $-1$ & $-1$ & 0 \\
+\midrule
+\textbf{Total ponderado}      & \textbf{1,00} & \textbf{0,00} & \textbf{$-$0,10} & \textbf{$-$0,20} & \textbf{+0,15} \\
+\bottomrule
+\end{tabularx}
+\end{table}

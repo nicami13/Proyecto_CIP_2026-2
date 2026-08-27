@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\caption{Consolidado de decisiones derivadas de las matrices de Pugh.}
+\label{tab:pugh-consolidado}
+\begin{tabular}{llc}
+\toprule
+\textbf{Elemento} & \textbf{Alternativa seleccionada} & \textbf{Total} \\
+\midrule
+Arquitectura del sistema   & Lazo cerrado de recirculación                         & +0,40 \\
+Sensor de temperatura      & Pt100 3 hilos + transmisor 4--20\,mA                  & +0,60 \\
+Sensor de nivel            & Flotador reed inox 115\,mm (\texttimes2)              & +0,75 \\
+Topología de potencia      & SSR + termostato bimetálico en serie                  & +0,35 \\
+Dispositivo de conmutación & SSR 40\,A cruce por cero                              & +0,80 \\
+Dosificación               & Peristáltica 24\,V con tubo Norprene                  & +0,45 \\
+Agitación                  & Motorreductor 100\,rpm                                & +0,30 \\
+Calentamiento              & Resistencia de inmersión + enclavamiento + bimetálico & +0,15 \\
+Bomba de recirculación     & Truper BOAC-1/2 EXPERT centrífuga                     & ref. \\
+Válvula de llenado         & Electroválvula 1/2\textquotedbl{} NC 24\,VDC          & filtro \\
+Válvula de regulación      & Bola manual 1\textquotedbl{} precintada               & +1,00 \\
+Válvula de desvío          & Bola manual de 3 vías 1\textquotedbl                  & +0,65 \\
+Protocolo                  & PROFINET local + MQTT de supervisión                  & +0,30 \\
+Plataforma de supervisión  & ThingsBoard CE autohospedado                          & +0,40 \\
+\bottomrule
+\end{tabular}
+\end{table}
