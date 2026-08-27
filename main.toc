@@ -23,28 +23,29 @@
 \contentsline {subsection}{\numberline {4.5}Distribución preliminar y diseño CAD}{6}{subsection.38}%
 \contentsline {subsection}{\numberline {4.6}Equipo o circuito de prueba}{7}{subsection.40}%
 \contentsline {section}{\numberline {5}Diseño preliminar de Sistemas de Control I}{7}{section.41}%
-\contentsline {subsection}{\numberline {5.1}Definición del lazo de control}{7}{subsection.42}%
-\contentsline {subsection}{\numberline {5.2}Diagrama de bloques}{8}{subsection.44}%
-\contentsline {subsection}{\numberline {5.3}Modelo dinámico preliminar}{8}{subsection.46}%
-\contentsline {subsection}{\numberline {5.4}Simulación en lazo abierto}{8}{subsection.48}%
-\contentsline {subsection}{\numberline {5.5}Especificaciones preliminares de desempeño}{9}{subsection.50}%
-\contentsline {section}{\numberline {6}Diseño preliminar de Comunicaciones Industriales}{9}{section.52}%
-\contentsline {subsection}{\numberline {6.1}Topología y flujjas de información}{9}{subsection.53}%
-\contentsline {subsection}{\numberline {6.2}Equipos y direccionamiento IP}{10}{subsection.55}%
-\contentsline {subsection}{\numberline {6.3}Selección del protocolo}{10}{subsection.57}%
-\contentsline {subsection}{\numberline {6.4}Mapa iniciales de etiquetas}{10}{subsection.59}%
-\contentsline {subsection}{\numberline {6.5}Evidencia mínima de comunicación}{11}{subsection.60}%
-\contentsline {section}{\numberline {7}Plan de validación}{11}{section.62}%
-\contentsline {subsection}{\numberline {7.1}Métricas previstas}{11}{subsection.63}%
-\contentsline {section}{\numberline {8}Gestión del proyecto y entregables complementarios}{12}{section.65}%
-\contentsline {subsection}{\numberline {8.1}Cronograma}{12}{subsection.66}%
-\contentsline {subsection}{\numberline {8.2}Presupuesto preliminar}{12}{subsection.68}%
-\contentsline {subsection}{\numberline {8.3}Matriz de riesgos}{12}{subsection.70}%
-\contentsline {subsection}{\numberline {8.4}Repositorio digital}{12}{subsection.72}%
-\contentsline {subsection}{\numberline {8.5}Lista de verificación del primer corte}{13}{subsection.73}%
-\contentsline {section}{\numberline {9}Conclusiones del primer corte}{13}{section.75}%
-\contentsline {section}{\numberline {10}Trabajo previsto para el segundo corte}{13}{section.79}%
-\contentsline {section}{\numberline {A}Declaración preliminar de uso de inteligencia artificial}{14}{appendix.80}%
-\contentsline {section}{\numberline {B}Reporte de similitud}{14}{appendix.82}%
-\contentsline {section}{\numberline {C}Evidencia del artículo en inglés}{14}{appendix.83}%
-\contentsline {section}{\numberline {D}Anexos técnicos}{14}{appendix.84}%
+\contentsline {subsection}{\numberline {5.1}Variable controlada (PV)}{7}{subsection.42}%
+\contentsline {subsection}{\numberline {5.2}Definición del lazo de control}{7}{subsection.43}%
+\contentsline {subsection}{\numberline {5.3}Diagrama de bloques}{8}{subsection.45}%
+\contentsline {subsection}{\numberline {5.4}Modelo dinámico preliminar}{8}{subsection.47}%
+\contentsline {subsection}{\numberline {5.5}Simulación en lazo abierto}{8}{subsection.49}%
+\contentsline {subsection}{\numberline {5.6}Especificaciones preliminares de desempeño}{9}{subsection.51}%
+\contentsline {section}{\numberline {6}Diseño preliminar de Comunicaciones Industriales}{9}{section.53}%
+\contentsline {subsection}{\numberline {6.1}Topología y flujjas de información}{9}{subsection.54}%
+\contentsline {subsection}{\numberline {6.2}Equipos y direccionamiento IP}{10}{subsection.56}%
+\contentsline {subsection}{\numberline {6.3}Selección del protocolo}{10}{subsection.58}%
+\contentsline {subsection}{\numberline {6.4}Mapa iniciales de etiquetas}{10}{subsection.60}%
+\contentsline {subsection}{\numberline {6.5}Evidencia mínima de comunicación}{11}{subsection.61}%
+\contentsline {section}{\numberline {7}Plan de validación}{11}{section.63}%
+\contentsline {subsection}{\numberline {7.1}Métricas previstas}{11}{subsection.64}%
+\contentsline {section}{\numberline {8}Gestión del proyecto y entregables complementarios}{12}{section.66}%
+\contentsline {subsection}{\numberline {8.1}Cronograma}{12}{subsection.67}%
+\contentsline {subsection}{\numberline {8.2}Presupuesto preliminar}{12}{subsection.69}%
+\contentsline {subsection}{\numberline {8.3}Matriz de riesgos}{12}{subsection.71}%
+\contentsline {subsection}{\numberline {8.4}Repositorio digital}{12}{subsection.73}%
+\contentsline {subsection}{\numberline {8.5}Lista de verificación del primer corte}{13}{subsection.74}%
+\contentsline {section}{\numberline {9}Conclusiones del primer corte}{13}{section.76}%
+\contentsline {section}{\numberline {10}Trabajo previsto para el segundo corte}{13}{section.80}%
+\contentsline {section}{\numberline {A}Declaración preliminar de uso de inteligencia artificial}{14}{appendix.81}%
+\contentsline {section}{\numberline {B}Reporte de similitud}{14}{appendix.83}%
+\contentsline {section}{\numberline {C}Evidencia del artículo en inglés}{14}{appendix.84}%
+\contentsline {section}{\numberline {D}Anexos técnicos}{14}{appendix.85}%

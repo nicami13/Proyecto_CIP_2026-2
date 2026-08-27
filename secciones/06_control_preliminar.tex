@@ -1,7 +1,10 @@
 \section{Diseño preliminar de Sistemas de Control I}
-\begin{orientacion}
-Defina la variable controlada, la manipulada, las perturbaciones, el rango, el punto de operación, las limitaciones y las especificaciones. Presente un modelo dinámico preliminar y una simulación en lazo abierto. Declare todos los supuestos y unidades.
-\end{orientacion}
+
+\subsection{Variable controlada (PV)}
+
+La variable controlada es la temperatura del fluido de proceso (agua o agua con detergente diluido) en el tanque de mezcla del sistema CIP portátil, medida mediante un sensor RTD PT100 conectado a un módulo de expansión analógica SM 1231 (escalamiento \texttt{NORM\_X/SCALE\_X} en TIA Portal).
+
+De las variables de proceso disponibles (temperatura, caudal, nivel, presión y conductividad), la temperatura es la única con una dinámica lo suficientemente lenta y bien caracterizable con los recursos del laboratorio para diseñar y validar un controlador P/PI/PID completo dentro del alcance del curso de Sistemas de Control I.
 
 \subsection{Definición del lazo de control}
 \input{tablas/tabla_variables_control}
