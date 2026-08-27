@@ -17,9 +17,13 @@
 \contentsline {figure}{\numberline {16}{\ignorespaces Etapa 7: circulación de la solución de limpieza en la tubería.}}{15}{figure.caption.44}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Etapa 8: rellenado del tanque para el ultimo ciclo.}}{15}{figure.caption.44}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Etapa 9: enjuague con agua para eliminar residuos remanentes.}}{16}{figure.caption.45}%
-\contentsline {figure}{\numberline {19}{\ignorespaces P\&ID conceptual del sistema CIP.}}{16}{figure.caption.47}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Recorrido preliminar de fluidos.}}{18}{figure.caption.49}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Vista del diseño CAD preliminar.}}{18}{figure.caption.51}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Diagrama de bloques del sistema térmico.}}{21}{figure.caption.60}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Respuesta preliminar del modelo en lazo abierto.}}{22}{figure.caption.69}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Arquitectura de comunicaciones propuesta.}}{24}{figure.caption.74}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Etapa 10: cierre del ciclo y preparación para una nueva operación.}}{16}{figure.caption.45}%
+\contentsline {figure}{\numberline {20}{\ignorespaces P\&ID conceptual del sistema CIP.}}{16}{figure.caption.47}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Recorrido preliminar de fluidos.}}{18}{figure.caption.49}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Vista del diseño CAD preliminar.}}{18}{figure.caption.51}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagrama de bloques del sistema térmico.}}{21}{figure.caption.60}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Respuesta preliminar del modelo en lazo abierto.}}{22}{figure.caption.69}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Arquitectura de comunicaciones propuesta.}}{24}{figure.caption.74}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Accionamiento e interfaz del panel HMI.}}{27}{figure.caption.82}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Reinicio y reseteo de estados del sistema.}}{28}{figure.caption.83}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Simulación de la condición de tanque lleno.}}{28}{figure.caption.84}%

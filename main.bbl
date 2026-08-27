@@ -4,9 +4,7 @@
 T.~J. Bowser, ``What is clean in place (cip)?,'' 8 2023.
 
 \bibitem{pi_institucional}
-{Facultad de Ingeniería Mecatrónica, Universidad Santo Tomás}, ``Proyecto
-  integrador de octavo semestre 2026-2: Sistema cip,'' documento institucional,
-  Universidad Santo Tomás, Seccional Bucaramanga, 2026.
+{Facultad de Ingeniería Mecatrónica, Universidad Santo Tomás}, ``Proyecto integrador de octavo semestre 2026-2: Sistema cip,'' documento institucional, Universidad Santo Tomás, Seccional Bucaramanga, 2026.
 
 \bibitem{siemens2021pid}
 {Siemens AG}, {\em SIMATIC S7-1200, S7-1500 PID Control Function Manual}.
@@ -18,8 +16,7 @@ M.~H. Rashid, {\em Power Electronics: Circuits, Devices, and Applications}.
 \newblock Boston, MA, USA: Pearson, 4~ed., 2014.
 
 \bibitem{mohan2007power}
-N.~Mohan, T.~M. Undeland, and W.~P. Robbins, {\em Power Electronics:
-  Converters, Applications, and Design}.
+N.~Mohan, T.~M. Undeland, and W.~P. Robbins, {\em Power Electronics: Converters, Applications, and Design}.
 \newblock Hoboken, NJ, USA: John Wiley \& Sons, 3~ed., 2007.
 
 \bibitem{ogata2010modern}
@@ -31,16 +28,15 @@ R.~C. Dorf and R.~H. Bishop, {\em Modern Control Systems}.
 \newblock New York, NY, USA: Pearson, 14~ed., 2021.
 
 \bibitem{hajda2021security}
-J.~Hajda, R.~Jakuszewski, and S.~Ogonowski, ``Security challenges in industry
-  4.0 plc systems,'' {\em Applied Sciences}, vol.~11, p.~9785, Oct. 2021.
+J.~Hajda, R.~Jakuszewski, and S.~Ogonowski, ``Security challenges in industry 4.0 plc systems,'' {\em Applied Sciences}, vol.~11, p.~9785, Oct. 2021.
 
 \bibitem{cometa2025modbus}
-S.~Cometa, D.~Ambus, and J.~D. Bejarano, ``Comunicación modbus tcp: Esp32
-  (servidor) a siemens s7-1200 (cliente),'' 2025.
-\newblock Presentación académica sobre comunicación Modbus TCP entre ESP32 y
-  PLC Siemens S7-1200.
+S.~Cometa, D.~Ambus, and J.~D. Bejarano, ``Comunicación modbus tcp: Esp32 (servidor) a siemens s7-1200 (cliente),'' 2025.
+\newblock Presentación académica sobre comunicación Modbus TCP entre ESP32 y PLC Siemens S7-1200.
 
 \bibitem{gonzalez2024awsesp32}
-
+H.~E.~G. Martínez, {\em ESP32 \& AWS Report}.
+\newblock Universidad Politécnica de Yucatán, Ucú, Yucatán, México, 2024.
+\newblock Reporte técnico sobre integración de ESP32 con AWS IoT utilizando Arduino IDE y MQTT.
 
 \end{thebibliography}

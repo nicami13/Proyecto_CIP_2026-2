@@ -1,6 +1,9 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{Resumen ejecutivo}{i}{section*.1}%
 \contentsline {section}{Control de versión}{i}{section*.2}%
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{Resumen ejecutivo}{i}{section*.1}%
+\contentsline {section}{Control de versión}{i}{section*.2}%
 \contentsline {section}{\numberline {1}Contextualización y definición del problema}{1}{section*.7}%
 \contentsline {subsection}{\numberline {1.1}Planteamiento del problema}{1}{subsection*.8}%
 \contentsline {subsection}{\numberline {1.2}Justificación}{1}{subsection*.9}%
