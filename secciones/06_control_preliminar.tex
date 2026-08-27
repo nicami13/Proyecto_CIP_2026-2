@@ -79,7 +79,18 @@ G(s)=\frac{0{,}25}{15697{,}5s+1}
 
 \subsection{Simulación en lazo abierto}
 \insertarfigura{respuesta_lazo_abierto.pdf}{Respuesta preliminar del modelo en lazo abierto.}{fig:lazoabierto}
-\campo{Analice ganancia, constante de tiempo, retardo, estabilidad y limitaciones observadas.}
+
+\begin{itemize}
+
+\item A potencia máxima, el modelo lineal alcanzaría el límite de seguridad de $70\,^{\circ}\mathrm{C}$ en aproximadamente $37{,}4$ minutos. En la práctica, este es precisamente el comportamiento que debe evitar el controlador durante la operación normal. Este resultado confirma que el actuador posee suficiente autoridad para calentar rápidamente el fluido en cualquiera de las dos fases; por tanto, el riesgo principal corresponde al sobreimpulso y no a una falta de potencia del actuador.
+
+\item A un ciclo de trabajo fijo correspondiente al régimen permanente de cada fase ($8{,}0\,\%$ para $50\,^{\circ}\mathrm{C}$ y $5{,}33\,\%$ para $40\,^{\circ}\mathrm{C}$), el sistema alcanza el punto de operación de forma extremadamente lenta. Considerando los tiempos de establecimiento aproximados, se obtiene $t_s(5\,\%) \approx 3\tau \approx 785$ minutos y $t_s(2\,\%) \approx 4\tau \approx 1047$ minutos. Esto ocurre porque en un esquema de ciclo de trabajo fijo no se aprovecha la potencia disponible durante el transitorio de calentamiento.
+
+\item La diferencia entre las curvas de respuesta constituye la justificación cuantitativa central para emplear un controlador realimentado, en lugar de un ciclo de trabajo fijo en lazo abierto. Asimismo, evidencia la necesidad de incorporar acción integral con mecanismo anti-windup. El controlador debe permitir la saturación deliberada del actuador ($MV \approx 100\,\%$) durante el arranque para acelerar el calentamiento hacia cualquiera de las dos consignas y, posteriormente, reducir el ciclo de trabajo de manera gradual al aproximarse al valor de referencia, evitando el sobreimpulso.
+
+\item Al aumentar la masa activa hasta $15\,\mathrm{L}$, la constante de tiempo $\tau$ crece proporcionalmente, alcanzando aproximadamente $261{,}6$ minutos. El proceso se vuelve, por tanto, térmicamente más lento, lo que refuerza la necesidad de aprovechar el transitorio mediante la saturación controlada del actuador. Además, se justifica el empleo de una sintonía PI, en lugar de un controlador P, para eliminar el error de estado estacionario producido por la perturbación asociada a la adición de fluido frío entre fases.
+
+\end{itemize}
 
 \subsection{Especificaciones preliminares de desempeño}
 \input{tablas/tabla_especificaciones_control}
