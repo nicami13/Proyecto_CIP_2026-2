@@ -27,13 +27,4 @@ K.~Ogata, {\em Modern Control Engineering}.
 R.~C. Dorf and R.~H. Bishop, {\em Modern Control Systems}.
 \newblock New York, NY, USA: Pearson, 14~ed., 2021.
 
-\bibitem{incropera2011fundamentals}
-F.~P. Incropera, D.~P. DeWitt, T.~L. Bergman, and A.~S. Lavine, {\em
-  Fundamentals of Heat and Mass Transfer}.
-\newblock Hoboken, NJ, USA: John Wiley \& Sons, 7~ed., 2011.
-
-\bibitem{bequette2003process}
-B.~W. Bequette, {\em Process Control: Modeling, Design, and Simulation}.
-\newblock Upper Saddle River, NJ, USA: Prentice Hall, 2003.
-
 \end{thebibliography}
