@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {4.1}Descripción de la solución propuesta}{10}{subsection*.33}%
 \contentsline {subsection}{\numberline {4.2}Diagrama general de bloques}{12}{subsection*.35}%
 \contentsline {subsection}{\numberline {4.3}Diagrama general de bloques}{13}{subsection*.37}%
-\contentsline {subsection}{\numberline {4.4}Arquitectura funcional}{14}{subsection*.39}%
+\contentsline {subsection}{\numberline {4.4}Arquitectura funcional}{13}{subsection*.39}%
 \contentsline {subsection}{\numberline {4.5}P\&ID conceptual y recorrido del fluido}{16}{subsection*.46}%
 \contentsline {subsection}{\numberline {4.6}Distribución preliminar y diseño CAD}{18}{subsection*.50}%
 \contentsline {subsection}{\numberline {4.7}Equipo o circuito de prueba}{18}{subsection*.52}%
