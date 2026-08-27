@@ -11,14 +11,16 @@
 \label{fig:comunicaciones} 
 \end{figure} 
 
-\campo{La Figura~\ref{fig:comunicaciones} muestra la topología de comunicaciones implementada, en este caso, se considera la implementación de una topología mixta entre estrella y árbol, donde la topología estrella es aplicada en la sección control con el PLC y la topología tipo árbol es requerida al momento de supervisar y redirigir los datos con el Gateway y el servidor. Los medios físicos utilizados para el intercambio de datos será por medio de Ethernet industrial, comunicados a través de PROFINET por compatibilidad con los dispositivos de control y visualización. La disposición propuesta se fundamenta en la centralización del manejo y control de los datos recibidos y transmitidos por el PLC, dejándolo como eje central en la disposición estrella, entrando a un árbol para la visualización en el HMI, la obtención de los datos de un GATEWAY que serán enviados a un servidor para mostrarlos gráficamente como segmento de IoT, cumpliendo con la condición propuesta de no realizar una conexión directa del PLC a internet, esto con el fin de mejorar la ciberseguridad del proceso, siendo un problema comúnmente ignorado pero sumamente relevante para el correcto funcionamiento, así como es mencionado por Hajda, Jakuszewski, y Ogonowski \cite{hajda2021security}.}
+{La Figura~\ref{fig:comunicaciones} muestra la topología de comunicaciones implementada, en este caso, se considera la implementación de una topología mixta entre estrella y árbol, donde la topología estrella es aplicada en la sección control con el PLC y la topología tipo árbol es requerida al momento de supervisar y redirigir los datos con el Gateway y el servidor. Los medios físicos utilizados para el intercambio de datos será por medio de Ethernet industrial, comunicados a través de PROFINET por compatibilidad con los dispositivos de control y visualización. La disposición propuesta se fundamenta en la centralización del manejo y control de los datos recibidos y transmitidos por el PLC, dejándolo como eje central en la disposición estrella, entrando a un árbol para la visualización en el HMI, la obtención de los datos de un GATEWAY que serán enviados a un servidor para mostrarlos gráficamente como segmento de IoT, cumpliendo con la condición propuesta de no realizar una conexión directa del PLC a internet, esto con el fin de mejorar la ciberseguridad del proceso, siendo un problema comúnmente ignorado pero sumamente relevante para el correcto funcionamiento, así como es mencionado por Hajda, Jakuszewski, y Ogonowski \cite{hajda2021security}.}
 
 \subsection{Equipos y direccionamiento IP}
 \input{tablas/tabla_nodos_ip}
 
 \subsection{Selección del protocolo}
 \input{tablas/tabla_protocolos}
-\campo{Comparessssss S7, PROFINETas, Modbusas TCP u OPC UA según compatibilidad, licencias, seguridad, mantenibilidad y tiempo de implementación. MQTT se evaluará para el enlace entre el dispositivo de borde y la capa IoT.}
+{Teniendo en cuenta la comparación realizada con las características y requerimientos de diseño actuales, lo ideal es el unir e implementar una combinación entre PROFINET, para la integración entre el HMI y el PLC, y Modbus TCP, con el fin de conectar correctamente el ESP32 junto con el PLC, distribuir la información y usar un protocolo ya conocido para mostrar así mismo el HMI. Al tenerlos ya conectados, se facilita el establecimiento de una red local para el acceso y uso de los datos dentro de las pruebas, contando a su vez con las licencias y uso legal de los mismos.
+
+Dentro de este mismo campo se resalta la implementación de MQTT para el envió de los datos por parte del ESP32 que con su modulo de SIM se conectará a un servidor, que en este caso será AWS, para gestionar los datos, realizar la construcción de dashboards y crear una interfaz grafica simplificada para la comprensión de los usuarios.}
 
 \subsection{Mapa iniciales de etiquetas}
 \input{tablas/tabla_tags}
@@ -26,3 +28,5 @@
 \subsection{Evidencia mínima de comunicación}
 \input{tablas/tabla_prueba_comunicacion}
 \campo{Incluya capturas o trazas que demuestren el intercambio de dos señales entre dos dispositivos. No presente una simulación como señal real sin declararlo.}
+
+
