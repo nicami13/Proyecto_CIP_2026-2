@@ -1,9 +1,17 @@
+# Archivos PDF generados
+*.pdf
+
+# Archivos auxiliares de LaTeX
 *.aux
 *.log
-*.lof
-*.lot
-*.out
 *.toc
+*.out
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
