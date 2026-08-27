@@ -1,7 +1,15 @@
-\begin{table}[H]\centering\small\caption{Nodos y direccionamiento IP preliminar.}
-\begin{tabularx}{\textwidth}{L{2.8cm}L{2.7cm}L{2.7cm}YL{2.3cm}}\toprule
-\textbf{Nodo}&\textbf{IP}&\textbf{Máscara}&\textbf{Función}&\textbf{Interfaz}\\\midrule
-PLC&\campo{192.168.x.x}&\campo{255.255.255.0}&Control y adquisición&Ethernet\\
-HMI&\campo{192.168.x.x}&\campo{--}&Supervisión local&Ethernet\\
-Computador&\campo{192.168.x.x}&\campo{--}&Registro e integración&Ethernet\\\bottomrule
-\end{tabularx}\end{table}
+\begin{table}[H]
+\centering
+\small
+\caption{Nodos y direccionamiento IP preliminar.}
+\begin{tabularx}{\textwidth}{L{2.8cm}L{2.7cm}L{2.7cm}YL{2.3cm}}
+\toprule
+\textbf{Nodo} & \textbf{IP} & \textbf{Máscara} & \textbf{Función} & \textbf{Interfaz} \\
+\midrule
+PLC & \campo{172.16.140.116} & \campo{255.255.252.0} & Control y adquisición & Ethernet \\
+HMI & \campo{172.16.140.117} & \campo{255.255.252.0} & Supervisión local & Ethernet \\
+Computador & \campo{172.16.140.1} & \campo{255.255.252.0} & Registro e integración & Ethernet \\
+ESP32 & \campo{172.16.140.120} & \campo{255.255.252.0} & Gateway e integración con servidor & Wi-Fi y ethernet \\
+\bottomrule
+\end{tabularx}
+\end{table}
