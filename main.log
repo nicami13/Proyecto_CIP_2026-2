@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.26)  27 AUG 2026 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.26)  27 AUG 2026 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,29 +1032,23 @@ tex.def
 File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count368
 ) (main.aux)
-Runaway definition?
-->\LT@entry {1}{103.04872pt}\LT@entry {1}{111.58464pt}\LT@entry {1}{4\ETC.
-! File ended while scanning definition of \LT@x.
-<inserted text> 
-                }
-l.4 \begin{document}
-                    
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+\openout1 = `main.aux'.
 
- 
-Here is how much of TeX's memory you used:
- 31958 strings out of 467501
- 651287 string characters out of 5408550
- 1128251 words of memory out of 5000000
- 60730 multiletter control sequences out of 15000+600000
- 631780 words of font info for 43 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 97i,1n,99p,439b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
-cking defaults for PD1/pdf/m/n on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
@@ -1111,8 +1105,11 @@ Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count369
 \scratchdimen=\dimen319
@@ -1125,45 +1122,58 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 \MPnumerator=\count373
 \makeMPintoPDFobject=\count374
 \everyMPtoPDFconversion=\toks51
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+)
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count375
 Package hyperref Info: Link coloring ON on input line 4.
+ (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 Package babel Info: Main language set to 'spanish'.
  (secciones/00_portada.tex
-<figuras/logo_ustabuca.png, id=42, 306.14375pt x 165.61874pt>
+<figuras/logo_ustabuca.png, id=246, 306.14375pt x 165.61874pt>
 File: figuras/logo_ustabuca.png Graphic file (type png)
 <use figuras/logo_ustabuca.png>
 Package pdftex.def Info: figuras/logo_ustabuca.png  used on input line 3.
 (pdftex.def)             Requested size: 282.0303pt x 152.58084pt.
  [1
 
-{C:/Users/inner/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figuras/logo_ustabuca.png>]) (secciones/01_resumen.tex
+{C:/Users/inner/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/inne
+r/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figuras/logo_u
+stabuca.png>])
+(secciones/01_resumen.tex (tablas/tabla_control_version.tex
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
+.
 
-LaTeX Warning: Citation `bowser2023cip' on page i undefined on input line 6.
-
-(tablas/tabla_control_version.tex
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+.
+
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+5.
+
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+5.
+
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1173,69 +1183,59 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 5.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+)
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+)
+(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)))
-No file main.toc.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]|\T1/lmr/m/n/10.95 (+20) Merge branch 'main' of
+ []
+
+
+Overfull \hbox (42.6002pt too wide) in paragraph at lines 13--13
+\T1/lmr/m/n/10.95 (-20) https://github.com/nicami13/Proyecto_CIP_2026-
+ []
+
+)) (main.toc [1] [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-No file main.lof.
+ (main.lof [3])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
-No file main.lot.
+ (main.lot)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
-
-LaTeX Warning: Reference `LastPage' on page i undefined on input line 11.
-
-[1]
-
-LaTeX Warning: Reference `LastPage' on page ii undefined on input line 11.
-
-[2] (secciones/02_problema_objetivos.tex
-
-LaTeX Warning: Citation `pi_institucional' on page 1 undefined on input line 11.
-
-) (secciones/03_caracterizacion_cip.tex
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 1.
-
+ [4]
+(secciones/02_problema_objetivos.tex) (secciones/03_caracterizacion_cip.tex
 [1
 
 ] (tablas/tabla_fases_cip.tex
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.7 \end{tabularx}
                   \end{table}) (tablas/tabla_clasificacion_informacion.tex)
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 10.
-
 [2] (flujogramas/secuencia_cip.tex
 Overfull \hbox (210.9565pt too wide) in paragraph at lines 38--39
  [][] 
  []
 
-)
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 13.
-
-[3]) (secciones/04_ingenieria_requisitos.tex
-
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 1.
-
-[4] (tablas/tabla_requisitos.tex
+) [3]) (secciones/04_ingenieria_requisitos.tex [4] (tablas/tabla_requisitos.tex
 \colID=\skip79
 \colCat=\skip80
 \colReq=\skip81
@@ -1342,7 +1342,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []|\T1/lmr/bx/n/8 (+20) REQ-
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 71.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
+1.
 (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1400,15 +1401,11 @@ Overfull \hbox (36.00735pt too wide) in alignment at lines 47--89
  [] [] [] [] [] [] 
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 89.
-
-[5{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}])
-
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 14.
-
-[6{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 21.
+[5{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}]) [6{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.
+enc}]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+1.
  (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1417,104 +1414,52 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 24.
-
 [7{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
-<figuras/matriz_qfd.png, id=127, 1372.12625pt x 1258.7025pt>
+<figuras/matriz_qfd.png, id=451, 1372.12625pt x 1258.7025pt>
 File: figuras/matriz_qfd.png Graphic file (type png)
 <use figuras/matriz_qfd.png>
 Package pdftex.def Info: figuras/matriz_qfd.png  used on input line 35.
 (pdftex.def)             Requested size: 486.25761pt x 446.06467pt.
 
-
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 39.
-
-[8] (tablas/tabla_pugh.tex)
-
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 51.
-
-[9 <./figuras/matriz_qfd.png>]) (secciones/05_diseno_conceptual.tex
-
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 9.
-
-[10]
-<figuras/GENERAL CIP.jpeg, id=151, 944.52875pt x 869.2475pt>
+[8] (tablas/tabla_pugh.tex) [9 <./figuras/matriz_qfd.png>])
+(secciones/05_diseno_conceptual.tex [10]
+<figuras/GENERAL CIP.jpeg, id=470, 944.52875pt x 869.2475pt>
 File: figuras/GENERAL CIP.jpeg Graphic file (type jpg)
 <use figuras/GENERAL CIP.jpeg>
 Package pdftex.def Info: figuras/GENERAL CIP.jpeg  used on input line 12.
 (pdftex.def)             Requested size: 243.1288pt x 223.7442pt.
 
 
-pdfTeX warning: pdflatex (file ./figuras/diagrama_general.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/diagrama_general.pdf, id=152, 597.19106pt x 421.575pt>
+pdfTeX warning: pdflatex (file ./figuras/diagrama_general.pdf): PDF inclusion: 
+found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/diagrama_general.pdf, id=471, 597.19106pt x 421.575pt>
 File: figuras/diagrama_general.pdf Graphic file (type pdf)
 <use figuras/diagrama_general.pdf>
 Package pdftex.def Info: figuras/diagrama_general.pdf  used on input line 15.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 16.
-
 [11 <./figuras/GENERAL CIP.jpeg>]
 
-pdfTeX warning: pdflatex (file ./figuras/pid_conceptual (2).pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/pid_conceptual (2).pdf, id=158, 597.19106pt x 421.575pt>
+pdfTeX warning: pdflatex (file ./figuras/pid_conceptual (2).pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/pid_conceptual (2).pdf, id=477, 597.19106pt x 421.575pt>
 File: figuras/pid_conceptual (2).pdf Graphic file (type pdf)
 <use figuras/pid_conceptual (2).pdf>
 Package pdftex.def Info: figuras/pid_conceptual (2).pdf  used on input line 21.
+
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-(tablas/tabla_pid.tex
+(tablas/tabla_pid.tex [12 <./figuras/diagrama_general.pdf>])
 
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 29.
-
-[12 <./figuras/diagrama_general.pdf>])
-
-pdfTeX warning: pdflatex (file ./figuras/recorrido_fluidos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/recorrido_fluidos.pdf, id=176, 597.19106pt x 421.575pt>
+pdfTeX warning: pdflatex (file ./figuras/recorrido_fluidos.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<figuras/recorrido_fluidos.pdf, id=492, 597.19106pt x 421.575pt>
 File: figuras/recorrido_fluidos.pdf Graphic file (type pdf)
 <use figuras/recorrido_fluidos.pdf>
 Package pdftex.def Info: figuras/recorrido_fluidos.pdf  used on input line 23.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 23.
-
-[13 <./figuras/pid_conceptual (2).pdf>]
-
-LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 24.
-
-[14]) (secciones/06_control_preliminar.tex
-
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 6.
-
-[15 <./figuras/recorrido_fluidos.pdf>]
-
-LaTeX Warning: Citation `siemens2021pid' on page 16 undefined on input line 11.
-
-
-LaTeX Warning: Citation `rashid2014power' on page 16 undefined on input line 11.
-
-
-LaTeX Warning: Citation `mohan2007power' on page 16 undefined on input line 13.
-
-
-LaTeX Warning: Citation `ogata2010modern' on page 16 undefined on input line 15.
-
-
-LaTeX Warning: Citation `dorf2021modern' on page 16 undefined on input line 15.
-
-
-LaTeX Warning: Citation `rashid2014power' on page 16 undefined on input line 17.
-
-
-LaTeX Warning: Citation `mohan2007power' on page 16 undefined on input line 17.
-
-
-LaTeX Warning: Citation `rashid2014power' on page 16 undefined on input line 19.
-
-
-LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 29.
-
-[16{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] (tablas/tabla_variables_control.tex
+[13 <./figuras/pid_conceptual (2).pdf>] [14])
+(secciones/06_control_preliminar.tex [15 <./figuras/recorrido_fluidos.pdf>]
+[16{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
+nc}] (tablas/tabla_variables_control.tex
 Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
 []|\T1/lmr/bx/n/9 (-20) Unidad/rango|  
  []
@@ -1525,46 +1470,32 @@ Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
  []
 
 )
-<figuras/diagrama_bloques_control.pdf, id=233, 951.22675pt x 211.81433pt>
+<figuras/diagrama_bloques_control.pdf, id=556, 951.22675pt x 211.81433pt>
 File: figuras/diagrama_bloques_control.pdf Graphic file (type pdf)
 <use figuras/diagrama_bloques_control.pdf>
-Package pdftex.def Info: figuras/diagrama_bloques_control.pdf  used on input line 39.
+Package pdftex.def Info: figuras/diagrama_bloques_control.pdf  used on input li
+ne 39.
 (pdftex.def)             Requested size: 427.90907pt x 95.28323pt.
-
-
-LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 40.
-
-[17]
-
-LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 78.
-
-[18 <./figuras/diagrama_bloques_control.pdf>]
-<figuras/respuesta_lazo_abierto.pdf, id=297, 715.7798pt x 354.10231pt>
+ [17] [18 <./figuras/diagrama_bloques_control.pdf>]
+<figuras/respuesta_lazo_abierto.pdf, id=617, 715.7798pt x 354.10231pt>
 File: figuras/respuesta_lazo_abierto.pdf Graphic file (type pdf)
 <use figuras/respuesta_lazo_abierto.pdf>
-Package pdftex.def Info: figuras/respuesta_lazo_abierto.pdf  used on input line 81.
+Package pdftex.def Info: figuras/respuesta_lazo_abierto.pdf  used on input line
+ 81.
 (pdftex.def)             Requested size: 427.90907pt x 211.69576pt.
-
-
-LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 93.
-
-[19 <./figuras/respuesta_lazo_abierto.pdf>] (tablas/tabla_especificaciones_control.tex)) (secciones/07_comunicaciones.tex
-<figuras/Topologia_y_flujo_de_informacion.png, id=358, 813.0375pt x 1656.1875pt>
+ [19 <./figuras/respuesta_lazo_abierto.pdf>] (tablas/tabla_especificaciones_con
+trol.tex))
+(secciones/07_comunicaciones.tex
+<figuras/Topologia_y_flujo_de_informacion.png, id=677, 813.0375pt x 1656.1875pt
+>
 File: figuras/Topologia_y_flujo_de_informacion.png Graphic file (type png)
 <use figuras/Topologia_y_flujo_de_informacion.png>
-Package pdftex.def Info: figuras/Topologia_y_flujo_de_informacion.png  used on input line 9.
+Package pdftex.def Info: figuras/Topologia_y_flujo_de_informacion.png  used on 
+input line 9.
 (pdftex.def)             Requested size: 97.25003pt x 198.10214pt.
-
-
-LaTeX Warning: Reference `fig:comunicaciones' on page 20 undefined on input line 14.
-
-
-LaTeX Warning: Citation `hajda2021security' on page 20 undefined on input line 14.
-
-
-LaTeX Warning: Reference `LastPage' on page 20 undefined on input line 15.
-
-[20 <./figuras/Topologia_y_flujo_de_informacion.png (PNG copy)>] (tablas/tabla_nodos_ip.tex) (tablas/tabla_protocolos.tex) (tablas/tabla_tags.tex
+ [20] (tablas/tabla_nodos_ip.tex) [21 <./figuras/Topologia_y_flujo_de_informaci
+on.png (PNG copy)>]
+(tablas/tabla_protocolos.tex) (tablas/tabla_tags.tex
 Overfull \hbox (2.16583pt too wide) in paragraph at lines 5--6
 []|\T1/lmr/bx/n/10 (-20) Acceso|  
  []
@@ -1654,24 +1585,20 @@ Overfull \hbox (1.53198pt too wide) in paragraph at lines 30--31
 []|\T1/lmr/m/n/10 (-20) Lectura|  
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 21 undefined on input line 32.
-
-[21]
-pdfTeX warning (ext4): destination with the same identifier (name{table.18}) has been already used, duplicate ignored
+[22]
+pdfTeX warning (ext4): destination with the same identifier (name{table.18}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.32 \end{longtable}
-                    
-
-LaTeX Warning: Reference `LastPage' on page 22 undefined on input line 32.
-
-[22]) (tablas/tabla_prueba_comunicacion.tex
-pdfTeX warning (ext4): destination with the same identifier (name{table.20}) has been already used, duplicate ignored
+                     [23]) (tablas/tabla_prueba_comunicacion.tex
+pdfTeX warning (ext4): destination with the same identifier (name{table.20}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.10 \end{tabularx}
-                   \end{table})) (secciones/08_plan_validacion.tex (tablas/tabla_matriz_validacion.tex
+                   \end{table})) (secciones/08_plan_validacion.tex
+(tablas/tabla_matriz_validacion.tex
 Overfull \hbox (11.1401pt too wide) in paragraph at lines 5--5
 []|\T1/lmr/bx/n/10.95 (-20) Requisito| 
  []
@@ -1713,7 +1640,8 @@ Underfull \hbox (badness 1137) in paragraph at lines 24--24
 
 
 Underfull \hbox (badness 1874) in paragraph at lines 26--26
-[]|\T1/lmr/m/n/10.95 (+20) Consignar SP = 50\TS1/lmr/m/n/10.95 (+20) °\T1/lmr/m/n/10.95 (+20) C
+[]|\T1/lmr/m/n/10.95 (+20) Consignar SP = 50\TS1/lmr/m/n/10.95 (+20) °\T1/lmr/m
+/n/10.95 (+20) C
  []
 
 
@@ -1734,7 +1662,8 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 26.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
-[]|\T1/lmr/m/n/10.95 (+20) Gráfica $\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (+20) )$
+[]|\T1/lmr/m/n/10.95 (+20) Gráfica $\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 (+2
+0) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (+20) )$
  []
 
 
@@ -1847,18 +1776,7 @@ Overfull \hbox (23.9146pt too wide) in alignment at lines 20--46
  [] [] [] [] [] [] 
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 23 undefined on input line 46.
-
-[23]
-
-LaTeX Warning: Reference `LastPage' on page 24 undefined on input line 46.
-
-[24])
-
-LaTeX Warning: Reference `LastPage' on page 25 undefined on input line 28.
-
-[25] (tablas/tabla_metricas_validacion.tex
+[24] [25]) [26] (tablas/tabla_metricas_validacion.tex
 Overfull \hbox (0.89442pt too wide) in paragraph at lines 33--33
 []|\T1/lmr/m/n/10.95 (-20) Comunicaciones| 
  []
@@ -1868,27 +1786,24 @@ Overfull \hbox (2.41487pt too wide) in paragraph at lines 36--36
 []|\T1/lmr/m/n/10.95 (-20) Instrumentación| 
  []
 
-)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex)
-
-LaTeX Warning: Reference `LastPage' on page 26 undefined on input line 5.
-
-[26] (tablas/tabla_presupuesto.tex
-Overfull \hbox (17.5673pt too wide) in alignment at lines 4--10
+)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex) [27]
+(tablas/tabla_presupuesto.tex
+Overfull \hbox (28.22174pt too wide) in alignment at lines 4--10
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5673pt too wide) in alignment at lines 10--16
+Overfull \hbox (28.22174pt too wide) in alignment at lines 10--16
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5673pt too wide) in alignment at lines 16--20
+Overfull \hbox (28.22174pt too wide) in alignment at lines 16--20
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (17.5673pt too wide) in alignment at lines 20--23
+Overfull \hbox (28.22174pt too wide) in alignment at lines 20--23
  [] [] [] [] [] 
  []
 
@@ -1967,42 +1882,15 @@ Overfull \hbox (28.22174pt too wide) in alignment at lines 23--75
  [] [] [] [] [] 
  []
 
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 25 on input line 75.
-
-
-LaTeX Warning: Reference `LastPage' on page 27 undefined on input line 75.
-
-[27]
-
-LaTeX Warning: Reference `LastPage' on page 28 undefined on input line 75.
-
-[28]) (tablas/tabla_riesgos.tex) (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex
-
-LaTeX Warning: Reference `LastPage' on page 29 undefined on input line 1.
-
-[29]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex
-pdfTeX warning (ext4): destination with the same identifier (name{table.31}) has been already used, duplicate ignored
+[28] [29]) (tablas/tabla_riesgos.tex) (tablas/tabla_checklist.tex))
+(secciones/10_conclusiones.tex [30]) (secciones/11_declaraciones_anexos.tex
+(tablas/tabla_uso_ia.tex
+pdfTeX warning (ext4): destination with the same identifier (name{table.31}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.9 \end{tabularx}
-                  \end{table})
-
-LaTeX Warning: Reference `LastPage' on page 30 undefined on input line 4.
-
-[30]) (main.bbl
-
-LaTeX Warning: Reference `LastPage' on page 31 undefined on input line 10.
-
-[31])
-
-LaTeX Warning: Reference `LastPage' on page 32 undefined on input line 25.
-
-[32]
-
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
-
+                  \end{table}) [31]) (main.bbl [32]) [33]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (main.aux)
@@ -2010,37 +1898,50 @@ enddocument/afterlastpage (AED): lastpage setting LastPage.
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  49441CEC4AA570E278621223DF2EA1F2;10436.
-
-Package lastpage Warning: Rerun to get the references right on input line 25.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 49441CEC4AA570E278621223DF2EA1F2;10436.
  ) 
 Here is how much of TeX's memory you used:
- 34146 strings out of 467501
- 695388 string characters out of 5408550
- 1189087 words of memory out of 5000000
- 62267 multiletter control sequences out of 15000+600000
- 733086 words of font info for 245 fonts, out of 8000000 for 9000
+ 34221 strings out of 467501
+ 696508 string characters out of 5408550
+ 1192473 words of memory out of 5000000
+ 62323 multiletter control sequences out of 15000+600000
+ 733465 words of font info for 249 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,13n,99p,1636b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (35 pages, 1855075 bytes).
+ 97i,13n,99p,1587b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/inner/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/inner/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/inner/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/inner/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/inner/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/inner/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/inner/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/inner/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/inner/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/inner/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/inner/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/inner/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/inner/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/inner/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/inner/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/inner/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/inner/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/inner/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/inner/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmsy8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/lm/lmsy9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/lm/lmtt10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (38 pages, 1911611 bytes).
 PDF statistics:
- 611 PDF objects out of 1000 (max. 8388607)
- 154 named destinations out of 1000 (max. 500000)
- 58058 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 919 PDF objects out of 1000 (max. 8388607)
+ 157 named destinations out of 1000 (max. 500000)
+ 58466 words of extra memory for PDF output out of 61914 (max. 10000000)
 
