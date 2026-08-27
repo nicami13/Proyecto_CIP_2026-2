@@ -15,17 +15,11 @@
   flecha/.style={-{Stealth[length=3mm,width=2mm]}, line width=0.8pt, draw=AzulUSTA}
 ]
   \node[fase] (identificacion) {\textbf{1. Identificación}\\
-    Definir necesidad, alcance, actores y condiciones iniciales del proceso.};
   \node[fase, below=8mm of identificacion] (analisis) {\textbf{2. Análisis}\\
-    Caracterizar el proceso, riesgos, requisitos y criterios de desempeño.};
   \node[fase, below=8mm of analisis] (diseno) {\textbf{3. Diseño}\\
-    Establecer la solución, la secuencia operativa y los recursos requeridos.};
   \node[fase, below=8mm of diseno] (implementacion) {\textbf{4. Implementación}\\
-    Ejecutar las actividades previstas y registrar las condiciones de operación.};
   \node[fase, below=8mm of implementacion] (validacion) {\textbf{5. Validación}\\
-    Verificar resultados frente a los requisitos y documentar las evidencias.};
   \node[fase, below=8mm of validacion] (seguimiento) {\textbf{6. Seguimiento y mejora}\\
-    Monitorear indicadores, gestionar hallazgos y actualizar el ciclo cuando aplique.};
 
   \draw[flecha] (identificacion) -- (analisis);
   \draw[flecha] (analisis) -- (diseno);

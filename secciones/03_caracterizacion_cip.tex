@@ -1,11 +1,9 @@
 \section{Caracterización del proceso CIP}
-\begin{orientacion}
-Describa el principio de limpieza CIP con fuentes técnicas. Diferencie preenjuague, lavado y enjuague final. Para cada fase indique fluido, ruta, temperatura, duración, bombas, válvulas, condición de transición y destino del fluido. No adopte temperaturas universales sin sustento.
-\end{orientacion}
 \campo{Describa el proceso y cite las fuentes consultadas.}
 
 \subsection{Fases del ciclo}
 \input{tablas/tabla_fases_cip}
+{Nota: el sistema opera en esquema de un solo paso: no existe recirculación del fluido de vuelta a la cabina de preparación ni una etapa de filtrado de residuos entre el equipo de prueba y el drenaje. Los valores de temperatura y tiempo se marcan como preliminares y quedan sujetos a validación experimental y a la ficha técnica del detergente seleccionado durante el segundo corte.}
 
 \subsection{Clasificación de la información utilizada}
 \input{tablas/tabla_clasificacion_informacion}
@@ -13,4 +11,4 @@ Describa el principio de limpieza CIP con fuentes técnicas. Diferencie preenjua
 \subsection{Secuencia preliminar}
 \input{flujogramas/secuencia_cip}
 
-\campo{Explique las condiciones de transición, pausa, parada segura y finalización del ciclo.}
+{Respecto a las condiciones de operación del ciclo, se prevé que la transición entre fases se realice por tiempo programado en el PLC. Sin embargo, también existe la posibilidad de que se establezca un umbral límite de nivel mínimo del tanque, que marque el momento de apagado de la bomba de impulso del tanque principal, para evitar su trabajo en vacío, e inicio del ciclo siguiente. Ante una condición de sobretemperatura, pérdida de comunicación con la capa de supervisión o accionamiento de una parada de emergencia, el sistema deberá pasar a un estado de parada segura que detenga el calentamiento y las bombas, mantenga cerradas las válvulas de suministro y permita el drenaje controlado del fluido en proceso. La finalización normal del ciclo se dará al completarse el enjuague final a través de un temporizador.}
