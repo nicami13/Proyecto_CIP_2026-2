@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ieeetr.bst
+Database file #1: referencias/referencias.bib
+Warning--empty journal in bowser2023cip
+You've used 8 entries,
+            1876 wiz_defined-function locations,
+            525 strings with 4490 characters,
+and the built_in function-call counts, 1326 in all, are:
+= -- 128
+> -- 50
+< -- 0
++ -- 21
+- -- 13
+* -- 79
+:= -- 210
+add.period$ -- 14
+call.type$ -- 8
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 73
+empty$ -- 143
+format.name$ -- 13
+if$ -- 321
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 10
+newline$ -- 33
+num.names$ -- 8
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 23
+stack$ -- 0
+substring$ -- 8
+swap$ -- 15
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 9
+width$ -- 9
+write$ -- 80
+(There was 1 warning)
