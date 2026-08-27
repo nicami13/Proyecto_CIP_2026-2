@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 \section{Diseño conceptual mecatrónico}
 
 \subsection{Descripción de la solución propuesta}
@@ -32,15 +33,39 @@ Finalmente, la instrumentación de seguridad incorpora sensores de nivel tanto e
 \insertarfigura{pid_conceptual (2).pdf}{P\&ID conceptual del sistema CIP.}{fig:pid}
 \input{tablas/tabla_pid}
 \insertarfigura{recorrido_fluidos.pdf}{Recorrido preliminar de fluidos.}{fig:fluidos}
+=======
+\section{Ingeniería de requisitos}
+\begin{orientacion}
+Se incluyeron requisitos funcionales y de proceso, mecánicos y de portabilidad, hidráulicos, eléctricos, electrónicos, de instrumentación, control, comunicaciones, supervisión IoT, seguridad, documentación y validación. Cada requisito tiene identificador, descripción, criterio de aceptación, prioridad, fuente y método de verificación.
+Además, se presentan vistas preliminares del diseño asistido por computadora (CAD) de la estación CIP, que permiten identificar los elementos que componen el sistema y establecer la trazabilidad entre los requisitos definidos y el diseño implementado.
+Para que el sistema cumpla con los requisitos, se aplicó el ciclo de mejora continua (CIP) en seis fases: identificación, análisis, diseño, implementación, validación y seguimiento. La secuencia general del ciclo se ilustra en la figura \ref{fig:secuencia-cip}, destacando la retroalimentación para la mejora continua.
+\end{orientacion}
 
-\subsection{Distribución preliminar y diseño CAD}
-\insertarfigura{cad_prototipo.png}{Vista del diseño CAD preliminar.}{fig:cad}
+\subsection{Matriz de requisitos}
+\input{tablas/tabla_requisitos}
 
-El diseño CAD representa una estación CIP compacta, organizada alrededor de una cabina de operaciones en la que se preparan y acondicionan las soluciones de limpieza. En esta cabina, un motoreductor acciona el sistema de agitación para favorecer la homogeneidad de la mezcla antes de su circulación. El calentamiento del agua se realiza mediante una resistencia de inmersión de $2000\,\mathrm{W}$, seleccionada para elevar la temperatura de la solución de acuerdo con los parámetros definidos para cada etapa del ciclo.
+Incluya requisitos funcionales y de proceso, mecánicos y de portabilidad, hidráulicos, eléctricos, electrónicos, de instrumentación, control, comunicaciones, supervisión IoT, seguridad, documentación y validación.
 
-La arquitectura hidráulica incorpora dos bombas con funciones diferenciadas. La primera se encarga de evacuar o recircular los insumos procesados desde la cabina de operaciones hacia la ruta hidráulica correspondiente. La segunda bomba dosifica el jabón de manera controlada, permitiendo incorporarlo a la solución de trabajo durante la preparación o el lavado. El sistema contempla además un tanque para el almacenamiento del jabón y un tanque destinado a recolectar el agua residual, lo que permite separar el suministro de insumos de la gestión de los efluentes generados en el proceso.
+Como soporte visual para la identificación de los elementos que componen el sistema CIP y la posterior definición de sus requisitos funcionales, se presentan las siguientes vistas preliminares del diseño asistido por computadora (CAD). La estación se ha concebido como una unidad autónoma para la preparación de soluciones de limpieza, integrando de manera compacta los subsistemas de proceso, fluidos y control.
 
-La distribución propuesta facilita el acceso a los componentes de operación, mantenimiento y limpieza, y deja definidas las zonas de preparación, dosificación, agitación, calentamiento y recolección de residuos. Las imágenes CAD presentadas a continuación permiten verificar la disposición espacial preliminar de estos elementos y servirán como base para el dimensionamiento definitivo, la selección de conexiones y la integración de sensores, válvulas y elementos de control.
+En la cabina de operaciones confluyen los principales medios activos del sistema: un motoreductor encargado de transmitir el movimiento a un agitador mecánico, garantizando la homogeneización de la mezcla; y una resistencia de inmersión de $2000\,\mathrm{W}$, que aporta la potencia térmica necesaria para el calentamiento controlado del agua. El manejo de los fluidos se apoya en un circuito hidráulico estratégicamente distribuido, donde destacan dos bombas con funciones específicas. Por un lado, la bomba de circulación o evacuación permite extraer los insumos procesados desde la cabina hacia el exterior, facilitando su transferencia a las etapas posteriores. Por otro lado, la bomba dosificadora de jabón toma el detergente desde su tanque de almacenamiento y lo inyecta con precisión en el flujo principal, ajustando la concentración de la solución de limpieza. El conjunto se completa con un tanque dedicado al almacenamiento de jabón y un tanque para la recolección de agua residual, que aseguran la operación continua y la gestión adecuada de los efluentes.
+>>>>>>> Stashed changes
 
-\subsection{Equipo o circuito de prueba}
-\campo{Identifique el equipo que será sometido al ciclo y describa sus conexiones de entrada, retorno y drenaje.}
+Las imágenes que se incluyen a continuación ofrecen una visión detallada de la disposición general de estos componentes, la distribución interna de la cabina de operaciones y la configuración del sistema hidráulico, estableciendo así la base física para la trazabilidad entre los requisitos definidos y el diseño implementado.
+
+\insertarfigura{cad_vista_general.png}{Vista general del diseño CAD de la estación CIP.}{fig:cad-vista-general}
+
+\insertarfigura{cad_cabina_operaciones.png}{Cabina de operaciones: sistema de agitación y calentamiento de la solución.}{fig:cad-cabina}
+
+\insertarfigura{cad_sistema_hidraulico.png}{Distribución CAD del sistema hidráulico, tanques y bombas.}{fig:cad-hidraulico}
+
+\subsection{Despliegue de la función de calidad -- QFD}
+\begin{orientacion}
+Relacione necesidades del usuario con características técnicas. Use la sigla QFD, correspondiente a \textit{Quality Function Deployment}. Incorpore la matriz completa como figura legible o anexo y resuma aquí sus resultados.
+\end{orientacion}
+\insertarfigura{matriz_qfd.pdf}{Matriz QFD del sistema CIP.}{fig:qfd}
+\campo{Analice las características técnicas con mayor ponderación y su influencia sobre el diseño.}
+
+\subsection{Matrices de decisión Pugh}
+\input{tablas/tabla_pugh}
+\campo{Repita la matriz para arquitectura, sensores, actuadores, calentamiento, bomba, válvulas, protocolo y plataforma de supervisión. Explique la ponderación y la alternativa seleccionada.}
