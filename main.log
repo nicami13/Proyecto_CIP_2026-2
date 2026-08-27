@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.13)  26 AUG 2026 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.13)  26 AUG 2026 19:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1241,14 +1241,14 @@ L3 programming layer <2025-12-24>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2F5733702DC63A2B701E78D9C6D1B652;9966.
+(rerunfilecheck)             Checksum: 8EFA92BF32A6A12913C99AB99495AB4C;9986.
  ) 
 Here is how much of TeX's memory you used:
  33649 strings out of 467871
- 680455 string characters out of 5418860
- 1159973 words of memory out of 5000000
+ 680453 string characters out of 5418860
+ 1160996 words of memory out of 5000000
  61582 multiletter control sequences out of 15000+600000
- 727423 words of font info for 181 fonts, out of 8000000 for 9000
+ 727376 words of font info for 181 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,13n,99p,1035b,1004s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb
@@ -1265,7 +1265,7 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Acer/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Acer/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Acer/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (18 pages, 454080 bytes).
+Output written on main.pdf (18 pages, 456143 bytes).
 PDF statistics:
  554 PDF objects out of 1000 (max. 8388607)
  106 named destinations out of 1000 (max. 500000)
