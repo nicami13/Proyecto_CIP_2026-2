@@ -1,9 +1,24 @@
-\begin{table}[H]\centering\small\caption{Definición preliminar del lazo de control.}
-\begin{tabularx}{\textwidth}{L{3.7cm}YL{3cm}}\toprule
-\textbf{Elemento}&\textbf{Definición}&\textbf{Unidad/rango}\\\midrule
-Variable controlada&Temperatura del agua o solución&\campo{$^{\circ}$C y rango}\\
-Variable manipulada&Potencia entregada al calentador&\campo{W o \%}\\
-Perturbaciones&\campo{Pérdidas, caudal, temperatura de entrada}&\campo{Unidades}\\
-Punto de operación&\campo{Valor nominal}&\campo{Unidad}\\
-Limitaciones&\campo{Saturación y límites de seguridad}&\campo{Valores}\\\bottomrule
-\end{tabularx}\end{table}
+\begin{footnotesize}
+\begin{tabularx}{\textwidth}{L{2.4cm}L{3.1cm}L{2.2cm}>{\raggedright\arraybackslash}X}
+\caption{Definición preliminar del lazo de control.}\label{tab:lazo_control}\\
+\toprule
+\textbf{Elemento}&\textbf{Definición}&\textbf{Unidad/rango}&\textbf{Observaciones}\\
+\midrule
+\endfirsthead
+\multicolumn{4}{c}{\tablename\ \thetable{} -- continuación}\\
+\toprule
+\textbf{Elemento}&\textbf{Definición}&\textbf{Unidad/rango}&\textbf{Observaciones}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continúa en la página siguiente}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Variable controlada&Temperatura del agua o solución (PT100+SM1231)&$^{\circ}$C --- dos consignas: 40\,$^{\circ}$C (lavado), 50\,$^{\circ}$C (prelavado)&Desarrollo completo en la Sección~1.1.\\
+Variable manipulada&Potencia entregada al calentador (resistencia 1500\,W vía SSR+PWM)&0--1500\,W / 0--100\,\% ciclo de trabajo&Desarrollo completo en la Sección~1.2.\\
+Perturbaciones&Pérdidas térmicas hacia el ambiente (agrupadas en $UA$), $T_{amb}$, adición de fluido frío entre fases, pérdidas en mangueras externas&$UA\approx4$\,W/K (supuesto, a validar); $T_{amb}=18$--$25\,^{\circ}$C&$UA$ es la hipótesis más débil del modelo; pendiente de ensayo de enfriamiento libre en el Corte~2. La adición de fluido frío es la perturbación más crítica y descarta el control puramente P.\\
+Punto de operación&Nominal: $T_{amb}=20\,^{\circ}$C$\rightarrow$SP$=50\,^{\circ}$C. Secundario: $T_{amb}=20\,^{\circ}$C$\rightarrow$SP$=40\,^{\circ}$C&$\Delta T=30$\,K (prelavado); $\Delta T=20$\,K (lavado)&El prelavado es el caso más exigente (mayor $\Delta T$, mayor potencia de régimen: 120\,W vs.\ 80\,W); se usa para dimensionar el controlador.\\
+Limitaciones&Saturación por sobredimensionamiento; actuador unidireccional; corte físico por termostato NC, independiente del PLC&Sobredim. $\approx12{,}5\times$ (prelavado) / $\approx18{,}75\times$ (lavado); límite 70\,$^{\circ}$C&Obliga a usar anti-windup en PID\_Compact; el enfriamiento solo ocurre por pérdidas naturales, mucho más lento que el calentamiento.\\
+\end{tabularx}
+\end{footnotesize}
