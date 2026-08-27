@@ -41,8 +41,40 @@ donde $D$ corresponde al ciclo de trabajo, definido como la fracción del perío
 \subsection{Modelo dinámico preliminar}
 \campo{Presente el balance de energía, parámetros, condiciones iniciales, función de transferencia o modelo equivalente, punto de operación y rango de validez.}
 
+Se modela el tanque de mezcla como un sistema térmico de parámetros concentrados (\textit{lumped capacitance}), es decir, se asume una temperatura uniforme en todo el volumen activo en cada instante. Este supuesto es razonable debido al efecto de mezclado producido por la recirculación del propio sistema CIP y es válido cuando el número de Biot del sistema es suficientemente pequeño ($Bi \ll 1$) [9].
+
+El balance de energía instantáneo, análogo al de un tanque agitado con calentamiento eléctrico [10], se expresa mediante:
+
 \begin{equation}
-\boxed{\text{Inserte aquí la ecuación principal del modelo}}
+Q_h(t) - UA\left(T(t)-T_{\mathrm{amb}}\right)
+\end{equation}
+
+donde $m$ es la masa activa de fluido, expresada en $\mathrm{kg}$; $c_p$ es el calor específico del agua, con un valor aproximado de $4186,\mathrm{J/(kg,K)}$ [9]; $Q_h(t)$ es la potencia térmica entregada por la resistencia, expresada en $\mathrm{W}$; $UA$ es el coeficiente global de transferencia de calor asociado a las pérdidas hacia el ambiente, expresado en $\mathrm{W/K}$; y $T_{\mathrm{amb}}$ es la temperatura ambiente, considerada como una perturbación del sistema.
+
+Linealizando el modelo alrededor de un punto de operación y aplicando la transformada de Laplace, bajo la condición inicial $T(0)=T_{\mathrm{amb}}$, se obtiene el modelo de primer orden estándar [2], [3]:
+\begin{equation}
+\frac{\Delta T(s)}{Q_h(s)}
+\end{equation}
+\begin{equation}
+\frac{K}{\tau s+1}
+\end{equation}
+
+donde la ganancia estática del proceso y la constante de tiempo están dadas, respectivamente, por:
+
+\begin{equation}
+K=\frac{1}{UA}
+\end{equation}
+
+\begin{equation}
+\tau=\frac{m c_p}{UA}
+\end{equation}
+
+En este modelo, $K$ representa la ganancia estática del proceso, expresada en $\mathrm{K/W}$, mientras que $\tau$ representa la constante de tiempo térmica del sistema, expresada en segundos. El modelo permite caracterizar la relación dinámica entre la potencia térmica suministrada por la resistencia y el incremento de temperatura del fluido respecto al punto de operación.
+
+\begin{equation}
+\boxed{
+G(s)=\frac{0{,}25}{15697{,}5s+1}
+}
 \end{equation}
 
 \subsection{Simulación en lazo abierto}

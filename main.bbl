@@ -24,4 +24,7 @@ K.~Ogata, {\em Modern Control Engineering}.
 R.~C. Dorf and R.~H. Bishop, {\em Modern Control Systems}.
 \newblock New York, NY, USA: Pearson, 14~ed., 2021.
 
+\bibitem{hajda2021security}
+J.~Hajda, R.~Jakuszewski, and S.~Ogonowski, ``Security challenges in industry 4.0 plc systems,'' {\em Applied Sciences}, vol.~11, p.~9785, Oct. 2021.
+
 \end{thebibliography}
