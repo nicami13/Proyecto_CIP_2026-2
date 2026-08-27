@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.13)  27 AUG 2026 06:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.13)  27 AUG 2026 07:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1096,17 +1096,17 @@ File: figuras/diagrama_bloques_control.pdf Graphic file (type pdf)
 <use figuras/diagrama_bloques_control.pdf>
 Package pdftex.def Info: figuras/diagrama_bloques_control.pdf  used on input line 39.
 (pdftex.def)             Requested size: 427.90907pt x 95.28323pt.
- [11] (tablas/tabla_especificaciones_control.tex)) (secciones/07_comunicaciones.tex [12 <./figuras/diagrama_bloques_control.pdf>] (flujogramas/arquitectura_comunicaciones.tex) [13] (tablas/tabla_nodos_ip.tex) (tablas/tabla_protocolos.tex) (tablas/tabla_tags.tex) (tablas/tabla_prueba_comunicacion.tex) [14]) (secciones/08_plan_validacion.tex (tablas/tabla_plan_validacion.tex
+ [11] [12 <./figuras/diagrama_bloques_control.pdf>] (tablas/tabla_especificaciones_control.tex)) (secciones/07_comunicaciones.tex (flujogramas/arquitectura_comunicaciones.tex) [13] (tablas/tabla_nodos_ip.tex) (tablas/tabla_protocolos.tex) [14] (tablas/tabla_tags.tex) (tablas/tabla_prueba_comunicacion.tex)) (secciones/08_plan_validacion.tex [15] (tablas/tabla_plan_validacion.tex
 pdfTeX warning (ext4): destination with the same identifier (name{table.20}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.7 \end{longtable}
-                   ) (tablas/tabla_metricas.tex)) (secciones/09_gestion_entregables.tex [15] (tablas/tabla_cronograma.tex) (tablas/tabla_presupuesto.tex) (tablas/tabla_riesgos.tex
+                   ) (tablas/tabla_metricas.tex)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex) (tablas/tabla_presupuesto.tex) [16] (tablas/tabla_riesgos.tex
 pdfTeX warning (ext4): destination with the same identifier (name{table.28}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.7 \end{tabularx}
-                  \end{table}) [16] (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex [17]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex) [18]) (main.bbl) [19] 
+                  \end{table}) (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex [17]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex) [18]) (main.bbl [19]) [20] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (main.aux)
  ***********
@@ -1114,20 +1114,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D4841843969C1498D5A4587CA1C4FE52;10366.
+(rerunfilecheck)             Checksum: 77132CED3D8334DE358A8679290AD33B;10366.
  ) 
 Here is how much of TeX's memory you used:
- 33925 strings out of 467871
- 685542 string characters out of 5418860
+ 33941 strings out of 467871
+ 685708 string characters out of 5418860
  1184206 words of memory out of 5000000
  61724 multiletter control sequences out of 15000+600000
- 731564 words of font info for 225 fonts, out of 8000000 for 9000
+ 731979 words of font info for 230 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,13n,99p,1035b,1004s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (24 pages, 806325 bytes).
+<C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (25 pages, 819035 bytes).
 PDF statistics:
- 717 PDF objects out of 1000 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
+ 734 PDF objects out of 1000 (max. 8388607)
+ 141 named destinations out of 1000 (max. 500000)
  58436 words of extra memory for PDF output out of 61914 (max. 10000000)
 
