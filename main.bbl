@@ -1,9 +1,7 @@
 \begin{thebibliography}{1}
 
-\bibitem{pi_institucional}
-{Facultad de Ingeniería Mecatrónica, Universidad Santo Tomás}, ``Proyecto
-  integrador de octavo semestre 2026-2: Sistema cip,'' documento institucional,
-  Universidad Santo Tomás, Seccional Bucaramanga, 2026.
+\bibitem{bowser2023cip}
+T.~J. Bowser, ``What is clean in place (cip)?,'' 8 2023.
 
 \bibitem{siemens2021pid}
 {Siemens AG}, {\em SIMATIC S7-1200, S7-1500 PID Control Function Manual}.
@@ -15,8 +13,7 @@ M.~H. Rashid, {\em Power Electronics: Circuits, Devices, and Applications}.
 \newblock Boston, MA, USA: Pearson, 4~ed., 2014.
 
 \bibitem{mohan2007power}
-N.~Mohan, T.~M. Undeland, and W.~P. Robbins, {\em Power Electronics:
-  Converters, Applications, and Design}.
+N.~Mohan, T.~M. Undeland, and W.~P. Robbins, {\em Power Electronics: Converters, Applications, and Design}.
 \newblock Hoboken, NJ, USA: John Wiley \& Sons, 3~ed., 2007.
 
 \bibitem{ogata2010modern}
