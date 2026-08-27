@@ -1,20 +1,46 @@
 \section{Ingeniería de requisitos}
+
 \begin{orientacion}
 Formule requisitos verificables. Evite expresiones ambiguas como ``rápido'', ``eficiente'' o ``adecuado''. Cada requisito debe tener identificador, descripción, criterio de aceptación, prioridad, fuente y método de verificación.
 \end{orientacion}
 
 \subsection{Matriz de requisitos}
+
 \input{tablas/tabla_requisitos}
 
-Incluya requisitos funcionales y de proceso, mecánicos y de portabilidad, hidráulicos, eléctricos, electrónicos, de instrumentación, control, comunicaciones, supervisión IoT, seguridad, documentación y validación. cambio
+La matriz de requisitos permite establecer de manera organizada las condiciones que debe cumplir el sistema CIP. Los requisitos se clasifican de acuerdo con las diferentes áreas involucradas en el diseño, construcción, operación y validación del sistema.
+
+Se consideran requisitos funcionales y de proceso, mecánicos y de portabilidad, hidráulicos, eléctricos, electrónicos, de instrumentación, control, comunicaciones, supervisión mediante IoT, seguridad, documentación y validación.
 
 \subsection{Despliegue de la función de calidad -- QFD}
+
 \begin{orientacion}
 Relacione necesidades del usuario con características técnicas. Use la sigla QFD, correspondiente a \textit{Quality Function Deployment}. Incorpore la matriz completa como figura legible o anexo y resuma aquí sus resultados.
 \end{orientacion}
-\insertarfigura{matriz_qfd.pdf}{Matriz QFD del sistema CIP.}{fig:qfd}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/matriz_qfd.png}
+    \caption{Matriz QFD del sistema CIP.}
+    \label{fig:qfd}
+\end{figure}
+
 \campo{Analice las características técnicas con mayor ponderación y su influencia sobre el diseño.}
 
+La matriz QFD permite relacionar las necesidades identificadas por los usuarios con las características técnicas del sistema CIP. A partir de esta relación se pueden establecer las características de diseño que tienen mayor influencia sobre el desempeño del sistema.
+
+Las características técnicas con mayor ponderación deben recibir una atención prioritaria durante las etapas de diseño e implementación, debido a que tienen una mayor influencia sobre el cumplimiento de las necesidades del usuario. Esta priorización permite orientar la selección de componentes, la arquitectura del sistema, los elementos de instrumentación, los actuadores y las estrategias de control.
+
+Además, el QFD facilita la toma de decisiones técnicas al establecer una relación entre los requerimientos del usuario y las variables que pueden ser controladas directamente durante el desarrollo del sistema.
+
 \subsection{Matrices de decisión Pugh}
+
 \input{tablas/tabla_pugh}
+
 \campo{Repita la matriz para arquitectura, sensores, actuadores, calentamiento, bomba, válvulas, protocolo y plataforma de supervisión. Explique la ponderación y la alternativa seleccionada.}
+
+Las matrices de decisión Pugh permiten comparar diferentes alternativas de diseño utilizando criterios previamente establecidos. Para cada alternativa se asigna una valoración con respecto a una referencia, permitiendo identificar aquella que presenta el mejor comportamiento global frente a los requisitos definidos.
+
+La ponderación de los criterios debe considerar su importancia dentro del funcionamiento del sistema CIP. Entre los aspectos que pueden evaluarse se encuentran el cumplimiento funcional, costo, facilidad de implementación, disponibilidad de los componentes, mantenimiento, seguridad, compatibilidad con el sistema y posibilidad de integración con los demás elementos.
+
+Este procedimiento se aplica a la selección de la arquitectura del sistema, sensores, actuadores, sistema de calentamiento, bomba, válvulas, protocolo de comunicación y plataforma de supervisión. La alternativa seleccionada será aquella que obtenga la mejor valoración global y que, además, cumpla con los requisitos establecidos para el sistema.
