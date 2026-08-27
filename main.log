@@ -1459,4 +1459,128 @@ Overfull \hbox (2.41487pt too wide) in paragraph at lines 36--36
 []|\T1/lmr/m/n/10.95 (-20) Instrumentación| 
  []
 
-)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex) [27] (tab
+)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex) [27] (tablas/tabla_presupuesto.tex
+Overfull \hbox (28.22174pt too wide) in alignment at lines 4--10
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 10--16
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 16--20
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 20--23
+ [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 6252) in paragraph at lines 28--28
+\T1/lmr/m/n/10.95 (+20) Pe-dro-llo CPm 620 o Ber-cat-ti
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 31--31
+[]|\T1/lmr/m/n/10.95 (+20) Tubería/manguera CPVC
+ []
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 37--37
+[]|\T1/lmr/m/n/10.95 (+20) Estructura por-tá-til, se-gún MEC-
+ []
+
+
+Underfull \hbox (badness 7722) in paragraph at lines 38--38
+[]|\T1/lmr/m/n/10.95 (+20) Ruedas in-dus-tria-les con
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]|\T1/lmr/m/n/10.95 (+20) Soldadura --- elec-tro-
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 49--49
+[]|\T1/lmr/m/n/10.95 (+20) Disyuntor Chint NXB-63
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 54--54
+[]|\T1/lmr/m/n/10.95 (+20) LEDs pi-lo-to 24V, 22mm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]|\T1/lmr/m/n/10.95 (+20) Módulo de en-tra-da
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+\T1/lmr/m/n/10.95 (+20) RTD/analógica pa-ra el
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 61--61
+[]|\T1/lmr/m/n/10.95 (+20) Resistencia de in-mer-sión
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
+[]|\T1/lmr/m/n/10.95 (+20) ESP32 Dev-Kit (Wi-
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 71--71
+[]|\T1/lmr/m/n/10.95 (+20) Módulo Ether-net W5500
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 71--71
+[]|\T1/lmr/m/n/10.95 (+20) Conectividad ca-blea-da más es-ta-
+ []
+
+
+Underfull \hbox (badness 4899) in paragraph at lines 71--71
+\T1/lmr/m/n/10.95 (+20) ble que Wi-Fi cer-ca de mo-to-
+ []
+
+
+Overfull \hbox (28.22174pt too wide) in alignment at lines 23--75
+ [] [] [] [] [] 
+ []
+
+[28] [29]) (tablas/tabla_riesgos.tex) (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex [30]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex
+pdfTeX warning (ext4): destination with the same identifier (name{table.31}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.9 \end{tabularx}
+                  \end{table}) [31]) (main.bbl [32]) [33] 
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(main.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 49441CEC4AA570E278621223DF2EA1F2;10436.
+ ) 
+Here is how much of TeX's memory you used:
+ 34230 strings out of 467501
+ 696741 string characters out of 5408550
+ 1192531 words of memory out of 5000000
+ 62326 multiletter control sequences out of 15000+600000
+ 733950 words of font info for 252 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 97i,13n,99p,1627b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (38 pages, 1912317 bytes).
+PDF statistics:
+ 919 PDF objects out of 1000 (max. 8388607)
+ 157 named destinations out of 1000 (max. 500000)
+ 58978 words of extra memory for PDF output out of 61914 (max. 10000000)
+
