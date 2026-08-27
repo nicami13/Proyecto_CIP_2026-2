@@ -1,55 +1,19 @@
 \section{Diseño conceptual mecatrónico}
-\begin{orientacion}
-Presente un Producto Mínimo Viable capaz de almacenar o suministrar agua, calentarla, circularla y recircularla, dosificar una sustancia segura, ejecutar las fases CIP, recuperar o drenar el agua, permitir supervisión local y remota, y conectarse a un circuito externo.
-\end{orientacion}
 
 \subsection{Descripción de la solución propuesta}
+El diseño del sistema CIP se ha concebido como una solución compacta e integrada para la limpieza y desinfección de tuberías mediante una secuencia automatizada de etapas. La arquitectura funcional se articula en torno a tres subsistemas de almacenamiento: un tanque para la recolección de agua residual, un tanque para el agente de limpieza y desinfección, y una cabina de operaciones en la que se acondicionan los fluidos antes de su descarga hacia la línea objetivo.
 
-El sistema automatizado CIP (\textit{Clean-in-Place}) está 
-concebido como una unidad modular de preparación, acondicionamiento 
-térmico y distribución de solución limpiadora para líneas de 
-proceso agroindustrial. Su arquitectura opera bajo un esquema 
-hidráulico de paso directo (lazo abierto), donde el fluido 
-procesado cumple su ciclo de limpieza y se evacúa directamente 
-hacia la etapa de descarga, garantizando la eliminación 
-eficiente de residuos sin contaminación cruzada por recirculación.
+El proceso se estructura en tres ciclos secuenciales. En el preenjuague térmico, la cabina se llena con agua hasta el nivel de referencia, se activa la resistencia de inmersión y el volumen acondicionado se impulsa hacia la tubería. En el lavado químico y mecánico, se dosifica el agente jabonoso, se calienta la solución y se acciona el agitador para favorecer la homogeneidad de la mezcla. Finalmente, el enjuague utiliza agua sin calentamiento ni aditivos para arrastrar los residuos remanentes.
 
-El funcionamiento del sistema se articula a través de tres 
-etapas secuenciales definidas por sus subsistemas principales:
+El abastecimiento de agua desde la red general se regula mediante una electroválvula gobernada por la lógica de control. El sistema incorpora dos bombas con funciones diferenciadas: una bomba de circulación o evacuación que transporta los fluidos procesados desde la cabina hacia la tubería, y una bomba dosificadora que inyecta jabón desde su tanque de almacenamiento. A la salida de cada bomba se disponen dos electroválvulas en serie para asegurar el aislamiento hidráulico, prevenir el reflujo y evitar la contaminación cruzada entre fluidos.
 
-\begin{itemize}
-    \item \textbf{Acondicionamiento y Homogeneización:} En el 
-    tanque de mezcla TK-102, una estructura cilíndrica de acero 
-    inoxidable con fondo cónico, se deposita la solución de 
-    limpieza. La homogeneidad de la mezcla y la distribución 
-    uniforme de la energía térmica se logran mediante la 
-    acción mecánica continua del agitador AG-101, accionado 
-    por un motorreductor.
-    
-    \item \textbf{Control Térmico:} La elevación de la temperatura 
-    se realiza a través de un sistema de intercambio de calor 
-    regulado por la válvula solenoide SV-101. La variable es 
-    monitoreada en tiempo real por el sensor PT-100 (TT-101), 
-    permitiendo ajustar el flujo térmico para mantener la mezcla 
-    en el punto de trabajo requerido.
-    
-    \item \textbf{Impulsión y Evacuación:} Alcanzadas las 
-    condiciones térmicas y de concentración, se activa la bomba 
-    centrífuga P-102. Esta suministra el caudal y la presión 
-    necesarios para transportar el fluido por la tubería de 
-    limpieza hacia el equipo objetivo. Tras el recorrido, la 
-    solución agotada se descarga hacia el tanque de efluentes 
-    TK-103 o al desagüe general.
-\end{itemize}
+El acondicionamiento térmico se realiza con una resistencia de inmersión de $2000\,\mathrm{W}$. La instrumentación incluye sensores de nivel en el tanque de agua residual y en la cabina de operaciones, con el propósito de prevenir reboses y detener el llenado al alcanzar los límites máximos establecidos.
 
-Esta configuración responde directamente a las especificaciones 
-técnicas del proyecto. La integración del agitador AG-101 resuelve 
-la exigencia de homogeneidad y valida la hipótesis de temperatura 
-uniforme en el tanque. El lazo de control entre el sensor TT-101 
-y la válvula SV-101 asegura la precisión térmica. Por su parte, 
-la bomba P-102 garantiza el dinamismo hidráulico para la limpieza 
-de la tubería, mientras que la disposición final en TK-103 o 
-desagüe cumple con el manejo seguro de efluentes en paso directo.
+\insertarfigura[0.5\textwidth]{GENERAL CIP.jpeg}{CAD general del sistema CIP.}{fig:general}
+
+\subsection{Diagrama general de bloques}
+\insertarfigura{diagrama_general.pdf}{Diagrama general del sistema.}{fig:diagrama}
+
 \subsection{Arquitectura funcional}
 \insertarfigura{arquitectura_funcional.pdf}{Arquitectura funcional del sistema.}{fig:arquitectura}
 
@@ -60,12 +24,7 @@ desagüe cumple con el manejo seguro de efluentes en paso directo.
 
 \subsection{Distribución preliminar y diseño CAD}
 \insertarfigura{cad_prototipo.png}{Vista del diseño CAD preliminar.}{fig:cad}
-
-El diseño CAD representa una estación CIP compacta, organizada alrededor de una cabina de operaciones en la que se preparan y acondicionan las soluciones de limpieza. En esta cabina, un motoreductor acciona el sistema de agitación para favorecer la homogeneidad de la mezcla antes de su circulación. El calentamiento del agua se realiza mediante una resistencia de inmersión de $2000\,\mathrm{W}$, seleccionada para elevar la temperatura de la solución de acuerdo con los parámetros definidos para cada etapa del ciclo.
-
-La arquitectura hidráulica incorpora dos bombas con funciones diferenciadas. La primera se encarga de evacuar o recircular los insumos procesados desde la cabina de operaciones hacia la ruta hidráulica correspondiente. La segunda bomba dosifica el jabón de manera controlada, permitiendo incorporarlo a la solución de trabajo durante la preparación o el lavado. El sistema contempla además un tanque para el almacenamiento del jabón y un tanque destinado a recolectar el agua residual, lo que permite separar el suministro de insumos de la gestión de los efluentes generados en el proceso.
-
-La distribución propuesta facilita el acceso a los componentes de operación, mantenimiento y limpieza, y deja definidas las zonas de preparación, dosificación, agitación, calentamiento y recolección de residuos. Las imágenes CAD presentadas a continuación permiten verificar la disposición espacial preliminar de estos elementos y servirán como base para el dimensionamiento definitivo, la selección de conexiones y la integración de sensores, válvulas y elementos de control.
+\campo{Indique dimensiones, masa estimada, ubicación de tanque, bomba, calentador, válvulas y sensores, conexiones externas y criterios de portabilidad.}
 
 \subsection{Equipo o circuito de prueba}
 \campo{Identifique el equipo que será sometido al ciclo y describa sus conexiones de entrada, retorno y drenaje.}

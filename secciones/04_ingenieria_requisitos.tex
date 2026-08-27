@@ -12,6 +12,18 @@ La matriz de requisitos permite establecer de manera organizada las condiciones 
 
 Se consideran requisitos funcionales y de proceso, mecánicos y de portabilidad, hidráulicos, eléctricos, electrónicos, de instrumentación, control, comunicaciones, supervisión mediante IoT, seguridad, documentación y validación.
 
+Como soporte visual para la identificación de los elementos que componen el sistema CIP y la posterior definición de sus requisitos funcionales, se presentan las siguientes vistas preliminares del diseño asistido por computadora (CAD). La estación se ha concebido como una unidad autónoma para la preparación de soluciones de limpieza, integrando de manera compacta los subsistemas de proceso, fluidos y control.
+
+En la cabina de operaciones confluyen los principales medios activos del sistema: un motoreductor encargado de transmitir el movimiento a un agitador mecánico, garantizando la homogeneización de la mezcla; y una resistencia de inmersión de $2000\,\mathrm{W}$, que aporta la potencia térmica necesaria para el calentamiento controlado del agua. El manejo de los fluidos se apoya en un circuito hidráulico estratégicamente distribuido, donde destacan dos bombas con funciones específicas. Por un lado, la bomba de circulación o evacuación permite extraer los insumos procesados desde la cabina hacia el exterior, facilitando su transferencia a las etapas posteriores. Por otro lado, la bomba dosificadora de jabón toma el detergente desde su tanque de almacenamiento y lo inyecta con precisión en el flujo principal, ajustando la concentración de la solución de limpieza. El conjunto se completa con un tanque dedicado al almacenamiento de jabón y un tanque para la recolección de agua residual, que aseguran la operación continua y la gestión adecuada de los efluentes.
+
+Las imágenes que se incluyen a continuación ofrecen una visión detallada de la disposición general de estos componentes, la distribución interna de la cabina de operaciones y la configuración del sistema hidráulico, estableciendo así la base física para la trazabilidad entre los requisitos definidos y el diseño implementado.
+
+\insertarfigura{cad_vista_general.png}{Vista general del diseño CAD de la estación CIP.}{fig:cad-vista-general}
+
+\insertarfigura{cad_cabina_operaciones.png}{Cabina de operaciones: sistema de agitación y calentamiento de la solución.}{fig:cad-cabina}
+
+\insertarfigura{cad_sistema_hidraulico.png}{Distribución CAD del sistema hidráulico, tanques y bombas.}{fig:cad-hidraulico}
+
 \subsection{Despliegue de la función de calidad -- QFD}
 
 \begin{orientacion}
@@ -36,6 +48,7 @@ Además, el QFD facilita la toma de decisiones técnicas al establecer una relac
 \subsection{Matrices de decisión Pugh}
 
 \input{tablas/tabla_pugh}
+<<<<<<< Updated upstream
 
 \campo{Repita la matriz para arquitectura, sensores, actuadores, calentamiento, bomba, válvulas, protocolo y plataforma de supervisión. Explique la ponderación y la alternativa seleccionada.}
 
@@ -44,3 +57,6 @@ Las matrices de decisión Pugh permiten comparar diferentes alternativas de dise
 La ponderación de los criterios debe considerar su importancia dentro del funcionamiento del sistema CIP. Entre los aspectos que pueden evaluarse se encuentran el cumplimiento funcional, costo, facilidad de implementación, disponibilidad de los componentes, mantenimiento, seguridad, compatibilidad con el sistema y posibilidad de integración con los demás elementos.
 
 Este procedimiento se aplica a la selección de la arquitectura del sistema, sensores, actuadores, sistema de calentamiento, bomba, válvulas, protocolo de comunicación y plataforma de supervisión. La alternativa seleccionada será aquella que obtenga la mejor valoración global y que, además, cumpla con los requisitos establecidos para el sistema.
+=======
+\campo{Repita la matriz para arquitectura, sensores, actuadores, calentamiento, bomba, válvulas, protocolo y plataforma de supervisión. Explique la ponderación y la alternativa seleccionada.}
+>>>>>>> Stashed changes
