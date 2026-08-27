@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.8.26)  27 AUG 2026 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  27 AUG 2026 16:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -845,66 +845,65 @@ Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+) (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count371
-\scratchdimen=\dimen327
+\scratchcounter=\count370
+\scratchdimen=\dimen323
 \scratchbox=\box92
-\nofMPsegments=\count372
-\nofMParguments=\count373
+\nofMPsegments=\count371
+\nofMParguments=\count372
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count374
-\MPscratchDim=\dimen328
-\MPnumerator=\count375
-\makeMPintoPDFobject=\count376
+\MPscratchCnt=\count373
+\MPscratchDim=\dimen324
+\MPnumerator=\count374
+\makeMPintoPDFobject=\count375
 \everyMPtoPDFconversion=\toks51
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count377
+\c@lstlisting=\count376
 Package hyperref Info: Link coloring ON on input line 4.
- (main.out) (main.out)
+ (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-Package babel Info: Main language set to 'spanish'.
- (secciones/00_portada.tex
-<figuras/logo_ustabuca.png, id=250, 306.14375pt x 165.61874pt>
+ (./secciones/00_portada.tex
+<figuras/logo_ustabuca.png, id=252, 306.14375pt x 165.61874pt>
 File: figuras/logo_ustabuca.png Graphic file (type png)
 <use figuras/logo_ustabuca.png>
 Package pdftex.def Info: figuras/logo_ustabuca.png  used on input line 3.
 (pdftex.def)             Requested size: 282.0303pt x 152.58084pt.
  [1
 
-{C:/Users/inner/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figuras/logo_ustabuca.png>]) (secciones/01_resumen.tex (tablas/tabla_control_version.tex
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./figuras/logo_ustabuca.png>]) (./secciones/01_resumen.tex (./tablas/tabla_control_version.tex
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -914,46 +913,49 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 5.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 17--17
-[]|\T1/lmr/m/n/10.95 (+20) Merge branch 'main' of
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+[]|\T1/lmr/m/n/10.95 (+20) Merge remote-tracking branch 'ori-
  []
 
-
-Overfull \hbox (42.6002pt too wide) in paragraph at lines 17--17
-\T1/lmr/m/n/10.95 (-20) https://github.com/nicami13/Proyecto_CIP_2026-
- []
-
-)) (main.toc [1] [2])
+)) (./main.toc [1] [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- (main.lof [3])
+ (./main.lof [3])
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- (main.lot [4])
+ (./main.lot [4])
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [5] (secciones/02_problema_objetivos.tex) (secciones/03_caracterizacion_cip.tex [1
+ [5] (./secciones/02_problema_objetivos.tex [1
 
-] (tablas/tabla_fases_cip.tex) (tablas/tabla_clasificacion_informacion.tex) [2] (flujogramas/secuencia_cip.tex
+]) (./secciones/03_caracterizacion_cip.tex [2] (./tablas/tabla_fases_cip.tex) (./tablas/tabla_clasificacion_informacion.tex (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd)
+Overfull \hbox (13.59898pt too wide) in paragraph at lines 21--21
+\T1/lmr/m/n/9 (-20) NORM_X/SCALE_X 
+ []
+
+) [3] [4]
+Overfull \vbox (198.5228pt too high) has occurred while \output is active []
+
+ [5{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}] (./flujogramas/secuencia_cip.tex
 Overfull \hbox (210.9565pt too wide) in paragraph at lines 38--39
  [][] 
  []
 
-) [3]) (secciones/04_ingenieria_requisitos.tex [4] (tablas/tabla_requisitos.tex
+)) (./secciones/04_ingenieria_requisitos.tex [6] (./tablas/tabla_requisitos.tex
 \colID=\skip79
 \colCat=\skip80
 \colReq=\skip81
@@ -987,7 +989,7 @@ Overfull \hbox (36.00735pt too wide) in alignment at lines 40--44
 
 
 Overfull \hbox (36.00735pt too wide) in alignment at lines 44--47
- [] [] [] [] [] 
+ [] [] [] [] [] [] 
  []
 
 
@@ -1060,10 +1062,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []|\T1/lmr/bx/n/8 (+20) REQ-
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 71.
-(C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+
 Underfull \hbox (badness 10000) in paragraph at lines 73--73
 []|\T1/lmr/bx/n/8 (+20) REQ-
  []
@@ -1110,7 +1109,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--87
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 87--87
-[]|\T1/lmr/m/n/8 (+20) Documentaciï¿½n/
+[]|\T1/lmr/m/n/8 (+20) Documentación/
  []
 
 
@@ -1118,110 +1117,104 @@ Overfull \hbox (36.00735pt too wide) in alignment at lines 47--89
  [] [] [] [] [] [] 
  []
 
-[5{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]) [6{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+
+ignored: Infinite glue shrinkage found in box being split [7]) [8]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 21.
- (C:\Users\inner\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [7{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
-<figuras/matriz_qfd.png, id=484, 1372.12625pt x 1258.7025pt>
+ [9]
+<figuras/matriz_qfd.png, id=516, 1372.12625pt x 1258.7025pt>
 File: figuras/matriz_qfd.png Graphic file (type png)
 <use figuras/matriz_qfd.png>
 Package pdftex.def Info: figuras/matriz_qfd.png  used on input line 35.
 (pdftex.def)             Requested size: 486.25761pt x 446.06467pt.
- [8] (tablas/tabla_pugh.tex) [9 <./figuras/matriz_qfd.png>]) (secciones/05_diseno_conceptual.tex [10]
-<figuras/GENERAL CIP.jpeg, id=502, 944.52875pt x 869.2475pt>
+ [10] (./tablas/tabla_pugh.tex) [11 <./figuras/matriz_qfd.png>]) (./secciones/05_diseno_conceptual.tex [12]
+<figuras/GENERAL CIP.jpeg, id=534, 944.52875pt x 869.2475pt>
 File: figuras/GENERAL CIP.jpeg Graphic file (type jpg)
 <use figuras/GENERAL CIP.jpeg>
 Package pdftex.def Info: figuras/GENERAL CIP.jpeg  used on input line 21.
 (pdftex.def)             Requested size: 243.1288pt x 223.7442pt.
-
-
-pdfTeX warning: pdflatex (file ./figuras/diagrama_general.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/diagrama_general.pdf, id=503, 597.19106pt x 421.575pt>
+<figuras/diagrama_general.pdf, id=535, 597.19106pt x 421.575pt>
 File: figuras/diagrama_general.pdf Graphic file (type pdf)
 <use figuras/diagrama_general.pdf>
 Package pdftex.def Info: figuras/diagrama_general.pdf  used on input line 24.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-[11 <./figuras/GENERAL CIP.jpeg>]
+ [13 <./figuras/GENERAL CIP.jpeg>]
 File: figuras/diagrama_general.pdf Graphic file (type pdf)
 <use figuras/diagrama_general.pdf>
 Package pdftex.def Info: figuras/diagrama_general.pdf  used on input line 36.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
- [12 <./figuras/diagrama_general.pdf>]
-<figuras/Cade_Pi.png, id=523, 1474.50874pt x 704.6325pt>
+ [14 <./figuras/diagrama_general.pdf>]
+<figuras/Cade_Pi.png, id=556, 1474.50874pt x 704.6325pt>
 File: figuras/Cade_Pi.png Graphic file (type png)
 <use figuras/Cade_Pi.png>
 Package pdftex.def Info: figuras/Cade_Pi.png  used on input line 42.
 (pdftex.def)             Requested size: 291.75752pt x 139.41875pt.
-<figuras/etapa-01.png, id=524, 909.3975pt x 440.847pt>
+<figuras/etapa-01.png, id=557, 909.3975pt x 440.847pt>
 File: figuras/etapa-01.png Graphic file (type png)
 <use figuras/etapa-01.png>
 Package pdftex.def Info: figuras/etapa-01.png  used on input line 48.
 (pdftex.def)             Requested size: 228.54167pt x 110.78998pt.
-<figuras/etapa-02.png, id=526, 858.20625pt x 422.17725pt>
+<figuras/etapa-02.png, id=559, 858.20625pt x 422.17725pt>
 File: figuras/etapa-02.png Graphic file (type png)
 <use figuras/etapa-02.png>
 Package pdftex.def Info: figuras/etapa-02.png  used on input line 53.
 (pdftex.def)             Requested size: 228.54167pt x 112.424pt.
- [13 <./figuras/Cade_Pi.png (PNG copy)>]
-<figuras/etapa-03.png, id=533, 881.09175pt x 425.79076pt>
+ [15 <./figuras/Cade_Pi.png (PNG copy)>]
+<figuras/etapa-03.png, id=565, 881.09175pt x 425.79076pt>
 File: figuras/etapa-03.png Graphic file (type png)
 <use figuras/etapa-03.png>
 Package pdftex.def Info: figuras/etapa-03.png  used on input line 62.
 (pdftex.def)             Requested size: 228.54167pt x 110.4431pt.
-<figuras/etapa-04.png, id=534, 850.377pt x 448.67625pt>
+<figuras/etapa-04.png, id=566, 850.377pt x 448.67625pt>
 File: figuras/etapa-04.png Graphic file (type png)
 <use figuras/etapa-04.png>
 Package pdftex.def Info: figuras/etapa-04.png  used on input line 67.
 (pdftex.def)             Requested size: 228.54167pt x 120.58281pt.
-<figuras/etapa-05.png, id=535, 850.377pt x 414.348pt>
+<figuras/etapa-05.png, id=567, 850.377pt x 414.348pt>
 File: figuras/etapa-05.png Graphic file (type png)
 <use figuras/etapa-05.png>
 Package pdftex.def Info: figuras/etapa-05.png  used on input line 76.
 (pdftex.def)             Requested size: 228.54167pt x 111.35701pt.
-<figuras/etapa-06.png, id=536, 875.06924pt x 427.5975pt>
+<figuras/etapa-06.png, id=568, 875.06924pt x 427.5975pt>
 File: figuras/etapa-06.png Graphic file (type png)
 <use figuras/etapa-06.png>
 Package pdftex.def Info: figuras/etapa-06.png  used on input line 81.
 (pdftex.def)             Requested size: 228.54167pt x 111.67511pt.
-<figuras/etapa-07.png, id=537, 892.5345pt x 432.4155pt>
+<figuras/etapa-07.png, id=569, 892.5345pt x 432.4155pt>
 File: figuras/etapa-07.png Graphic file (type png)
-<use figures/etapa-07.png>
-Package pdftex.def Info: figures/etapa-07.png  used on input line 89.
+<use figuras/etapa-07.png>
+Package pdftex.def Info: figuras/etapa-07.png  used on input line 89.
 (pdftex.def)             Requested size: 228.54167pt x 110.72305pt.
-<figuras/etapa-08.png, id=538, 841.34325pt x 449.2785pt>
+<figuras/etapa-08.png, id=570, 841.34325pt x 449.2785pt>
 File: figuras/etapa-08.png Graphic file (type png)
 <use figuras/etapa-08.png>
 Package pdftex.def Info: figuras/etapa-08.png  used on input line 94.
 (pdftex.def)             Requested size: 228.54167pt x 122.04034pt.
- [14 <./figuras/etapa-01.png> <./figuras/etapa-02.png> <./figuras/etapa-03.png> <./figuras/etapa-04.png>]
-<figuras/etapa-09.png, id=548, 870.25125pt x 443.85825pt>
+ [16 <./figuras/etapa-01.png> <./figuras/etapa-02.png> <./figuras/etapa-03.png> <./figuras/etapa-04.png>]
+<figuras/etapa-09.png, id=580, 870.25125pt x 443.85825pt>
 File: figuras/etapa-09.png Graphic file (type png)
 <use figuras/etapa-09.png>
 Package pdftex.def Info: figuras/etapa-09.png  used on input line 102.
 (pdftex.def)             Requested size: 228.54167pt x 116.56532pt.
- [15 <./figuras/etapa-05.png> <./figuras/etapa-06.png> <./figuras/etapa-07.png> <./figuras/etapa-08.png>]
-
-pdfTeX warning: pdflatex (file ./figuras/pid_conceptual (2).pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/pid_conceptual (2).pdf, id=558, 597.19106pt x 421.575pt>
+ [17 <./figuras/etapa-05.png> <./figuras/etapa-06.png> <./figuras/etapa-07.png> <./figuras/etapa-08.png>]
+<figuras/pid_conceptual (2).pdf, id=590, 597.19106pt x 421.575pt>
 File: figuras/pid_conceptual (2).pdf Graphic file (type pdf)
 <use figuras/pid_conceptual (2).pdf>
 Package pdftex.def Info: figuras/pid_conceptual (2).pdf  used on input line 107.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-(tablas/tabla_pid.tex)
-
-pdfTeX warning: pdflatex (file ./figuras/recorrido_fluidos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figuras/recorrido_fluidos.pdf, id=559, 597.19106pt x 421.575pt>
+ (./tablas/tabla_pid.tex)
+<figuras/recorrido_fluidos.pdf, id=591, 597.19106pt x 421.575pt>
 File: figuras/recorrido_fluidos.pdf Graphic file (type pdf)
 <use figuras/recorrido_fluidos.pdf>
 Package pdftex.def Info: figuras/recorrido_fluidos.pdf  used on input line 109.
 (pdftex.def)             Requested size: 427.90907pt x 302.07353pt.
-[16 <./figuras/etapa-09.png> <./figuras/pid_conceptual (2).pdf>] [17]) (secciones/06_control_preliminar.tex [18 <./figuras/recorrido_fluidos.pdf>] [19{C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] (tablas/tabla_variables_control.tex
+ [18 <./figuras/etapa-09.png> <./figuras/pid_conceptual (2).pdf>] [19]) (./secciones/06_control_preliminar.tex [20 <./figuras/recorrido_fluidos.pdf>] [21] (./tablas/tabla_variables_control.tex
 Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
 []|\T1/lmr/bx/n/9 (-20) Unidad/rango|  
  []
@@ -1232,24 +1225,24 @@ Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
  []
 
 )
-<figuras/diagrama_bloques_control.pdf, id=624, 951.22675pt x 211.81433pt>
+<figuras/diagrama_bloques_control.pdf, id=657, 951.22675pt x 211.81433pt>
 File: figuras/diagrama_bloques_control.pdf Graphic file (type pdf)
 <use figuras/diagrama_bloques_control.pdf>
 Package pdftex.def Info: figuras/diagrama_bloques_control.pdf  used on input line 39.
 (pdftex.def)             Requested size: 427.90907pt x 95.28323pt.
- [20] [21 <./figuras/diagrama_bloques_control.pdf>]
-<figuras/respuesta_lazo_abierto.pdf, id=685, 715.7798pt x 354.10231pt>
+ [22] [23 <./figuras/diagrama_bloques_control.pdf>]
+<figuras/respuesta_lazo_abierto.pdf, id=714, 715.7798pt x 354.10231pt>
 File: figuras/respuesta_lazo_abierto.pdf Graphic file (type pdf)
 <use figuras/respuesta_lazo_abierto.pdf>
 Package pdftex.def Info: figuras/respuesta_lazo_abierto.pdf  used on input line 81.
 (pdftex.def)             Requested size: 427.90907pt x 211.69576pt.
- [22 <./figuras/respuesta_lazo_abierto.pdf>] (tablas/tabla_especificaciones_control.tex)) (secciones/07_comunicaciones.tex
-<figuras/Topologia_y_flujo_de_informacion.png, id=745, 813.0375pt x 1656.1875pt>
+ [24 <./figuras/respuesta_lazo_abierto.pdf>] (./tablas/tabla_especificaciones_control.tex)) (./secciones/07_comunicaciones.tex
+<figuras/Topologia_y_flujo_de_informacion.png, id=774, 813.0375pt x 1656.1875pt>
 File: figuras/Topologia_y_flujo_de_informacion.png Graphic file (type png)
 <use figuras/Topologia_y_flujo_de_informacion.png>
 Package pdftex.def Info: figuras/Topologia_y_flujo_de_informacion.png  used on input line 9.
 (pdftex.def)             Requested size: 97.25003pt x 198.10214pt.
- [23] (tablas/tabla_nodos_ip.tex) [24 <./figuras/Topologia_y_flujo_de_informacion.png (PNG copy)>] (tablas/tabla_protocolos.tex) (tablas/tabla_tags.tex
+ [25] (./tablas/tabla_nodos_ip.tex) [26 <./figuras/Topologia_y_flujo_de_informacion.png (PNG copy)>] (./tablas/tabla_protocolos.tex) (./tablas/tabla_tags.tex
 Overfull \hbox (2.16583pt too wide) in paragraph at lines 5--6
 []|\T1/lmr/bx/n/10 (-20) Acceso|  
  []
@@ -1339,7 +1332,25 @@ Overfull \hbox (1.53198pt too wide) in paragraph at lines 30--31
 []|\T1/lmr/m/n/10 (-20) Lectura|  
  []
 
-[25] [26]) (tablas/tabla_prueba_comunicacion.tex)) (secciones/08_plan_validacion.tex (tablas/tabla_matriz_validacion.tex
+[27]
+ignored: Infinite glue shrinkage found in box being split [28]) (./tablas/tabla_prueba_comunicacion.tex)
+<figuras/HMIACCIONADO.JPG, id=809, 971.3088pt x 728.4816pt>
+File: figuras/HMIACCIONADO.JPG Graphic file (type jpg)
+<use figuras/HMIACCIONADO.JPG>
+Package pdftex.def Info: figuras/HMIACCIONADO.JPG  used on input line 34.
+(pdftex.def)             Requested size: 194.50008pt x 145.87158pt.
+<figuras/RESETEARESTADO.JPG, id=810, 971.3088pt x 728.4816pt>
+File: figuras/RESETEARESTADO.JPG Graphic file (type jpg)
+<use figuras/RESETEARESTADO.JPG>
+Package pdftex.def Info: figuras/RESETEARESTADO.JPG  used on input line 43.
+(pdftex.def)             Requested size: 340.37885pt x 255.28362pt.
+ [29 <./figuras/HMIACCIONADO.JPG>]
+<figuras/SIM_TANQUE_LLENO.JPG, id=817, 971.3088pt x 728.4816pt>
+File: figuras/SIM_TANQUE_LLENO.JPG Graphic file (type jpg)
+<use figuras/SIM_TANQUE_LLENO.JPG>
+Package pdftex.def Info: figuras/SIM_TANQUE_LLENO.JPG  used on input line 52.
+(pdftex.def)             Requested size: 340.37885pt x 255.28362pt.
+) (./secciones/08_plan_validacion.tex [30 <./figuras/RESETEARESTADO.JPG> <./figuras/SIM_TANQUE_LLENO.JPG>] (./tablas/tabla_matriz_validacion.tex
 Overfull \hbox (11.1401pt too wide) in paragraph at lines 5--5
 []|\T1/lmr/bx/n/10.95 (-20) Requisito| 
  []
@@ -1381,7 +1392,7 @@ Underfull \hbox (badness 1137) in paragraph at lines 24--24
 
 
 Underfull \hbox (badness 1874) in paragraph at lines 26--26
-[]|\T1/lmr/m/n/10.95 (+20) Consignar SP = 50\TS1/lmr/m/n/10.95 (+20) ï¿½\T1/lmr/m/n/10.95 (+20) C
+[]|\T1/lmr/m/n/10.95 (+20) Consignar SP = 50\TS1/lmr/m/n/10.95 (+20) °\T1/lmr/m/n/10.95 (+20) C
  []
 
 
@@ -1391,7 +1402,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--26
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 26--26
-\T1/lmr/m/n/10.95 (+20) ter-mï¿½-me-tro
+\T1/lmr/m/n/10.95 (+20) ter-mó-me-tro
  []
 
 
@@ -1402,7 +1413,7 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 26.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
-[]|\T1/lmr/m/n/10.95 (+20) Grï¿½fica $\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (+20) )$
+[]|\T1/lmr/m/n/10.95 (+20) Gráfica $\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 (+20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (+20) )$
  []
 
 
@@ -1437,7 +1448,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\T1/lmr/m/n/10.95 (+20) Inspecciï¿½n
+[]|\T1/lmr/m/n/10.95 (+20) Inspección
  []
 
 
@@ -1447,7 +1458,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 34--35
-\T1/lmr/m/n/10.95 (+20) vo-lï¿½-me-nes y
+\T1/lmr/m/n/10.95 (+20) vo-lú-me-nes y
  []
 
 
@@ -1457,7 +1468,7 @@ Underfull \hbox (badness 1509) in paragraph at lines 38--38
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 38--38
-[]|\T1/lmr/m/n/10.95 (+20) Inspecciï¿½n
+[]|\T1/lmr/m/n/10.95 (+20) Inspección
  []
 
 
@@ -1502,7 +1513,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--44
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 44--44
-[]|\T1/lmr/m/n/10.95 (+20) Inspecciï¿½n
+[]|\T1/lmr/m/n/10.95 (+20) Inspección
  []
 
 
@@ -1515,17 +1526,20 @@ Overfull \hbox (23.9146pt too wide) in alignment at lines 20--46
  [] [] [] [] [] [] 
  []
 
-[27] [28]) [29] (tablas/tabla_metricas_validacion.tex
+
+ignored: Infinite glue shrinkage found in box being split [31]
+ignored: Infinite glue shrinkage found in box being split [32]) (./tablas/tabla_metricas_validacion.tex
 Overfull \hbox (0.89442pt too wide) in paragraph at lines 33--33
 []|\T1/lmr/m/n/10.95 (-20) Comunicaciones| 
  []
 
 
 Overfull \hbox (2.41487pt too wide) in paragraph at lines 36--36
-[]|\T1/lmr/m/n/10.95 (-20) Instrumentaciï¿½n| 
+[]|\T1/lmr/m/n/10.95 (-20) Instrumentación| 
  []
 
-)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma_corte1.tex [30]) (tablas/tabla_cronograma_corte2.tex) (tablas/tabla_cronograma_corte3.tex) (tablas/tabla_presupuesto.tex
+
+ignored: Infinite glue shrinkage found in box being split [33])) (./secciones/09_gestion_entregables.tex (./tablas/tabla_cronograma_corte1.tex) [34] (./tablas/tabla_cronograma_corte2.tex) (./tablas/tabla_cronograma_corte3.tex [35]) (./tablas/tabla_presupuesto.tex
 Overfull \hbox (28.22174pt too wide) in alignment at lines 4--10
  [] [] [] [] [] 
  []
@@ -1552,12 +1566,12 @@ Underfull \hbox (badness 6252) in paragraph at lines 28--28
 
 
 Underfull \hbox (badness 1163) in paragraph at lines 31--31
-[]|\T1/lmr/m/n/10.95 (+20) Tuberï¿½a/manguera CPVC
+[]|\T1/lmr/m/n/10.95 (+20) Tubería/manguera CPVC
  []
 
 
 Underfull \hbox (badness 1092) in paragraph at lines 37--37
-[]|\T1/lmr/m/n/10.95 (+20) Estructura por-tï¿½-til, se-gï¿½n MEC-
+[]|\T1/lmr/m/n/10.95 (+20) Estructura por-tá-til, se-gún MEC-
  []
 
 
@@ -1582,17 +1596,17 @@ Underfull \hbox (badness 1067) in paragraph at lines 54--54
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 60--60
-[]|\T1/lmr/m/n/10.95 (+20) Mï¿½dulo de en-tra-da
+[]|\T1/lmr/m/n/10.95 (+20) Módulo de en-tra-da
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 60--60
-\T1/lmr/m/n/10.95 (+20) RTD/analï¿½gica pa-ra el
+\T1/lmr/m/n/10.95 (+20) RTD/analógica pa-ra el
  []
 
 
 Underfull \hbox (badness 2653) in paragraph at lines 61--61
-[]|\T1/lmr/m/n/10.95 (+20) Resistencia de in-mer-siï¿½n
+[]|\T1/lmr/m/n/10.95 (+20) Resistencia de in-mer-sión
  []
 
 
@@ -1602,12 +1616,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--70
 
 
 Underfull \hbox (badness 1939) in paragraph at lines 71--71
-[]|\T1/lmr/m/n/10.95 (+20) Mï¿½dulo Ether-net W5500
+[]|\T1/lmr/m/n/10.95 (+20) Módulo Ether-net W5500
  []
 
 
 Underfull \hbox (badness 1292) in paragraph at lines 71--71
-[]|\T1/lmr/m/n/10.95 (+20) Conectividad ca-blea-da mï¿½s es-ta-
+[]|\T1/lmr/m/n/10.95 (+20) Conectividad ca-blea-da más es-ta-
  []
 
 
@@ -1620,32 +1634,31 @@ Overfull \hbox (28.22174pt too wide) in alignment at lines 23--75
  [] [] [] [] [] 
  []
 
-[31] [32] [33]) (tablas/tabla_riesgos.tex) (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex [34] [35]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex) [36]) (main.bbl [37]) [38] 
+
+ignored: Infinite glue shrinkage found in box being split [36]
+ignored: Infinite glue shrinkage found in box being split [37]) (./tablas/tabla_riesgos.tex) (./tablas/tabla_checklist.tex)) (./secciones/10_conclusiones.tex [38] [39]) (./secciones/11_declaraciones_anexos.tex [40] (./tablas/tabla_uso_ia.tex) [41]) (./main.bbl) [42] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-(main.aux)
+(./main.aux)
  ***********
-LaTeX2e <2026-06-01>
-L3 programming layer <2026-07-20>
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6EE23035BBC41D0D2AF466E43407611A;10644.
+(rerunfilecheck)             Checksum: B6E2FECBF9A9E21B10D10B34EF182F18;10563.
  ) 
 Here is how much of TeX's memory you used:
- 35730 strings out of 467501
- 726914 string characters out of 5408550
- 1226445 words of memory for 5000000
- 63776 multiletter control sequences out of 15000+600000
- 734431 words of font info for 258 fonts out of 8000000 for 9000
+ 35495 strings out of 467525
+ 712383 string characters out of 5418982
+ 1204293 words of memory out of 5000000
+ 63189 multiletter control sequences out of 15000+600000
+ 735336 words of font info for 266 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,13n,99p,1627b,835s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/inner/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (44 pages, 2693501 bytes).
+ 91i,13n,99p,1906b,830s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (48 pages, 12490586 bytes).
 PDF statistics:
- 1008 PDF objects out of 1200 (max. 8388607)
- 180 named destinations out of 1000 (max. 500000)
- 59036 words of extra memory for 5000000
+ 1060 PDF objects out of 1200 (max. 8388607)
+ 825 compressed objects within 9 object streams
+ 188 named destinations out of 1000 (max. 500000)
+ 61099 words of extra memory for PDF output out of 61914 (max. 10000000)
 
