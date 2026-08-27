@@ -1,7 +1,75 @@
-\begin{table}[H]\centering\small\caption{Presupuesto preliminar.}
-\begin{tabularx}{\textwidth}{L{3.5cm}L{3cm}C{1.5cm}L{2.5cm}L{2.5cm}}\toprule
-\textbf{Elemento}&\textbf{Especificación}&\textbf{Cant.}&\textbf{Valor unitario}&\textbf{Subtotal}\\\midrule
-\campo{Componente}&\campo{Referencia}&\campo{1}&\campo{COP}&\campo{COP}\\
-\campo{Componente}&\campo{Referencia}&\campo{1}&\campo{COP}&\campo{COP}\\\midrule
-&&&\textbf{Total}&\campo{COP}\\\bottomrule
-\end{tabularx}\end{table}
+resupuesto cip actualizado · TEX
+% Tabla generada a partir de Presupuesto_CIP_Karen.xlsx
+% Requiere en el preambulo: \usepackage{longtable}, \usepackage{booktabs}, \usepackage{array}
+\begin{longtable}{@{}p{4.6cm}p{6cm}crr@{}}
+\caption{Presupuesto preliminar.}
+\label{tab:presupuesto_preliminar} \\
+\toprule
+\textbf{Elemento} & \textbf{Especificación} & \textbf{Cant.} & \textbf{Valor unitario} & \textbf{Subtotal} \\
+\midrule
+\endfirsthead
+ 
+\multicolumn{5}{c}{\tablename\ \thetable{} -- continuación} \\
+\toprule
+\textbf{Elemento} & \textbf{Especificación} & \textbf{Cant.} & \textbf{Valor unitario} & \textbf{Subtotal} \\
+\midrule
+\endhead
+ 
+\midrule
+\multicolumn{5}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+ 
+\bottomrule
+\endlastfoot
+ 
+\multicolumn{5}{@{}l}{\textbf{Hidráulico / Actuadores}} \\
+\addlinespace[2pt]
+Electroválvula 1/2" 24V DC con presión & Metálica, NC, rosca 1/2" NPT, IP65 --- ref. Vistronica VIS685 (2W160-15) o U.S. Solid equivalente & 3 & \$70.000 & \$210.000 \\
+Motobomba centrífuga 0.5 HP & Autocebante, sello mecánico --- ref. Pedrollo CPm 620 o Bercatti CPM130B & 1 & \$380.000 & \$380.000 \\
+Bomba dosificadora peristáltica 12V DC & Manguera silicona/Norprene compatible con soap --- ref. Diitao 12V (Yaxa) o Electronilab & 1 & \$150.000 & \$150.000 \\
+Válvula de retención (check valve) 1/2" & Evita contraflujo hacia tanques & 2 & \$15.000 & \$30.000 \\
+Tubería/manguera CPVC o PVC-C 1/2" (resistente $\geq$60$^{\circ}$C) & Metros lineales estimados & 6 & \$8.000 & \$48.000 \\
+Accesorios hidráulicos & Uniones, codos, abrazaderas, teflón (lote) & 1 & \$60.000 & \$60.000 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Mecánico / Estructura}} \\
+\addlinespace[2pt]
+Tanque 20L de acero con tapa & Grado alimenticio --- ref. tipo Colplast & 2 & \$80.000 & \$160.000 \\
+Perfil estructural (ángulo de acero o aluminio) para chasis & Estructura portátil, según MEC-01/06 & 1 & \$180.000 & \$180.000 \\
+Ruedas industriales con freno & 4 uds, mínimo 2 con freno & 4 & \$25.000 & \$100.000 \\
+Soldadura --- electrodos/consumibles & Para estructura y/o tanque inox (electrodos inox si aplica) & 1 & \$40.000 & \$40.000 \\
+Tornillería, sellantes, teflón, silicona & Lote de consumibles de montaje & 1 & \$30.000 & \$30.000 \\
+Motorreductor 24V DC, 150 RPM, 15 kg-cm (stall) & Eje D 6mm, diámetro 37mm --- genérico tipo 37GB & 1 & \$55.000 & \$55.000 \\
+Hélice/impulsor + acople para agitador & Fabricado o comprada resistente a la temperatura & 1 & \$50.000 & \$50.000 \\
+Prensaestopa/sello para eje del motorreductor & Paso a través de tapa del tanque sin fugas & 1 & \$15.000 & \$15.000 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Eléctrico}} \\
+\addlinespace[2pt]
+Contactor Chint NC1-1210 & Para bomba de 0.5HP --- corriente calculada $\approx$6.5A & 1 & \$75.000 & \$75.000 \\
+Guardamotor Chint NS2-25 (rango ajustable) & Ajustado a corriente nominal del motor de la bomba & 1 & \$120.000 & \$120.000 \\
+Disyuntor Chint NXB-63 curva C, 20A (circuito bomba/control) & Protección línea monofásica,2000W a 110V $\approx$18A --- requiere circuito dedicado & 2 & \$60.000 & \$120.000 \\
+Fuente de alimentación 24V DC & Para electroválvulas, sensores y motorreductor, con margen de 30\% & 1 & \$90.000 & \$90.000 \\
+SSR (relé de estado sólido) de paso por cero, 40A & Interfaz entre salida digital del PLC (PWM/Time Proportioning) y carga de potencia del calentador --- ref. tipo SSR-40DA & 1 & \$45.000 & \$45.000 \\
+Botón de paro de emergencia tipo hongo & Corta alimentación de todos los actuadores & 1 & \$0 & \$0 \\
+Selector manual/auto + pulsadores marcha/paro & Lote de mando & 1 & \$0 & \$0 \\
+LEDs piloto 24V, 22mm (marcha/alarma/proceso) & 3 colores: verde/rojo/amarillo & 1 & \$0 & \$0 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Instrumentación}} \\
+\addlinespace[2pt]
+Sensor de nivel flotador, acero inoxidable & 3 uds --- uno por tanque & 3 & \$45.000 & \$135.000 \\
+Sensor RTD PT100, 3 hilos & Vaina acero inoxidable, clase B & 1 & \$250.000 & \$250.000 \\
+Módulo de entrada RTD/analógica para el PLC & Siemens SM 1231 RTD o transmisor PT100$\rightarrow$4-20mA + módulo AI & 1 & \$400.000 & \$400.000 \\
+Resistencia de inmersión 2000W, 110V, roscada & Vaina cobre o acero inoxidable --- es la resistencia de calor de agua 20L, no duplicar & 1 & \$75.000 & \$75.000 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Control}} \\
+\addlinespace[2pt]
+PLC S7-1200 CPU 1214C AC/DC/RLY & Prestado por la universidad & 1 & \$0 & \$0 \\
+Software TIA Portal & Licencia académica de la universidad & 1 & \$0 & \$0 \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Comunicaciones / IoT}} \\
+\addlinespace[2pt]
+ESP32 DevKit (WiFi/Bluetooth) & Para supervisión IoT independiente del control crítico del PLC & 1 & \$35.000 & \$35.000 \\
+Módulo Ethernet W5500 (RJ45, SPI) & Conectividad cableada más estable que WiFi cerca de motores/contactores --- ref. Sigma Electrónica & 1 & \$45.000 & \$45.000 \\
+Cable UTP Cat5e + conectores RJ45 & Lote para conexión de red & 1 & \$20.000 & \$20.000 \\
+\midrule
+\multicolumn{4}{r}{\textbf{Total}} & \textbf{\$2.918.000} \\
+\end{longtable}

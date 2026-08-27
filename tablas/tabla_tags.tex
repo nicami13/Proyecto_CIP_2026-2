@@ -1,10 +1,33 @@
-\begin{longtable}{L{2.6cm}L{3.3cm}L{1.3cm}L{1.2cm}L{2cm}L{2cm}L{1.5cm}}
-\caption{Mapa inicial de variables o etiquetas.}\label{tab:tags}\\\toprule
-\textbf{Etiqueta}&\textbf{Descripción}&\textbf{Tipo}&\textbf{Ud.}&\textbf{Origen}&\textbf{Destino}&\textbf{Acceso}\\\midrule\endfirsthead
-\toprule\textbf{Etiqueta}&\textbf{Descripción}&\textbf{Tipo}&\textbf{Ud.}&\textbf{Origen}&\textbf{Destino}&\textbf{Acceso}\\\midrule\endhead
-Temp\_PV&Temperatura medida&REAL&$^{\circ}$C&PLC&HMI/IoT&Lectura\\
-Temp\_SP&Consigna&REAL&$^{\circ}$C&PLC/HMI&PLC/IoT&\campo{R/W}\\
-Heater\_MV&Acción de control&REAL&\%&PLC&HMI/IoT&Lectura\\
-CIP\_Phase&Fase activa&INT&--&PLC&HMI/IoT&Lectura\\
-\campo{Tag}&\campo{Descripción}&\campo{Tipo}&\campo{Ud.}&\campo{Origen}&\campo{Destino}&\campo{R/W}\\\bottomrule
+\begin{small}
+\begin{longtable}{L{3.2cm}L{3.5cm}L{1.0cm}L{0.8cm}L{1.8cm}L{1.8cm}L{1.1cm}}
+\caption{Mapa inicial de variables o etiquetas del lazo PID de temperatura.} \label{tab:tags_pid}\\
+\toprule
+\textbf{Etiqueta} & \textbf{Descripción} & \textbf{Tipo} & \textbf{Ud.} & \textbf{Origen} & \textbf{Destino} & \textbf{Acceso} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Etiqueta} & \textbf{Descripción} & \textbf{Tipo} & \textbf{Ud.} & \textbf{Origen} & \textbf{Destino} & \textbf{Acceso} \\
+\midrule
+\endhead
+SP\_\allowbreak Temp\_\allowbreak Fase\_\allowbreak C & Consigna de temperatura activa según receta y fase CIP & REAL & $^\circ$C & PLC/HMI & PID/HMI & R/W \\
+IW\_\allowbreak PT100\_\allowbreak Tanque\_\allowbreak Mezcla & Valor crudo proveniente del módulo RTD asociado al PT100 & INT & -- & Sensor RTD & PID & Lectura \\
+PV\_\allowbreak Temp\_\allowbreak Tanque\_\allowbreak C & Temperatura escalada entregada por PID\_Compact & REAL & $^\circ$C & PID & HMI/IoT & Lectura \\
+MV\_\allowbreak Duty\_\allowbreak Cycle\_\allowbreak Pct & Esfuerzo de control calculado por el controlador PI & REAL & \% & PID & HMI/IoT & Lectura \\
+Q\_\allowbreak SSR\_\allowbreak Calentador & Salida PWM que gobierna el SSR del calentador & BOOL & -- & PID & SSR/Actuador & Lectura \\
+HMI\_\allowbreak Modo\_\allowbreak Manual\_\allowbreak Calent & Habilitación de modo manual desde HMI & BOOL & -- & HMI & PID & R/W \\
+HMI\_\allowbreak Valor\_\allowbreak Manual\_\allowbreak PWM & Duty Cycle aplicado en modo manual & REAL & \% & HMI & PID & R/W \\
+HMI\_\allowbreak Ack\_\allowbreak Error\_\allowbreak PID & Reconocimiento de alarmas del controlador & BOOL & -- & HMI & PID & R/W \\
+Reset\_\allowbreak PID\_\allowbreak Sistema & Reinicio controlado del bloque PID & BOOL & -- & PLC/HMI & PID & R/W \\
+Activar\_\allowbreak Modo\_\allowbreak PID & Solicitud de cambio de modo operativo & BOOL & -- & Secuenciador & PID & R/W \\
+Modo\_\allowbreak PID\_\allowbreak Solicitado & Modo requerido para el controlador (Manual/Auto) & INT & -- & PLC/HMI & PID & R/W \\
+Estado\_\allowbreak PID & Estado actual del bloque PID\_Compact & INT & -- & PID & PLC/HMI & Lectura \\
+Advertencia\_\allowbreak Temp\_\allowbreak Alta & Temperatura próxima al límite superior establecido & BOOL & -- & PID & HMI & Lectura \\
+Advertencia\_\allowbreak Temp\_\allowbreak Baja & Temperatura inferior al rango esperado & BOOL & -- & PID & HMI & Lectura \\
+Alarma\_\allowbreak SP\_\allowbreak Limite\_\allowbreak Sup & Consigna saturada en límite superior & BOOL & -- & PID & HMI & Lectura \\
+Alarma\_\allowbreak SP\_\allowbreak Limite\_\allowbreak Inf & Consigna saturada en límite inferior & BOOL & -- & PID & HMI & Lectura \\
+Error\_\allowbreak PID\_\allowbreak General & Indicador global de fallo del controlador & BOOL & -- & PID & PLC/HMI & Lectura \\
+ErrorBits\_\allowbreak PID & Código detallado de diagnóstico de fallos & DWORD & -- & PID & PLC/HMI & Lectura \\
+CIP\_\allowbreak Phase & Fase actual del ciclo CIP & INT & -- & Secuenciador & HMI/IoT & Lectura \\
+\bottomrule
 \end{longtable}
+\end{small}

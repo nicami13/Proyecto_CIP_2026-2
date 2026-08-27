@@ -4,16 +4,58 @@ Presente un Producto Mínimo Viable capaz de almacenar o suministrar agua, calen
 \end{orientacion}
 
 \subsection{Descripción de la solución propuesta}
-\campo{Explique el concepto seleccionado, su funcionamiento y su correspondencia con los requisitos.}
 
-\subsection{Diagrama general de bloques}
-\insertarfigura{diagrama_general.pdf}{Diagrama general del sistema}{fig:diagrama}
+El sistema automatizado CIP (\textit{Clean-in-Place}) está 
+concebido como una unidad modular de preparación, acondicionamiento 
+térmico y distribución de solución limpiadora para líneas de 
+proceso agroindustrial. Su arquitectura opera bajo un esquema 
+hidráulico de paso directo (lazo abierto), donde el fluido 
+procesado cumple su ciclo de limpieza y se evacúa directamente 
+hacia la etapa de descarga, garantizando la eliminación 
+eficiente de residuos sin contaminación cruzada por recirculación.
 
+El funcionamiento del sistema se articula a través de tres 
+etapas secuenciales definidas por sus subsistemas principales:
+
+\begin{itemize}
+    \item \textbf{Acondicionamiento y Homogeneización:} En el 
+    tanque de mezcla TK-102, una estructura cilíndrica de acero 
+    inoxidable con fondo cónico, se deposita la solución de 
+    limpieza. La homogeneidad de la mezcla y la distribución 
+    uniforme de la energía térmica se logran mediante la 
+    acción mecánica continua del agitador AG-101, accionado 
+    por un motorreductor.
+    
+    \item \textbf{Control Térmico:} La elevación de la temperatura 
+    se realiza a través de un sistema de intercambio de calor 
+    regulado por la válvula solenoide SV-101. La variable es 
+    monitoreada en tiempo real por el sensor PT-100 (TT-101), 
+    permitiendo ajustar el flujo térmico para mantener la mezcla 
+    en el punto de trabajo requerido.
+    
+    \item \textbf{Impulsión y Evacuación:} Alcanzadas las 
+    condiciones térmicas y de concentración, se activa la bomba 
+    centrífuga P-102. Esta suministra el caudal y la presión 
+    necesarios para transportar el fluido por la tubería de 
+    limpieza hacia el equipo objetivo. Tras el recorrido, la 
+    solución agotada se descarga hacia el tanque de efluentes 
+    TK-103 o al desagüe general.
+\end{itemize}
+
+Esta configuración responde directamente a las especificaciones 
+técnicas del proyecto. La integración del agitador AG-101 resuelve 
+la exigencia de homogeneidad y valida la hipótesis de temperatura 
+uniforme en el tanque. El lazo de control entre el sensor TT-101 
+y la válvula SV-101 asegura la precisión térmica. Por su parte, 
+la bomba P-102 garantiza el dinamismo hidráulico para la limpieza 
+de la tubería, mientras que la disposición final en TK-103 o 
+desagüe cumple con el manejo seguro de efluentes en paso directo.
 \subsection{Arquitectura funcional}
 \insertarfigura{arquitectura_funcional.pdf}{Arquitectura funcional del sistema.}{fig:arquitectura}
 
 \subsection{P\&ID conceptual y recorrido del fluido}
 \insertarfigura{pid_conceptual (2).pdf}{P\&ID conceptual del sistema CIP.}{fig:pid}
+\input{tablas/tabla_pid}
 \insertarfigura{recorrido_fluidos.pdf}{Recorrido preliminar de fluidos.}{fig:fluidos}
 
 \subsection{Distribución preliminar y diseño CAD}
