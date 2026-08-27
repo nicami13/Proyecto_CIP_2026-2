@@ -1,10 +1,33 @@
 \section{Plan de validación}
-\begin{orientacion}
-Cada prueba debe relacionarse con un requisito y definir procedimiento, instrumentos, variables, criterio de aceptación y evidencia. En este corte se presenta el plan; no se inventan resultados.
-\end{orientacion}
-\input{tablas/tabla_plan_validacion}
 
-El plan debe incluir consignas de temperaturassss, perturbacionesss, instrumentos de referencia, ciclos y repeticiones, métricas de control y comunicación, dosificación, recuperación de agua, seguridad y portabilidad.
+El plan de validación del sistema portátil de limpieza CIP se estructura a partir de la matriz de
+requisitos definida en la Sección~3.1 (Tabla~6) y de las decisiones de diseño de control y
+comunicaciones presentadas en las Secciones~5 y~6. Para el segundo corte se prevé ejecutar como mínimo tres
+ciclos completos del proceso CIP (preenjuague, lavado y enjuague final) y una prueba continua,
+ evaluando al menos tres valores de consigna de temperatura dentro del rango seguro
+(35\,°C, 40\,°C y 50\,°C) y aplicando una perturbación controlada mediante la adición de fluido frío
+durante la fase de lavado. En este corte se presenta únicamente el plan; los resultados experimentales
+se reportarán en el segundo corte, una vez ejecutadas las pruebas sobre el prototipo integrado.
+
+Cada prueba se identifica con un código, que se relaciona con uno o más requisitos de la
+Tabla~6 y define el procedimiento, el instrumento de referencia y el criterio de aceptación que permitirá
+declarar el requisito como cumplido.
+
+\input{tablas/tabla_matriz_validacion}
+
+Adicionalmente, para cada consigna evaluada se comparará la respuesta experimental de temperatura con
+la respuesta simulada del modelo obtenido en la Sección~5.5, con el fin de analizar las diferencias,
+las saturaciones del actuador y las limitaciones del modelo de primer orden adoptado.
 
 \subsection{Métricas previstas}
-\input{tablas/tabla_metricas}
+
+Las métricas que se calcularán a partir de los datos registrados durante las pruebas del segundo corte se
+resumen en la Tabla~20. El método de cálculo de cada métrica se apoya en los datos exportados desde el
+PLC, el HMI y la plataforma de supervisión IoT, evitando el uso de valores simulados como si fueran
+mediciones reales.
+
+\input{tablas/tabla_metricas_validacion}
+
+Estas métricas permitirán, en el segundo corte, contrastar el desempeño experimental del sistema frente a las
+especificaciones preliminares definidas en la Tabla~10 y frente a los criterios mínimos de aceptación
+establecidos para el proyecto.
