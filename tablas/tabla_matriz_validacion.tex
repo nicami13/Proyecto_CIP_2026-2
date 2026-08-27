@@ -1,0 +1,46 @@
+\begin{longtable}{p{1.3cm} p{1.4cm} p{4.3cm} p{2.6cm} p{3.4cm} p{2.4cm}}
+\caption{Matriz requisito--prueba--evidencia.}
+\label{tab:matriz-validacion} \\
+\toprule
+\textbf{ID} & \textbf{Requisito} & \textbf{Procedimiento} & \textbf{Instrumento} & \textbf{Criterio} & \textbf{Evidencia} \\
+\midrule
+\endfirsthead
+
+\multicolumn{6}{c}{\tablename\ \thetable{} -- continuación} \\
+\toprule
+\textbf{ID} & \textbf{Requisito} & \textbf{Procedimiento} & \textbf{Instrumento} & \textbf{Criterio} & \textbf{Evidencia} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{6}{r}{Continúa en la siguiente página} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+VAL-01 & REQ01 & Ejecutar el ciclo completo automático (preenjuague, lavado, enjuague) desde el HMI, sin intervención manual, repetido en 3 pruebas consecutivas & Cronómetro, registro del PLC & 3/3 ejecuciones completas en la secuencia correcta & Trazas de ciclo exportadas del HMI \\
+
+VAL-02 & REQ02 & Verificar la apertura y cierre de SV-101, SV-102 y SV-103 en cada fase, confirmando ausencia de traslapes entre etapas incompatibles & Registro de estados digitales del PLC & Secuencia correcta sin traslapes en 3 pruebas consecutivas & Trazas de variables digitales \\
+
+VAL-03 & REQ13 & Consignar SP = 50\,°C (prelavado) y SP = 40\,°C (lavado) y registrar la evolución de la temperatura hasta alcanzar el estado estable & TT-101 (PT100 0 SM1231), termómetro patrón & Error en estado estable $ \leq 2\,°C $ respecto al SP & Gráfica $T(t)$ vs. SP y datos exportados \\
+
+VAL-04 & REQ14 & Forzar, de forma controlada, una condición de sobre temperatura y verificar el corte del calentador E-101 (vía SSR)  & Registro de eventos del PLC, cronómetro & Corte del SSR y aviso activado al superar 60\,°C & Registro de evento y captura de HMI \\
+
+VAL-05 & REQ09 & Dosificar, mediante la bomba peristáltica P-101, 3 repeticiones de un mismo tiempo de activación y medir el volumen de jabón entregado en cada una & Probeta graduada, cronómetro & Variación $\leq 10\,\%$ entre las 3 mediciones & Registro fotográfico y tabla de volúmenes \\
+
+VAL-06 & REQ06 & Ejecutar un ciclo completo e inspeccionar los tanques TK-101, TK-102 y TK-103 y sus conexiones (SV-101, SV-102, SV-103, P-101, P-102) en busca de fugas & Inspección visual directa & Cero fugas visibles durante la prueba & Registro fotográfico \\
+
+VAL-07 & REQ06 & Medir el volumen de agua suministrado al ciclo (línea L-2) y el volumen recuperado en el tanque de almacenamiento TK-103 (línea L-4) al finalizar & Recipiente graduado o báscula & Porcentaje de recuperación calculado y reportado & Registro de volúmenes y cálculo de \% \\
+
+VAL-08 & REQ18 & Accionar el paro de emergencia durante la ejecución del ciclo y medir el tiempo de corte de bomba, calentador y dosificador & Cronómetro, registro de eventos del PLC & Corte de los actuadores principales en $\leq 1\,\text{s}$ & Captura de señal o video \\
+
+VAL-09 & REQ19 & Simular las 3 condiciones anómalas previstas (nivel bajo, sobretemperatura, falla de bomba) y verificar la activación de la alarma visual y sonora & Inspección directa & Aviso activado correctamente en las 3 condiciones simuladas & Registro fotográfico o video \\
+
+VAL-10 & REQ15, REQ16 & Verificar, durante una prueba, la actualización de temperatura, nivel y estado del ciclo en el HMI y en la plataforma de supervisión IoT & Captura de tráfico de red, trazas de la plataforma & $\geq 99\,\%$ de los registros esperados recibidos, con periodo $\leq 30\,\text{s}$ & Trazas de red y capturas de la plataforma \\
+
+VAL-11 & REQ11 & Comparar la lectura del sensor de nivel LIT-101, instalado en el tanque de mezcla TK-102, contra una medición manual de referencia en al menos 3 niveles distintos & LIT-101, regla o marca graduada & Error $\leq 5\,\%$ del rango medido en las 3 mediciones & Tabla de lecturas y registro fotográfico \\
+
+VAL-12 & REQ01 (PMV, Sección~4.5) & Activar el motorreductor M-101 y el agitador AG-101 durante la fase de preparación de la mezcla en TK-102, y verificar la homogeneidad del fluido tras un tiempo de agitación definido, repitiendo el ensayo 3 veces & Inspección visual directa, cronómetro & Mezcla visualmente homogénea (sin zonas de concentración diferenciada) en las 3 pruebas, dentro del tiempo de agitación definido & Registro fotográfico o video \\
+
+\end{longtable}
