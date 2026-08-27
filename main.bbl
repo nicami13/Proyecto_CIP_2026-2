@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{bowser2023cip}
 T.~J. Bowser, ``What is clean in place (cip)?,'' 8 2023.
@@ -33,5 +33,14 @@ R.~C. Dorf and R.~H. Bishop, {\em Modern Control Systems}.
 \bibitem{hajda2021security}
 J.~Hajda, R.~Jakuszewski, and S.~Ogonowski, ``Security challenges in industry
   4.0 plc systems,'' {\em Applied Sciences}, vol.~11, p.~9785, Oct. 2021.
+
+\bibitem{cometa2025modbus}
+S.~Cometa, D.~Ambus, and J.~D. Bejarano, ``Comunicación modbus tcp: Esp32
+  (servidor) a siemens s7-1200 (cliente),'' 2025.
+\newblock Presentación académica sobre comunicación Modbus TCP entre ESP32 y
+  PLC Siemens S7-1200.
+
+\bibitem{gonzalez2024awsesp32}
+
 
 \end{thebibliography}

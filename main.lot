@@ -4,17 +4,19 @@
 \contentsline {table}{\numberline {4}{\ignorespaces Clasificación de la información de diseño.}}{3}{table.caption.20}%
 \contentsline {table}{\numberline {6}{\ignorespaces Matriz de requisitos del sistema.}}{5}{table.6}%
 \contentsline {table}{\numberline {7}{\ignorespaces Plantilla de matriz de decisión Pugh.}}{10}{table.caption.31}%
-\contentsline {table}{\numberline {9}{\ignorespaces Identificación de elementos del diagrama P\&ID (Equipos, Válvulas, Instrumentos y Líneas).}}{16}{table.caption.46}%
-\contentsline {table}{\numberline {11}{\ignorespaces Definición preliminar del lazo de control.}}{19}{table.11}%
-\contentsline {table}{\numberline {12}{\ignorespaces Especificaciones preliminares de desempeño.}}{22}{table.caption.69}%
-\contentsline {table}{\numberline {14}{\ignorespaces Nodos y direccionamiento IP preliminar.}}{24}{table.caption.74}%
-\contentsline {table}{\numberline {16}{\ignorespaces Comparación preliminar de protocolos.}}{24}{table.caption.76}%
-\contentsline {table}{\numberline {18}{\ignorespaces Mapa inicial de variables o etiquetas del lazo PID de temperatura.}}{25}{table.18}%
-\contentsline {table}{\numberline {19}{\ignorespaces Evidencia mínima de comunicación.}}{26}{table.caption.79}%
-\contentsline {table}{\numberline {21}{\ignorespaces Matriz requisito--prueba--evidencia.}}{27}{table.21}%
-\contentsline {table}{\numberline {22}{\ignorespaces Métricas previstas para validación.}}{29}{table.22}%
-\contentsline {table}{\numberline {23}{\ignorespaces Cronograma general del proyecto.}}{30}{table.caption.84}%
-\contentsline {table}{\numberline {25}{\ignorespaces Presupuesto preliminar.}}{30}{table.25}%
-\contentsline {table}{\numberline {26}{\ignorespaces Matriz preliminar de riesgos.}}{32}{table.caption.87}%
-\contentsline {table}{\numberline {28}{\ignorespaces Lista de verificación del primer corte.}}{33}{table.caption.90}%
-\contentsline {table}{\numberline {30}{\ignorespaces Declaración de uso de herramientas de inteligencia artificial.}}{35}{table.caption.97}%
+\contentsline {table}{\numberline {9}{\ignorespaces Identificación de elementos del diagrama P\&ID (Equipos, Válvulas, Instrumentos y Líneas).}}{17}{table.caption.48}%
+\contentsline {table}{\numberline {11}{\ignorespaces Definición preliminar del lazo de control.}}{20}{table.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Especificaciones preliminares de desempeño.}}{23}{table.caption.71}%
+\contentsline {table}{\numberline {14}{\ignorespaces Nodos y direccionamiento IP preliminar.}}{25}{table.caption.76}%
+\contentsline {table}{\numberline {16}{\ignorespaces Comparación preliminar de protocolos.}}{25}{table.caption.78}%
+\contentsline {table}{\numberline {18}{\ignorespaces Mapa inicial de variables o etiquetas del lazo PID de temperatura.}}{26}{table.18}%
+\contentsline {table}{\numberline {19}{\ignorespaces Evidencia mínima de comunicación.}}{27}{table.caption.81}%
+\contentsline {table}{\numberline {21}{\ignorespaces Matriz requisito--prueba--evidencia.}}{28}{table.21}%
+\contentsline {table}{\numberline {22}{\ignorespaces Métricas previstas para validación.}}{30}{table.22}%
+\contentsline {table}{\numberline {23}{\ignorespaces Cronograma general del proyecto.}}{31}{table.caption.86}%
+\contentsline {table}{\numberline {25}{\ignorespaces Cronograma general del proyecto.}}{31}{table.caption.87}%
+\contentsline {table}{\numberline {27}{\ignorespaces Cronograma general del proyecto.}}{31}{table.caption.88}%
+\contentsline {table}{\numberline {29}{\ignorespaces Presupuesto preliminar.}}{32}{table.29}%
+\contentsline {table}{\numberline {30}{\ignorespaces Matriz preliminar de riesgos.}}{34}{table.caption.91}%
+\contentsline {table}{\numberline {32}{\ignorespaces Lista de verificación del primer corte.}}{34}{table.caption.94}%
+\contentsline {table}{\numberline {34}{\ignorespaces Declaración de uso de herramientas de inteligencia artificial.}}{37}{table.caption.101}%
