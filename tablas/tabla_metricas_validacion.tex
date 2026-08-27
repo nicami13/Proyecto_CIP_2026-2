@@ -1,0 +1,40 @@
+\begin{longtable}{p{2.6cm} p{4.6cm} p{2.0cm} p{5.0cm}}
+\caption{Métricas previstas para validación.}
+\label{tab:metricas-validacion} \\
+\toprule
+\textbf{Área} & \textbf{Métrica} & \textbf{Unidad} & \textbf{Método de cálculo} \\
+\midrule
+\endfirsthead
+
+\multicolumn{4}{c}{\tablename\ \thetable{} -- continuación} \\
+\toprule
+\textbf{Área} & \textbf{Métrica} & \textbf{Unidad} & \textbf{Método de cálculo} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{Continúa en la siguiente página} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+Control & Error estacionario, sobreimpulso y tiempo de establecimiento & \%, °C &
+\begin{minipage}[t]{5.0cm}
+\vspace{2pt}
+$\displaystyle e_{ss} = \dfrac{|SP - T_{estable}|}{SP}\times 100$
+
+\vspace{6pt}
+$\displaystyle M_p = \dfrac{T_{max}-SP}{SP}\times 100$
+
+\vspace{6pt}
+Calculados a partir de la curva $T(t)$ exportada del PLC/HMI.
+\end{minipage} \\[4pt]
+Comunicaciones & Latencia, pérdida de mensajes y tiempo de reconexión & ms, \%, s & Captura de tráfico de red con marcas de tiempo; conteo de paquetes esperados frente a recibidos \\
+Dosificación & Error absoluto y relativo del volumen dosificado & mL, \% & Comparación entre el volumen programado (por tiempo de activación) y el volumen medido en probeta, en 3 repeticiones \\
+Recuperación & Porcentaje de recuperación de agua & \% & Relación entre el volumen recuperado en TK-103 y el volumen total suministrado al ciclo \\
+Instrumentación & Error de medición de nivel (LIT-101) & \% & Comparación entre la lectura del sensor y la medición manual de referencia en TK-102, en al menos 3 niveles \\
+Agitación & Tiempo de homogeneización de la mezcla (M-101/AG-101) & min & Cronometraje desde el inicio de la agitación hasta lograr una mezcla visualmente homogénea, en 3 repeticiones \\
+Seguridad & Tiempo de respuesta del paro de emergencia y de las alarmas & s & Cronometraje o captura de eventos del PLC desde la activación hasta el corte o la señal de alarma \\
+
+\end{longtable}
