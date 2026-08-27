@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/flutter/ephemeral": true,
+        "**/Flutter/ephemeral": true,
+        "**/.symlinks": true,
+        "**/.plugin_symlinks": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.aux": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.log": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.gz": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.out": true
+    }
+}
