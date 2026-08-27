@@ -1,15 +1,31 @@
 \section{Diseño conceptual mecatrónico}
-\begin{orientacion}
-Presente un Producto Mínimo Viable capaz de almacenar o suministrar agua, calentarla, circularla y recircularla, dosificar una sustancia segura, ejecutar las fases CIP, recuperar o drenar el agua, permitir supervisión local y remota, y conectarse a un circuito externo.
-\end{orientacion}
 
 \subsection{Descripción de la solución propuesta}
-\campo{Explique el concepto seleccionado, su funcionamiento y su correspondencia con los requisitos.}
+El diseño del sistema CIP se ha concebido como una solución compacta e integrada, orientada a optimizar los procesos de limpieza y desinfección de tuberías mediante una secuencia automatizada de etapas. La arquitectura funcional del equipo se articula en torno a tres subsistemas de almacenamiento: un tanque para la recogida de agua residual —cuyo llenado se realiza por gravedad al término de cada ciclo—, un tanque destinado al agente de limpieza y desinfección, y una cabina de operaciones que constituye el núcleo reactivo del sistema, donde se acondicionan los fluidos antes de su descarga a la línea objetivo.
+
+El proceso productivo se estructura en tres ciclos diferenciados, ejecutados de manera secuencial dentro de la cabina de operaciones:
+
+Ciclo I (preenjuague térmico): se procede al llenado de la cabina con agua hasta alcanzar un nivel preestablecido, monitorizado por sensor. Acto seguido, se activa la resistencia de inmersión hasta lograr la temperatura de consigna, tras lo cual el volumen acondicionado es evacuado hacia la tubería a limpiar.
+
+Ciclo II (lavado químico y mecánico): nuevamente se carga la cabina con agua hasta el nivel de referencia. En esta etapa se incorpora una dosificación controlada del agente jabonoso, al tiempo que se activa el calentamiento y se acciona el agitador (motoreductor) para asegurar la homogeneización y la eficacia térmica de la solución. Finalizada la preparación, la mezcla es impulsada hacia la tubería.
+
+Ciclo III (enjuague final): se realiza un último llenado con agua hasta el nivel establecido, para ser descargado directamente sin tratamiento térmico ni aditivos, garantizando el arrastre de los residuos remanentes y concluyendo la secuencia de limpieza.
+
+El abastecimiento de agua proviene de la red general, cuyo ingreso a la cabina es regulado mediante una electroválvula de paso, gobernada por la lógica de control, que habilita o interrumpe el flujo según la demanda de cada ciclo.
+
+En cuanto al manejo de fluidos, el sistema dispone de dos bombas con cometidos claramente diferenciados: una destinada a la extracción de los insumos procesados desde la cabina hacia la tubería, y otra encargada de la dosificación precisa del jabón desde su tanque de almacenamiento. Con el fin de garantizar la estanqueidad y evitar el reflujo o la contaminación cruzada entre fluidos, a la salida de cada bomba se ha dispuesto una configuración de doble bloqueo mediante dos electroválvulas en serie, que aseguran el aislamiento hidráulico cuando la bomba no se encuentra en operación.
+
+El acondicionamiento térmico del agua se efectúa exclusivamente a través de una resistencia de inmersión, cuya potencia de $2000\,\mathrm{W}$ permite alcanzar los rangos de temperatura requeridos en los tiempos establecidos.
+
+Finalmente, la instrumentación de seguridad incorpora sensores de nivel tanto en el tanque de agua residual como en la cabina de operaciones, cuyas señales permiten prevenir condiciones de rebose y garantizar la integridad operativa del conjunto, deteniendo el llenado de forma automática al alcanzar los límites máximos permitidos.
+
+\insertarfigura[0.5\textwidth]{figuras/GENERAL CIP.jpeg}{CAD general del sistema}{fig:general}
 
 \subsection{Diagrama general de bloques}
 \insertarfigura{diagrama_general.pdf}{Diagrama general del sistema}{fig:diagrama}
 
 \subsection{Arquitectura funcional}
+
 \insertarfigura{arquitectura_funcional.pdf}{Arquitectura funcional del sistema.}{fig:arquitectura}
 
 \subsection{P\&ID conceptual y recorrido del fluido}
