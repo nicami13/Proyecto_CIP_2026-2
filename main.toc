@@ -1,4 +1,52 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{Resumen ejecutivo}{i}{section*.1}%
 \contentsline {section}{Control de versión}{i}{section*.2}%
-\contentsline {section}{\numberline {1}Contextualización y definición del problema}{1}{section*.7}%\n\contentsline {subsection}{\numberline {1.1}Planteamiento del problema}{1}{subsection*.8}%\n\contentsline {subsection}{\numberline {1.2}Justificación}{1}{subsection*.9}%\n\contentsline {subsection}{\numberline {1.3}Objetivo general}{1}{subsection*.10}%\n\contentsline {subsection}{\numberline {1.4}Objetivos específicos}{1}{subsection*.11}%\n\contentsline {subsection}{\numberline {1.5}Alcance y limitaciones}{1}{subsection*.15}%\n\contentsline {section}{\numberline {2}Caracterización del proceso CIP}{2}{section*.16}%\n\contentsline {subsection}{\numberline {2.1}Fases del ciclo}{2}{subsection*.17}%\n\contentsline {subsection}{\numberline {2.2}Clasificación de la información utilizada}{3}{subsection*.19}%\n\contentsline {subsection}{\numberline {2.3}Secuencia preliminar}{4}{subsection*.21}%\n\contentsline {section}{\numberline {3}Ingeniería de requisitos}{5}{section*.23}%\n\contentsline {subsection}{\numberline {3.1}Matriz de requisitos}{5}{subsection*.24}%\n\contentsline {subsection}{\numberline {3.2}Despliegue de la función de calidad -- QFD}{8}{subsection*.28}%\n\contentsline {subsection}{\numberline {3.3}Matrices de decisión Pugh}{10}{subsection*.30}%\n\contentsline {section}{\numberline {4}Diseño conceptual mecatrónico}{10}{section*.32}%\n\contentsline {subsection}{\numberline {4.1}Descripción de la solución propuesta}{10}{subsection*.33}%\n\contentsline {subsection}{\numberline {4.2}Diagrama general de bloques}{12}{subsection*.35}%\n\contentsline {subsection}{\numberline {4.3}Arquitectura funcional}{12}{subsection*.37}%\n\contentsline {subsection}{\numberline {4.4}P\&ID conceptual y recorrido del fluido}{15}{subsection*.44}%\n\contentsline {subsection}{\numberline {4.5}Distribución preliminar y diseño CAD}{17}{subsection*.48}%\n\contentsline {subsection}{\numberline {4.6}Equipo o circuito de prueba}{17}{subsection*.50}%\n\contentsline {section}{\numberline {5}Diseño preliminar de Sistemas de Control I}{18}{section*.51}%\n\contentsline {subsection}{\numberline {5.1}Variable controlada (PV)}{18}{subsection*.52}%\n\contentsline {subsection}{\numberline {5.2}Variable manipulada (MV)}{18}{subsection*.53}%\n\contentsline {subsection}{\numberline {5.3}Definición del lazo de control}{19}{subsection*.56}%\n\contentsline {subsection}{\numberline {5.4}Diagrama de bloques}{20}{subsection*.57}%\n\contentsline {subsection}{\numberline {5.5}Modelo dinámico preliminar}{20}{subsection*.59}%\n\contentsline {subsection}{\numberline {5.6}Simulación en lazo abierto}{21}{subsection*.66}%\n\contentsline {subsection}{\numberline {5.7}Especificaciones preliminares de desempeño}{22}{subsection*.68}%\n\contentsline {section}{\numberline {6}Diseño preliminar de Comunicaciones Industriales}{23}{section*.70}%\n\contentsline {subsection}{\numberline {6.1}Topología y flujo de información}{23}{subsection*.71}%\n\contentsline {subsection}{\numberline {6.2}Equipos y direccionamiento IP}{24}{subsection*.73}%\n\contentsline {subsection}{\numberline {6.3}Selección del protocolo}{24}{subsection*.75}%\n\contentsline {subsection}{\numberline {6.4}Mapa iniciales de etiquetas}{24}{subsection*.77}%\n\contentsline {subsection}{\numberline {6.5}Evidencia mínima de comunicación}{26}{subsection*.78}%\n\contentsline {section}{\numberline {7}Plan de validación}{26}{section*.80}%\n\contentsline {subsection}{\numberline {7.1}Métricas previstas}{29}{subsection*.81}%\n\contentsline {section}{\numberline {8}Gestión del proyecto y entregables complementarios}{30}{section*.82}%\n\contentsline {subsection}{\numberline {8.1}Cronograma}{30}{subsection*.83}%\n\contentsline {subsection}{\numberline {8.2}Presupuesto preliminar}{30}{subsection*.85}%\n\contentsline {subsection}{\numberline {8.3}Matriz de riesgos}{32}{subsection*.86}%\n\contentsline {subsection}{\numberline {8.4}Repositorio digital}{32}{subsection*.88}%\n\contentsline {subsection}{\numberline {8.5}Lista de verificación del primer corte}{33}{subsection*.89}%\n\contentsline {section}{\numberline {9}Conclusiones del primer corte}{33}{section*.91}%\n\contentsline {section}{\numberline {10}Trabajo previsto para el segundo corte}{33}{section*.95}%\n\contentsline {section}{\numberline {A}Declaración preliminar de uso de inteligencia artificial}{34}{section*.96}%\n\contentsline {section}{\numberline {B}Reporte de similitud}{34}{section*.98}%\n\contentsline {section}{\numberline {C}Evidencia del artículo en inglés}{34}{section*.99}%\n\contentsline {section}{\numberline {D}Anexos técnicos}{34}{section*.100}%
+\contentsline {section}{\numberline {1}Contextualización y definición del problema}{1}{section*.7}%
+\contentsline {subsection}{\numberline {1.1}Planteamiento del problema}{1}{subsection*.8}%
+\contentsline {subsection}{\numberline {1.2}Justificación}{1}{subsection*.9}%
+\contentsline {subsection}{\numberline {1.3}Objetivo general}{1}{subsection*.10}%
+\contentsline {subsection}{\numberline {1.4}Objetivos específicos}{1}{subsection*.11}%
+\contentsline {subsection}{\numberline {1.5}Alcance y limitaciones}{1}{subsection*.15}%
+\contentsline {section}{\numberline {2}Caracterización del proceso CIP}{2}{section*.16}%
+\contentsline {subsection}{\numberline {2.1}Fases del ciclo}{2}{subsection*.17}%
+\contentsline {subsection}{\numberline {2.2}Clasificación de la información utilizada}{3}{subsection*.19}%
+\contentsline {subsection}{\numberline {2.3}Secuencia preliminar}{4}{subsection*.21}%
+\contentsline {section}{\numberline {3}Ingeniería de requisitos}{5}{section*.23}%
+\contentsline {subsection}{\numberline {3.1}Matriz de requisitos}{5}{subsection*.24}%
+\contentsline {subsection}{\numberline {3.2}Despliegue de la función de calidad -- QFD}{8}{subsection*.28}%
+\contentsline {subsection}{\numberline {3.3}Matrices de decisión Pugh}{10}{subsection*.30}%
+\contentsline {section}{\numberline {4}Diseño conceptual mecatrónico}{10}{section*.32}%
+\contentsline {subsection}{\numberline {4.1}Descripción de la solución propuesta}{10}{subsection*.33}%
+\contentsline {subsection}{\numberline {4.2}Diagrama general de bloques}{12}{subsection*.35}%
+\contentsline {subsection}{\numberline {4.3}Arquitectura funcional}{12}{subsection*.37}%
+\contentsline {subsection}{\numberline {4.4}P\&ID conceptual y recorrido del fluido}{15}{subsection*.44}%
+\contentsline {subsection}{\numberline {4.5}Distribución preliminar y diseño CAD}{17}{subsection*.48}%
+\contentsline {subsection}{\numberline {4.6}Equipo o circuito de prueba}{17}{subsection*.50}%
+\contentsline {section}{\numberline {5}Diseño preliminar de Sistemas de Control I}{18}{section*.51}%
+\contentsline {subsection}{\numberline {5.1}Variable controlada (PV)}{18}{subsection*.52}%
+\contentsline {subsection}{\numberline {5.2}Variable manipulada (MV)}{18}{subsection*.53}%
+\contentsline {subsection}{\numberline {5.3}Definición del lazo de control}{19}{subsection*.56}%
+\contentsline {subsection}{\numberline {5.4}Diagrama de bloques}{20}{subsection*.57}%
+\contentsline {subsection}{\numberline {5.5}Modelo dinámico preliminar}{20}{subsection*.59}%
+\contentsline {subsection}{\numberline {5.6}Simulación en lazo abierto}{21}{subsection*.66}%
+\contentsline {subsection}{\numberline {5.7}Especificaciones preliminares de desempeño}{22}{subsection*.68}%
+\contentsline {section}{\numberline {6}Diseño preliminar de Comunicaciones Industriales}{23}{section*.70}%
+\contentsline {subsection}{\numberline {6.1}Topología y flujo de información}{23}{subsection*.71}%
+\contentsline {subsection}{\numberline {6.2}Equipos y direccionamiento IP}{24}{subsection*.73}%
+\contentsline {subsection}{\numberline {6.3}Selección del protocolo}{24}{subsection*.75}%
+\contentsline {subsection}{\numberline {6.4}Mapa iniciales de etiquetas}{24}{subsection*.77}%
+\contentsline {subsection}{\numberline {6.5}Evidencia mínima de comunicación}{26}{subsection*.78}%
+\contentsline {section}{\numberline {7}Plan de validación}{26}{section*.80}%
+\contentsline {subsection}{\numberline {7.1}Métricas previstas}{29}{subsection*.81}%
+\contentsline {section}{\numberline {8}Gestión del proyecto y entregables complementarios}{30}{section*.82}%
+\contentsline {subsection}{\numberline {8.1}Cronograma}{30}{subsection*.83}%
+\contentsline {subsection}{\numberline {8.2}Presupuesto preliminar}{30}{subsection*.85}%
+\contentsline {subsection}{\numberline {8.3}Matriz de riesgos}{32}{subsection*.86}%
+\contentsline {subsection}{\numberline {8.4}Repositorio digital}{32}{subsection*.88}%
+\contentsline {subsection}{\numberline {8.5}Lista de verificación del primer corte}{33}{subsection*.89}%
+\contentsline {section}{\numberline {9}Conclusiones del primer corte}{33}{section*.91}%
+\contentsline {section}{\numberline {10}Trabajo previsto para el segundo corte}{33}{section*.95}%
+\contentsline {section}{\numberline {A}Declaración preliminar de uso de inteligencia artificial}{35}{section*.96}%
+\contentsline {section}{\numberline {B}Reporte de similitud}{35}{section*.98}%
+\contentsline {section}{\numberline {C}Evidencia del artículo en inglés}{35}{section*.99}%
+\contentsline {section}{\numberline {D}Anexos técnicos}{35}{section*.100}%
