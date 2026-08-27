@@ -41,17 +41,31 @@ donde $D$ corresponde al ciclo de trabajo, definido como la fracción del perío
 \subsection{Modelo dinámico preliminar}
 \campo{Presente el balance de energía, parámetros, condiciones iniciales, función de transferencia o modelo equivalente, punto de operación y rango de validez.}
 
-Se modela el tanque de mezcla como un sistema térmico de parámetros concentrados (\textit{lumped capacitance}), es decir, se asume una temperatura uniforme en todo el volumen activo en cada instante. Este supuesto es razonable debido al efecto de mezclado producido por la recirculación del propio sistema CIP y es válido cuando el número de Biot del sistema es suficientemente pequeño ($Bi \ll 1$) [9].
+Se modela el tanque de mezcla como un sistema térmico de parámetros concentrados (\textit{lumped capacitance}), es decir, se asume una temperatura uniforme en todo el volumen activo en cada instante. Este supuesto es razonable debido al efecto de mezclado producido por la recirculación del propio sistema CIP y es válido cuando el número de Biot del sistema es suficientemente pequeño ($Bi \ll 1$) \cite{incropera2011fundamentals}.
 
-El balance de energía instantáneo, análogo al de un tanque agitado con calentamiento eléctrico [10], se expresa mediante:
+El criterio clásico de Biot,
+\begin{equation}
+\mathrm{Bi} = \frac{h L_c}{k}
+\end{equation}
+permite estimar si la conducción molecular por sí sola bastaría para mantener una temperatura uniforme dentro del tanque. Para un volumen del orden de $20\,\mathrm{L}$, la longitud característica $L_c = V/A$ resultante es de pocos centímetros, con independencia de la proporción exacta del recipiente. Esto, combinado con la baja conductividad térmica del agua, $k \approx 0{,}63\,\mathrm{W/(m\cdot K)}$, y con coeficientes convectivos naturales típicos, arroja valores de $\mathrm{Bi}$ del orden de la unidad, por encima del umbral convencional $\mathrm{Bi} < 0{,}1$ \cite{incropera2011fundamentals}. Es decir, la sola conducción estática no justificaría el supuesto de parámetros concentrados, independientemente de la forma final del tanque.
+
+El supuesto se sostiene, en cambio, por un mecanismo distinto: la recirculación forzada propia del sistema CIP homogeneiza el volumen en un tiempo de mezclado dado aproximadamente por:
+\begin{equation}
+t_{\mathrm{mix}} = \frac{V}{Q_{\mathrm{bomba}}}
+\end{equation}
+Para el rango de caudal de diseño de la bomba P2, correspondiente a $35\text{--}60\,\mathrm{L/min}$, el tiempo de mezclado resulta del orden de decenas de segundos, varios órdenes de magnitud menor que la constante de tiempo térmica dominante, $\tau \approx 261{,}6\,\mathrm{min}$. Por tanto, la temperatura del fluido puede considerarse aproximadamente uniforme a la escala temporal relevante para la dinámica térmica del proceso.
+
+A diferencia del cálculo geométrico del número de Biot, este argumento depende directamente del volumen y del caudal de recirculación, ambos definidos por el diseño del sistema. Este enfoque es consistente con el estándar de modelado empleado en tanques agitados y reactores de mezcla perfecta \cite{bequette2003process} y constituye la justificación principal del supuesto de temperatura uniforme adoptado en el modelo dinámico, en lugar de la conducción molecular estática.
+
+El balance de energía instantáneo, análogo al de un tanque agitado con calentamiento eléctrico \cite{bequette2003process}, se expresa mediante:
 
 \begin{equation}
 Q_h(t) - UA\left(T(t)-T_{\mathrm{amb}}\right)
 \end{equation}
 
-donde $m$ es la masa activa de fluido, expresada en $\mathrm{kg}$; $c_p$ es el calor específico del agua, con un valor aproximado de $4186,\mathrm{J/(kg,K)}$ [9]; $Q_h(t)$ es la potencia térmica entregada por la resistencia, expresada en $\mathrm{W}$; $UA$ es el coeficiente global de transferencia de calor asociado a las pérdidas hacia el ambiente, expresado en $\mathrm{W/K}$; y $T_{\mathrm{amb}}$ es la temperatura ambiente, considerada como una perturbación del sistema.
+donde $m$ es la masa activa de fluido, expresada en $\mathrm{kg}$; $c_p$ es el calor específico del agua, con un valor aproximado de $4186,\mathrm{J/(kg,K)}$ \cite{incropera2011fundamentals}; $Q_h(t)$ es la potencia térmica entregada por la resistencia, expresada en $\mathrm{W}$; $UA$ es el coeficiente global de transferencia de calor asociado a las pérdidas hacia el ambiente, expresado en $\mathrm{W/K}$; y $T_{\mathrm{amb}}$ es la temperatura ambiente, considerada como una perturbación del sistema.
 
-Linealizando el modelo alrededor de un punto de operación y aplicando la transformada de Laplace, bajo la condición inicial $T(0)=T_{\mathrm{amb}}$, se obtiene el modelo de primer orden estándar [2], [3]:
+Linealizando el modelo alrededor de un punto de operación y aplicando la transformada de Laplace, bajo la condición inicial $T(0)=T_{\mathrm{amb}}$, se obtiene el modelo de primer orden estándar \cite{ogata2010modern}:
 \begin{equation}
 \frac{\Delta T(s)}{Q_h(s)}
 \end{equation}
