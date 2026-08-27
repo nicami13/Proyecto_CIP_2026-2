@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.13)  27 AUG 2026 08:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.13)  27 AUG 2026 08:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -873,28 +873,1855 @@ Package pdftex.def Info: figuras/logo_ustabuca.png  used on input line 3.
 (pdftex.def)             Requested size: 282.0303pt x 152.58084pt.
  [1
 
-{C:/Users/Acer/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figuras/logo_ustabuca.png>]) (secciones/01_resumen.tex (tablas/tabla_control_version.tex (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg))) (main.toc
+{C:/Users/Acer/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figuras/logo_ustabuca.png>]) (secciones/01_resumen.tex (tablas/tabla_control_version.tex
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
+ (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
+ (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 5.
+ (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 5.
+ (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 5.
- [1] [2])
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+ (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+ (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\Acer\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+tablas/tabla_control_version.tex:8: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.8 ...preliminar & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:8: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.8 ...preliminar & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:8: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.8 ...preliminar & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:8: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.8 ...preliminar & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:9: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.9 9410448 &
+              2026-08-27 & Create .gitignore & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:9: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.9 ....gitignore & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:10: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.10 a310a08 & 2026-08-27 &
+                            Conflictos resueltos & fabianruizma2404-cmyk \ \...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:10: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.10 ...resueltos & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:10: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.10 ...resueltos & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:10: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.10 ...resueltos & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:10: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.10 ...resueltos & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:11: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.11 ...6-08-27 & Diagrama de bloques de control &
+                                                   fabianruizma2404-cmyk \ \...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:11: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.11 ...e control & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:11: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.11 ...e control & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:11: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.11 ...e control & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:11: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.11 ...e control & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:12: You can't use `macro parameter character #' in horizontal mode.
+l.12 c19d040 & 2026-08-27 & Merge pull request #
+                                                1 from nicami13/Equipo_A & u...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+tablas/tabla_control_version.tex:12: Missing $ inserted.
+<inserted text> 
+                $
+l.12 ...erge pull request #1 from nicami13/Equipo_
+                                                  A & undefain \ \hline
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+tablas/tabla_control_version.tex:12: Missing $ inserted.
+<inserted text> 
+                $
+l.12 ...e pull request #1 from nicami13/Equipo_A &
+                                                   undefain \ \hline
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/lmr/m/n/10.95 (+20) Merge pull re-quest 1 from
+ []
+
+tablas/tabla_control_version.tex:12: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.12 ...from nicami13/Equipo_A & undefain \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:12: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.12 ...from nicami13/Equipo_A & undefain \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:12: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.12 ...from nicami13/Equipo_A & undefain \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:12: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.12 ...from nicami13/Equipo_A & undefain \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:13: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.13 5194fc3 &
+               2026-08-27 & push to create branch and update & undefain \ \h...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:13: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.13 ...eate branch and update & undefain \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:14: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.14 b15e482 & 2026-08-26 &
+                            Referencias Sección 5.2 & fabianruizma2404-cmyk...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:14: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.14 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:14: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.14 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:14: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.14 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.14 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:15: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.15 ... conflictos e integrar matriz QFD en PNG &
+                                                   Kare_g \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:15: Missing $ inserted.
+<inserted text> 
+                $
+l.15 ...ictos e integrar matriz QFD en PNG & Kare_
+                                                  g \ \hline
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+tablas/tabla_control_version.tex:15: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.15 ...tegrar matriz QFD en PNG & Kare_g \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:15: Missing $ inserted.
+<inserted text> 
+                $
+l.15 ...tegrar matriz QFD en PNG & Kare_g \ \hline
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+tablas/tabla_control_version.tex:15: Missing } inserted.
+<inserted text> 
+                }
+l.15 ...tegrar matriz QFD en PNG & Kare_g \ \hline
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+tablas/tabla_control_version.tex:15: You can't use `\hrule' here except with leaders.
+<recently read> \hrule 
+                       
+l.15 ...tegrar matriz QFD en PNG & Kare_g \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:15: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.15 ...tegrar matriz QFD en PNG & Kare_g \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:15: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.15 ...tegrar matriz QFD en PNG & Kare_g \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:16: Extra }, or forgotten \endgroup.
+\@xhline ...ip \doublerulesep \fi \ifnum 0=`{\fi }
+                                                  
+l.16 e
+      028aa7 & 2026-08-26 & Referencias de Sección 5.2 & fabianruizma2404-c...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+tablas/tabla_control_version.tex:16: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.16 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:16: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.16 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:16: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.16 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:16: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.16 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:17: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.17 c9dabb7 &
+               2026-08-26 & Referencias de Sección 5.2 & fabianruizma2404-c...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:17: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.17 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:18: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.18 9a54f94 & 2026-08-26 &
+                            primer commit yesid & undefain \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:18: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.18 ... & primer commit yesid & undefain \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:18: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.18 ... & primer commit yesid & undefain \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:18: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.18 ... & primer commit yesid & undefain \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:18: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.18 ... & primer commit yesid & undefain \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:19: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.19 1be8937 & 2026-08-26 & primer commit &
+                                            undefain \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:19: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.19 ...-08-26 & primer commit & undefain \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:19: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.19 ...-08-26 & primer commit & undefain \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:19: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.19 ...-08-26 & primer commit & undefain \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:19: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.19 ...-08-26 & primer commit & undefain \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:20: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.20 ...-08-26 & Primer commit & undefain \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:20: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.20 ...-08-26 & Primer commit & undefain \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:20: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.20 ...-08-26 & Primer commit & undefain \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:20: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.20 ...-08-26 & Primer commit & undefain \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:21: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.21 9a56119 &
+               2026-08-26 & Recompila documento tras merge para regenerar ar...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:21: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.21 ...chivos de salida & Julian Jimenez \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:22: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.22 00c10c1 & 2026-08-26 &
+                            Merge branch 'main' resolviendo conflictos en ar...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:22: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.22 ... de compilación & Julian Jimenez \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:22: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.22 ... de compilación & Julian Jimenez \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:22: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.22 ... de compilación & Julian Jimenez \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:22: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.22 ... de compilación & Julian Jimenez \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:23: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.23 660d16d & 2026-08-26 & commit &
+                                     Julian Jimenez \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:23: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.23 ...6-08-26 & commit & Julian Jimenez \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:23: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.23 ...6-08-26 & commit & Julian Jimenez \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:23: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.23 ...6-08-26 & commit & Julian Jimenez \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:23: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.23 ...6-08-26 & commit & Julian Jimenez \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:24: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.24 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:24: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.24 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:24: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.24 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:24: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.24 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:25: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.25 e245b7f &
+               2026-08-26 & Sección 5.2 & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:25: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.25 ...ción 5.2 & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:26: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.26 6f46df2 & 2026-08-26 &
+                            Actualizar matriz de requisitos & Kare_g \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:26: Missing $ inserted.
+<inserted text> 
+                $
+l.26 ... & Actualizar matriz de requisitos & Kare_
+                                                  g \ \hline
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+tablas/tabla_control_version.tex:26: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.26 ...zar matriz de requisitos & Kare_g \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:26: Missing $ inserted.
+<inserted text> 
+                $
+l.26 ...zar matriz de requisitos & Kare_g \ \hline
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+tablas/tabla_control_version.tex:26: Missing } inserted.
+<inserted text> 
+                }
+l.26 ...zar matriz de requisitos & Kare_g \ \hline
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+tablas/tabla_control_version.tex:26: You can't use `\hrule' here except with leaders.
+<recently read> \hrule 
+                       
+l.26 ...zar matriz de requisitos & Kare_g \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:26: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.26 ...zar matriz de requisitos & Kare_g \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:26: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.26 ...zar matriz de requisitos & Kare_g \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:27: Extra }, or forgotten \endgroup.
+\@xhline ...ip \doublerulesep \fi \ifnum 0=`{\fi }
+                                                  
+l.27 6
+      ca26cc & 2026-08-26 & Actualiza documentación del sistema CIP & Ferne...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+tablas/tabla_control_version.tex:27: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.27 ...Actualiza documentación del sistema CIP &
+                                                   FerneyPatino \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:27: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.27 ...�n del sistema CIP & FerneyPatino \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:27: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.27 ...�n del sistema CIP & FerneyPatino \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:27: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.27 ...�n del sistema CIP & FerneyPatino \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:27: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.27 ...�n del sistema CIP & FerneyPatino \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:28: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.28 ...n Villaronga 1 & Karen Villaronga \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:28: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.28 ...n Villaronga 1 & Karen Villaronga \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:28: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.28 ...n Villaronga 1 & Karen Villaronga \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:28: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.28 ...n Villaronga 1 & Karen Villaronga \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:29: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.29 50eddb9 &
+               2026-08-26 & Merge branch 'main' of https://github.com/nicami...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:29: Missing $ inserted.
+<inserted text> 
+                $
+l.29 ...' of https://github.com/nicami13/Proyecto_
+                                                  CIP_2026-2 & Shadows340 \ ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+tablas/tabla_control_version.tex:29: Missing $ inserted.
+<inserted text> 
+                $
+l.29 .../github.com/nicami13/Proyecto_CIP_2026-2 &
+                                                   Shadows340 \ \hline
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+tablas/tabla_control_version.tex:29: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.29 .../Proyecto_CIP_2026-2 & Shadows340 \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:30: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.30 65537a5 & 2026-08-26 &
+                            Descripción de los cambios 2 & Shadows340 \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:30: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.30 ...ón de los cambios 2 & Shadows340 \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:30: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.30 ...ón de los cambios 2 & Shadows340 \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:30: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.30 ...ón de los cambios 2 & Shadows340 \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:30: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.30 ...ón de los cambios 2 & Shadows340 \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:31: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.31 7598ed1 & 2026-08-26 & Sección 5.1 &
+                                           fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:31: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.31 ...ción 5.1 & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:31: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.31 ...ción 5.1 & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:31: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.31 ...ción 5.1 & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:31: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.31 ...ción 5.1 & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:32: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.32 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:32: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.32 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:32: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.32 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:32: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.32 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:33: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.33 c37a724 &
+               2026-08-26 & Descripción de los cambios & Shadows340 \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:33: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.33 ...ción de los cambios & Shadows340 \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:34: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.34 40ce1c8 & 2026-08-26 &
+                            Modificación preámbulo & fabianruizma2404-cmyk...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:34: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.34 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:34: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.34 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:34: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.34 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:34: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.34 ...reámbulo & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:35: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.35 7e298b0 & 2026-08-26 & Update README.md &
+                                               fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:35: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.35 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:35: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.35 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:35: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.35 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:35: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.35 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:36: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.36 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:36: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.36 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:36: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.36 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:36: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.36 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:37: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.37 8cfbb63 &
+               2026-08-26 & Update README.md & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:37: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.37 ...README.md & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:38: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.38 f230ce5 & 2026-08-26 &
+                            Delete main.aux & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:38: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.38 ... main.aux & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:38: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.38 ... main.aux & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:38: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.38 ... main.aux & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:38: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.38 ... main.aux & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:39: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.39 2f290e3 & 2026-08-26 & Delete main.bbl &
+                                              fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:39: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.39 ... main.bbl & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:39: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.39 ... main.bbl & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:39: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.39 ... main.bbl & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:39: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.39 ... main.bbl & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:40: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.40 ... main.blg & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:40: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.40 ... main.blg & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:40: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.40 ... main.blg & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:40: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.40 ... main.blg & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:41: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.41 0780283 &
+               2026-08-26 & Delete main.fdb_latexmk & fabianruizma2404-cmyk ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:41: Missing $ inserted.
+<inserted text> 
+                $
+l.41 0780283 & 2026-08-26 & Delete main.fdb_
+                                            latexmk & fabianruizma2404-cmyk ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+tablas/tabla_control_version.tex:41: Missing $ inserted.
+<inserted text> 
+                $
+l.41 ...3 & 2026-08-26 & Delete main.fdb_latexmk &
+                                                   fabianruizma2404-cmyk \ \...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+tablas/tabla_control_version.tex:41: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.41 ...b_latexmk & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:42: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.42 c06622a & 2026-08-26 &
+                            Delete main.fls & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:42: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.42 ... main.fls & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:42: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.42 ... main.fls & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:42: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.42 ... main.fls & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:42: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.42 ... main.fls & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:43: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.43 6c92445 & 2026-08-26 & Delete main.lof &
+                                              fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:43: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.43 ... main.lof & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:43: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.43 ... main.lof & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:43: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.43 ... main.lof & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:43: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.43 ... main.lof & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:44: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.44 ... main.log & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:44: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.44 ... main.log & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:44: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.44 ... main.log & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:44: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.44 ... main.log & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:45: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.45 fe8c8ea &
+               2026-08-26 & Delete main.lot & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:45: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.45 ... main.lot & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:46: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.46 28fdd7b & 2026-08-26 &
+                            Delete main.pdf & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:46: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.46 ... main.pdf & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:46: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.46 ... main.pdf & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:46: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.46 ... main.pdf & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:46: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.46 ... main.pdf & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:47: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.47 ab7f342 & 2026-08-26 & Delete main.out &
+                                              fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:47: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.47 ... main.out & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:47: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.47 ... main.out & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:47: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.47 ... main.out & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:47: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.47 ... main.out & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:48: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.48 ...ynctex.gz & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:48: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.48 ...ynctex.gz & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:48: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.48 ...ynctex.gz & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:48: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.48 ...ynctex.gz & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:49: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.49 ab1fc22 &
+               2026-08-26 & Delete main.toc & fabianruizma2404-cmyk \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:49: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.49 ... main.toc & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:50: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.50 c344dad & 2026-08-26 &
+                            Commit prueba & undefain \ \hline
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:50: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.50 ...-08-26 & Commit prueba & undefain \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:50: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.50 ...-08-26 & Commit prueba & undefain \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:50: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.50 ...-08-26 & Commit prueba & undefain \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:50: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.50 ...-08-26 & Commit prueba & undefain \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:51: Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.51 8136efb & 2026-08-26 & Add files via upload &
+                                                   fabianruizma2404-cmyk \ \...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+tablas/tabla_control_version.tex:51: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.51 ...ia upload & fabianruizma2404-cmyk \ \hline
+                                                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:51: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.51 ...ia upload & fabianruizma2404-cmyk \ \hline
+                                                  
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:51: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.51 ...ia upload & fabianruizma2404-cmyk \ \hline
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:51: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.51 ...ia upload & fabianruizma2404-cmyk \ \hline
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+tablas/tabla_control_version.tex:52: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.52 ...08-26 & Initial commit & undefain \ \hline
+                                                  \end{tabular}
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+tablas/tabla_control_version.tex:52: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.52 ...08-26 & Initial commit & undefain \ \hline
+                                                  \end{tabular}
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+tablas/tabla_control_version.tex:52: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.52 ...08-26 & Initial commit & undefain \ \hline
+                                                  \end{tabular}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+tablas/tabla_control_version.tex:52: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.52 ...08-26 & Initial commit & undefain \ \hline
+                                                  \end{tabular}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Overfull \hbox (704.56429pt too wide) in paragraph at lines 5--53
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 38.37755pt on input line 53.
+
+)) (main.toc [1] [2{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- (main.lof)
+ [3] (main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- (main.lot [3])
+ (main.lot)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
  [4] (secciones/02_problema_objetivos.tex) (secciones/03_caracterizacion_cip.tex [1
 
-] (tablas/tabla_fases_cip.tex) (tablas/tabla_clasificacion_informacion.tex) (flujogramas/secuencia_cip.tex
+] (tablas/tabla_fases_cip.tex
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7 \end{tabularx}
+                  \end{table}) (tablas/tabla_clasificacion_informacion.tex) (flujogramas/secuencia_cip.tex
 Overfull \hbox (172.55702pt too wide) in paragraph at lines 38--39
  [][] 
  []
@@ -1065,8 +2892,8 @@ Overfull \hbox (36.00735pt too wide) in alignment at lines 47--89
  []
 
 [3]
-tablas/tabla_requisitos.tex:89: ignored error: Infinite glue shrinkage found in box being split [4{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}])
-<figuras/matriz_qfd.png, id=424, 1372.12625pt x 1258.7025pt>
+tablas/tabla_requisitos.tex:89: ignored error: Infinite glue shrinkage found in box being split [4{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}])
+<figuras/matriz_qfd.png, id=428, 1372.12625pt x 1258.7025pt>
 File: figuras/matriz_qfd.png Graphic file (type png)
 <use figuras/matriz_qfd.png>
 Package pdftex.def Info: figuras/matriz_qfd.png  used on input line 23.
@@ -1080,7 +2907,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [8]) (secciones/06_control_preliminar.tex [9{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] [10{C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}] (tablas/tabla_variables_control.tex
+ [8]) (secciones/06_control_preliminar.tex [9] [10] (tablas/tabla_variables_control.tex
 Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
 []|\T1/lmr/bx/n/9 (-20) Unidad/rango|  
  []
@@ -1091,22 +2918,17 @@ Overfull \hbox (1.61772pt too wide) in paragraph at lines 23--23
  []
 
 )
-<figuras/diagrama_bloques_control.pdf, id=475, 951.22675pt x 211.81433pt>
+<figuras/diagrama_bloques_control.pdf, id=476, 951.22675pt x 211.81433pt>
 File: figuras/diagrama_bloques_control.pdf Graphic file (type pdf)
 <use figuras/diagrama_bloques_control.pdf>
 Package pdftex.def Info: figuras/diagrama_bloques_control.pdf  used on input line 39.
 (pdftex.def)             Requested size: 427.90907pt x 95.28323pt.
- [11] [12 <./figuras/diagrama_bloques_control.pdf>] (tablas/tabla_especificaciones_control.tex)) (secciones/07_comunicaciones.tex (flujogramas/arquitectura_comunicaciones.tex) [13] (tablas/tabla_nodos_ip.tex) (tablas/tabla_protocolos.tex) [14] (tablas/tabla_tags.tex) (tablas/tabla_prueba_comunicacion.tex)) (secciones/08_plan_validacion.tex [15] (tablas/tabla_plan_validacion.tex
-pdfTeX warning (ext4): destination with the same identifier (name{table.20}) has been already used, duplicate ignored
+ [11] [12 <./figuras/diagrama_bloques_control.pdf>] (tablas/tabla_especificaciones_control.tex)) (secciones/07_comunicaciones.tex (flujogramas/arquitectura_comunicaciones.tex) [13] (tablas/tabla_nodos_ip.tex) (tablas/tabla_protocolos.tex) [14] (tablas/tabla_tags.tex) (tablas/tabla_prueba_comunicacion.tex
+pdfTeX warning (ext4): destination with the same identifier (name{table.18}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7 \end{longtable}
-                   ) (tablas/tabla_metricas.tex)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex) (tablas/tabla_presupuesto.tex) [16] (tablas/tabla_riesgos.tex
-pdfTeX warning (ext4): destination with the same identifier (name{table.28}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.7 \end{tabularx}
-                  \end{table}) (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex [17]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex) [18]) (main.bbl [19]) [20] 
+l.10 \end{tabularx}
+                   \end{table})) (secciones/08_plan_validacion.tex [15] (tablas/tabla_plan_validacion.tex) (tablas/tabla_metricas.tex)) (secciones/09_gestion_entregables.tex (tablas/tabla_cronograma.tex) (tablas/tabla_presupuesto.tex) [16] (tablas/tabla_riesgos.tex) (tablas/tabla_checklist.tex)) (secciones/10_conclusiones.tex [17]) (secciones/11_declaraciones_anexos.tex (tablas/tabla_uso_ia.tex) [18]) (main.bbl [19]) [20] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (main.aux)
  ***********
@@ -1117,17 +2939,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 77132CED3D8334DE358A8679290AD33B;10366.
  ) 
 Here is how much of TeX's memory you used:
- 33939 strings out of 467871
- 685627 string characters out of 5418860
- 1184206 words of memory out of 5000000
- 61722 multiletter control sequences out of 15000+600000
+ 33940 strings out of 467871
+ 685685 string characters out of 5418860
+ 1184181 words of memory out of 5000000
+ 61724 multiletter control sequences out of 15000+600000
  731979 words of font info for 230 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  91i,13n,99p,1035b,1004s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Acer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (25 pages, 819035 bytes).
+Output written on main.pdf (25 pages, 825136 bytes).
 PDF statistics:
- 734 PDF objects out of 1000 (max. 8388607)
- 141 named destinations out of 1000 (max. 500000)
+ 733 PDF objects out of 1000 (max. 8388607)
+ 140 named destinations out of 1000 (max. 500000)
  58436 words of extra memory for PDF output out of 61914 (max. 10000000)
 
