@@ -1,11 +1,17 @@
 \section{Diseño preliminar de Comunicaciones Industriales}
-\begin{orientacion}
-El PLC será el nodo principal de control y adquisición. Justifique la arquitectura, los medios y el protocolo con base en el hardware y software disponibles. Separe el control local de la capa IoT; el PLC no debe exponerse directamente a Internet.
-\end{orientacion}
+%\begin{orientacion}
+%El PLC será el nodo principal de control y adquisición. Justifique la arquitectura, los medios y el protocolo con base en el hardware y software disponibles. Separe el control local de la capa IoT; el PLC no debe exponerse directamente a Internet.
+%\end{orientacion}
 
-\subsection{Topología y flujjas de información}
-\input{flujogramas/arquitectura_comunicaciones}
-\campo{Justifique la topología, los medios físicos, la ubicación de los nodos y la separación entre control y supervisión.}
+\subsection{Topología y flujo de información}
+\begin{figure}[H] 
+\centering 
+\includegraphics[width=0.2\textwidth]{figuras/Topologia_y_flujo_de_informacion.png} 
+\caption{Arquitectura de comunicaciones propuesta.} 
+\label{fig:comunicaciones} 
+\end{figure} 
+
+\campo{La Figura~\ref{fig:comunicaciones} muestra la topología de comunicaciones implementada, los medios físicos utilizados para el intercambio de datos, la ubicación de los nodos dentro de la arquitectura de automatización y la separación funcional entre los niveles de control y supervisión.}
 
 \subsection{Equipos y direccionamiento IP}
 \input{tablas/tabla_nodos_ip}
