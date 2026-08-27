@@ -1,8 +1,9 @@
 \begin{table}[H]\centering\small\caption{Especificaciones preliminares de desempeño.}
-\begin{tabularx}{\textwidth}{YL{3cm}L{4cm}}\toprule
+\begin{tabularx}{\textwidth}{L{3.2cm}L{2.9cm}Y}\toprule
 \textbf{Indicador}&\textbf{Meta}&\textbf{Justificación o fuente}\\\midrule
-Error estacionario&\campo{\%}&\campo{--}\\
-Sobreimpulso&\campo{\%}&\campo{--}\\
-Tiempo de establecimiento&\campo{s o min}&\campo{--}\\
-Esfuerzo de control&\campo{Límite}&\campo{--}\\\bottomrule
+Error en estado estable ($e_{ss}$)&$\leq 5\,\%$&Exigido por el enunciado del Proyecto Integrador; en un proceso CIP la eficacia de limpieza depende de mantener la temperatura dentro de banda, por lo que un error residual grande compromete la validez del ciclo.\\
+Sobreimpulso ($M_p$)&$\leq 15\,\%$&Un sobreimpulso mayor puede acercar la temperatura al límite del termostato de seguridad (70\,$^{\circ}$C) o dañar el producto de limpieza/superficie tratada; además es la meta explícita del rúbrico de Corte~1.\\
+Tiempo de establecimiento ($t_s$, 2\,\%)&Compatible con $\tau$ del proceso (orden de varias horas en lazo abierto, a reducir en lazo cerrado; a cuantificar experimentalmente)&El proceso es de gran inercia térmica ($\tau\approx261{,}6$~min en lazo abierto); el controlador debe acelerar la respuesta respecto del lazo abierto sin inducir sobreimpulso, aprovechando la gran reserva de potencia del actuador.\\
+Esfuerzo de control (MV)&0--100\,\% ciclo de trabajo, con anti-windup activo&El actuador está sobredimensionado entre $\approx12{,}5\times$ (fase de prelavado, SP$=50\,^{\circ}$C) y $\approx18{,}75\times$ (fase de lavado, SP$=40\,^{\circ}$C) frente a la potencia de régimen permanente requerida en cada fase; sin anti-windup el integrador se satura durante el arranque y genera sobreimpulso excesivo.\\
+\bottomrule
 \end{tabularx}\end{table}
