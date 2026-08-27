@@ -29,10 +29,10 @@
 \contentsline {subsection}{\numberline {5.4}Simulación en lazo abierto}{8}{subsection.48}%
 \contentsline {subsection}{\numberline {5.5}Especificaciones preliminares de desempeño}{9}{subsection.50}%
 \contentsline {section}{\numberline {6}Diseño preliminar de Comunicaciones Industriales}{9}{section.52}%
-\contentsline {subsection}{\numberline {6.1}Topología y flujo de información}{9}{subsection.53}%
+\contentsline {subsection}{\numberline {6.1}Topología y flujjas de información}{9}{subsection.53}%
 \contentsline {subsection}{\numberline {6.2}Equipos y direccionamiento IP}{10}{subsection.55}%
 \contentsline {subsection}{\numberline {6.3}Selección del protocolo}{10}{subsection.57}%
-\contentsline {subsection}{\numberline {6.4}Mapa inicial de etiquetas}{10}{subsection.59}%
+\contentsline {subsection}{\numberline {6.4}Mapa iniciales de etiquetas}{10}{subsection.59}%
 \contentsline {subsection}{\numberline {6.5}Evidencia mínima de comunicación}{11}{subsection.60}%
 \contentsline {section}{\numberline {7}Plan de validación}{11}{section.62}%
 \contentsline {subsection}{\numberline {7.1}Métricas previstas}{11}{subsection.63}%

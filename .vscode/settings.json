@@ -1,4 +1,27 @@
 {
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": ["%DOCFILE%"]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex + bibtex",
+            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+        }
+    ],
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -12,6 +35,14 @@
         "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.aux": true,
         "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.log": true,
         "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.gz": true,
-        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.out": true
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\08_plan_validacion.out": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\07_comunicaciones.aux": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\07_comunicaciones.log": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\07_comunicaciones.gz": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\secciones\\07_comunicaciones.out": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\main.aux": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\main.log": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\main.gz": true,
+        "**/c:\\Users\\Josepth Suarez\\Proyecto_CIP_2026-2\\main.out": true
     }
 }
