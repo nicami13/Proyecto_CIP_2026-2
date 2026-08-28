@@ -13,5 +13,5 @@
 *.bcf
 *.run.xml
 
-# PDF generado
-*.pdf
+# PDF 
+*main.pdf
