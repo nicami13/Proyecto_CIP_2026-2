@@ -1,7 +1,59 @@
-\begin{table}[H]\centering\scriptsize\caption{Matriz preliminar de riesgos.}
-\begin{tabularx}{\textwidth}{L{2cm}YL{1.6cm}L{1.6cm}L{1.7cm}Y}\toprule
-\textbf{ID}&\textbf{Riesgo}&\textbf{Prob.}&\textbf{Impacto}&\textbf{Nivel}&\textbf{Tratamiento}\\\midrule
-R-01&Sobretemperatura&\campo{1--5}&\campo{1--5}&\campo{P$\times$I}&\campo{Alarma, límite e interbloqueo}\\
-R-02&Fuga hidráulica&\campo{1--5}&\campo{1--5}&\campo{P$\times$I}&\campo{Medida}\\
-R-03&Pérdida de red&\campo{1--5}&\campo{1--5}&\campo{P$\times$I}&Control local independiente\\\bottomrule
-\end{tabularx}\end{table}
+% Requiere en el preambulo: \usepackage{longtable}, \usepackage{booktabs}, \usepackage{array}, \usepackage{textcomp}
+\begin{longtable}{@{}c p{4.5cm} ccc p{5.5cm}@{}}
+\caption{Matriz preliminar de riesgos.}
+\label{tab:matriz_riesgos} \\
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Prob.} & \textbf{Impacto} & \textbf{Nivel} & \textbf{Tratamiento} \\
+\midrule
+\endfirsthead
+
+\multicolumn{6}{c}{\tablename\ \thetable{} -- continuación} \\
+\toprule
+\textbf{ID} & \textbf{Riesgo} & \textbf{Prob.} & \textbf{Impacto} & \textbf{Nivel} & \textbf{Tratamiento} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{6}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\multicolumn{6}{@{}l}{\textit{Térmicos y de calentamiento}} \\
+\addlinespace[2pt]
+R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Termostato bimetálico en serie, alarma alta por RTD y límite de consigna \\
+R-02 & Trabajo en seco de la resistencia & 3 & 4 & 12 & Enclavamiento por flotador de nivel mínimo como condición de habilitación \\
+R-03 & Falla del SSR en cortocircuito & 2 & 5 & 10 & Corte térmico independiente, no programable, en serie con la línea \\
+R-04 & Sobrecalentamiento del SSR por disipación insuficiente & 3 & 3 & 9 & Disipador $\leq$1,2\,\textdegree C/W con ventilación forzada de tablero \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Hidráulicos}} \\
+\addlinespace[2pt]
+R-05 & Velocidad inferior a 1,5\,m/s: limpieza no efectiva & 3 & 5 & \textbf{15} & Aforo volumétrico en puesta en marcha y manómetro con zona marcada \\
+R-06 & Operación de la bomba contra válvula cerrada & 3 & 4 & 12 & Válvula de regulación precintada, sin cierre automático en descarga \\
+R-07 & Cavitación de la bomba & 3 & 3 & 9 & Succión inundada obligatoria, línea corta de 1\textquotedbl{} y filtro accesible \\
+R-08 & Fuga hidráulica en acoples y uniones & 3 & 3 & 9 & Prueba hidrostática a 1,5\texttimes{} la presión de trabajo antes de cada campaña \\
+R-09 & Formación de espuma: cavitación y arrastre & 4 & 3 & 12 & Retorno sumergido y tangencial, detergente de bajo poder espumante \\
+R-10 & Obstrucción del filtro: caída de caudal & 4 & 2 & 8 & Limpieza del filtro por ciclo y verificación en el manómetro \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Materiales y compatibilidad química}} \\
+\addlinespace[2pt]
+R-11 & Falla del sello mecánico por operar sobre 40\,\textdegree C & 4 & 3 & 12 & Consigna limitada a 50\,\textdegree C, enjuague frío final, kit de sello en stock \\
+R-12 & Descincado del impulsor de latón & 3 & 3 & 9 & Detergente pH 8,0--10,5 sin amoniaco ni cáusticos clorados \\
+R-13 & Degradación del tubo peristáltico: dosificación errática & 4 & 2 & 8 & Tubo Norprene, reemplazo cada 500\,h, verificación volumétrica mensual \\
+R-14 & Residuo de detergente en la tubería tras el ciclo & 3 & 4 & 12 & Enjuague $\geq$3\texttimes{} el volumen del lazo y verificación de conductividad \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Eléctricos y de control}} \\
+\addlinespace[2pt]
+R-15 & Sobrecarga del ramal eléctrico (22,2\,A simultáneos) & 3 & 3 & 9 & Enclavamiento por software: resistencia y bomba mutuamente excluyentes \\
+R-16 & Descarga eléctrica al operador & 2 & 5 & 10 & DDR 30\,mA, gabinete IP54, puesta a tierra y 24\,V SELV en campo \\
+R-17 & Lectura de temperatura errónea & 3 & 3 & 9 & Verificación con termómetro patrón en dos puntos, referencia común a 2M \\
+R-18 & Agotamiento de las salidas de relé por ciclado & 3 & 3 & 9 & Control ON/OFF con histéresis \textpm2\,\textdegree C, snubber RC y diodos volantes \\
+R-19 & Pérdida de red & 3 & 2 & 6 & Control local independiente en el PLC, ThingsBoard autohospedado \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Operativos y de proyecto}} \\
+\addlinespace[2pt]
+R-20 & Quemadura del operador por fluido o superficie a 50\,\textdegree C & 3 & 4 & 12 & Aislamiento, etiquetado y enjuague frío enclavado antes del desacople \\
+R-21 & Presupuesto excedido & 5 & 3 & \textbf{15} & Recortes priorizados y solicitud formal de ampliación \\
+R-22 & Retraso por importación de componentes & 4 & 2 & 8 & Pedido con seis semanas de anticipación o sustitución local \\
+\end{longtable}
