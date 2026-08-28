@@ -23,7 +23,53 @@
 \subsection{Repositorio digital}
 \textbf{Enlace:} \url{\EnlaceRepositorio}
 
-\campo{Explique la estructura del repositorio, estrategia de ramas o versiones, responsables, convención de nombres y evidencia de participación de los integrantes.}
+{\subsection{Repositorio digital}
+\textbf{Enlace:} \url{\EnlaceRepositorio}
+
+El repositorio \texttt{Proyecto\_CIP\_2026-2}, alojado en la cuenta \texttt{nicami13}, centraliza la totalidad
+del código fuente en \LaTeX{}, las figuras, los flujogramas y las actas del proyecto. A la fecha de este
+corte cuenta con 162 commits distribuidos en 6 ramas y con la participación de los 9 integrantes del
+equipo, registrados como colaboradores del repositorio (\texttt{kcvillaronga-prog}, \texttt{nicami13},
+\texttt{fabianruizma2404-cmyk}, \texttt{FerneyPatino}, \texttt{YesGz}, \texttt{yuliethgutierrez},
+\texttt{Shadows340}, \texttt{Karen140215} y \texttt{Julian12005}), lo que constituye evidencia directa
+de la participación de todos los miembros en el control de versiones.
+
+La estructura del repositorio organiza el contenido por tipo de artefacto en lugar de por integrante,
+con el fin de evitar conflictos de compilación y facilitar la trazabilidad de cada cambio:
+
+\begin{itemize}
+    \item \texttt{secciones/}: contiene los archivos fuente \texttt{.tex} de cada sección del informe
+    (contextualización, caracterización CIP, ingeniería de requisitos, diseño mecatrónico, control,
+    comunicaciones, validación y gestión del proyecto), permitiendo que distintos integrantes trabajen
+    de forma simultánea sobre secciones independientes.
+    \item \texttt{tablas/}: agrupa las tablas del informe en archivos separados, referenciadas desde las
+    secciones correspondientes mediante \texttt{input}.
+    \item \texttt{figuras/}: almacena las imágenes, diagramas y evidencias gráficas del proyecto,
+    incluyendo las capturas de demostración del código del PLC.
+    \item \texttt{flujogramas/}: contiene los diagramas de flujo y secuencias del proceso CIP.
+    \item \texttt{referencias/}: incluye el archivo de bibliografía y las fuentes utilizadas para la
+    caracterización del proceso y la clasificación de la información de diseño.
+    \item \texttt{preambulo/}: reúne la configuración general del documento (paquetes, comandos
+    personalizados y estilo).
+    \item \texttt{actas/}: almacena las actas de reunión del equipo, correspondientes al primer corte.
+    \item \texttt{compilado/}: contiene la versión compilada más reciente del informe en PDF.
+    \item \texttt{main.tex}: archivo raíz que integra todas las secciones mediante \texttt{input} y
+    genera el documento final; \texttt{main.bbl} corresponde a la bibliografía compilada.
+\end{itemize}
+
+En cuanto a la estrategia de ramas, se emplea \texttt{main} como rama principal e integradora, sobre la
+cual se fusionan (\textit{merge}) los avances desarrollados en ramas de trabajo individuales o por
+subsistema, evitando así modificaciones directas y simultáneas sobre el documento final. La convención
+de nombres de los commits describe brevemente el cambio realizado y, cuando aplica, la sección o el
+artefacto afectado (por ejemplo, \textit{“Caracterización del proceso y clasificación de información”},
+\textit{“Corrección de numeración de tablas”} o \textit{“Checklist”}), lo que permite reconstruir el
+historial de cambios de cada apartado del informe.
+
+La responsabilidad de la administración general del repositorio (estructura de carpetas, resolución de
+conflictos de \textit{merge} y actualización del \texttt{README}) recae principalmente en
+Karen Villaronga y Camilo Díaz Gamboa, mientras que cada integrante es responsable de subir y
+versionar el contenido correspondiente a las secciones y tablas que le fueron asignadas según el
+cronograma del primer corte (Tabla~32).}
 
 \subsection{Lista de verificación del primer corte}
 \input{tablas/tabla_checklist}
