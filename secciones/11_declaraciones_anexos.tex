@@ -4,7 +4,7 @@
 \input{tablas/tabla_uso_ia}
 
 \section{Reporte de similitud}
-\campo{Adjunte el primer reporte de Turnitin. Si la similitud supera el 20\,\% después de las exclusiones definidas, revise y corrija las coincidencias antes de entregar.}
+
 
 \section{Evidencia del artículo en inglés}
 Como evidencia del desarrollo del artículo científico, se adjunta la versión en inglés elaborada hasta la sección de Materials and Methods.
@@ -16,9 +16,112 @@ Como evidencia del desarrollo del artículo científico, se adjunta la versión 
 \item Anexo A: matriz QFD completa.
 \begin{figure}[H] \centering \includegraphics[width=0.4\textwidth]{figuras/MATRIZ_QFD.png} \end{figure}
 \item Anexo B: matrices Pugh completas.
-\item Anexo C: diseño CAD validado.
+Las matrices se encuentran ya cargadas dentro del documento para mejor comprensión lineal del proyecto
 \item Anexo D: cálculos y simulaciones.
-\item Anexo E: evidencia de comunicación.
+
+Los parámetros del modelo térmico de primer orden se obtienen a partir del
+coeficiente global de pérdidas térmicas $UA$, la masa activa de fluido y el
+calor específico del agua. Estos parámetros corresponden al modelo del
+proceso y no a los parámetros de sintonía del controlador.
+
+El valor de la ganancia estática del proceso se calcula como:
+
+\begin{equation}
+K = \frac{1}{UA}
+= \frac{1}{4}
+= 0{,}25\ \mathrm{K/W}
+\end{equation}
+
+La constante de tiempo del proceso se determina mediante:
+
+\begin{equation}
+\tau = \frac{m\,c_p}{UA}
+= \frac{15 \times 4186}{4}
+= 15\,697{,}5\ \mathrm{s}
+\approx 261{,}6\ \mathrm{min}
+\end{equation}
+
+Por tanto, el modelo de primer orden utilizado para representar la dinámica
+térmica del sistema queda definido por:
+
+\begin{equation}
+\boxed{
+G(s) = \frac{0{,}25}{15\,697{,}5\,s + 1}
+}
+\end{equation}
+
+A partir del valor de $UA$ también pueden determinarse las potencias de
+régimen permanente requeridas para las dos temperaturas de operación
+consideradas. La potencia necesaria para compensar las pérdidas térmicas se
+calcula mediante:
+
+\begin{equation}
+Q_{ss} = UA\,\Delta T
+\end{equation}
+
+Para el prelavado, con una diferencia de temperatura de $\Delta T=30$ K,
+se obtiene:
+
+\begin{equation}
+Q_{ss} = 4(30) = 120\ \mathrm{W}
+\end{equation}
+
+Considerando una resistencia de calentamiento de $1500$ W, el ciclo de
+trabajo requerido en régimen permanente es:
+
+\begin{equation}
+D = \frac{Q_{ss}}{P_{\max}}\times100
+= \frac{120}{1500}\times100
+= 8{,}0\,\%
+\end{equation}
+
+Para la fase de lavado, con una diferencia de temperatura de
+$\Delta T=20$ K:
+
+\begin{equation}
+Q_{ss} = 4(20) = 80\ \mathrm{W}
+\end{equation}
+
+y, por tanto, el ciclo de trabajo correspondiente es:
+
+\begin{equation}
+D = \frac{80}{1500}\times100
+= 5{,}33\,\%
+\end{equation}
+
+En consecuencia, los principales parámetros obtenidos para el modelo y los
+puntos de operación son:
+
+\begin{equation}
+\boxed{
+K=0{,}25\ \mathrm{K/W},
+\qquad
+\tau=15\,697{,}5\ \mathrm{s}\approx261{,}6\ \mathrm{min}
+}
+\end{equation}
+
+\begin{equation}
+\boxed{
+\begin{aligned}
+\text{Prelavado:}\quad &Q_{ss}=120\ \mathrm{W},
+&&D=8{,}0\,\%\\
+\text{Lavado:}\quad &Q_{ss}=80\ \mathrm{W},
+&&D=5{,}33\,\%
+\end{aligned}
+}
+\end{equation}
+
+\subsubsection{Enlace al script de la simulación en lazo abierto}
+
+El script utilizado para realizar la simulación en lazo abierto se encuentra
+disponible en el siguiente enlace:
+
+\begin{center}
+\href{https://mailustabucaedu-my.sharepoint.com/:u:/g/personal/fabianaugusto_ruiz_ustabuca_edu_co/IQA-BS2GA_CMQ4VUrsyvaq6EAYTtpR_JWi9h-BOVhUr7l5k?e=7DXsHx}
+{\textbf{Script de simulación en lazo abierto}}
+\end{center}
+
+
 \item Anexo F: evidencia del repositorio y del MOOC institucional.
 \item Anexo G: información IP del PLC
 \begin{figure}[H] \centering \includegraphics[width=0.4\textwidth]{figuras/DATOSPLC.png} \end{figure}
