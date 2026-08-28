@@ -1,0 +1,29 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Identificación de elementos del diagrama P\&ID (Equipos, Válvulas, Instrumentos y Líneas).}
+\label{tab:pid_elementos}
+\begin{tabularx}{\textwidth}{L{2.5cm}L{3.5cm}L{3.0cm}X}
+\toprule
+\textbf{Tag / Identificador} & \textbf{Nombre} & \textbf{Categoría / Tipo} & \textbf{Función} \\ \midrule
+TK-101 & Tanque de jabón & Equipo (Tanque) & Almacena la materia prima (jabón) antes de la dosificación. \\
+P-101 & Bomba de jabón & Equipo (Bomba) & Impulsa el jabón hacia el tanque de mezcla. \\
+TK-102 & Tanque de mezcla & Equipo (Tanque) & Recipiente principal donde se realiza la mezcla y calentamiento. \\
+AG-101 & Agitador & Equipo (Interno) & Agita e homogeniza la mezcla dentro de TK-102. \\
+M-101 & Motorreductor & Equipo (Motor) & Acciona mecánicamente el eje del agitador AG-101. \\
+E-101 & Resistencia eléctrica calefactora & Equipo (Calefactor) & Proporciona energía térmica para calentar el agua/mezcla. \\
+P-102 & Bomba de limpieza & Equipo (Bomba) & Impulsa la mezcla de limpieza hacia el circuito. \\
+TK-103 & Tanque de almacenamiento de agua & Equipo (Tanque) & Almacena el efluente/agua de retorno tras el proceso de limpieza. \\
+SV-101 & Válvula solenoide de jabón & Válvula de control & Permite o interrumpe el paso de jabón desde TK-101 a P-101. \\
+SV-102 & Válvula solenoide de agua & Válvula de control & Regula el ingreso de agua de red hacia el tanque de mezcla. \\
+SV-103 & Válvula solenoide de descarga & Válvula de control & Controla la salida de mezcla de TK-102 hacia la bomba P-102. \\
+LIT-101 & Transmisor indicador de nivel & Instrumento & Mide e indica localmente el nivel de líquido en TK-102. \\
+TT-101 & Transmisor de temperatura & Instrumento & Mide la temperatura del fluido dentro de TK-102. \\
+L-1 & Línea de jabón & Tubería de proceso & Transporta jabón impulsado hacia la mezcla. \\
+L-2 & Línea de agua & Tubería de proceso & Alimenta agua de proceso a TK-102. \\
+L-3 & Línea de descarga de mezcla & Tubería de proceso & Salida de fluido desde la base de TK-102. \\
+L-4 & Línea de efluente de limpieza & Tubería de proceso & Conduce el fluido que retorna de la tubería de limpieza. \\
+L-5 & Línea de desagüe de agua & Tubería de proceso & Drena o evacúa el agua almacenada en TK-103. \\
+--- & Señales de control (PLC) & Línea de instrumentación & Transmite señales eléctricas/datos de entrada y salida entre el PLC y los equipos/instrumentos (SV-101, SV-102, SV-103, LIT-101, TT-101, E-101, M-101, P-102). \\ \bottomrule
+\end{tabularx}
+\end{table}

@@ -4,7 +4,8 @@
 \usepackage[margin=2.25cm]{geometry}
 \usepackage{lmodern,microtype}
 \usepackage{graphicx}
-\usepackage{array,booktabs,longtable,tabularx,multirow}
+\usepackage{caption}
+\usepackage{array,booktabs,longtable,tabularx,multirow,makecell}
 \usepackage{enumitem,float,xcolor,fancyhdr,lastpage}
 \usepackage{amsmath,amssymb}
 \usepackage{tikz}
@@ -12,6 +13,8 @@
 \usetikzlibrary{arrows.meta,positioning,shapes.geometric}
 \usepackage[most]{tcolorbox}
 \usepackage{hyperref}
+\usepackage{ltablex}
+\keepXColumns
 \graphicspath{{figuras/}}
 \definecolor{AzulUSTA}{HTML}{003B71}
 \definecolor{DoradoUSTA}{HTML}{E8A713}
@@ -31,10 +34,10 @@
 \newtcolorbox{orientacion}{colback=GrisGuia,colframe=AzulUSTA,title=Orientación para diligenciar,fonttitle=\bfseries,breakable}
 \newtcolorbox{verificacion}{colback=white,colframe=DoradoUSTA,title=Verificación antes de entregar,fonttitle=\bfseries,breakable}
 \newcommand{\campo}[1]{\textcolor{AzulUSTA}{\textit{[#1]}}}
-\newcommand{\insertarfigura}[3]{%
+\newcommand{\insertarfigura}[4][0.88\textwidth]{%
 \begin{figure}[H]\centering
-\IfFileExists{figuras/#1}{\includegraphics[width=0.88\textwidth]{#1}}{\fbox{\parbox[c][5cm][c]{0.82\textwidth}{\centering \textcolor{AzulUSTA}{\textit{Inserte en la carpeta figuras el archivo:}}\\[2mm]\texttt{\detokenize{#1}}}}}
-\caption{#2}\label{#3}\end{figure}}
+\IfFileExists{figuras/#2}{\includegraphics[width=#1]{#2}}{\fbox{\parbox[c][5cm][c]{0.82\textwidth}{\centering \textcolor{AzulUSTA}{\textit{Inserte en la carpeta figuras el archivo:}}\\[2mm]\texttt{\detokenize{#2}}}}}
+\caption{#3}\label{#4}\end{figure}}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small Proyecto Integrador -- Primer corte}

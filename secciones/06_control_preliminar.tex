@@ -8,15 +8,15 @@ De las variables de proceso disponibles (temperatura, caudal, nivel, presión y 
 
 \subsection{Variable manipulada (MV)}
 
-La variable manipulada corresponde a la potencia eléctrica suministrada al elemento calefactor del sistema, constituido por una resistencia eléctrica sumergible de potencia nominal de $1500\,\mathrm{W}$. Esta variable es modificada por el PLC mediante una estrategia de control por proporción de tiempo (\textit{Time Proportioning Control}), implementada mediante el bloque \texttt{PID\_Compact} de TIA Portal. La señal de control es aplicada a la resistencia a través de un relé de estado sólido (SSR) con conmutación en cruce por cero.
+La variable manipulada corresponde a la potencia eléctrica suministrada al elemento calefactor del sistema, constituido por una resistencia eléctrica sumergible de potencia nominal de $1500\,\mathrm{W}$. Esta variable es modificada por el PLC mediante una estrategia de control por proporción de tiempo (\textit{Time Proportioning Control}), implementada mediante el bloque \texttt{PID\_Compact} de TIA Portal \cite{siemens2021pid}. La señal de control es aplicada a la resistencia a través de un relé de estado sólido (SSR) con conmutación en cruce por cero \cite{rashid2014power}.
 
-Para la modulación de la potencia de la resistencia se evaluaron dos estrategias de control para una carga resistiva de corriente alterna (CA): el control por ángulo de fase mediante TRIAC y el control proporcional en el tiempo mediante SSR con conmutación en cruce por cero. La selección de la estrategia se realizó considerando principalmente la dinámica térmica del proceso y los requerimientos de implementación del sistema CIP portátil.
+Para la modulación de la potencia de la resistencia se evaluaron dos estrategias de control para una carga resistiva de corriente alterna (CA): el control por ángulo de fase mediante TRIAC y el control proporcional en el tiempo mediante SSR con conmutación en cruce por cero \cite{mohan2007power}. La selección de la estrategia se realizó considerando principalmente la dinámica térmica del proceso y los requerimientos de implementación del sistema CIP portátil.
 
-La constante de tiempo térmica estimada del proceso es del orden de varias horas, con un valor aproximado de $\tau \approx 261{,}6\,\mathrm{min}$, correspondiente al modelo obtenido en la sección 3. Este valor es considerablemente superior al período de conmutación empleado para la modulación proporcional en el tiempo mediante el SSR, cuyo orden de magnitud es de segundos. En consecuencia, desde el punto de vista de la dinámica térmica, el proceso no responde a las conmutaciones individuales del SSR, sino al valor promedio de la potencia suministrada durante cada período de modulación.
+La constante de tiempo térmica estimada del proceso es del orden de varias horas, con un valor aproximado de $\tau \approx 261{,}6\,\mathrm{min}$, correspondiente al modelo obtenido en la sección 3. Este valor es considerablemente superior al período de conmutación empleado para la modulación proporcional en el tiempo mediante el SSR, cuyo orden de magnitud es de segundos. En consecuencia, desde el punto de vista de la dinámica térmica, el proceso no responde a las conmutaciones individuales del SSR, sino al valor promedio de la potencia suministrada durante cada período de modulación \cite{ogata2010modern, dorf2021modern}.
 
-Por lo anterior, ambas estrategias pueden producir un efecto térmico equivalente siempre que entreguen el mismo valor promedio de potencia a la resistencia. Sin embargo, el control por ángulo de fase mediante TRIAC presenta como desventaja la generación de componentes armónicas y mayores niveles de interferencia electromagnética (EMI) conducida, además de requerir una etapa de disparo más compleja.
+Por lo anterior, ambas estrategias pueden producir un efecto térmico equivalente siempre que entreguen el mismo valor promedio de potencia a la resistencia. Sin embargo, el control por ángulo de fase mediante TRIAC presenta como desventaja la generación de componentes armónicas y mayores niveles de interferencia electromagnética (EMI) conducida, además de requerir una etapa de disparo más compleja \cite{rashid2014power, mohan2007power}.
 
-En contraste, la solución basada en SSR con conmutación en cruce por cero y control proporcional en el tiempo permite obtener una regulación adecuada de la potencia promedio sin introducir una modulación de fase de la tensión de alimentación. Por esta razón, se seleccionó la estrategia de \textit{Time Proportioning Control} mediante SSR para el sistema, debido a su menor complejidad de implementación, robustez frente a las condiciones de operación y adecuación a la dinámica lenta del proceso térmico.
+En contraste, la solución basada en SSR con conmutación en cruce por cero y control proporcional en el tiempo permite obtener una regulación adecuada de la potencia promedio sin introducir una modulación de fase de la tensión de alimentación \cite{rashid2014power}. Por esta razón, se seleccionó la estrategia de \textit{Time Proportioning Control} mediante SSR para el sistema, debido a su menor complejidad de implementación, robustez frente a las condiciones de operación y adecuación a la dinámica lenta del proceso térmico.
 
 En términos de control, la variable manipulada puede expresarse como la potencia promedio suministrada a la resistencia, $P_{\mathrm{prom}}$, cuyo valor se encuentra limitado por la potencia nominal del elemento calefactor:
 
@@ -41,13 +41,56 @@ donde $D$ corresponde al ciclo de trabajo, definido como la fracción del perío
 \subsection{Modelo dinámico preliminar}
 \campo{Presente el balance de energía, parámetros, condiciones iniciales, función de transferencia o modelo equivalente, punto de operación y rango de validez.}
 
+Se modela el tanque de mezcla como un sistema térmico de parámetros concentrados (\textit{lumped capacitance}), es decir, se asume una temperatura uniforme en todo el volumen activo en cada instante. Este supuesto es razonable debido al efecto de mezclado producido por la recirculación del propio sistema CIP y es válido cuando el número de Biot del sistema es suficientemente pequeño ($Bi \ll 1$) [9].
+
+El balance de energía instantáneo, análogo al de un tanque agitado con calentamiento eléctrico [10], se expresa mediante:
+
 \begin{equation}
-\boxed{\text{Inserte aquí la ecuación principal del modelo}}
+Q_h(t) - UA\left(T(t)-T_{\mathrm{amb}}\right)
+\end{equation}
+
+donde $m$ es la masa activa de fluido, expresada en $\mathrm{kg}$; $c_p$ es el calor específico del agua, con un valor aproximado de $4186,\mathrm{J/(kg,K)}$ [9]; $Q_h(t)$ es la potencia térmica entregada por la resistencia, expresada en $\mathrm{W}$; $UA$ es el coeficiente global de transferencia de calor asociado a las pérdidas hacia el ambiente, expresado en $\mathrm{W/K}$; y $T_{\mathrm{amb}}$ es la temperatura ambiente, considerada como una perturbación del sistema.
+
+Linealizando el modelo alrededor de un punto de operación y aplicando la transformada de Laplace, bajo la condición inicial $T(0)=T_{\mathrm{amb}}$, se obtiene el modelo de primer orden estándar [2], [3]:
+\begin{equation}
+\frac{\Delta T(s)}{Q_h(s)}
+\end{equation}
+\begin{equation}
+\frac{K}{\tau s+1}
+\end{equation}
+
+donde la ganancia estática del proceso y la constante de tiempo están dadas, respectivamente, por:
+
+\begin{equation}
+K=\frac{1}{UA}
+\end{equation}
+
+\begin{equation}
+\tau=\frac{m c_p}{UA}
+\end{equation}
+
+En este modelo, $K$ representa la ganancia estática del proceso, expresada en $\mathrm{K/W}$, mientras que $\tau$ representa la constante de tiempo térmica del sistema, expresada en segundos. El modelo permite caracterizar la relación dinámica entre la potencia térmica suministrada por la resistencia y el incremento de temperatura del fluido respecto al punto de operación.
+
+\begin{equation}
+\boxed{
+G(s)=\frac{0{,}25}{15697{,}5s+1}
+}
 \end{equation}
 
 \subsection{Simulación en lazo abierto}
 \insertarfigura{respuesta_lazo_abierto.pdf}{Respuesta preliminar del modelo en lazo abierto.}{fig:lazoabierto}
-\campo{Analice ganancia, constante de tiempo, retardo, estabilidad y limitaciones observadas.}
+
+\begin{itemize}
+
+\item A potencia máxima, el modelo lineal alcanzaría el límite de seguridad de $70\,^{\circ}\mathrm{C}$ en aproximadamente $37{,}4$ minutos. En la práctica, este es precisamente el comportamiento que debe evitar el controlador durante la operación normal. Este resultado confirma que el actuador posee suficiente autoridad para calentar rápidamente el fluido en cualquiera de las dos fases; por tanto, el riesgo principal corresponde al sobreimpulso y no a una falta de potencia del actuador.
+
+\item A un ciclo de trabajo fijo correspondiente al régimen permanente de cada fase ($8{,}0\,\%$ para $50\,^{\circ}\mathrm{C}$ y $5{,}33\,\%$ para $40\,^{\circ}\mathrm{C}$), el sistema alcanza el punto de operación de forma extremadamente lenta. Considerando los tiempos de establecimiento aproximados, se obtiene $t_s(5\,\%) \approx 3\tau \approx 785$ minutos y $t_s(2\,\%) \approx 4\tau \approx 1047$ minutos. Esto ocurre porque en un esquema de ciclo de trabajo fijo no se aprovecha la potencia disponible durante el transitorio de calentamiento.
+
+\item La diferencia entre las curvas de respuesta constituye la justificación cuantitativa central para emplear un controlador realimentado, en lugar de un ciclo de trabajo fijo en lazo abierto. Asimismo, evidencia la necesidad de incorporar acción integral con mecanismo anti-windup. El controlador debe permitir la saturación deliberada del actuador ($MV \approx 100\,\%$) durante el arranque para acelerar el calentamiento hacia cualquiera de las dos consignas y, posteriormente, reducir el ciclo de trabajo de manera gradual al aproximarse al valor de referencia, evitando el sobreimpulso.
+
+\item Al aumentar la masa activa hasta $15\,\mathrm{L}$, la constante de tiempo $\tau$ crece proporcionalmente, alcanzando aproximadamente $261{,}6$ minutos. El proceso se vuelve, por tanto, térmicamente más lento, lo que refuerza la necesidad de aprovechar el transitorio mediante la saturación controlada del actuador. Además, se justifica el empleo de una sintonía PI, en lugar de un controlador P, para eliminar el error de estado estacionario producido por la perturbación asociada a la adición de fluido frío entre fases.
+
+\end{itemize}
 
 \subsection{Especificaciones preliminares de desempeño}
 \input{tablas/tabla_especificaciones_control}

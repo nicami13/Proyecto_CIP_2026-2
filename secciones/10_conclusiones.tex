@@ -9,4 +9,34 @@ Redacte conclusiones derivadas de la formulación, los requisitos y las decision
 \end{enumerate}
 
 \section{Trabajo previsto para el segundo corte}
-\campo{Indique las actividades de ingeniería de detalle, construcción, programación e integración parcial que continuarán.}
+\noindent Durante el segundo corte el proyecto avanzará desde el diseño principalmente conceptual hacia la \textbf{ingeniería de detalle, construcción, programación e integración parcial del prototipo CIP}.
+\par\medskip
+\noindent\textbf{Selección definitiva de componentes.}\par\smallskip
+\noindent Se realizará la selección final de bombas, válvulas, sensores, sistema de calentamiento, recipientes, mangueras, acoples, PLC, elementos eléctricos y dispositivos de protección. La selección se realizará con base en los requisitos definidos durante el primer corte y en las condiciones reales de operación previstas para el prototipo.
+\par\medskip
+\noindent\textbf{Actualización del diseño de ingeniería.}\par\smallskip
+\noindent Una vez definidos los componentes, se complementará y actualizará el P\&ID y se modificará el diseño CAD de acuerdo con las dimensiones, conexiones y necesidades reales de montaje. También se incorporarán elementos o modificaciones no contempladas inicialmente que resulten necesarias durante el desarrollo del prototipo.
+\par\medskip
+\noindent\textbf{Sistema eléctrico, alimentación y protecciones.}\par\smallskip
+\noindent Se definirá la alimentación requerida por cada componente y se desarrollará la distribución eléctrica del sistema. Se determinarán protecciones eléctricas y térmicas, elementos de maniobra, conexiones de sensores y actuadores y las condiciones necesarias para una implementación segura.
+\par\medskip
+\noindent\textbf{Construcción e integración física.}\par\smallskip
+\noindent Se realizará el montaje de la estructura, recipientes, circuito hidráulico, bombas, válvulas, sistema de calentamiento, sensores, conexiones y tablero eléctrico. Antes de implementar el control automático se efectuarán pruebas básicas de funcionamiento para verificar circulación, retorno, calentamiento, accionamiento de los componentes y lectura de los sensores.
+\par\medskip
+\noindent\textbf{Modelado y control del proceso térmico.}\par\smallskip
+\noindent Con el prototipo físico se obtendrá o ajustará el modelo dinámico del proceso térmico. Posteriormente se comparará la respuesta experimental con la respuesta del modelo y se diseñará el controlador P, PI o PID que resulte más adecuado. Se evaluarán estabilidad, tiempo de subida, tiempo de establecimiento, sobreimpulso, error estacionario, esfuerzo de control, saturación del actuador y respuesta ante cambios de consigna y perturbaciones.
+\par\medskip
+\noindent\textbf{Programación de la secuencia CIP.}\par\smallskip
+\noindent Se desarrollará el GEMMA y la lógica secuencial del proceso para posteriormente implementar la programación Ladder en el PLC. La programación incluirá modos manual y automático, control de bombas, calentador y válvulas, condiciones de transición entre fases, inicio, pausa, parada, reinicio seguro, alarmas, interbloqueos y límites de operación.
+\par\medskip
+\noindent\textbf{Arquitectura centralizada y supervisión.}\par\smallskip
+\noindent Se definirá e implementará la integración entre PLC, HMI, sensores y actuadores, procurando que el control principal del proceso permanezca en el PLC. La HMI permitirá visualizar variables como SP, PV, MV, fase activa, tiempos, estados de equipos, tendencias y alarmas.
+\par\medskip
+\noindent\textbf{Comunicaciones industriales.}\par\smallskip
+\noindent Se verificará la comunicación entre los dispositivos del sistema mediante el intercambio de variables entre PLC y HMI. También se evaluarán aspectos como actualización de señales, reconexión, interrupciones de comunicación, mapa de variables y comportamiento del sistema ante posibles fallos.
+\par\medskip
+\noindent\textbf{Integración y validación preliminar.}\par\smallskip
+\noindent Una vez integrados los subsistemas se realizarán pruebas de circulación, calentamiento, control en lazo cerrado, cambios de consigna, perturbaciones térmicas, dosificación, retorno o recuperación, ejecución de la secuencia CIP y comunicaciones. Los resultados serán registrados para evaluar el comportamiento del prototipo e identificar los ajustes necesarios.
+\par\medskip
+\noindent\textbf{Documentación del avance.}\par\smallskip
+\noindent Los resultados obtenidos durante la construcción, programación y pruebas serán incorporados al informe técnico, al artículo en inglés y al repositorio del proyecto. También se actualizarán planos, diagramas, código, simulaciones, lista de materiales y evidencias correspondientes al estado real del prototipo.

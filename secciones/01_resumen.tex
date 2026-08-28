@@ -1,12 +1,12 @@
 \section*{Resumen ejecutivo}
 \addcontentsline{toc}{section}{Resumen ejecutivo}
-\begin{orientacion}
-Redacte entre 150 y 250 palabras. Presente la necesidad, el objetivo, la solución conceptual, las decisiones principales de control y comunicaciones, y el resultado alcanzado durante el primer corte. No anuncie resultados experimentales que todavía no se hayan obtenido.
-\end{orientacion}
-\campo{Escriba aquí el resumen ejecutivo. Aqui escribo el resumen.}
-
-\textbf{Palabras clave:} \campo{entre tres y cinco términos separados por punto y coma.}
-
+%\begin{orientacion}
+%Redacte entre 150 y 250 palabras. Presente la necesidad, el objetivo, la solución conceptual, las decisiones principales de control y comunicaciones, y el resultado alcanzado durante el primer corte. No anuncie resultados experimentales que todavía no se hayan obtenido.
+%\end{orientacion}
+Los procesos de limpieza en la industria de alimentos y bebidas requieren ciclos repetibles, controlados y trazables que garanticen la inocuidad del producto y reduzcan la intervención manual sobre equipos y tuberías. Sin embargo, muchos entornos de laboratorio y pequeñas plantas piloto no cuentan con una unidad de limpieza en sitio (Clean-In-Place, CIP) que permita ejecutar y validar estas rutinas de forma autónoma, quedando limitados a procedimientos manuales que dependen del operario y son difíciles de estandarizar y documentar \cite{bowser2023cip}. Este proyecto tiene como objetivo el diseño conceptual de un sistema portátil de limpieza CIP capaz de preparar, calentar, dosificar, circular y recuperar una solución de limpieza a través de un equipo de prueba, ejecutando de forma secuenciada las fases de preenjuague, lavado y enjuague final.
+La solución propuesta se organiza como un Producto Mínimo Viable compuesto por una cabina de preparación con agitación, calentamiento por resistencia de inmersión, dos bombas con funciones diferenciadas (recirculación y dosificación), válvulas solenoides que dirigen el fluido según la fase activa, e instrumentación de temperatura basada en RTD PT100. El control se plantea alrededor de un PLC como nodo principal, con una capa de supervisión separada que evita exponer el controlador a Internet.
+En este primer corte se definieron el problema, los objetivos, el alcance, la caracterización preliminar del ciclo CIP y la matriz de requisitos verificables, bajo un enfoque de mejora continua.
+\textbf{Palabras clave:} \campo{limpieza en sitio (CIP); sistema portátil; automatización de procesos; control; supervisión IoT.}
 \section*{Control de versión del documento}
 \addcontentsline{toc}{section}{Control de versión}
-\input{tablas/tabla_control_version}
+\input{tablas/tabla_control_version.tex}

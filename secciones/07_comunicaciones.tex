@@ -1,22 +1,59 @@
 \section{Diseño preliminar de Comunicaciones Industriales}
-\begin{orientacion}
-El PLC será el nodo principal de control y adquisición. Justifique la arquitectura, los medios y el protocolo con base en el hardware y software disponibles. Separe el control local de la capa IoT; el PLC no debe exponerse directamente a Internet.
-\end{orientacion}
+%\begin{orientacion}
+%El PLC será el nodo principal de control y adquisición. Justifique la arquitectura, los medios y el protocolo con base en el hardware y software disponibles. Separe el control local de la capa IoT; el PLC no debe exponerse directamente a Internet.
+%\end{orientacion}
 
-\subsection{Topología y flujjas de información}
-\input{flujogramas/arquitectura_comunicaciones}
-\campo{Justifique la topología, los medios físicos, la ubicación de los nodos y la separación entre control y supervisión.}
+\subsection{Topología y flujo de información}
+\begin{figure}[H] 
+\centering 
+\includegraphics[width=0.2\textwidth]{figuras/Topologia_y_flujo_de_informacion.png} 
+\caption{Arquitectura de comunicaciones propuesta.} 
+\label{fig:comunicaciones} 
+\end{figure} 
+
+{La Figura~\ref{fig:comunicaciones} muestra la topología de comunicaciones implementada, en este caso, se considera la implementación de una topología mixta entre estrella y árbol, donde la topología estrella es aplicada en la sección control con el PLC y la topología tipo árbol es requerida al momento de supervisar y redirigir los datos con el Gateway y el servidor. Los medios físicos utilizados para el intercambio de datos será por medio de Ethernet industrial, comunicados a través de PROFINET por compatibilidad con los dispositivos de control y visualización. La disposición propuesta se fundamenta en la centralización del manejo y control de los datos recibidos y transmitidos por el PLC, dejándolo como eje central en la disposición estrella, entrando a un árbol para la visualización en el HMI, la obtención de los datos de un GATEWAY que serán enviados a un servidor para mostrarlos gráficamente como segmento de IoT, cumpliendo con la condición propuesta de no realizar una conexión directa del PLC a internet, esto con el fin de mejorar la ciberseguridad del proceso, siendo un problema comúnmente ignorado pero sumamente relevante para el correcto funcionamiento, así como es mencionado por Hajda, Jakuszewski, y Ogonowski \cite{hajda2021security}.}
 
 \subsection{Equipos y direccionamiento IP}
 \input{tablas/tabla_nodos_ip}
 
 \subsection{Selección del protocolo}
 \input{tablas/tabla_protocolos}
-\campo{Comparessssss S7, PROFINETas, Modbusas TCP u OPC UA según compatibilidad, licencias, seguridad, mantenibilidad y tiempo de implementación. MQTT se evaluará para el enlace entre el dispositivo de borde y la capa IoT.}
+{Teniendo en cuenta la comparación realizada con las características y requerimientos de diseño actuales, lo ideal es el unir e implementar una combinación entre PROFINET, para la integración entre el HMI y el PLC, y Modbus TCP, con el fin de conectar correctamente el ESP32 junto con el PLC, distribuir la información y usar un protocolo ya conocido para mostrar así mismo el HMI. Al tenerlos ya conectados, se facilita el establecimiento de una red local para el acceso y uso de los datos dentro de las pruebas, contando a su vez con las licencias y uso legal de los mismos \cite{cometa2025modbus}.
+
+Dentro de este mismo campo se resalta la implementación de MQTT para el envió de los datos por parte del ESP32 que con su modulo de SIM se conectará a un servidor, que en este caso será AWS, para gestionar los datos, realizar la construcción de dashboards y crear una interfaz grafica simplificada para la comprensión de los usuarios \cite{gonzalez2024awsesp32}.}
 
 \subsection{Mapa iniciales de etiquetas}
 \input{tablas/tabla_tags}
 
 \subsection{Evidencia mínima de comunicación}
 \input{tablas/tabla_prueba_comunicacion}
-\campo{Incluya capturas o trazas que demuestren el intercambio de dos señales entre dos dispositivos. No presente una simulación como señal real sin declararlo.}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{figuras/HMIACCIONADO.JPG}
+\caption{Accionamiento e interfaz del panel HMI.}
+\label{fig:hmi_accionado}
+\end{figure}
+
+En esta figura se observa el accionamiento del pulsador como entrada analogica en el PLC, sacando una salida analogica en el led indicador y siendo visible dentro del HMI este cambio, como forma de simulación del volumen.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/RESETEARESTADO.JPG}
+\caption{Reinicio y reseteo de estados del sistema.}
+\label{fig:resetear_estado}
+\end{figure}
+
+Reseteo del sistema para volver a contar desde 0, con otra entrada de pulsador, como forma de reinicio del sistema y volver a simular el llenado del tanque.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{figuras/SIM_TANQUE_LLENO.JPG}
+\caption{Simulación de la condición de tanque lleno.}
+\label{fig:sim_tanque_lleno}
+\end{figure}
+
+Muestra la condición de tanque lleno, con la activación de la salida del led indicador y el cambio en el HMI, como forma de simulación de la condición de llenado del tanque.
+
+

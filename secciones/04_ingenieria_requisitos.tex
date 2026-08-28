@@ -1,20 +1,189 @@
 \section{Ingeniería de requisitos}
+
 \begin{orientacion}
 Formule requisitos verificables. Evite expresiones ambiguas como ``rápido'', ``eficiente'' o ``adecuado''. Cada requisito debe tener identificador, descripción, criterio de aceptación, prioridad, fuente y método de verificación.
 \end{orientacion}
 
 \subsection{Matriz de requisitos}
+
 \input{tablas/tabla_requisitos}
 
-Incluya requisitos funcionales y de proceso, mecánicos y de portabilidad, hidráulicos, eléctricos, electrónicos, de instrumentación, control, comunicaciones, supervisión IoT, seguridad, documentación y validación. cambio
+La matriz de requisitos permite establecer de manera organizada las condiciones que debe cumplir el sistema CIP. Los requisitos se clasifican de acuerdo con las diferentes áreas involucradas en el diseño, construcción, operación y validación del sistema.
+
+Se consideran requisitos funcionales y de proceso, mecánicos y de portabilidad, hidráulicos, eléctricos, electrónicos, de instrumentación, control, comunicaciones, supervisión mediante IoT, seguridad, documentación y validación.
+
+Como soporte visual para la identificación de los elementos que componen el sistema CIP y la posterior definición de sus requisitos funcionales, se presentan las siguientes vistas preliminares del diseño asistido por computadora (CAD). La estación se ha concebido como una unidad autónoma para la preparación de soluciones de limpieza, integrando de manera compacta los subsistemas de proceso, fluidos y control.
+
+En la cabina de operaciones confluyen los principales medios activos del sistema: un motoreductor encargado de transmitir el movimiento a un agitador mecánico, garantizando la homogeneización de la mezcla; y una resistencia de inmersión de $2000\,\mathrm{W}$, que aporta la potencia térmica necesaria para el calentamiento controlado del agua. El manejo de los fluidos se apoya en un circuito hidráulico estratégicamente distribuido, donde destacan dos bombas con funciones específicas. Por un lado, la bomba de circulación o evacuación permite extraer los insumos procesados desde la cabina hacia el exterior, facilitando su transferencia a las etapas posteriores. Por otro lado, la bomba dosificadora de jabón toma el detergente desde su tanque de almacenamiento y lo inyecta con precisión en el flujo principal, ajustando la concentración de la solución de limpieza. El conjunto se completa con un tanque dedicado al almacenamiento de jabón y un tanque para la recolección de agua residual, que aseguran la operación continua y la gestión adecuada de los efluentes.
+
+Las imágenes que se incluyen a continuación ofrecen una visión detallada de la disposición general de estos componentes, la distribución interna de la cabina de operaciones y la configuración del sistema hidráulico, estableciendo así la base física para la trazabilidad entre los requisitos definidos y el diseño implementado.
+
+\insertarfigura{cad_vista_general.png}{Vista general del diseño CAD de la estación CIP.}{fig:cad-vista-general}
+
+\insertarfigura{cad_cabina_operaciones.png}{Cabina de operaciones: sistema de agitación y calentamiento de la solución.}{fig:cad-cabina}
+
+\insertarfigura{cad_sistema_hidraulico.png}{Distribución CAD del sistema hidráulico, tanques y bombas.}{fig:cad-hidraulico}
 
 \subsection{Despliegue de la función de calidad -- QFD}
+
 \begin{orientacion}
 Relacione necesidades del usuario con características técnicas. Use la sigla QFD, correspondiente a \textit{Quality Function Deployment}. Incorpore la matriz completa como figura legible o anexo y resuma aquí sus resultados.
 \end{orientacion}
-\insertarfigura{matriz_qfd.pdf}{Matriz QFD del sistema CIP.}{fig:qfd}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/matriz_qfd.png}
+    \caption{Matriz QFD del sistema CIP.}
+    \label{fig:qfd}
+\end{figure}
+
 \campo{Analice las características técnicas con mayor ponderación y su influencia sobre el diseño.}
 
+La matriz QFD permite relacionar las necesidades identificadas por los usuarios con las características técnicas del sistema CIP. A partir de esta relación se pueden establecer las características de diseño que tienen mayor influencia sobre el desempeño del sistema.
+
+Las características técnicas con mayor ponderación deben recibir una atención prioritaria durante las etapas de diseño e implementación, debido a que tienen una mayor influencia sobre el cumplimiento de las necesidades del usuario. Esta priorización permite orientar la selección de componentes, la arquitectura del sistema, los elementos de instrumentación, los actuadores y las estrategias de control.
+
+Además, el QFD facilita la toma de decisiones técnicas al establecer una relación entre los requerimientos del usuario y las variables que pueden ser controladas directamente durante el desarrollo del sistema.
+
 \subsection{Matrices de decisión Pugh}
-\input{tablas/tabla_pugh}
-\campo{Repita la matriz para arquitectura, sensores, actuadores, calentamiento, bomba, válvulas, protocolo y plataforma de supervisión. Explique la ponderación y la alternativa seleccionada.}
+\label{sec:pugh}
+
+\subsubsection{Metodología aplicada}
+
+Las matrices de decisión Pugh permiten comparar diferentes alternativas de diseño utilizando criterios previamente establecidos. Para cada alternativa se asigna una valoración con respecto a una referencia, permitiendo identificar aquella que presenta el mejor comportamiento global frente a los requisitos definidos.
+
+La escala de puntaje adoptada es la siguiente: \textbf{+1} indica que la alternativa se comporta mejor que la referencia en ese criterio, \textbf{0} indica comportamiento equivalente y \textbf{$-$1} indica un comportamiento inferior. La referencia obtiene por construcción un total de $0{,}00$; un total positivo indica superioridad global sobre ella.
+
+\subsubsection{Criterios de evaluación y ponderación}
+
+Se adopta un conjunto común de seis criterios para todas las matrices, de modo que los resultados sean comparables entre sí. Los pesos varían de una matriz a otra, porque la importancia relativa de cada criterio depende de la función que cumple el elemento evaluado.
+
+\input{tablas/tabla_pugh_criterios}
+
+\subsubsection{Arquitectura del sistema}
+
+\input{tablas/tabla_pugh_arquitectura}
+
+\paragraph{Ponderación.} El cumplimiento funcional domina (0,30) porque la arquitectura hidráulica determina si el sistema puede sostener el régimen turbulento, condición física de la limpieza CIP.
+
+\paragraph{Alternativa seleccionada: A2, lazo cerrado de recirculación.} Con 20\,L de tanque y 50\,L/min de caudal, un circuito de paso único agota la carga en 24 segundos, tiempo insuficiente para cualquier ciclo de limpieza. A2 además mantiene el nivel del tanque constante, lo que protege la resistencia de inmersión del trabajo en seco, y reduce el consumo por ciclo de unos 200\,L a una carga de 20\,L recirculada. Su única desventaja es la válvula de desvío y la línea de retorno adicionales. A3 penaliza costo, mantenibilidad e implementación sin aportar cumplimiento funcional adicional.
+
+\subsubsection{Sensores}
+
+\input{tablas/tabla_pugh_temperatura}
+
+\paragraph{Ponderación.} La compatibilidad recibe el peso máximo (0,30) porque el CPU 1214C dispone únicamente de entradas analógicas de 0--10\,V y ninguna de corriente, lo que convierte la compatibilidad eléctrica en condición eliminatoria.
+
+\paragraph{Alternativa seleccionada: T4, Pt100 de 3 hilos con transmisor 4--20\,mA.} El DS18B20 emplea interfaz 1-Wire, ilegible por un S7-1200 sin conversor externo: es incompatibilidad de protocolo, no de precio. El termopar tipo K entrega decenas de microvoltios por grado en la ventana de 20--60\,\textdegree C, donde el error de compensación de unión fría domina la medición; su rango hasta 1200\,\textdegree C es irrelevante aquí. La Pt100 es la única con curva normalizada según IEC 60751, lo que permite calibración trazable y validación documentada del prelavado a 50\,\textdegree C. Su único punto en contra es el costo de la cadena completa.
+
+\input{tablas/tabla_pugh_nivel}
+
+\paragraph{Ponderación.} La seguridad recibe el peso máximo (0,30) porque el sensor de nivel mínimo no cumple una función de proceso sino de barrera de protección: impide que la resistencia de 170\,W/pulg\textsuperscript{2} trabaje en seco.
+
+\paragraph{Alternativa seleccionada: L2, flotador reed en acero inoxidable de 115\,mm.} Obtiene cuatro valoraciones positivas y ninguna negativa, es decir, dominancia estricta sobre la referencia. Su rango de $-30$ a $+125$\,\textdegree C y construcción en SUS304 superan a un flotador de cable plástico sin especificación térmica declarada, frente a un fluido a 50\,\textdegree C con detergente alcalino. Además, un flotador de cable requiere libertad de giro que un tanque de 20\,L no ofrece. L4 queda penalizada porque su salida analógica ocuparía la segunda y última entrada AI del CPU, eliminando la reserva de expansión.
+
+\subsubsection{Actuadores}
+
+\input{tablas/tabla_pugh_potencia}
+
+\paragraph{Ponderación.} La seguridad recibe 0,30 porque el elemento controla una carga de 16,7\,A capaz de producir sobrecalentamiento incontrolado. El criterio no evalúa solo si el dispositivo funciona, sino cómo falla.
+
+\paragraph{Alternativa seleccionada: K3, SSR con termostato bimetálico en serie.} El resultado más relevante es que K2, el SSR por sí solo, empata con el contactor en lugar de superarlo. Su ventaja en vida útil frente al ciclado queda compensada por su modo de falla: un triac degradado falla en cortocircuito, dejando la carga permanentemente energizada e ignorando cualquier orden del controlador. La alternativa solo supera a la referencia al incorporar un corte térmico independiente y no programable en serie con la línea de potencia. K4 se documenta para dejar constancia de su descarte: exigiría a un contacto de 2\,A conmutar 16,7\,A.
+
+\input{tablas/tabla_pugh_ssr}
+
+\paragraph{Ponderación.} La compatibilidad domina (0,30) porque la señal de mando disponible es un contacto seco de relé: el 1214C AC/DC/RLY no dispone de salidas PWM por hardware, que exigen salidas a transistor.
+
+\paragraph{Alternativa seleccionada: A, SSR de 40\,A con disparo en cruce por cero.} El control por ángulo de fase exige pulsos sincronizados con la red con resolución cercana a 50\,\textmu s, que el CPU no puede generar: su tiempo de ciclo es de milisegundos y las salidas a relé conmutan en unos 10\,ms. Implementar el TRIAC requeriría detector de cruce por cero, optoacoplador de disparo, snubber, disipador, filtro EMI y PCB, cuyo costo y mano de obra igualan o superan al SSR, sin certificación IEC 60947-4-3 y con menor aislamiento. Usarlo solo en modo ON/OFF por cruce por cero equivaldría a reconstruir un SSR de peor calidad.
+
+El dimensionamiento a 40\,A responde al derating normativo de 2\texttimes{} para carga resistiva sobre 16,7\,A y cubre la dispersión de calidad típica de la categoría, dejando un margen de 2,4\texttimes. La opción B ofrece 25\,A certificados con rigidez dieléctrica de 2500\,VCA y disipador desmontable, pero su margen nominal cae a 1,5\texttimes{} y su costo es de cuatro a seis veces el de A, insostenible frente al sobrecosto ya identificado en el presupuesto.
+
+Dos consecuencias de diseño se derivan de esta selección. Primera: la disipación del dispositivo obliga a un disipador con resistencia térmica igual o menor a 1,2\,\textdegree C/W, valor que un disipador de convección natural de tamaño medio no alcanza, por lo que el tablero requiere ventilación forzada. Segunda: la entrada del SSR debe alimentarse a 24\,VDC y no a 12\,VDC, porque a menor tensión la corriente de entrada cae por debajo de la carga mínima de conmutación del relé del PLC y se forma película de óxido en los contactos.
+
+\input{tablas/tabla_pugh_dosificacion}
+
+\paragraph{Ponderación.} Cumplimiento funcional y mantenibilidad dominan porque la exigencia real es repetibilidad sostenida en el tiempo, no exactitud puntual: una dosificación que se degrada progresivamente sin aviso es peor que una menos exacta pero estable.
+
+\paragraph{Alternativa seleccionada: D3, bomba peristáltica con tubo de Norprene.} La comparación entre D2 y D3 aísla una sola variable, el elastómero del tubo, y esa variable decide el resultado. La silicona se hincha y pierde recuperación elástica en medios alcalinos, degradando la exactitud volumétrica de forma progresiva y silenciosa. Con Norprene, la repetibilidad de \textpm5\,\% sobre una dosis de 300\,mL equivale a \textpm0,075\,\% v/v sobre una consigna de 1,5\,\%, holgadamente suficiente. Ambas peristálticas superan a la de diafragma porque el fluido nunca contacta el mecanismo y porque carecen de válvulas de retención internas susceptibles de adherirse con detergente concentrado. D4 empata aritméticamente con la referencia, pero queda descartada por el filtro de requisitos obligatorios al no ser automatizable desde el PLC.
+
+\input{tablas/tabla_pugh_agitacion}
+
+\paragraph{Ponderación.} Cumplimiento funcional y seguridad concentran el peso porque la función del agitador quedó redefinida durante el análisis eléctrico: no es mezclar detergente, sino evitar la estratificación térmica sobre un elemento calefactor de alta densidad de vatios.
+
+\paragraph{Alternativa seleccionada: MR2, motorreductor de 100\,rpm.} Esta matriz documenta una reversión respecto al diseño preliminar, donde el agitador se consideró prescindible por la renovación del tanque cada 16 segundos que produce la recirculación. Ese argumento pierde validez al establecerse que la resistencia (16,7\,A) y la bomba principal (5,0\,A) no pueden operar simultáneamente en una rama monofásica: durante toda la fase de calentamiento la bomba está detenida y no existe otra fuente de movimiento del fluido.
+
+La diferencia entre MR1 y MR2 proviene exclusivamente del plazo de suministro, ya que MR1 es de importación con tránsito de tres a cinco semanas. Es un margen inferior a la resolución del método, por lo que se registra la siguiente condición: si el plazo se resuelve mediante pedido anticipado, ambas quedan funcionalmente empatadas y decide el costo (\$22.000 frente a \$75.200), invirtiendo la selección hacia MR1. La elección de MR2 es una decisión de cronograma, no de desempeño técnico.
+
+\subsubsection{Sistema de calentamiento}
+
+\input{tablas/tabla_pugh_calentamiento}
+
+\paragraph{Ponderación.} La seguridad recibe 0,30 porque el modo de falla dominante, el trabajo en seco de un elemento de 170\,W/pulg\textsuperscript{2}, produce daño irreversible en menos de un minuto.
+
+\paragraph{Alternativa seleccionada: H4, resistencia de inmersión con enclavamiento de nivel y termostato bimetálico.} El problema de la configuración base no era el principio de calentamiento sino su modo de falla. H2 y H3 intentan resolverlo cambiando de tecnología y quedan por debajo de la referencia: el calentador de paso agrava el conflicto de consumo simultáneo y el intercambiador externo exige una fuente de calor que anula la portabilidad. H4 lo resuelve añadiendo un termostato bimetálico de bajo costo y una condición de habilitación en el programa, convirtiendo la opción más económica en la mejor calificada. Es el uso propio del método iterativo: emplear la comparación para mejorar la mejor alternativa, no solo para elegir entre opciones dadas.
+
+\subsubsection{Bomba de recirculación}
+
+\input{tablas/tabla_pugh_bomba_r1}
+
+\paragraph{Ponderación.} El cumplimiento funcional recibe el peso más alto de todo el estudio (0,35): el caudal en el punto de operación determina la velocidad en la tubería, criterio físico de eficacia de la limpieza. Por debajo de 1,5\,m/s el ciclo no cumple su propósito con independencia del resto del diseño.
+
+La primera ronda arroja empate entre B2 y B3, por lo que se requiere una segunda iteración.
+
+\input{tablas/tabla_pugh_bomba_r2}
+
+\paragraph{Alternativa seleccionada: B2, Truper BOAC-1/2 EXPERT.} En el punto de operación sobre la curva del sistema, B2 entrega 76,0\,L/min (2,27\,m/s) frente a 61,9\,L/min (1,85\,m/s) de B3, con un margen del 51\,\% sobre el umbral de turbulencia frente al 23\,\%. Simultáneamente, B3 cuesta \$149.420 más por un 19\,\% menos de caudal.
+
+La referencia B1 falla por razón estructural, no de tamaño. La curva de una bomba periférica es inversa a la que el sistema requiere: entrega 33\,m de altura, que aquí sobran, con un tope de 35\,L/min, que aquí faltan, alcanzando como máximo 1,01\,m/s. Ninguna modificación de la instalación corrige eso porque la limitación está en la geometría del impulsor. Se suma que las holguras axiales de 0,1 a 0,3\,mm del impulsor periférico se rayan de forma irreversible con las partículas que un sistema de limpieza arrastra por definición. B4 opera íntegramente en muy baja tensión, pero su caudal es de un orden de magnitud inferior al requerido.
+
+\subsubsection{Válvulas}
+
+La evaluación agregada de válvulas conduce a un resultado no utilizable, porque mezcla funciones con requisitos de automatismo incompatibles entre sí. Se desagrega en las tres funciones hidráulicas reales del circuito.
+
+\input{tablas/tabla_pugh_valvula_llenado}
+
+\paragraph{Alternativa seleccionada: V1, electroválvula servopilotada, por filtro de presupuesto.} El método señala a V3, pero una válvula de bola motorizada de 1\textquotedbl{} representaría cerca del 15\,\% del presupuesto total del proyecto para una función auxiliar. La limitación real de V1, que requiere un diferencial mínimo de 0,02\,MPa para abrir, no aplica en esta posición porque el llenado se realiza desde la red con presión de línea disponible. V3 se registra como ruta de mejora para una versión de producción.
+
+\input{tablas/tabla_pugh_valvula_regulacion}
+
+\paragraph{Ponderación.} La seguridad sube a 0,25, el valor más alto entre las matrices de válvulas, porque un elemento de cierre en la descarga de la bomba introduce el riesgo de operación contra válvula cerrada, con daño del sello mecánico en pocos minutos.
+
+\paragraph{Alternativa seleccionada: V4, válvula de bola manual ajustada y precintada.} Es el único caso del estudio con puntaje máximo teórico: seis valoraciones positivas y ninguna negativa. La regulación de caudal se ajusta una sola vez durante la puesta en marcha y no vuelve a modificarse, de modo que automatizarla no aporta valor operativo e introduce dos modos de falla. Una electroválvula de 1/2\textquotedbl{} en el lazo principal constituye a la vez un estrangulamiento permanente, con diámetro nominal de 8 a 13\,mm frente a los 26,6\,mm de la línea, y un riesgo de cierre con la bomba en marcha.
+
+\input{tablas/tabla_pugh_valvula_desvio}
+
+\paragraph{Alternativa seleccionada: V7, válvula de bola manual de 3 vías.} Su único punto en contra es la pérdida del mando automático desde el PLC. Se acepta porque el desvío ocurre una única vez por ciclo, al final y con el operador presente, de modo que no compromete la operación desatendida de las fases críticas. V6 queda registrada como mejora futura si se busca un ciclo completamente autónomo.
+
+\input{tablas/tabla_pugh_valvulas_config}
+
+El planteamiento preliminar contemplaba tres electroválvulas; la desagregación por función las reduce a una, con un ahorro de \$66.000 y la eliminación de dos modos de falla.
+
+\subsubsection{Protocolo de comunicación}
+
+\input{tablas/tabla_pugh_protocolo}
+
+\paragraph{Ponderación.} La compatibilidad recibe 0,30 por evaluar el soporte nativo en el CPU y la HMI sin hardware adicional, condición que separa de forma tajante las alternativas viables de las que no lo son.
+
+\paragraph{Alternativa seleccionada: M3, MQTT, en coexistencia con PROFINET.} La decisión no es excluyente: ambos protocolos resuelven capas distintas y conviven sobre el mismo puerto Ethernet físico del CPU. PROFINET atiende el enlace local entre PLC y HMI, de forma nativa y determinista; MQTT publica las variables del ciclo hacia la plataforma IoT mediante la librería abierta \texttt{LMQTT\_Client} sobre las instrucciones TCON y TSEND. M2 carece de mecanismo nativo de autenticación. M4 impone carga de procesamiento sobre un CPU de gama básica y licencias asociadas. M5 registra el puntaje más bajo del estudio porque exige el módulo CM 1241, de costo comparable a toda la instrumentación del proyecto.
+
+\subsubsection{Plataforma de supervisión}
+
+\input{tablas/tabla_pugh_iot}
+
+\paragraph{Ponderación.} Cumplimiento funcional y costo comparten el peso máximo. En el criterio de compatibilidad se evalúa explícitamente la capacidad de operar sin conexión a internet, condición derivada de la naturaleza portátil del equipo: un sistema CIP móvil se traslada a instalaciones donde la conectividad no está garantizada.
+
+\paragraph{Alternativa seleccionada: I2, ThingsBoard Community Edition autohospedado.} Las plataformas en nube pública no superan a la referencia pese a sus ventajas técnicas, porque pierden simultáneamente en los dos criterios de mayor peso: costo recurrente por suscripción y dependencia de conectividad permanente. Una arquitectura que depende de la nube deja el equipo sin registro precisamente en el escenario donde la trazabilidad es más necesaria. I2 incorpora tableros, gestión de alarmas y almacenamiento histórico ya construidos, frente a Node-RED que requiere desarrollarlos, además de gestión nativa de usuarios y permisos; su desventaja es el esfuerzo inicial de despliegue del servidor.
+
+\subsubsection{Resumen de alternativas seleccionadas}
+
+\input{tablas/tabla_pugh_consolidado}
+
+\subsubsection{Observaciones metodológicas}
+
+Tres situaciones exigieron apartarse del resultado aritmético directo, y se documentan por transparencia del proceso de decisión.
+
+\textbf{Filtro de requisitos obligatorios.} Dos alternativas, dosificación manual y limpieza química en frío, obtuvieron puntajes competitivos por acumulación de ventajas en criterios secundarios pese a incumplir requisitos explícitos del sistema. El método Pugh no distingue entre restricciones eliminatorias y criterios ponderables, por lo que se aplica un filtro previo a la evaluación.
+
+\textbf{Filtro de restricción presupuestaria.} En la válvula de llenado, la alternativa mejor calificada representaría cerca del 15\,\% del presupuesto total para una función auxiliar. Se documenta como ruta de mejora en lugar de adoptarse.
+
+\textbf{Iteración del método.} En dos casos la primera ronda no produjo una decisión utilizable, un empate y una alternativa base superable, y se ejecutó una segunda ronda. En el calentamiento la iteración generó una alternativa nueva que no figuraba en el conjunto inicial y que resultó ganadora. Ese es el uso previsto del método: emplear la comparación para mejorar la mejor alternativa, no solo para elegir entre opciones dadas.

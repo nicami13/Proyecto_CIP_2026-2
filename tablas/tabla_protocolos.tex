@@ -1,8 +1,15 @@
-\begin{table}[H]\centering\scriptsize\caption{Comparación preliminar de protocolos.}
-\begin{tabularx}{\textwidth}{L{2.2cm}ccccY}\toprule
-\textbf{Protocolo}&\textbf{PLC}&\textbf{HMI}&\textbf{Software}&\textbf{Licencia}&\textbf{Observaciones}\\\midrule
-S7&\campo{Sí/No}&\campo{Sí/No}&\campo{--}&\campo{--}&\campo{--}\\
-PROFINET&\campo{Sí/No}&\campo{Sí/No}&\campo{--}&\campo{--}&\campo{--}\\
-Modbus TCP&\campo{Sí/No}&\campo{Sí/No}&\campo{--}&\campo{--}&\campo{--}\\
-OPC UA&\campo{Sí/No}&\campo{Sí/No}&\campo{--}&\campo{--}&\campo{--}\\\bottomrule
-\end{tabularx}\end{table}
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Comparación preliminar de protocolos.}
+\begin{tabularx}{\textwidth}{L{2.2cm}ccccY}
+\toprule
+\textbf{Protocolo} & \textbf{PLC} & \textbf{HMI} & \textbf{Software} & \textbf{Licencia} & \textbf{Observaciones} \\
+\midrule
+S7 & Sí & Sí & TIA Portal & Propietaria & Protocolo nativo Siemens. Eficiente para comunicación local PLC-HMI, pero limitado para la integración con sistemas de terceros. \\
+PROFINET & Sí & Sí & TIA Portal & Estándar libre & Red determinista en tiempo real. Excelente para periferia distribuida, pero de alta complejidad de implementación en hardware embebido. \\
+Modbus TCP & Sí & Sí & TIA Portal / IDE & Libre & Estándar abierto, muy ligero y multiplataforma. Facilita la integración directa entre el PLC y el microcontrolador (ESP32). \\
+OPC UA & Sí & Sí & TIA Portal & Con licencia & Estándar seguro e interoperable orientado a Industria 4.0. Requiere licencia runtime en el PLC y mayor carga de procesamiento. \\
+\bottomrule
+\end{tabularx}
+\end{table}
