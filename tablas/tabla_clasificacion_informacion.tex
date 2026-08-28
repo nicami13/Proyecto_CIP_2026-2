@@ -1,6 +1,28 @@
-\begin{table}[H]\centering\footnotesize\caption{Clasificación de la información de diseño.}
-\begin{tabularx}{\textwidth}{L{2.6cm}YL{2.7cm}L{3.5cm}}\toprule
-\textbf{Elemento}&\textbf{Descripción o valor}&\textbf{Fuente o justificación}&\textbf{Clasificación}\\\midrule
+
+\newlength{\anchoflex}
+\setlength{\anchoflex}{\dimexpr\textwidth-2.6cm-2.7cm-3.5cm-8\tabcolsep\relax}
+
+\begin{footnotesize}
+\begin{longtable}{L{2.6cm}L{\anchoflex}L{2.7cm}L{3.5cm}}
+\caption{Clasificación de la información de diseño.}\label{tab:clasificacion-info-diseno} \\
+\toprule
+\textbf{Elemento}&\textbf{Descripción o valor}&\textbf{Fuente o justificación}&\textbf{Clasificación}\\
+\midrule
+\endfirsthead
+
+\multicolumn{4}{l}{\small \tablename\ \thetable{} -- continuación}\\
+\toprule
+\textbf{Elemento}&\textbf{Descripción o valor}&\textbf{Fuente o justificación}&\textbf{Clasificación}\\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{4}{r}{\small Continúa en la siguiente página}\\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
 Temperatura de preenjuague & 50\,°C & Tabla 2, definida por el equipo con base en la dinámica térmica del proceso & Supuesto (por validar en Corte 2)\\
 Temperatura de lavado & 40\,°C & Tabla 2 y REQ13 (rango de control 40--50\,°C, error $\leq 2$\,°C) & Requisito\\
 Temperatura de enjuague final & Ambiente (sin calentamiento) & Tabla 2, ciclo III del diseño conceptual (Sección 4.1) & Confirmado\\
@@ -17,5 +39,7 @@ Protocolo de comunicaciones PLC--HMI & PROFINET sobre Ethernet industrial & Secc
 Protocolo de integración PLC--ESP32 (IoT) & Modbus TCP, con MQTT hacia el servidor (AWS) & Sección 6.3 & Requisito (decisión de diseño)\\
 Peso del sistema en condición de vacío & $\leq 23$\,kg (referencia NIOSH) & REQ03, requisito de portabilidad & Requisito\\
 Capacidad de los tanques & Agua/mezcla $\geq 20$\,L, jabón $\geq 5$\,L, agua residual $\geq 20$\,L & REQ06 & Requisito\\
-Esquema hidráulico del ciclo & Un solo paso, sin recirculación ni filtrado de residuos & Sección 2, nota de la Tabla 2 & Confirmado (decisión de diseño del equipo)\\\bottomrule
-\end{tabularx}\end{table}
+Esquema hidráulico del ciclo & Un solo paso, sin recirculación ni filtrado de residuos & Sección 2, nota de la Tabla 2 & Confirmado (decisión de diseño del equipo)\\
+
+\end{longtable}
+\end{footnotesize}

@@ -1,5 +1,8 @@
+\newlength{\anchoflexlazo}
+\setlength{\anchoflexlazo}{\dimexpr\textwidth-2.4cm-3.1cm-2.2cm-8\tabcolsep\relax}
+
 \begin{footnotesize}
-\begin{tabularx}{\textwidth}{L{2.4cm}L{3.1cm}L{2.2cm}>{\raggedright\arraybackslash}X}
+\begin{longtable}{L{2.4cm}L{3.1cm}L{2.2cm}L{\anchoflexlazo}}
 \caption{Definición preliminar del lazo de control.}\label{tab:lazo_control}\\
 \toprule
 \textbf{Elemento}&\textbf{Definición}&\textbf{Unidad/rango}&\textbf{Observaciones}\\
@@ -20,5 +23,5 @@ Variable manipulada&Potencia entregada al calentador (resistencia 1500\,W vía S
 Perturbaciones&Pérdidas térmicas hacia el ambiente (agrupadas en $UA$), $T_{amb}$, adición de fluido frío entre fases, pérdidas en mangueras externas&$UA\approx4$\,W/K (supuesto, a validar); $T_{amb}=18$--$25\,^{\circ}$C&$UA$ es la hipótesis más débil del modelo; pendiente de ensayo de enfriamiento libre en el Corte~2. La adición de fluido frío es la perturbación más crítica y descarta el control puramente P.\\
 Punto de operación&Nominal: $T_{amb}=20\,^{\circ}$C$\rightarrow$SP$=50\,^{\circ}$C. Secundario: $T_{amb}=20\,^{\circ}$C$\rightarrow$SP$=40\,^{\circ}$C&$\Delta T=30$\,K (prelavado); $\Delta T=20$\,K (lavado)&El prelavado es el caso más exigente (mayor $\Delta T$, mayor potencia de régimen: 120\,W vs.\ 80\,W); se usa para dimensionar el controlador.\\
 Limitaciones&Saturación por sobredimensionamiento; actuador unidireccional; corte físico por termostato NC, independiente del PLC&Sobredim. $\approx12{,}5\times$ (prelavado) / $\approx18{,}75\times$ (lavado); límite 70\,$^{\circ}$C&Obliga a usar anti-windup en PID\_Compact; el enfriamiento solo ocurre por pérdidas naturales, mucho más lento que el calentamiento.\\
-\end{tabularx}
+\end{longtable}
 \end{footnotesize}
