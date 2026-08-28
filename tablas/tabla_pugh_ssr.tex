@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\caption{Matriz de decisión Pugh --- Dispositivo de conmutación para control proporcional en el tiempo. Referencia: C, TRIAC discreto BTA41-600B con electrónica de disparo propia.}
+\label{tab:pugh-ssr}
+\begin{tabularx}{\textwidth}{Xccccc}
+\toprule
+\textbf{Criterio} & \textbf{Peso} & \textbf{C TRIAC (ref.)} & \textbf{A SSR-40DA} & \textbf{B Autonics SR1-1225-N} \\
+\midrule
+Cumplimiento funcional        & 0,20 & 0 & 0    & 0 \\
+Compatibilidad con el sistema & 0,30 & 0 & $+1$ & $+1$ \\
+Seguridad                     & 0,20 & 0 & $+1$ & $+1$ \\
+Costo y disponibilidad        & 0,15 & 0 & $+1$ & $-1$ \\
+Mantenibilidad                & 0,10 & 0 & $+1$ & $+1$ \\
+Facilidad de implementación   & 0,05 & 0 & $+1$ & $+1$ \\
+\midrule
+\textbf{Total ponderado}      & \textbf{1,00} & \textbf{0,00} & \textbf{+0,80} & \textbf{+0,50} \\
+\bottomrule
+\end{tabularx}
+\end{table}

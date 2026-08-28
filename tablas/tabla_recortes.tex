@@ -1,0 +1,79 @@
+```latex
+\begin{table}[htbp]
+\centering
+
+\caption{Acciones de reducción presupuestal priorizadas.}
+\label{tab:recortes}
+
+\small
+
+\begin{tabularx}{\textwidth}{cXrrX}
+\toprule
+
+\textbf{Prioridad} &
+\textbf{Acción} &
+\textbf{Ahorro} &
+\textbf{Acumulado} &
+\textbf{Costo técnico} \\
+
+\midrule
+
+1 &
+Tanque de proceso reciclado &
+\$150.000 &
+\$2.077.660 &
+Ninguno si admite soldadura del buje \\
+
+2 &
+Suprimir el guardamotor &
+\$120.000 &
+\$1.957.660 &
+Ninguno; protección redundante \\
+
+3 &
+Suprimir ESP32, W5500 y cable UTP &
+\$100.000 &
+\$1.857.660 &
+Ninguno; función nativa del PLC \\
+
+4 &
+Motorreductor de 30\,rpm en lugar de 100\,rpm &
+\$53.200 &
+\$1.804.460 &
+Requiere pedido anticipado \\
+
+5 &
+Disipador mayor sin ventilación forzada &
+\$32.000 &
+\$1.772.460 &
+Mayor volumen de tablero \\
+
+6 &
+Malla en succión en lugar de filtro Y &
+\$30.000 &
+\$1.742.460 &
+Menor accesibilidad de limpieza \\
+
+\midrule
+
+\multicolumn{5}{@{}l}{
+\textit{Acciones evaluadas y no recomendadas:}
+} \\
+
+7 &
+Suprimir el segundo sensor de nivel &
+\$37.990 &
+\$1.704.470 &
+Elimina la barrera de sobrellenado \\
+
+8 &
+Suprimir el manómetro &
+\$25.000 &
+\$1.679.470 &
+Elimina el control operativo del caudal \\
+
+\bottomrule
+\end{tabularx}
+
+\end{table}
+```
