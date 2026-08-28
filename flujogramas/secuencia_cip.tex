@@ -32,9 +32,7 @@
   \draw[flecha] (diseno) -- (implementacion);
   \draw[flecha] (implementacion) -- (validacion);
   \draw[flecha] (validacion) -- (seguimiento);
-  \draw[flecha] (seguimiento.east) to[out=0,in=0,looseness=1.2]
-    node[right, align=left, font=\footnotesize\itshape, text=AzulUSTA]
-    {Retroalimentación para la mejora continua} (identificacion.east);
+  \draw[flecha] (seguimiento.east) to[out=0,in=0,looseness=1.2] (identificacion.east);
 \end{tikzpicture}
 \caption{Secuencia general del ciclo de mejora continua aplicado al proceso CIP.}
 \label{fig:secuencia-cip}
