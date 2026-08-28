@@ -15,6 +15,7 @@
 
 \subsection{Equipos y direccionamiento IP}
 \input{tablas/tabla_nodos_ip}
+{Esta información fue suministrada por el área de comunicaciones de la institución, y se utilizó para la configuración de los equipos de control y visualización. Son accesibles desde el software de programación del PLC (TIA PORTAL), tal como se puede observar en el Anexo G, H e I, donde se muestran las direcciones IP de cada uno de los equipos.}
 
 \subsection{Selección del protocolo}
 \input{tablas/tabla_protocolos}
@@ -36,7 +37,7 @@ Dentro de este mismo campo se resalta la implementación de MQTT para el envió 
 \label{fig:hmi_accionado}
 \end{figure}
 
-En esta figura se observa el accionamiento del pulsador como entrada analogica en el PLC, sacando una salida analogica en el led indicador y siendo visible dentro del HMI este cambio, como forma de simulación del volumen.
+{En esta figura se observa el accionamiento del pulsador como entrada analogica en el PLC, sacando una salida analogica en el led indicador y siendo visible dentro del HMI este cambio, como forma de simulación del volumen.}
 
 \begin{figure}[H]
 \centering
@@ -45,7 +46,7 @@ En esta figura se observa el accionamiento del pulsador como entrada analogica e
 \label{fig:resetear_estado}
 \end{figure}
 
-Reseteo del sistema para volver a contar desde 0, con otra entrada de pulsador, como forma de reinicio del sistema y volver a simular el llenado del tanque.
+{Reseteo del sistema para volver a contar desde 0, con otra entrada de pulsador, como forma de reinicio del sistema y volver a simular el llenado del tanque.}
 
 \begin{figure}[H]
 \centering
@@ -54,6 +55,27 @@ Reseteo del sistema para volver a contar desde 0, con otra entrada de pulsador, 
 \label{fig:sim_tanque_lleno}
 \end{figure}
 
-Muestra la condición de tanque lleno, con la activación de la salida del led indicador y el cambio en el HMI, como forma de simulación de la condición de llenado del tanque.
+{Muestra la condición de tanque lleno, con la activación de la salida del led indicador y el cambio en el HMI, como forma de simulación de la condición de llenado del tanque.}
 
+{El funcionamiento real de la programación realizada para esta simulación se puede observar en las siguientes figuras, donde se observa el código en ladder, la tabla de variables y la conexión de las variables del PLC con el HMI, verificando que existe la comunicación entre ambos equipos y que se puede visualizar el cambio de estado de las variables.}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{TABLADEVARIABLES.png}
+    \caption{Nombre de las variables y su tipo asignado para la simulación.}
+    \label{fig:TABLADEVARIABLES}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{MAIN.png}
+    \caption{Código ladder principal con el que se implementó el funcionamiento de la evidencia.}
+    \label{fig:MAIN}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{HMI.png}
+    \caption{Impresión del HMI con las variables relacionadas.}
+    \label{fig:HMI}
+\end{figure}
