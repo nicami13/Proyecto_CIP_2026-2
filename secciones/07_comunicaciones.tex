@@ -6,12 +6,12 @@
 \subsection{Topología y flujo de información}
 \begin{figure}[H] 
 \centering 
-\includegraphics[width=0.2\textwidth]{figuras/Topologia_y_flujo_de_informacion.png} 
+\includegraphics[width=0.5\textwidth]{figuras/Topologia_y_flujo_de_informacion.png} 
 \caption{Arquitectura de comunicaciones propuesta.} 
 \label{fig:comunicaciones} 
 \end{figure} 
 
-{La Figura~\ref{fig:comunicaciones} muestra la topología de comunicaciones implementada, en este caso, se considera la implementación de una topología mixta entre estrella y árbol, donde la topología estrella es aplicada en la sección control con el PLC y la topología tipo árbol es requerida al momento de supervisar y redirigir los datos con el Gateway y el servidor. Los medios físicos utilizados para el intercambio de datos será por medio de Ethernet industrial, comunicados a través de PROFINET por compatibilidad con los dispositivos de control y visualización. La disposición propuesta se fundamenta en la centralización del manejo y control de los datos recibidos y transmitidos por el PLC, dejándolo como eje central en la disposición estrella, entrando a un árbol para la visualización en el HMI, la obtención de los datos de un GATEWAY que serán enviados a un servidor para mostrarlos gráficamente como segmento de IoT, cumpliendo con la condición propuesta de no realizar una conexión directa del PLC a internet, esto con el fin de mejorar la ciberseguridad del proceso, siendo un problema comúnmente ignorado pero sumamente relevante para el correcto funcionamiento, así como es mencionado por Hajda, Jakuszewski, y Ogonowski \cite{hajda2021security}.}
+{La Figura~\ref{fig:comunicaciones} muestra la arquitectura de comunicaciones implementada, la cual presenta una topología física en estrella dentro de una estructura jerárquica de comunicación. En esta disposición, el router actúa como punto central de interconexión entre el PLC, la HMI y el Gateway ESP32, mientras que el PLC se encarga directamente de la adquisición de datos provenientes de los sensores y del control de los actuadores. Por su parte, el Gateway permite la transferencia de los datos provenientes del sistema de control hacia el servidor, donde estos pueden ser almacenados y visualizados gráficamente como parte del segmento IoT. Los medios físicos utilizados para el intercambio de datos corresponden a Ethernet industrial, empleando el protocolo PROFINET para la comunicación entre los dispositivos de control y visualización compatibles. La disposición propuesta permite mantener al PLC como elemento principal para el control y procesamiento de las variables del proceso, mientras que el Gateway funciona como una interfaz de comunicación entre la red de control y los servicios externos. De esta manera, se evita establecer una conexión directa entre el PLC e Internet, manteniendo separadas las funciones de control industrial y comunicación con la nube. Esta separación contribuye a mejorar la seguridad de la arquitectura de comunicaciones, aspecto relevante en sistemas industriales conectados, debido a los riesgos asociados con la exposición directa de los dispositivos de control a redes externas, como se menciona en Hajda, Jakuszewski y Ogonowski \cite{hajda2021security}.
 
 \subsection{Equipos y direccionamiento IP}
 \input{tablas/tabla_nodos_ip}
@@ -28,7 +28,7 @@ Dentro de este mismo campo se resalta la implementación de MQTT para el envió 
 
 \subsection{Evidencia mínima de comunicación}
 \input{tablas/tabla_prueba_comunicacion}
-
+La Tabla~\ref{tab:evidencia_comunicacion} presenta la evidencia mínima de comunicación implementada entre el PLC Siemens S7-1200 CPU 1214C y el panel HMI KTP600 Basic mediante una red Ethernet industrial, utilizando el protocolo PROFINET. Para esta comunicación se configuró la variable \texttt{CONTADOR\_HMI}, de tipo entero (INT), en la dirección \%MW2, permitiendo la transferencia de datos desde el PLC hacia la interfaz HMI para su monitoreo. Adicionalmente, la variable \texttt{C1\_Estado\_HMI} fue vinculada a una barra gráfica en la pantalla del HMI, de modo que el valor recibido desde el PLC se representó visualmente mediante el nivel de llenado de dicho elemento. La programación desarrollada permite comprobar el correcto intercambio de información entre ambos dispositivos, demostrando que los cambios realizados en el PLC son transmitidos y posteriormente visualizados de manera adecuada en la interfaz HMI. Con esto, se valida el funcionamiento de la comunicación industrial mediante PROFINET y la correcta asociación de las variables entre el controlador y el sistema de supervisión.
 
 \begin{figure}[H]
 \centering
@@ -37,7 +37,7 @@ Dentro de este mismo campo se resalta la implementación de MQTT para el envió 
 \label{fig:hmi_accionado}
 \end{figure}
 
-{En esta figura se observa el accionamiento del pulsador como entrada analogica en el PLC, sacando una salida analogica en el led indicador y siendo visible dentro del HMI este cambio, como forma de simulación del volumen.}
+{En esta figura se observa el accionamiento del pulsador como simulación de una entrada analogica en el PLC, sacando una salida analogica en el led indicador y siendo visible dentro del HMI este cambio, como forma de simulación del volumen.}
 
 \begin{figure}[H]
 \centering
