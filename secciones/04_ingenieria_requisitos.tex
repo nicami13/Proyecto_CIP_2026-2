@@ -11,6 +11,14 @@ Se consideran requisitos funcionales y de proceso, mecánicos y de portabilidad,
 
 \subsection{Despliegue de la función de calidad -- QFD}
 
+Las diez necesidades del usuario se obtuvieron a partir de la matriz de requisitos presentada en la Sección 3.1 . Para la matriz QFD, estos requisitos fueron reformulados desde la perspectiva del usuario, de manera que representaran las necesidades que debe satisfacer el sistema y no solamente sus especificaciones técnicas.
+
+La importancia de cada necesidad se estableció en una escala de 1 a 5, teniendo en cuenta su influencia sobre el funcionamiento, la seguridad y el desempeño general del sistema. Las necesidades con mayor impacto sobre estos aspectos recibieron una valoración más alta, mientras que aquellas relacionadas con aspectos complementarios de la operación recibieron una valoración menor.
+
+Para relacionar las necesidades con las características técnicas se utilizó la escala 9--3--1, donde 9 representa una relación fuerte, 3 una relación media y 1 una relación débil. Las relaciones se determinaron de acuerdo con la influencia que tiene cada característica técnica sobre el cumplimiento de las necesidades planteadas.
+
+Las prioridades de las características técnicas se calcularon combinando la importancia asignada a cada necesidad con el valor de la relación correspondiente. Para cada característica técnica se multiplicó la importancia de cada necesidad por su relación (9, 3 o 1) y luego se sumaron los resultados. De esta manera, las características relacionadas con necesidades de mayor importancia y con relaciones más fuertes obtienen una prioridad mayor. Las celdas vacías se consideran relaciones nulas y, por tanto, no aportan al cálculo de la prioridad. Finalmente, estos valores permiten establecer cuáles características técnicas deben recibir mayor atención durante el diseño.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figuras/matriz_qfd.png}
@@ -18,11 +26,9 @@ Se consideran requisitos funcionales y de proceso, mecánicos y de portabilidad,
     \label{fig:qfd}
 \end{figure}
 
-La matriz QFD permite relacionar las necesidades identificadas por los usuarios con las características técnicas del sistema CIP. A partir de esta relación se pueden establecer las características de diseño que tienen mayor influencia sobre el desempeño del sistema.
+El resultado de la matriz permite establecer la prioridad de las características técnicas del sistema. La lógica de secuencia y comunicación del PLC presenta el mayor peso técnico, con 19,8%, seguida por el tiempo de ciclo de lavado, con 9,8%. Las características relacionadas con la temperatura también tienen una participación importante dentro del resultado, al considerar el rango de control, la exactitud y el tiempo de respuesta del sensor.
 
-Las características técnicas con mayor ponderación deben recibir una atención prioritaria durante las etapas de diseño e implementación, debido a que tienen una mayor influencia sobre el cumplimiento de las necesidades del usuario. Esta priorización permite orientar la selección de componentes, la arquitectura del sistema, los elementos de instrumentación, los actuadores y las estrategias de control.
-
-Además, el QFD facilita la toma de decisiones técnicas al establecer una relación entre los requerimientos del usuario y las variables que pueden ser controladas directamente durante el desarrollo del sistema.
+Estos resultados permiten identificar las características técnicas que tienen mayor influencia sobre las necesidades del usuario. Por lo tanto, las características con mayor prioridad deben recibir mayor atención durante el desarrollo y ajuste del diseño, ya que tienen una mayor incidencia en el cumplimiento de los requerimientos del sistema.
 
 \subsection{Matrices de decisión Pugh}
 \label{sec:pugh}
