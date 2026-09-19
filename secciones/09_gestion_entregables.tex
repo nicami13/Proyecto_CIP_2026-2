@@ -18,6 +18,40 @@
 \input{tablas/tabla_recortes}
 
 \subsection{Matriz de riesgos}
+Para la evaluación de riesgos del proyecto se empleó una matriz de probabilidad e impacto, 
+metodología semicuantitativa que permite priorizar los riesgos identificados en función de 
+su criticidad. Cada riesgo fue calificado en dos dimensiones, utilizando una escala ordinal 
+de 1 (muy bajo) a 5 (muy alto):
+
+\begin{itemize}
+    \item \textbf{Probabilidad}: posibilidad de que el riesgo se materialice durante el 
+    desarrollo o la operación del sistema.
+    \item \textbf{Impacto}: magnitud de las consecuencias sobre la seguridad del operador, 
+    la integridad del equipo o el cumplimiento de los objetivos del proyecto, en caso de 
+    que el riesgo se materialice.
+\end{itemize}
+
+El \textbf{nivel de riesgo} se obtiene como el producto de ambos factores 
+(Nivel = Probabilidad $\times$ Impacto), lo que arroja valores entre 1 y 25. Estos valores 
+se agrupan en tres categorías que orientan la urgencia del tratamiento:
+
+\begin{itemize}
+    \item \textbf{Riesgo bajo} (1--8): se acepta o se controla mediante medidas básicas 
+    de rutina.
+    \item \textbf{Riesgo medio} (9--12): requiere medidas de mitigación específicas, 
+    documentadas e implementadas antes de la puesta en marcha.
+    \item \textbf{Riesgo alto} (13--25): exige controles prioritarios y, de ser posible, 
+    eliminación o sustitución de la fuente de peligro.
+\end{itemize}
+
+Los riesgos se agruparon en cinco categorías según su naturaleza: térmicos y de 
+calentamiento, hidráulicos, de materiales y compatibilidad química, eléctricos y de 
+control, y operativos/de proyecto. Para cada riesgo identificado se definió una medida de 
+tratamiento orientada a reducir la probabilidad de ocurrencia, el impacto de sus 
+consecuencias, o ambos. La Tabla~\ref{tab:matriz_riesgos} presenta la matriz preliminar 
+resultante, donde se destacan en negrita los riesgos de mayor nivel (R-05 y R-21), 
+correspondientes a la velocidad insuficiente del fluido de limpieza y al riesgo de 
+sobrecosto presupuestal, respectivamente.
 \input{tablas/tabla_riesgos}
 
 \subsection{Repositorio digital}

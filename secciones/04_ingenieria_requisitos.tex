@@ -41,7 +41,7 @@ La escala de puntaje adoptada es la siguiente: \textbf{+1} indica que la alterna
 
 \subsubsection{Criterios de evaluación y ponderación}
 
-Se adopta un conjunto común de seis criterios para todas las matrices, de modo que los resultados sean comparables entre sí. Los pesos varían de una matriz a otra, porque la importancia relativa de cada criterio depende de la función que cumple el elemento evaluado.
+Se adopta un conjunto común de seis criterios para todas las matrices mostradas en la tabla \ref{tab:pugh-criterios}, de modo que los resultados sean comparables entre sí. Los pesos varían de una matriz a otra, porque la importancia relativa de cada criterio depende de la función que cumple el elemento evaluado.
 
 \input{tablas/tabla_pugh_criterios}
 
@@ -51,7 +51,7 @@ Se adopta un conjunto común de seis criterios para todas las matrices, de modo 
 
 \paragraph{Ponderación.} El cumplimiento funcional domina (0,30) porque la arquitectura hidráulica determina si el sistema puede sostener el régimen turbulento, condición física de la limpieza CIP.
 
-\paragraph{Alternativa seleccionada: A2, lazo cerrado de recirculación.} Con 20\,L de tanque y 50\,L/min de caudal, un circuito de paso único agota la carga en 24 segundos, tiempo insuficiente para cualquier ciclo de limpieza. A2 además mantiene el nivel del tanque constante, lo que protege la resistencia de inmersión del trabajo en seco, y reduce el consumo por ciclo de unos 200\,L a una carga de 20\,L recirculada. Su única desventaja es la válvula de desvío y la línea de retorno adicionales. A3 penaliza costo, mantenibilidad e implementación sin aportar cumplimiento funcional adicional.
+\paragraph{Alternativa seleccionada: A2, lazo cerrado.} Con 20\,L de tanque y 50\,L/min de caudal, un circuito de paso único agota la carga en 24 segundos, tiempo insuficiente para cualquier ciclo de limpieza. A2 además mantiene el nivel del tanque constante, lo que protege la resistencia de inmersión del trabajo en seco. A3 penaliza costo, mantenibilidad e implementación sin aportar cumplimiento funcional adicional.
 
 \subsubsection{Sensores}
 
@@ -59,13 +59,13 @@ Se adopta un conjunto común de seis criterios para todas las matrices, de modo 
 
 \paragraph{Ponderación.} La compatibilidad recibe el peso máximo (0,30) porque el CPU 1214C dispone únicamente de entradas analógicas de 0--10\,V y ninguna de corriente, lo que convierte la compatibilidad eléctrica en condición eliminatoria.
 
-\paragraph{Alternativa seleccionada: T4, Pt100 de 3 hilos con transmisor 4--20\,mA.} El DS18B20 emplea interfaz 1-Wire, ilegible por un S7-1200 sin conversor externo: es incompatibilidad de protocolo, no de precio. El termopar tipo K entrega decenas de microvoltios por grado en la ventana de 20--60\,\textdegree C, donde el error de compensación de unión fría domina la medición; su rango hasta 1200\,\textdegree C es irrelevante aquí. La Pt100 es la única con curva normalizada según IEC 60751, lo que permite calibración trazable y validación documentada del prelavado a 50\,\textdegree C. Su único punto en contra es el costo de la cadena completa.
+\paragraph{Alternativa seleccionada: T4, Pt100 de 3 hilos con transmisor 4--20\,mA.} El DS18B20 emplea interfaz 1-Wire, ilegible por un S7-1200 sin conversor externo: es incompatibilidad de protocolo, no de precio. El termopar tipo K entrega decenas de microvoltios por grado en la ventana de 20--60\,\textdegree C, donde el error de compensación de unión fría domina la medición; su rango hasta 1200\,\textdegree C es irrelevante aquí. La Pt100 es la única con curva normalizada según IEC 60751, lo que permite calibración trazable y validación documentada del prelavado a 50\,\textdegree C. Su único punto en contra es el costo frente a demas alternativas.
 
 \input{tablas/tabla_pugh_nivel}
 
 \paragraph{Ponderación.} La seguridad recibe el peso máximo (0,30) porque el sensor de nivel mínimo no cumple una función de proceso sino de barrera de protección: impide que la resistencia de 170\,W/pulg\textsuperscript{2} trabaje en seco.
 
-\paragraph{Alternativa seleccionada: L2, flotador reed en acero inoxidable de 115\,mm.} Obtiene cuatro valoraciones positivas y ninguna negativa, es decir, dominancia estricta sobre la referencia. Su rango de $-30$ a $+125$\,\textdegree C y construcción en SUS304 superan a un flotador de cable plástico sin especificación térmica declarada, frente a un fluido a 50\,\textdegree C con detergente alcalino. Además, un flotador de cable requiere libertad de giro que un tanque de 20\,L no ofrece. L4 queda penalizada porque su salida analógica ocuparía la segunda y última entrada AI del CPU, eliminando la reserva de expansión.
+\paragraph{Alternativa seleccionada: L2, flotador reed en acero inoxidable de 115\,mm.} Obtiene cuatro valoraciones positivas y ninguna negativa, es decir, dominancia estricta sobre la referencia y alta viabilidad en el proyecto. Su rango de $-30$ a $+125$\,\textdegree C y construcción en SUS304 superan a un flotador de cable plástico sin especificación térmica declarada, frente a un fluido a 50\,\textdegree C con detergente alcalino. Además, un flotador de cable requiere libertad de giro que un tanque de 20\,L no ofrece. L4 queda penalizada porque su salida analógica ocuparía la segunda y última entrada AI del CPU, eliminando la reserva de expansión.
 
 \subsubsection{Actuadores}
 
@@ -95,7 +95,7 @@ Dos consecuencias de diseño se derivan de esta selección. Primera: la disipaci
 
 \paragraph{Ponderación.} Cumplimiento funcional y seguridad concentran el peso porque la función del agitador quedó redefinida durante el análisis eléctrico: no es mezclar detergente, sino evitar la estratificación térmica sobre un elemento calefactor de alta densidad de vatios.
 
-\paragraph{Alternativa seleccionada: MR2, motorreductor de 100\,rpm.} Esta matriz documenta una reversión respecto al diseño preliminar, donde el agitador se consideró prescindible por la renovación del tanque cada 16 segundos que produce la recirculación. Ese argumento pierde validez al establecerse que la resistencia (16,7\,A) y la bomba principal (5,0\,A) no pueden operar simultáneamente en una rama monofásica: durante toda la fase de calentamiento la bomba está detenida y no existe otra fuente de movimiento del fluido.
+\paragraph{Alternativa seleccionada: MR2, motorreductor de 100\,rpm.} Esta matriz documenta una reversión respecto al diseño preliminar, donde el agitador se consideró prescindible por la renovación del tanque cada 16 segundos que produce la circulación del fluido. Ese argumento pierde validez al establecerse que la resistencia (16,7\,A) y la bomba principal (5,0\,A) no pueden operar simultáneamente en una rama monofásica: durante toda la fase de calentamiento la bomba está detenida y no existe otra fuente de movimiento del fluido.
 
 La diferencia entre MR1 y MR2 proviene exclusivamente del plazo de suministro, ya que MR1 es de importación con tránsito de tres a cinco semanas. Es un margen inferior a la resolución del método, por lo que se registra la siguiente condición: si el plazo se resuelve mediante pedido anticipado, ambas quedan funcionalmente empatadas y decide el costo (\$22.000 frente a \$75.200), invirtiendo la selección hacia MR1. La elección de MR2 es una decisión de cronograma, no de desempeño técnico.
 
@@ -107,7 +107,7 @@ La diferencia entre MR1 y MR2 proviene exclusivamente del plazo de suministro, y
 
 \paragraph{Alternativa seleccionada: H4, resistencia de inmersión con enclavamiento de nivel y termostato bimetálico.} El problema de la configuración base no era el principio de calentamiento sino su modo de falla. H2 y H3 intentan resolverlo cambiando de tecnología y quedan por debajo de la referencia: el calentador de paso agrava el conflicto de consumo simultáneo y el intercambiador externo exige una fuente de calor que anula la portabilidad. H4 lo resuelve añadiendo un termostato bimetálico de bajo costo y una condición de habilitación en el programa, convirtiendo la opción más económica en la mejor calificada. Es el uso propio del método iterativo: emplear la comparación para mejorar la mejor alternativa, no solo para elegir entre opciones dadas.
 
-\subsubsection{Bomba de recirculación}
+\subsubsection{Bomba de impulsión}
 
 \input{tablas/tabla_pugh_bomba_r1}
 
@@ -129,15 +129,9 @@ La evaluación agregada de válvulas conduce a un resultado no utilizable, porqu
 
 \paragraph{Alternativa seleccionada: V1, electroválvula servopilotada, por filtro de presupuesto.} El método señala a V3, pero una válvula de bola motorizada de 1\textquotedbl{} representaría cerca del 15\,\% del presupuesto total del proyecto para una función auxiliar. La limitación real de V1, que requiere un diferencial mínimo de 0,02\,MPa para abrir, no aplica en esta posición porque el llenado se realiza desde la red con presión de línea disponible. V3 se registra como ruta de mejora para una versión de producción.
 
-\input{tablas/tabla_pugh_valvula_regulacion}
-
-\paragraph{Ponderación.} La seguridad sube a 0,25, el valor más alto entre las matrices de válvulas, porque un elemento de cierre en la descarga de la bomba introduce el riesgo de operación contra válvula cerrada, con daño del sello mecánico en pocos minutos.
-
-\paragraph{Alternativa seleccionada: V4, válvula de bola manual ajustada y precintada.} Es el único caso del estudio con puntaje máximo teórico: seis valoraciones positivas y ninguna negativa. La regulación de caudal se ajusta una sola vez durante la puesta en marcha y no vuelve a modificarse, de modo que automatizarla no aporta valor operativo e introduce dos modos de falla. Una electroválvula de 1/2\textquotedbl{} en el lazo principal constituye a la vez un estrangulamiento permanente, con diámetro nominal de 8 a 13\,mm frente a los 26,6\,mm de la línea, y un riesgo de cierre con la bomba en marcha.
-
 \input{tablas/tabla_pugh_valvula_desvio}
 
-\paragraph{Alternativa seleccionada: V7, válvula de bola manual de 3 vías.} Su único punto en contra es la pérdida del mando automático desde el PLC. Se acepta porque el desvío ocurre una única vez por ciclo, al final y con el operador presente, de modo que no compromete la operación desatendida de las fases críticas. V6 queda registrada como mejora futura si se busca un ciclo completamente autónomo.
+\paragraph{Alternativa seleccionada: V7, válvula de bola manual de 3 vías.} Su único punto en contra es la pérdida del mando automático desde el PLC. Se acepta porque el drenaje ocurre una única vez por ciclo, al final y con el operador presente, de modo que no compromete la operación desatendida de las fases críticas. V6 queda registrada como mejora futura si se busca un ciclo completamente autónomo.
 
 \input{tablas/tabla_pugh_valvulas_config}
 
