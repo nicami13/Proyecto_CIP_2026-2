@@ -1,3 +1,4 @@
+La Tabla~\ref{tab:clasificacion-info-diseno} clasifica la información de diseño utilizada en cuatro categorías: información confirmada, requisitos definidos por el proyecto, supuestos adoptados para el diseño y aspectos por validar experimentalmente. Para cada elemento se indica la sección, el requisito o la tabla que lo respalda.
 
 \newlength{\anchoflex}
 \setlength{\anchoflex}{\dimexpr\textwidth-2.6cm-2.7cm-3.5cm-8\tabcolsep\relax}
@@ -24,22 +25,23 @@
 \endlastfoot
 
 Temperatura de preenjuague & 50\,°C & Tabla 2, definida por el equipo con base en la dinámica térmica del proceso & Supuesto (por validar en Corte 2)\\
-Temperatura de lavado & 40\,°C & Tabla 2 y REQ13 (rango de control 40--50\,°C, error $\leq 2$\,°C) & Requisito\\
+Temperatura de lavado & 40\,°C & Tabla 2 y REQ13 (rango de control 40--50\,°C; error en estado estacionario $\leq 2$\,°C, equivalente al 5\,\% de la consigna de 40\,°C; ver Nota 1) & Requisito\\
 Temperatura de enjuague final & Ambiente (sin calentamiento) & Tabla 2, ciclo III del diseño conceptual (Sección 4.1) & Confirmado\\
-Umbral de seguridad de temperatura & 60\,°C (corte automático del calentador) & REQ14, límite térmico del termostato NC (Sección 5.3) & Requisito\\
-Sensor de temperatura & RTD PT100 + módulo de expansión analógica SM1231 & REQ12 y Sección 5.1 (escalamiento NORM\_X/SCALE\_X en TIA Portal) & Confirmado\\
-Potencia del calentador (diseño mecatrónico) & Resistencia de inmersión de 2000\,W & Sección 4.1, descripción de la solución propuesta & Confirmado\\
-Potencia del calentador (modelo de control) & Resistencia sumergible de 1500\,W & Sección 5.2, variable manipulada y presupuesto (Tabla 25) & Por validar (inconsistencia entre secciones a resolver en Corte 2)\\
+Umbral de seguridad de temperatura & 70\,°C (corte automático del calentador) & REQ14, límite térmico del termostato NC (Sección 5.3) & Requisito\\
+Sensor de temperatura & RTD Pt100 de 3 hilos, clase B, con transmisor 4--20\,mA (0--100\,°C) conectado a entrada analógica del PLC & REQ12, matriz Pugh de sensores (Sección 3.3), presupuesto preliminar (Tabla 35) y Sección 5.1 (escalamiento NORM\_X/SCALE\_X en TIA Portal) & Confirmado\\
+Potencia del calentador & Una (1) resistencia sumergible de 1500\,W, única fuente de calentamiento del sistema & Sección 5.2, variable manipulada (potencia nominal de 1500\,W) & Confirmado\\
 Masa activa de fluido en el modelo térmico & 15\,kg & Sección 5.5, parámetro del modelo de primer orden ($\tau \approx 261{,}6$\,min) & Supuesto\\
 Coeficiente global de pérdidas (UA) & $\approx 4$\,W/K & Sección 5.3, hipótesis más débil del modelo, pendiente de ensayo de enfriamiento libre & Supuesto (por validar)\\
-Bomba de impulsión principal & Centrífuga 0.5\,HP, autocebante & Presupuesto preliminar (Tabla 25), Sección 4.1 & Confirmado\\
-Bomba dosificadora de detergente & Peristáltica 12\,VDC, control por relé del PLC (sin PWM) & REQ09, presupuesto preliminar (Tabla 25) & Confirmado\\
-Controlador lógico programable & PLC Siemens S7-1200 CPU 1214C AC/DC/Rly & REQ13, prestado por la universidad (Tabla 25) & Confirmado\\
-Protocolo de comunicaciones PLC--HMI & PROFINET sobre Ethernet industrial & Sección 6.3, comparación preliminar de protocolos (Tabla 16) & Requisito (decisión de diseño)\\
+Bomba de impulsión del fluido & Motobomba centrífuga de 0.5\,HP, autocebante; única bomba de impulsión del sistema & Presupuesto preliminar (Tabla 35), Sección 4.1 & Confirmado\\
+Bomba dosificadora de detergente & Peristáltica de 24\,V DC con tubo Norprene, accionada por relé del PLC (sin PWM); única bomba de dosificación & REQ09, presupuesto preliminar (Tabla 35) & Confirmado\\
+Controlador lógico programable & PLC Siemens S7-1200 CPU 1214C AC/DC/Rly & REQ13, prestado por la universidad (Tabla 35) & Confirmado\\
+Protocolo de comunicaciones PLC--HMI & PROFINET sobre Ethernet industrial & Sección 6.3, comparación preliminar de protocolos (Tabla 27) & Requisito (decisión de diseño)\\
 Protocolo de integración PLC--ESP32 (IoT) & Modbus TCP, con MQTT hacia el servidor (AWS) & Sección 6.3 & Requisito (decisión de diseño)\\
-Peso del sistema en condición de vacío & $\leq 23$\,kg (referencia NIOSH) & REQ03, requisito de portabilidad & Requisito\\
-Capacidad de los tanques & Agua/mezcla $\geq 20$\,L, jabón $\geq 5$\,L, agua residual $\geq 20$\,L & REQ06 & Requisito\\
-Esquema hidráulico del ciclo & Un solo paso, sin recirculación ni filtrado de residuos & Sección 2, nota de la Tabla 2 & Confirmado (decisión de diseño del equipo)\\
+Peso del sistema en condición de vacío & $\leq 23$\,kg (referencia NIOSH, \textit{National Institute for Occupational Safety and Health}) & REQ03, requisito de portabilidad & Requisito\\
+Capacidad de los tanques & Agua/mezcla $\leq 20$\,L, jabón $\leq 5$\,L, agua residual $\leq 20$\,L & REQ06; tanque de proceso de 20\,L en presupuesto (Tabla 35) & Requisito\\
+Esquema hidráulico del ciclo & Un solo paso: todo el fluido se conduce al drenaje tras recorrer el equipo de prueba & Sección 2, nota de la Tabla 2 & Confirmado (decisión de diseño del equipo)\\
 
 \end{longtable}
 \end{footnotesize}
+
+\noindent{\footnotesize \textbf{Nota 1:} la tolerancia de $\pm 2$\,°C es un requisito definido por el equipo, no un valor normativo de la industria CIP. Se deriva del criterio de referencia del enunciado del Proyecto Integrador (error en estado estacionario $\leq 5$\,\%), que para una consigna de 40\,°C equivale a 2\,°C. Es compatible con la instrumentación: un RTD Pt100 clase B según IEC 60751 presenta una tolerancia de $\pm(0{,}30 + 0{,}005\,|t|)$\,°C, es decir, aproximadamente $\pm 0{,}5$\,°C a 40\,°C~\cite{iec60751}, por lo que el sensor resuelve la banda con margen. Su validez se verificará experimentalmente en el segundo corte.}
