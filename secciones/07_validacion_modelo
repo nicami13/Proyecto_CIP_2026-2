@@ -1,0 +1,83 @@
+\section{Validación experimental del modelo dinámico}
+
+\subsection{Procedimiento experimental}
+
+Con el fin de contrastar el modelo dinámico obtenido en la sección anterior frente al comportamiento real de la planta, se diseñó un ensayo experimental de escalones múltiples de potencia sobre el elemento calefactor. Esta estrategia, en lugar de un único escalón llevado hasta el régimen permanente, permite obtener información suficiente para la identificación de parámetros en un intervalo de tiempo considerablemente menor al período característico del proceso ($\tau \approx 261{,}6\,\mathrm{min}$), mediante la introducción de excitación persistente en la señal de entrada \cite{seborg2016process}.
+
+El ensayo se ejecuta partiendo del sistema en equilibrio térmico con el ambiente, aplicando la secuencia de potencia promedio indicada en la Tabla~\ref{tab:escalones_potencia}, con registro continuo de temperatura y potencia aplicada a una frecuencia de muestreo de $0{,}1\,\mathrm{Hz}$ (un dato cada $10\,\mathrm{s}$).
+
+\begin{table}[H]
+\centering
+\caption{Secuencia de escalones de potencia aplicados durante el ensayo.}
+\label{tab:escalones_potencia}
+\begin{tabular}{cccc}
+\toprule
+Segmento & Intervalo (min) & Potencia promedio (W) & \% de $P_{\mathrm{nom}}$ \\
+\midrule
+1 & 0 -- 10  & 1500 & 100 \\
+2 & 10 -- 25 & 750  & 50  \\
+3 & 25 -- 35 & 1500 & 100 \\
+4 & 35 -- 40 & 0    & 0   \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+El segmento~4, correspondiente al apagado del calentador, no se emplea en la estimación de parámetros; se reserva como conjunto de validación independiente para verificar la consistencia del modelo ajustado.
+
+\subsection{Procesamiento de datos}
+
+El registro de temperatura $T(t)$ se filtra mediante un suavizado tipo Savitzky--Golay, con el propósito de atenuar el ruido de medición del sensor PT100 antes de calcular derivadas numéricas \cite{ogata2010modern}. Sobre la señal suavizada se estima la derivada $dT/dt$ mediante diferencias centradas.
+
+El modelo de primer orden que describe la dinámica térmica del sistema,
+
+\begin{equation}
+C\,\frac{dT}{dt} = P(t) - UA \left[T(t) - T_{\mathrm{amb}}\right],
+\label{eq:balance_energia}
+\end{equation}
+
+se reorganiza en la forma lineal en los parámetros:
+
+\begin{equation}
+\frac{dT}{dt} = a\,P(t) - b\,\Delta T(t), \qquad a = \frac{1}{C}, \qquad b = \frac{UA}{C},
+\label{eq:regresion_lineal}
+\end{equation}
+
+donde $\Delta T(t) = T(t) - T_{\mathrm{amb}}$. Los parámetros $a$ y $b$ se estiman mediante regresión lineal por mínimos cuadrados, empleando como regresores la potencia aplicada $P(t)$ y la diferencia de temperatura $\Delta T(t)$, y como variable de respuesta la derivada estimada $dT/dt$. La variación deliberada de $P(t)$ entre los segmentos~1--3 garantiza la identificabilidad conjunta de $a$ y $b$ a partir de un intervalo de observación corto, en contraste con un ensayo de potencia constante, en el cual ambos parámetros resultan pobremente distinguibles cuando $t \ll \tau$.
+
+A partir de los coeficientes estimados, los parámetros físicos del modelo se recuperan como:
+
+\begin{equation}
+C_{\mathrm{exp}} = \frac{1}{a}, \qquad UA_{\mathrm{exp}} = b\,C_{\mathrm{exp}}, \qquad \tau_{\mathrm{exp}} = \frac{C_{\mathrm{exp}}}{UA_{\mathrm{exp}}}, \qquad K_{\mathrm{exp}} = \frac{1}{UA_{\mathrm{exp}}}.
+\label{eq:parametros_recuperados}
+\end{equation}
+
+Como verificación independiente, los datos del segmento~4 ($P = 0$) se contrastan contra la predicción del modelo ajustado, la cual, al no existir aporte de potencia, se reduce a $dT/dt = -b\,\Delta T$.
+
+\subsection{Parámetros obtenidos}
+
+El procedimiento anterior permite obtener, sin necesidad de alcanzar el régimen permanente del proceso, una estimación experimental de la ganancia y la constante de tiempo del sistema, contrastable frente a los valores teóricos definidos en la sección de modelado preliminar (Tabla~\ref{tab:comparacion_parametros}).
+
+\begin{table}[H]
+\centering
+\caption{Comparación entre parámetros teóricos y experimentales del modelo térmico.}
+\label{tab:comparacion_parametros}
+\begin{tabular}{lccc}
+\toprule
+Parámetro & Valor teórico & Valor experimental & Diferencia (\%) \\
+\midrule
+$UA$ (W/K)     & 4{,}00     & --- & --- \\
+$C$ (J/K)      & 62\,790    & --- & --- \\
+$\tau$ (min)   & 261{,}6    & --- & --- \\
+$K$ (K/W)      & 0{,}25     & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Se estableció como criterio de aceptación una diferencia relativa máxima del $15\,\%$ entre el valor teórico y el experimental de $UA$:
+
+\begin{equation}
+\left| \frac{UA_{\mathrm{exp}} - UA_{\mathrm{teo}}}{UA_{\mathrm{teo}}} \right| \times 100\,\% \leq 15\,\%.
+\label{eq:criterio_aceptacion}
+\end{equation}
+
+De cumplirse este criterio, el modelo dinámico obtenido en la sección de modelado preliminar se considera validado experimentalmente y se emplea sin modificaciones para el diseño del controlador. En caso contrario, se adoptan los parámetros $UA_{\mathrm{exp}}$, $C_{\mathrm{exp}}$ y $\tau_{\mathrm{exp}}$ como referencia actualizada para la sintonía del controlador PI, documentando explícitamente la corrección respecto al valor de catálogo inicial. Adicionalmente, se reporta el coeficiente de determinación ($R^2$) del ajuste por mínimos cuadrados y la comparación gráfica entre la temperatura medida y la predicha por el modelo, como evidencia cuantitativa de la calidad de la identificación.

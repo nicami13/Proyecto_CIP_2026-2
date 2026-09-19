@@ -9,7 +9,9 @@ T.~J. Bowser, ``What is clean in place (cip)?,'' 8 2023.
   Universidad Santo Tomás, Seccional Bucaramanga, 2026.
 
 \bibitem{johansson2025cip}
-J.~Johansson, ``Design and validation for clean-in-place (cip) in a food process,'' second cycle, a2e, Swedish University of Agricultural Sciences, Uppsala, Sweden, 2025.
+J.~Johansson, ``Design and validation for clean-in-place (cip) in a food
+  process,'' second cycle, a2e, Swedish University of Agricultural Sciences,
+  Uppsala, Sweden, 2025.
 
 \bibitem{iec60751}
 {International Electrotechnical Commission}, {\em Industrial platinum
@@ -38,6 +40,11 @@ K.~Ogata, {\em Modern Control Engineering}.
 \bibitem{dorf2021modern}
 R.~C. Dorf and R.~H. Bishop, {\em Modern Control Systems}.
 \newblock New York, NY, USA: Pearson, 14~ed., 2021.
+
+\bibitem{seborg2016process}
+D.~E. Seborg, T.~F. Edgar, D.~A. Mellichamp, and F.~J. Doyle~III, {\em Process
+  Dynamics and Control}.
+\newblock Hoboken, NJ, USA: Wiley, 4th~ed., 2016.
 
 \bibitem{hajda2021security}
 J.~Hajda, R.~Jakuszewski, and S.~Ogonowski, ``Security challenges in industry
