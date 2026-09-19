@@ -30,16 +30,28 @@ uniforme en el tanque. El lazo de control entre el sensor TT-101
 y la válvula SV-101 asegura la precisión térmica. Por su parte, 
 la bomba P-102 garantiza el dinamismo hidráulico para la limpieza 
 de la tubería, mientras que la disposición final en TK-103 o 
-desagüe cumple con el manejo seguro de efluentes en paso directo.
+desagüe cumple con el manejo seguro de efluentes en paso directo. La identificación y función 
+de los equipos e instrumentos mencionados se encuentran detalladas en la Tabla~\ref{tab:pid_elementos}
 
 \subsection{Arquitectura funcional}
+La Figura~\ref{fig:arq_funcional} presenta la arquitectura propuesta para el sistema portátil de limpieza CIP, en la cual se integran los elementos de proceso, control, instrumentación y supervisión.
+La operación del sistema se centraliza en el PLC, encargado de coordinar las señales de los instrumentos y el accionamiento de los diferentes actuadores. En la etapa de preparación, el agua ingresa 
+al tanque de mezcla TK-102, mientras que el jabón almacenado en TK-101 es incorporado mediante la bomba dosificadora P-101. Posteriormente, el motorreductor M-101 acciona el agitador AG-101 para favorecer
+la homogeneización de la mezcla, mientras que el elemento calefactor E-101 permite elevar su temperatura. Durante esta etapa, el nivel y la temperatura son supervisados mediante LIT-101 y TT-101, respectivamente.
+
+Una vez preparada la solución de limpieza, la bomba P-102 impulsa el fluido hacia la tubería de limpieza CIP, donde se realiza el lavado del equipo de prueba. Finalmente, el fluido utilizado es conducido hacia 
+TK-103 o al sistema de desagüe, de acuerdo con la disposición hidráulica planteada. La identificación, denominación y función de los equipos, válvulas, instrumentos y líneas mencionados se encuentran detalladas en la Tabla~\ref{tab:pid_elementos}
+
+La arquitectura también incorpora una capa de comunicación y supervisión. El gateway recibe la información generada por el sistema de control, realiza el procesamiento y empaquetado de los datos y permite su envío hacia
+ la capa de visualización y supervisión. De esta manera, variables como temperatura, nivel y estados de operación pueden ser monitoreados y registrados, manteniendo separada la función de control local de la capa de supervisión IoT.
+
 \insertarfigura{arquitectura_funcional.pdf}{Diagrama de la arquitectura propuesta.}{fig:arq_funcional}
 
 \subsection{Arquitectura operacional}
 
-La arquitectura operacional del sistema CIP organiza la operación como una secuencia controlada de etapas, desde la preparación de la solución hasta la descarga final. En cada etapa, la lógica de control coordina el ingreso de agua, la dosificación de jabón, la agitación, el calentamiento, la impulsión del fluido y la supervisión de los niveles para garantizar una limpieza segura y repetible de la tubería
-esto se desea mostrar en una CadeSimu el cual permite ver la integracion de un Grafcet preliminar no sera el usado de manera definiticva pero permite ver el funcionamiento del sistema.
+La arquitectura operacional del sistema CIP organiza el proceso como una secuencia controlada de etapas, desde la preparación de la solución hasta la descarga final. En cada etapa, la lógica de control coordina el ingreso de agua, la dosificación de jabón, la agitación, el calentamiento, la impulsión del fluido y la supervisión de los niveles, con el propósito de garantizar una operación segura y repetible durante la limpieza de la tubería.
 
+Esta secuencia se representa de manera preliminar mediante CadeSimu, permitiendo visualizar la integración de un Grafcet inicial y comprender el funcionamiento general del sistema. Este Grafcet corresponde a una propuesta preliminar y podrá ser ajustado durante el desarrollo posterior del sistema de control. Las etapas principales de funcionamiento se presentan de forma general en las Figuras~\ref{fig:etapa-01}--\ref{fig:etapa-09}.
 \insertarfigura[0.6\textwidth]{Cade_Pi.png}{Arquitectura funcional del sistema.}{fig:arquitectura}
 
 \begin{figure}[H]
@@ -134,7 +146,7 @@ A continuación se presentan las diferentes vistas del diseño CAD del sistema C
 
 \insertarfigura[0.55\textwidth]{cip_isometrica_2.jpeg}{Vista isométrica lateral del sistema CIP. Destaca la disposición de la bomba de recirculación en la parte inferior y las líneas de tubería de impulsión y retorno.}{fig:cip_isometrica_2}
 
-\insertarfigura[0.55\textwidth]{cip_vista_lateral.jpeg}{Vista lateral detallada del tanque CIP. Se observa el impulsor de tres aspas, el sensor de temperatura, la sonda y la conexión del motor del agitador.}{fig:cip_detalle_tanque}
+\insertarfigura[0.55\textwidth]{cip_vista_lateral.jpeg}{Vista lateral detallada del tanque CIP. Se observa el impulsor de tres aspas, el sensor de temperatura, el sensor de nivel, la sonda y la conexión del motor del agitador.}{fig:cip_detalle_tanque}
 
 \subsection{Funcionamiento general}
 
