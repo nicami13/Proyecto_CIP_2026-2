@@ -3,16 +3,16 @@
 Registro de las decisiones técnicas y de redacción para actualizar el informe al **segundo corte**.
 **Todo lo que se escriba en el documento debe coincidir con este archivo.** Si algo no coincide, no se corrige por cuenta propia: se avisa a Karen García para consultarlo con el equipo.
 
-- Rama de trabajo: `corte2-ajustes` (no se trabaja en `main`).
+- Se trabaja directamente en la rama `main`. Solo Karen García y su compañera redactan el documento en este corte; el resto del equipo envía la información y no edita el informe sin avisar.
 - Última actualización: 15 de octubre de 2026.
 
 ---
 
 ## 1. Cómo trabajamos
 
-1. Antes de empezar: `git pull`.
+1. Antes de empezar: `git pull` (siempre).
 2. Cada persona trabaja en **archivos distintos**. Si hay que tocar uno ajeno, se avisa antes.
-3. Al terminar: compilar sin errores, y luego `git add` **solo** de `secciones/`, `tablas/`, `figuras/`, `flujogramas/`, `referencias/`, `preambulo/` o `main.tex`, `git commit -m "Sección X: qué se cambió"` y `git push`.
+3. Al terminar: compilar sin errores, y luego `git add` **solo** de `secciones/`, `tablas/`, `figuras/`, `flujogramas/`, `referencias/`, `preambulo/` o `main.tex`, `git commit -m "Sección X: qué se cambió"` y `git push`. Hacer commits pequeños y seguidos para evitar conflictos.
 4. **No subir** `main.pdf`, `.aux`, `.log`, `.bbl` ni otros archivos generados al compilar.
 5. Tablas, figuras y secciones se citan con `\ref{...}`. **Nunca** se escribe el número a mano.
 6. Lo que falte por escribir se marca con `\campo{Pendiente: ...}` (sale en azul en el PDF).
@@ -44,7 +44,7 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 
 Indicación de la profesora (Dra. Edna Moriones): sección nueva de montaje físico con instrumentación electrónica, programación, comunicación, control y pruebas; enlace a videos (ideal uno de ~5 min); y **todo lo actualizado debe quedar ajustado en las secciones de planeación**.
 
-Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3) gestión, conclusiones y anexos → (4) revisión completa y unión a `main`.
+Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3) gestión, conclusiones y anexos → (4) revisión completa.
 
 ---
 
