@@ -15,9 +15,19 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 - **Sección 1:** objetivo general "diseñar e implementar un prototipo funcional…", 5 objetivos específicos, pregunta de diseño, alcance por cortes (1, 2 y 3) y limitaciones actualizadas.
 - **Control (indicaciones de Fabián):** potencia de 2000 W en toda la parte de control; se quitaron las dos temperaturas (40/50 °C) y el termostato de seguridad; el PT100 va conectado al PLC, que hace `NORM_X`/`SCALE_X` (sin módulo SM 1231). El controlador de temperatura **aún no está terminado**.
 - **Ensayo del modelo:** sí se realizó (datos en `PRUEBAFINAL1.csv`, de Fabián).
-- **Sección 2:** texto con paso único a TK-103, tres bombas (P-101, P-102, P-103), transiciones por nivel/temperatura/temporizadores; tabla de fases (20–23 L, 35 °C, tiempo "por medir", destino TK-103); tabla de clasificación actualizada.
+- **Sección 2:** texto con paso único a TK-103, tres bombas (P-101, P-102, P-103), transiciones por nivel/temperatura/temporizadores; tabla de fases (20 L, 35 °C, tiempo "por medir", destino TK-103); tabla de clasificación actualizada.
 - **Tolerancia de temperatura: ±1,75 °C** (5 % de la consigna de 35 °C). REQ-13 debe decir lo mismo.
-- **Umbral de seguridad de temperatura: "por definir"** (corte del calentador por programa del PLC; sin termostato).
+- **Umbral de seguridad de temperatura: "por definir"** (corte del calentador por programa del PLC). Los 65 °C del ensayo de Fabián son **solo el límite de ese ensayo**.
+
+### Decisiones del 16 de octubre
+- **Volumen del sistema: 20 L por fase** (en todo el documento). La sección 5 y el Anexo D usan 20 kg: τ = 20 930 s ≈ 348,8 min, G(s) = 0,25/(20 930 s + 1).
+- **Ensayo del modelo (8.5):** volumen de **18 L** estimado, solo para analizar el ensayo. Modelo adoptado (método C): C = 72 330 J/K, UA = 13,63 W/K, τ = 88,4 min, K = 0,0733 °C/W, G(s) = 0,0733/(5305 s + 1). El modelo teórico no se confirmó (UA +240,9 %).
+- **Potencia:** 2000 W es el valor **nominal**; **2046 W** (126,3 V y 16,2 A) es el valor **medido** en el ensayo.
+- **No hay termostato.** Tampoco hay **alarma sonora**: REQ-19 y VAL-09 dicen solo "alarma visual".
+- **No se hace la prueba de tinta.** Falta definir cómo se evaluará la limpieza de la tubería.
+- **La validación completa** del prototipo frente a los requisitos queda para el **tercer corte**.
+- **Dos carros:** uno con los tanques y la tubería, y otro con el PLC, la HMI y el tablero.
+- **Pendiente de corregir en Gestión:** el termostato del presupuesto ajustado y el riesgo R-01. Además, los 16,2 A medidos superan el breaker de 15 A.
 
 ---
 
@@ -91,7 +101,7 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 
 ### Proceso
 - **Paso único:** no hay recirculación. P-102 vacía TK-102 a través de la tubería de prueba y el efluente termina en **TK-103**.
-- TK-102 **se llena en cada fase**: **20–23 L** como máximo por fase (queda espacio libre arriba).
+- TK-102 **se llena en cada fase**: **20 L** por fase.
 - **Consigna de temperatura: 35 °C** (preliminar) para **preenjuague y lavado**. El enjuague final va sin calentar.
   Justificación: el sello mecánico de la bomba falla por encima de 40 °C (riesgo R-11), así que se deja margen.
 - **Agitación (P-103) solo antes de calentar**, no durante el calentamiento.
@@ -115,7 +125,7 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 | Electroválvulas | **Dos** (SV-102 llenado, SV-103 descarga), 24 V DC. |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
-| Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20–23 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
+| Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
 | Tubería | **PVC** de 1" y 3/4". |
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
 | Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). |
@@ -145,11 +155,11 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 
 ## 5. Pendientes por confirmar con el equipo
 
-- [ ] Masa de agua del modelo térmico: 15 kg actual o 20–23 L reales.
+- [x] Masa de agua del modelo térmico: 20 L (decidido el 16 de octubre).
 - [ ] Consignas del plan de validación (ya no sirven 40 y 50 °C).
 - [ ] Sobreimpulso máximo (con 15 % sobre 35 °C se llega a 40,25 °C, el límite del sello). *(Error ya decidido: ±1,75 °C.)*
 - [ ] Valor del umbral de corte por sobretemperatura (en el documento queda "por definir").
-- [ ] Termostato bimetálico: se cree que no se usa.
+- [x] Termostato bimetálico: no hay.
 - [x] Breaker de las bombas: 7 A (confirmado). Voltaje de la red: 126 V medidos.
 - [ ] Protección de la bomba de impulsión si el SSR se queda pegado.
 - [ ] Justificación de temperatura uniforme en el modelo sin agitación durante el calentamiento.

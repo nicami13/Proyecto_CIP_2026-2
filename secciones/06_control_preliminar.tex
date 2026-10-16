@@ -12,7 +12,7 @@ La variable manipulada corresponde a la potencia eléctrica suministrada al elem
 
 Para la modulación de la potencia de la resistencia se evaluaron dos estrategias de control para una carga resistiva de corriente alterna (CA): el control por ángulo de fase mediante TRIAC y el control proporcional en el tiempo mediante SSR con conmutación en cruce por cero \cite{mohan2007power}. La selección de la estrategia se realizó considerando principalmente la dinámica térmica del proceso y los requerimientos de implementación del sistema CIP portátil.
 
-La constante de tiempo térmica estimada del proceso es del orden de varias horas, con un valor aproximado de $\tau \approx 261{,}6\,\mathrm{min}$, correspondiente al modelo obtenido en la Sección~\ref{sec:modelo_dinamico}. Este valor es considerablemente superior al período de conmutación empleado para la modulación proporcional en el tiempo mediante el SSR, cuyo orden de magnitud es de segundos. En consecuencia, desde el punto de vista de la dinámica térmica, el proceso no responde a las conmutaciones individuales del SSR, sino al valor promedio de la potencia suministrada durante cada período de modulación \cite{ogata2010modern, dorf2021modern}.
+La constante de tiempo térmica estimada del proceso es del orden de varias horas, con un valor aproximado de $\tau \approx 348{,}8\,\mathrm{min}$, correspondiente al modelo obtenido en la Sección~\ref{sec:modelo_dinamico}. Este valor es considerablemente superior al período de conmutación empleado para la modulación proporcional en el tiempo mediante el SSR, cuyo orden de magnitud es de segundos. En consecuencia, desde el punto de vista de la dinámica térmica, el proceso no responde a las conmutaciones individuales del SSR, sino al valor promedio de la potencia suministrada durante cada período de modulación \cite{ogata2010modern, dorf2021modern}.
 
 Por lo anterior, ambas estrategias pueden producir un efecto térmico equivalente siempre que entreguen el mismo valor promedio de potencia a la resistencia. Sin embargo, el control por ángulo de fase mediante TRIAC presenta como desventaja la generación de componentes armónicas y mayores niveles de interferencia electromagnética (EMI) conducida, además de requerir una etapa de disparo más compleja \cite{rashid2014power, mohan2007power}.
 
@@ -71,9 +71,11 @@ En este modelo, $K$ representa la ganancia estática del proceso, expresada en $
 
 \begin{equation}
 \boxed{
-G(s)=\frac{0{,}25}{15697{,}5s+1}
+G(s)=\frac{0{,}25}{20\,930\,s+1}
 }
 \end{equation}
+
+Este modelo preliminar se contrastó experimentalmente en la Sección~\ref{sec:montaje_control}. Como la diferencia en $UA$ superó el criterio de aceptación, el modelo se actualizó con los parámetros experimentales (Ecuación~\ref{eq:modelo_experimental}).
 
 \subsection{Simulación en lazo abierto}
 \insertarfigura{respuesta_lazo_abierto.pdf}{Respuesta preliminar del modelo en lazo abierto.}{fig:lazoabierto}
@@ -82,7 +84,7 @@ G(s)=\frac{0{,}25}{15697{,}5s+1}
 
 \item La diferencia entre las curvas de respuesta constituye la justificación cuantitativa central para emplear un controlador realimentado, en lugar de un ciclo de trabajo fijo en lazo abierto. Asimismo, evidencia la necesidad de incorporar acción integral con mecanismo anti-windup. El controlador debe permitir la saturación deliberada del actuador ($MV \approx 100\,\%$) durante el arranque para acelerar el calentamiento hacia la consigna y, posteriormente, reducir el ciclo de trabajo de manera gradual al aproximarse al valor de referencia, evitando el sobreimpulso.
 
-\item Al aumentar la masa activa hasta $15\,\mathrm{L}$, la constante de tiempo $\tau$ crece proporcionalmente, alcanzando aproximadamente $261{,}6$ minutos. El proceso se vuelve, por tanto, térmicamente más lento, lo que refuerza la necesidad de aprovechar el transitorio mediante la saturación controlada del actuador. Además, se justifica el empleo de una sintonía PI, en lugar de un controlador P, para eliminar el error de estado estacionario producido por la perturbación asociada a la adición de fluido frío entre fases.
+\item Al aumentar la masa activa hasta $20\,\mathrm{L}$, la constante de tiempo $\tau$ crece proporcionalmente, alcanzando aproximadamente $348{,}8$ minutos. El proceso se vuelve, por tanto, térmicamente más lento, lo que refuerza la necesidad de aprovechar el transitorio mediante la saturación controlada del actuador. Además, se justifica el empleo de una sintonía PI, en lugar de un controlador P, para eliminar el error de estado estacionario producido por la perturbación asociada a la adición de fluido frío entre fases.
 
 \end{itemize}
 

@@ -28,8 +28,8 @@ Temperatura de enjuague final & Ambiente (sin calentamiento) & Tabla~\ref{tab:fa
 Umbral de seguridad de temperatura & Por definir (corte del calentador por programa del PLC) & REQ-14 & Requisito (por definir)\\
 Sensor de temperatura & RTD Pt100 de 3 hilos, clase B, con transmisor 4--20\,mA (0--100\,°C) y resistencia de 500\,$\Omega$ hacia la entrada analógica del PLC & REQ-12, matriz Pugh de sensores (Sección~\ref{sec:pugh}), presupuesto preliminar (Tabla~\ref{tab:presupuesto_preliminar}) y Sección~\ref{sec:pv} (escalamiento NORM\_X/SCALE\_X en TIA Portal) & Confirmado\\
 Potencia del calentador & Una (1) resistencia sumergible de 1500\,W de placa, que entrega aproximadamente 2000\,W a la tensión del laboratorio (126\,V); el modelo térmico usa 2000\,W & Sección~\ref{sec:mv}, variable manipulada & Confirmado\\
-Masa activa de fluido en el modelo térmico & 15\,kg (el llenado real por fase es de 20--23\,L) & Sección~\ref{sec:modelo_dinamico}, parámetro del modelo de primer orden ($\tau \approx 261{,}6$\,min) & Supuesto (por validar)\\
-Coeficiente global de pérdidas (UA) & $\approx 4$\,W/K & Tabla~\ref{tab:lazo_control}, hipótesis más débil del modelo; a contrastar con el ensayo experimental (Sección~\ref{sec:montaje_control}) & Supuesto (por validar)\\
+Masa activa de fluido en el modelo térmico & 20\,kg (20\,L de agua por fase) & Sección~\ref{sec:modelo_dinamico}, parámetro del modelo de primer orden ($\tau \approx 348{,}8$\,min) & Confirmado\\
+Coeficiente global de pérdidas (UA) & 13,63\,W/K (el modelo preliminar suponía $\approx 4$\,W/K) & Ensayo experimental de escalones de potencia (Sección~\ref{sec:montaje_control}, Tabla~\ref{tab:comparacion_parametros}) & Confirmado (experimental)\\
 Bomba de impulsión del fluido & Bomba periférica (P-102), accionada por un SSR de 40\,A; única bomba de impulsión del sistema & Sección~\ref{sec:montaje_instrumentacion} & Confirmado\\
 Bomba dosificadora de detergente & Peristáltica de 12\,V DC (P-101), alimentada mediante un convertidor LM2596 y accionada por relé del PLC (sin PWM); única bomba de dosificación & REQ-09 & Confirmado\\
 Bomba de agitación & Bomba sumergible de 22\,W (P-103) dentro del tanque de mezcla, accionada antes del calentamiento & Sección~\ref{sec:montaje_instrumentacion} & Confirmado\\
@@ -38,7 +38,7 @@ Controlador lógico programable & PLC Siemens S7-1200 CPU 1214C AC/DC/Rly & REQ-
 Protocolo de comunicaciones PLC--HMI & PROFINET sobre Ethernet industrial & Sección~\ref{sec:protocolo}, comparación preliminar de protocolos (Tabla~\ref{tab:protocolos}) & Requisito (decisión de diseño)\\
 Integración de la supervisión remota (IoT) & PLC--Raspberry Pi mediante protocolo S7 (Node-RED); envío por HTTP a una API en AWS; interfaz en Streamlit & Sección~\ref{sec:montaje_comunicaciones} & Confirmado (implementado)\\
 Peso del sistema en condición de vacío & $\leq 23$\,kg (referencia NIOSH, \textit{National Institute for Occupational Safety and Health}) & REQ-03, requisito de portabilidad & Requisito\\
-Capacidad de los tanques & Tanque de mezcla (TK-102): 50\,L, con 20--23\,L por fase; tanque de efluentes (TK-103): 30\,L; tanque de detergente (TK-101): por definir & REQ-06 & Confirmado\\
+Capacidad de los tanques & Tanque de mezcla (TK-102): 50\,L, con 20\,L por fase; tanque de efluentes (TK-103): 30\,L; tanque de detergente (TK-101): por definir & REQ-06 & Confirmado\\
 Esquema hidráulico del ciclo & Un solo paso: el efluente se conduce al tanque de efluentes (TK-103), que se vacía manualmente al drenaje entre fases & Sección~\ref{sec:caracterizacion}, nota de la Tabla~\ref{tab:fases_cip} & Confirmado (decisión de diseño del equipo)\\
 
 \end{longtable}
