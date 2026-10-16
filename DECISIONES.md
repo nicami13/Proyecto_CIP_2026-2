@@ -43,14 +43,14 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 | 5 | Diseño de control | `06_control_preliminar.tex` | Ajustar (2000 W, 35 °C, masa) |
 | 6 | Comunicaciones industriales | `07_comunicaciones.tex` | Ajustar (Raspberry, S7, AWS, Streamlit) |
 | 7 | Plan de validación | `08_plan_validacion.tex` | Ajustar (consignas, REQ-01) |
-| 8 | **Montaje físico** (nueva) | `09_montaje_fisico.tex` | Redactar |
-| 8.1 | Cambios entre el diseño conceptual y el prototipo | | Tabla: qué cambió y por qué |
-| 8.2 | Instrumentación electrónica | | Sensores, actuadores, SSR, alimentación, protecciones |
-| 8.3 | Programación | | GRAFCET, mapa de E/S, Ladder v1 |
-| 8.4 | Comunicación | | Node-RED, API, Streamlit, evidencias |
-| 8.5 | Control | `09_5_validacion_modelo.tex` | Texto de Fabián (validación del modelo) |
-| 8.6 | Pruebas | | Resultados y trazabilidad requisito–prueba–resultado |
-| 8.7 | Evidencia en video | | Enlace a un video de ~5 min |
+| 8 | **Montaje físico** (nueva) | `secciones-2/09_montaje_fisico.tex` | Redactar introducción |
+| 8.1 | Instrumentación electrónica | `secciones-2/10_montaje_instrumentacion.tex` | Sensores, actuadores, SSR, alimentación, protecciones |
+| 8.2 | Programación | `secciones-2/11_montaje_programacion.tex` | GRAFCET, mapa de E/S, Ladder v1 |
+| 8.3 | Comunicación | `secciones-2/12_montaje_comunicaciones.tex` | Node-RED, API, Streamlit, evidencias |
+| 8.4 | Cambios entre el diseño conceptual y el prototipo | `secciones-2/13_cambios_prototipo.tex` | Tabla hecha; completar los "Motivo por confirmar" |
+| 8.5 | Control | `secciones-2/14_montaje_control.tex` → `09_5_validacion_modelo.tex` | Texto de Fabián (validación del modelo) |
+| 8.6 | Pruebas | `secciones-2/15_montaje_pruebas.tex` | Resultados y trazabilidad requisito–prueba–resultado |
+| 8.7 | Evidencia en video | `secciones-2/16_montaje_evidencias.tex` | Enlace a un video de ~5 min |
 | 9 | Gestión del proyecto | `10_gestion_entregables.tex` | Presupuesto real, riesgos, cronograma, checklist |
 | 10–11 | Conclusiones y trabajo previsto | `11_conclusiones.tex` | Reescribir (corte 2 y tercer corte) |
 | — | Anexos | `12_declaraciones_anexos.tex` | Ajustar |
@@ -123,12 +123,14 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 
 ### Alimentación
 - El PLC se alimenta a **110 V AC** del tomacorriente.
-- Los **24 V DC** salen de una **fuente integrada en el banco** del laboratorio (no del PLC). De ahí se alimentan los sensores, el transmisor y las salidas de relé del PLC.
+- Los **24 V DC** salen de la fuente **WDR-120-24 (24 V, 120 W, ≈ 5 A)** montada en el tablero del banco (no del PLC). De ahí se alimentan los sensores, el transmisor y las salidas de relé del PLC.
 - Electroválvulas: el contacto de relé del PLC conmuta el **+24 V** de la fuente del banco hacia la bobina; el otro terminal va al **0 V** de la misma fuente.
 
 ### Comunicaciones
 - **PLC → (protocolo S7) → Raspberry Pi con Node-RED → (HTTP) → API en AWS → interfaz en Streamlit.**
-- PLC ↔ HMI por PROFINET.
+- PLC ↔ HMI por PROFINET, a través del **switch Siemens CSM1277** (no un router).
+- HMI real: **KTP600 Basic** (el CAD muestra una KTP700; no usar esa vista como evidencia de la HMI).
+- Estructura: dos carritos (planos en `PlanosEstructuras.pdf` y CAD en `version3.zip`).
 - Reemplaza lo que decía el primer corte (ESP32, Modbus TCP, MQTT, ThingsBoard).
 - IP del PLC y de la Raspberry: **pendientes** (las confirma Camilo).
 

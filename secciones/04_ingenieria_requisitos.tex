@@ -1,7 +1,7 @@
 \section{Ingeniería de requisitos}
 
 
-\subsection{Matriz de requisitos}
+\subsection{Matriz de requisitos}\label{sec:matriz_requisitos}
 
 \input{tablas/tabla_requisitos}
 
@@ -11,7 +11,7 @@ Se consideran requisitos funcionales y de proceso, mecánicos y de portabilidad,
 
 \subsection{Despliegue de la función de calidad -- QFD}
 
-Las diez necesidades del usuario se obtuvieron a partir de la matriz de requisitos presentada en la Sección 3.1 . Para la matriz QFD, estos requisitos fueron reformulados desde la perspectiva del usuario, de manera que representaran las necesidades que debe satisfacer el sistema y no solamente sus especificaciones técnicas.
+Las diez necesidades del usuario se obtuvieron a partir de la matriz de requisitos presentada en la Sección~\ref{sec:matriz_requisitos}. Para la matriz QFD, estos requisitos fueron reformulados desde la perspectiva del usuario, de manera que representaran las necesidades que debe satisfacer el sistema y no solamente sus especificaciones técnicas.
 
 La importancia de cada necesidad se estableció en una escala de 1 a 5, teniendo en cuenta su influencia sobre el funcionamiento, la seguridad y el desempeño general del sistema. Las necesidades con mayor impacto sobre estos aspectos recibieron una valoración más alta, mientras que aquellas relacionadas con aspectos complementarios de la operación recibieron una valoración menor.
 
@@ -26,12 +26,14 @@ Las prioridades de las características técnicas se calcularon combinando la im
     \label{fig:qfd}
 \end{figure}
 
-El resultado de la matriz permite establecer la prioridad de las características técnicas del sistema. La lógica de secuencia y comunicación del PLC presenta el mayor peso técnico, con 19,8%, seguida por el tiempo de ciclo de lavado, con 9,8%. Las características relacionadas con la temperatura también tienen una participación importante dentro del resultado, al considerar el rango de control, la exactitud y el tiempo de respuesta del sensor.
+El resultado de la matriz permite establecer la prioridad de las características técnicas del sistema. La lógica de secuencia y comunicación del PLC presenta el mayor peso técnico, con 19,8\,\%, seguida por el tiempo de ciclo de lavado, con 9,8\,\%. Las características relacionadas con la temperatura también tienen una participación importante dentro del resultado, al considerar el rango de control, la exactitud y el tiempo de respuesta del sensor.
 
 Estos resultados permiten identificar las características técnicas que tienen mayor influencia sobre las necesidades del usuario. Por lo tanto, las características con mayor prioridad deben recibir mayor atención durante el desarrollo y ajuste del diseño, ya que tienen una mayor incidencia en el cumplimiento de los requerimientos del sistema.
 
 \subsection{Matrices de decisión Pugh}
 \label{sec:pugh}
+
+Las matrices de decisión presentadas en esta sección corresponden al diseño de referencia definido en el primer corte. Los cambios incorporados en el prototipo implementado, junto con su justificación, se explican en la Sección~\ref{sec:cambios_prototipo}.
 
 \subsubsection{Metodología aplicada}
 

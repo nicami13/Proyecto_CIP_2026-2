@@ -1,0 +1,35 @@
+\begingroup
+\footnotesize
+\begin{longtable}{L{2.6cm}L{3.9cm}L{4.4cm}L{\dimexpr\textwidth-10.9cm-8\tabcolsep\relax}}
+\caption{Cambios entre el diseño de referencia (primer corte) y el prototipo implementado.}\label{tab:cambios_prototipo}\\
+\toprule
+\textbf{Elemento} & \textbf{Diseño de referencia (matrices Pugh)} & \textbf{Prototipo implementado} & \textbf{Motivo}\\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\small \tablename\ \thetable{} -- continuación}\\
+\toprule
+\textbf{Elemento} & \textbf{Diseño de referencia (matrices Pugh)} & \textbf{Prototipo implementado} & \textbf{Motivo}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\small Continúa en la siguiente página}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Esquema hidráulico & Lazo cerrado con recirculación (A2) & Paso único hacia el tanque de efluentes (TK-103), vaciado manualmente al drenaje entre fases & Simplifica la arquitectura hidráulica y evita la acumulación de residuos en el circuito de preparación (Sección~\ref{sec:caracterizacion})\\
+Temperatura de consigna & 50\,°C (preenjuague) y 40\,°C (lavado) & 35\,°C en ambas fases & Margen frente al límite de 40\,°C del sello mecánico de la bomba\\
+Bomba de impulsión & Truper BOAC-1/2 EXPERT, centrífuga & Bomba periférica (P-102) & \campo{Motivo por confirmar}\\
+Agitación & Motorreductor de 100\,rpm con agitador & Bomba sumergible de 22\,W (P-103), activa antes del calentamiento & \campo{Motivo por confirmar}\\
+Protección térmica de la resistencia & Termostato bimetálico en serie & Sin termostato; corte del calentador por programa del PLC (umbral por definir) & \campo{Motivo por confirmar}\\
+Conmutación de potencia & Un SSR de 40\,A para la resistencia & SSR de 60\,A para la resistencia y SSR de 40\,A para la bomba de impulsión & \campo{Motivo por confirmar}\\
+Disipación de los SSR & Disipador $\leq 1{,}2$\,°C/W y ventilación forzada & Solo la placa metálica propia de cada SSR & \campo{Motivo por confirmar}\\
+Accionamiento de la bomba & Contactor y guardamotor & SSR de 40\,A e interruptor automático & \campo{Motivo por confirmar}\\
+Electroválvulas & Una electroválvula de llenado & Dos electroválvulas: llenado (SV-102) y descarga (SV-103) & \campo{Motivo por confirmar}\\
+Válvulas manuales, filtro Y, manómetro y antirretorno & Incluidos en el diseño & Aún no instalados & Pendientes de instalación\\
+Bomba dosificadora & Peristáltica de 24\,V con tubo Norprene & Peristáltica de 12\,V (P-101) alimentada con un convertidor LM2596 & \campo{Motivo por confirmar}\\
+Sensor de nivel & Dos flotadores reed de 115\,mm & Un flotador doble (LSL-101 y LSH-101) & \campo{Motivo por confirmar}\\
+Tanque de mezcla & Acero inoxidable con buje soldado para la resistencia & Tanque de plástico de 50\,L; la resistencia atraviesa la pared con contratuerca y empaques & \campo{Motivo por confirmar}\\
+Tubería & Acero inoxidable / CPVC & PVC de 1 y 3/4 de pulgada & \campo{Motivo por confirmar}\\
+Supervisión remota & MQTT con ThingsBoard autohospedado & Raspberry Pi con Node-RED (protocolo S7), API en AWS e interfaz en Streamlit & \campo{Motivo por confirmar}\\
+\end{longtable}
+\endgroup
