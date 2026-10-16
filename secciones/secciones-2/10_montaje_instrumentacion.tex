@@ -16,9 +16,9 @@ LSL-101 / LSH-101 & Interruptores de nivel bajo y alto & Flotador doble instalad
 E-101 & Resistencia de inmersión & Resistencia de 1500\,W de placa, que entrega aproximadamente 2000\,W a la tensión del laboratorio (126\,V) & Salida de relé que activa un SSR de 60\,A\\
 P-102 & Bomba de impulsión & Bomba periférica Pretul BOAP-1/2P3 de 127\,V\,AC y 3\,A; caudal máximo de 30\,L/min y altura máxima de 20\,m & Salida de relé que activa un SSR de 40\,A\\
 P-103 & Bomba de agitación & Bomba sumergible Pumpower HJ-1141 de 22\,W y 110--120\,V\,AC, con caudal máximo de 1000\,L/h, ubicada dentro del tanque de mezcla & Salida de relé que activa un relé auxiliar con bobina de 24\,V\\
-P-101 & Bomba dosificadora & Bomba peristáltica de 12\,V\,DC, alimentada mediante un convertidor reductor LM2596 (pendiente de instalación) & Salida de relé (encendido y apagado temporizado)\\
+P-101 & Bomba dosificadora & Bomba peristáltica de 12\,V\,DC y 80\,mA, con caudal de 0 a 100\,mL/min, alimentada mediante un convertidor reductor LM2596 (pendiente de instalación) & Salida de relé (encendido y apagado temporizado)\\
 XV-102 & Electroválvula de llenado & Electroválvula de 24\,V\,DC en la entrada de agua de red & Salida de relé\\
-XV-103 & Electroválvula de descarga & Electroválvula de 24\,V\,DC entre el tanque de mezcla y la bomba de impulsión & Salida de relé\\
+XV-103 & Electroválvula de descarga & Electroválvula de 24\,V\,DC entre el tanque de mezcla y la bomba de impulsión (pendiente de instalación: la unidad comprada es servopilotada y no abre con la descarga por gravedad, por lo que se requiere una de acción directa) & Salida de relé\\
 --- & Elementos de mando & Paro de emergencia tipo hongo, pulsadores, selector y pilotos luminosos & Entradas y salidas digitales\\
 \bottomrule
 \end{tabularx}
@@ -32,52 +32,9 @@ Según los datos de placa, la temperatura máxima del agua es de 40\,$^{\circ}$C
 
 \paragraph{Protecciones.} El sistema cuenta con dos interruptores automáticos: uno de 15\,A, de un polo, para la resistencia de inmersión, y uno de 7\,A para el resto de las cargas (bombas de impulsión y de agitación, PLC y Raspberry Pi). El sistema dispone además de un paro de emergencia tipo hongo, ubicado en el banco del PLC.
 
-\paragraph{Diagrama unifilar.} La Figura~\ref{fig:unifilar} presenta el diagrama unifilar de potencia del prototipo. Desde la red monofásica de 110\,V\,AC se alimentan, a través de los dos interruptores automáticos, el circuito de la resistencia de inmersión y el de las demás cargas: el banco del PLC, la Raspberry Pi y las bombas de impulsión y de agitación, cada bomba con su elemento de conmutación. Los SSR, el relé auxiliar y las electroválvulas se accionan desde las salidas de relé del PLC con los 24\,V\,DC del banco. La bomba dosificadora, pendiente de instalación, se indica con línea discontinua.
+\paragraph{Diagrama unifilar.} La Figura~\ref{fig:unifilar} presenta el diagrama unifilar de potencia del prototipo. Desde la red monofásica de 110\,V\,AC se alimentan, a través de los dos interruptores automáticos, el circuito de la resistencia de inmersión (Q1, 15\,A) y el de las demás cargas (Q2, 7\,A): el banco del PLC, la Raspberry Pi y las bombas de impulsión y de agitación, cada bomba con su elemento de conmutación (SSR de 40\,A y relé auxiliar KA1). Cada carga se conecta a su tomacorriente. Los SSR, el relé auxiliar y las electroválvulas se accionan desde las salidas de relé del PLC con los 24\,V\,DC del banco. La bomba dosificadora y su convertidor, pendientes de instalación, se indican con línea discontinua.
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[
-  font=\footnotesize,
-  equipo/.style={draw=AzulUSTA,rounded corners=3pt,fill=AzulUSTA!8,align=center,minimum height=1.1cm,text width=2.2cm},
-  prot/.style={draw=AzulUSTA,line width=0.9pt,fill=white,align=center,minimum height=0.8cm,text width=2.2cm},
-  pend/.style={draw=gray,dashed,fill=white,align=center,minimum height=0.8cm,text width=2.4cm,text=gray},
-  linea/.style={line width=0.8pt,draw=AzulUSTA},
-  etiqueta/.style={font=\scriptsize,align=left,fill=white,inner sep=1pt}]
-  % Barra de alimentación
-  \draw[linea,line width=1.6pt] (-1.2,0) -- (13.2,0);
-  \node[font=\footnotesize\bfseries,anchor=south] at (6.0,0.1) {Red monofásica 110\,V\,AC (126\,V medidos en el laboratorio)};
-  % Resistencia
-  \node[prot] (b15) at (0,-1.3) {Interruptor\\15\,A, 1 polo};
-  \node[equipo] (ssr60) at (0,-2.8) {SSR 60\,A};
-  \node[equipo] (e101) at (0,-4.6) {E-101\\Resistencia\\($\approx$2000\,W)};
-  % Resto de cargas
-  \node[prot] (b7) at (7.5,-1.3) {Interruptor 7\,A};
-  \node[equipo,text width=2.6cm] (banco) at (3.0,-2.9) {Banco del PLC\\PLC y salida\\de 24\,V\,DC};
-  \node[equipo] (rpi) at (6.0,-2.8) {Raspberry Pi};
-  \node[equipo] (ssr40) at (9.0,-2.8) {SSR 40\,A};
-  \node[equipo] (rel) at (12.0,-2.8) {Contacto del\\relé auxiliar};
-  \node[equipo] (p102) at (9.0,-4.6) {P-102\\Bomba de impulsión};
-  \node[equipo] (p103) at (12.0,-4.6) {P-103\\Bomba de agitación (22\,W)};
-  % Circuitos de 24 V DC
-  \node[equipo,text width=3.0cm] (c24) at (2.6,-6.1) {Bornera de 24\,V\,DC y 0\,V: sensores, mando, electroválvulas, entradas de los SSR y bobina del relé};
-  \node[pend,text width=2.2cm,minimum height=1.1cm] (lm) at (6.0,-4.6) {Convertidor\\LM2596\\(12\,V\,DC)};
-  \node[pend,text width=2.2cm,minimum height=1.1cm] (p101) at (6.0,-6.9) {P-101 Bomba\\dosificadora\\(pendiente)};
-  % Conexiones
-  \foreach \x/\n in {0/b15,7.5/b7} \draw[linea] (\x,0) -- (\n.north);
-  \draw[linea] (b15) -- (ssr60);
-  \draw[linea] (ssr60) -- (e101);
-  \draw[linea] (b7.south) -- (7.5,-2.05);
-  \draw[linea] (3.0,-2.05) -- (12.0,-2.05);
-  \foreach \n in {banco,rpi,ssr40,rel} \draw[linea] (\n.north |- 0,-2.05) -- (\n.north);
-  \draw[linea] (ssr40) -- (p102);
-  \draw[linea] (rel) -- (p103);
-  \draw[linea] (banco.south) -- (3.0,-3.85) -- (3.0,-3.85 |- c24.north);
-  \draw[linea,dashed] (3.0,-3.85) -- (4.4,-3.85) -- (4.4,-4.6) -- (lm.west);
-  \draw[linea,dashed] (lm) -- node[etiqueta,right=2pt] {Salida de relé\\del PLC} (p101);
-\end{tikzpicture}
-\caption{Diagrama unifilar de potencia del prototipo.}
-\label{fig:unifilar}
-\end{figure}
+\insertarfigura[0.95\textwidth]{diagrama_unifilar.png}{Diagrama unifilar de potencia del prototipo.}{fig:unifilar}
 
 \paragraph{Montaje y conexionado.} Los elementos de potencia (interruptores automáticos, SSR de la resistencia y de la bomba de impulsión, y relé de la bomba de agitación) se montaron sobre un riel atornillado dentro de una zona de potencia con paredes de acrílico, junto con la bornera de 24\,V\,DC y 0\,V y el transmisor de temperatura. Las extensiones de cableado desde los componentes hasta las entradas y salidas del banco del PLC se soldaron, y las conexiones se realizaron con tornillería métrica y se protegieron con termoencogible, de modo que quedaran fijas, seguras y aisladas de la humedad. La Figura~\ref{fig:montaje_tablero} muestra el panel del PLC y de la HMI junto al tanque de mezcla durante el montaje del prototipo.
 
@@ -105,7 +62,7 @@ Las direcciones de las entradas y salidas del PLC se presentan en el mapa de la 
 \fotomontaje{0.31\textwidth}{foto_p102.jpg}{(a) Bomba de impulsión P-102 instalada}\hfill
 \fotomontaje{0.31\textwidth}{foto_p102_placa.jpg}{(b) Placa de datos de P-102}\hfill
 \fotomontaje{0.31\textwidth}{foto_zona_potencia.jpg}{(c) Zona de potencia con paredes de acrílico}\\[3mm]
-\fotomontaje{0.31\textwidth}{foto_xv_electrovalvula.jpg}{(d) Electroválvula de 24\,V\,DC normalmente cerrada}\hfill
+\fotomontaje{0.31\textwidth}{foto_xv_electrovalvula.jpg}{(d) Electroválvula de llenado XV-102 de 24\,V\,DC, normalmente cerrada}\hfill
 \fotomontaje{0.31\textwidth}{foto_p101.jpg}{(e) Bomba dosificadora P-101 de 12\,V\,DC (pendiente de instalación)}\hfill
 \fotomontaje{0.31\textwidth}{foto_tk101.jpg}{(f) Tanque de detergente TK-101 (garrafa de 1,8\,L) fijado a la estructura}
 \caption{Actuadores, tanque de detergente y zona de potencia del prototipo.}
@@ -114,4 +71,4 @@ Las direcciones de las entradas y salidas del PLC se presentan en el mapa de la 
 
 \insertarfigura[0.8\textwidth]{foto_banco_plc.jpg}{Banco del PLC: fuente Mean Well DR-120-24, PLC S7-1200 CPU 1214C AC/DC/RLY, switch CSM 1277, HMI, elementos de mando y paro de emergencia.}{fig:foto_banco_plc}
 
-\campo{Pendiente: instalación de la bomba dosificadora P-101, conexión del paro de emergencia en el circuito y diagrama de conexiones del PLC.}
+\campo{Pendiente: instalación de la bomba dosificadora P-101 y de la electroválvula de descarga XV-103 (de acción directa), conexión del paro de emergencia en el circuito y diagrama de conexiones del PLC.}

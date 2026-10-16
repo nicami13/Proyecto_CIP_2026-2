@@ -206,7 +206,10 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
   - **TK-101**: garrafa plástica blanca fijada con precintos bajo el carro de tanques (confirmado por Karen), de 1,8 L: alcanza para unos 6 lavados de 300 mL.
 - Por confirmar:
   - La etiqueta del banco dice **PLC 172.16.140.128 y HMI 172.16.140.129** (módulo MSI01); el servidor web dio **.112**.
-  - La HMI del banco tiene **8 teclas de función** (como la KTP700 Basic); el documento dice KTP600 Basic.
+  - HMI: **CONFIRMADO KTP600 Basic** (Karen, 16 oct.).
 - Audio: en los ensayos las variables se supervisaron y forzaron desde la **tabla de observación** de TIA Portal (así se accionó la resistencia). Agregado en Programación.
 - Conclusiones y trabajo previsto reescritos para el **segundo corte** / **tercer corte**.
 - Anexos G, H e I marcados como **primer corte** (el G muestra la IP .116).
+- **XV-103 NO está instalada** (confirmado por Karen): la unidad comprada es servopilotada y no abre con la descarga por gravedad; se comprará una de acción directa. Solo está instalada XV-102. Aplicado en 8.1, tabla del P&ID, conclusiones, sección 8 y presupuestos.
+- **P-101**: 0–100 mL/min. Los ~300 mL por lavado necesitan **al menos 3 min**; el tiempo de 5 s del ladder es preliminar y debe ajustarse.
+- **Unifilar**: la 8.1 usa ahora la imagen de la compañera (`figuras/diagrama_unifilar.png`).
