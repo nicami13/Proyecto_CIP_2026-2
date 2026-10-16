@@ -203,7 +203,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
   - **Electroválvula**: King Sheng, 24 V DC, normalmente cerrada, tipo "con presión" (posible válvula de pilotaje: puede necesitar presión mínima para abrir).
   - **Fuente del banco**: Mean Well DR-120-24 (24 V DC, 5 A).
   - **Paro de emergencia**: hongo rojo "PE" en el banco del PLC.
-  - **TK-101**: garrafa plástica blanca fijada con precintos bajo el carro de tanques (confirmado por Karen). Capacidad por confirmar.
+  - **TK-101**: garrafa plástica blanca fijada con precintos bajo el carro de tanques (confirmado por Karen), de 1,8 L: alcanza para unos 6 lavados de 300 mL.
 - Por confirmar:
   - La etiqueta del banco dice **PLC 172.16.140.128 y HMI 172.16.140.129** (módulo MSI01); el servidor web dio **.112**.
   - La HMI del banco tiene **8 teclas de función** (como la KTP700 Basic); el documento dice KTP600 Basic.
