@@ -1,0 +1,39 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Elementos del prototipo sin costo para el proyecto o pendientes de adquirir.}
+\label{tab:presupuesto_complementario}
+\begin{tabularx}{\textwidth}{@{}L{4.6cm}YL{2.2cm}>{\raggedleft\arraybackslash}p{1.5cm}@{}}
+\toprule
+\textbf{Elemento} & \textbf{Especificación} & \textbf{Origen} & \textbf{Valor}\\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Prestados por la universidad}}\\
+\addlinespace[2pt]
+PLC & Siemens S7-1200 CPU 1214C AC/DC/RLY & Universidad & \$0\\
+HMI & Siemens KTP600 Basic & Universidad & \$0\\
+TE-101 / TT-101 Elemento y transmisor de temperatura & RTD PT100 de 3 hilos con transmisor SITRANS de 4--20\,mA (0--100\,\textdegree C) & Universidad & \$0\\
+Switch industrial & Siemens CSM 1277 & Universidad & \$0\\
+Raspberry Pi & Servidor local con Node-RED & Universidad & \$0\\
+SSR de P-102 & 40\,A, sin disipador adicional & Universidad & \$0\\
+Interruptor automático de las demás cargas & 7\,A (P-102, P-103, PLC y Raspberry Pi) & Universidad & \$0\\
+Relé auxiliar de P-103 & Bobina de 24\,V\,DC & Universidad & \$0\\
+Material del tablero & Cables, riel, bornera de 24\,V y 0\,V, y tomacorrientes & Universidad & \$0\\
+Elementos de mando & Paro de emergencia tipo hongo, pulsadores, selector y pilotos & Universidad & \$0\\
+Software & TIA Portal, licencia académica & Universidad & \$0\\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Donados}}\\
+\addlinespace[2pt]
+Láminas de acrílico & Cerramiento de la zona de potencia del banco de relés & Donadas a un integrante & \$0\\
+\addlinespace
+\multicolumn{4}{@{}l}{\textit{Pendientes de adquirir}}\\
+\addlinespace[2pt]
+XV-103 Electroválvula de descarga & 24\,V\,DC, de acción directa (no servopilotada), porque la descarga de TK-102 hacia P-102 ocurre por gravedad, sin el diferencial de presión que exige una válvula servopilotada & Compra & \campo{Por cotizar}\\
+TK-101 Tanque de detergente & \campo{Tipo y capacidad por definir} & Compra & \campo{Por cotizar}\\
+Válvula de bola manual & 1\textquotedbl, regulación del circuito (valor estimado en el primer corte) & Compra & \$25.000\\
+Manómetro con glicerina & 0--4\,bar, 1/4\textquotedbl{} (valor estimado en el primer corte) & Compra & \$25.000\\
+Válvula antirretorno & 1\textquotedbl{} (valor estimado en el primer corte) & Compra & \$15.000\\
+\midrule
+\multicolumn{3}{@{}r}{\textbf{Total estimado pendiente (sin XV-103 ni TK-101)}} & \textbf{\$65.000}\\
+\bottomrule
+\end{tabularx}
+\end{table}

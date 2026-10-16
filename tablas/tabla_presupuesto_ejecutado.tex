@@ -1,0 +1,82 @@
+% Gasto ejecutado del prototipo, a partir del formulario "Compras Proyecto Integrador 2026-2"
+% (registros del 14/09/2026 al 15/10/2026). Soporte: archivos_complementarios/Compras_Proyecto_Integrador_2026-2.pdf
+% Nombres y tags según el glosario de DECISIONES.md, la Tabla tab:instrumentacion y la Tabla tab:pid_elementos.
+\begingroup
+\footnotesize
+\begin{longtable}{@{}L{3.5cm}L{5.75cm}C{0.9cm}>{\raggedleft\arraybackslash}p{1.75cm}L{1.9cm}@{}}
+\caption{Presupuesto ejecutado: compras registradas para el prototipo.}
+\label{tab:presupuesto_ejecutado} \\
+\toprule
+\textbf{Elemento} & \textbf{Especificación} & \textbf{Cant.} & \textbf{Valor} & \textbf{Compra}\\
+\midrule
+\endfirsthead
+\multicolumn{5}{c}{\tablename\ \thetable{} -- continuación} \\
+\toprule
+\textbf{Elemento} & \textbf{Especificación} & \textbf{Cant.} & \textbf{Valor} & \textbf{Compra}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\textit{Continúa en la siguiente página}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{5}{@{}l}{\textbf{Calentamiento e instrumentación}} \\
+\addlinespace[2pt]
+E-101 Resistencia de inmersión & Fabricada a la medida, sin marca ni referencia comercial; 1500\,W teóricos, ha operado a $\approx$2000\,W con la tensión del laboratorio (2046\,W medidos a 126,3\,V). Se fija a la pared de TK-102 con contratuerca y empaques & 1 & \$120.000 & Julián Jiménez\\
+LSL-101 / LSH-101 Flotador doble & Reed en acero inoxidable SUS304, 21,7\,cm, dos conmutadores (nivel bajo y alto) en TK-102 & 1 & \$55.500 & Julián Jiménez\\
+Resistencia del lazo de TT-101 & 500\,$\Omega$; convierte la señal de 4--20\,mA del transmisor en 2--10\,V para la entrada analógica del PLC & 1 & \$350 & Fabián Ruiz\\
+Resistencias del lazo de corriente y domicilio & Resistencias adicionales para el lazo de 4--20\,mA de TT-101, con envío & Lote & \$3.300 & Fabián Ruiz\\
+\addlinespace[1pt]
+\multicolumn{3}{@{}r}{\textit{Subtotal}} & \textit{\$179.150} & \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Bombas y electroválvulas}} \\
+\addlinespace[2pt]
+P-102 Bomba de impulsión & Bomba periférica de 1/2\,HP, 110\,V, 60\,Hz, monofásica & 1 & \$114.776 & Julián Jiménez\\
+P-103 Bomba de agitación sumergible & Modelo HJ-1141: 110--120\,V, 60\,Hz, 22\,W; caudal máximo 1000\,L/h; altura máxima 1,6\,m; inmersión máxima 2\,m; temperatura del líquido 5--35\,\textdegree C; protección IPX8. Permanece sumergida en TK-102 durante el calentamiento & 1 & \$70.000 & Camilo Díaz\\
+P-101 Bomba dosificadora peristáltica & 12\,V\,DC, 80\,mA; caudal de 0--100\,mL/min; 0,1--100\,rpm en el cabezal (motor de 5000\,rpm); tubo de 2,5\,mm de diámetro interior y 4,7\,mm exterior; sentido de flujo según la polaridad; humedad relativa $<$80\,\%. Alimentada con el convertidor LM2596 (pendiente de instalación) & 1 & \$59.414 & Julián Jiménez\\
+Electroválvulas & 1/2\textquotedbl, normalmente cerradas, bobina de 24\,V\,DC; una unidad instalada como XV-102 (llenado) \campo{indicar el uso de la segunda unidad} & 2 & \$42.990 & Julián Jiménez\\
+\addlinespace[1pt]
+\multicolumn{3}{@{}r}{\textit{Subtotal}} & \textit{\$287.180} & \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Tubería y accesorios hidráulicos}} \\
+\addlinespace[2pt]
+Tubería de PVC & Tramos de 1\textquotedbl{} y 3/4\textquotedbl{} para el circuito y la tubería de prueba (REQ-05) & Lote & \$22.000 & Yesid Gómez\\
+Accesorios de PVC & Codos de 1\textquotedbl{} y 3/4\textquotedbl, adaptadores macho de 1\textquotedbl, bujes y accesorios de 3/4\textquotedbl & Lote & \$20.200 & Yesid Gómez\\
+Sellantes para tubería & Soldadura líquida para PVC, silicona y cinta de teflón & Lote & \$26.000 & Yesid Gómez\\
+Abrazaderas & Abrazaderas de 1\textquotedbl{} y n.º 14 & Lote & \$4.300 & Yesid Gómez, Karen García\\
+\addlinespace[1pt]
+\multicolumn{3}{@{}r}{\textit{Subtotal}} & \textit{\$72.500} & \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Tanques}} \\
+\addlinespace[2pt]
+TK-102 Tanque de mezcla & Tanque verde de plástico de 50\,L (20\,L por fase) & 1 & \$35.000 & Yesid Gómez\\
+TK-103 Tanque de efluentes & Tanque azul metálico de 30\,L; previsto inicialmente como tanque de mezcla y reutilizado como tanque de efluentes & 1 & \$30.000 & Camilo Díaz\\
+Montaje de E-101 en la pared de TK-102 & Contratuerca, empaques de sello, sellante y pincel para su aplicación & Lote & \$26.500 & Camilo Díaz\\
+Acoples y perforación de los tanques & Acople de tanque, y sierra copa con su acople para las perforaciones & Lote & \$55.000 & Camilo Díaz\\
+Reparación del tanque azul & Sellado de las perforaciones del tanque azul para su uso como TK-103 & Lote & \$15.200 & Ferney Patiño\\
+\addlinespace[1pt]
+\multicolumn{3}{@{}r}{\textit{Subtotal}} & \textit{\$161.700} & \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Estructura}} \\
+\addlinespace[2pt]
+Estructura de los dos carros & Tubo cuadrado, perfil, láminas, ruedas y tornillería de la Tabla~\ref{tab:materiales_estructura} & Lote & \$500.000 & Ferney Patiño\\
+Tornillos y bisagras & Tornillería y bisagras de montaje & Lote & \$6.000 & Camilo Díaz\\
+Planchas de acrílico & Cerramiento del banco de relés del carro del PLC & Lote & \$12.000 & Yesid Gómez\\
+\addlinespace[1pt]
+\multicolumn{3}{@{}r}{\textit{Subtotal}} & \textit{\$518.000} & \\
+\addlinespace
+\multicolumn{5}{@{}l}{\textbf{Eléctrico y conexionado}} \\
+\addlinespace[2pt]
+SSR de la resistencia E-101 & SSR-60DA de 60\,A, entrada 3--32\,V\,DC, salida 24--380\,V\,AC, conmutación en cruce por cero, sin disipador adicional & 1 & \$41.500 & Julián Jiménez\\
+Interruptor automático de E-101 & 15\,A, un polo, montaje en riel DIN & 1 & \$7.900 & Karen García\\
+Convertidor reductor LM2596 & Entrada de 24\,V\,DC, salida ajustada a 12\,V\,DC para P-101 & 1 & \$6.000 & Karen García\\
+Clavija y domicilio & Clavija de conexión a la red & 1 & \$8.000 & Fabián Ruiz\\
+Conectores tipo banana & Para las extensiones de cableado hacia el banco del PLC & Lote & \$26.400 & Karen García\\
+Terminales & Terminales de conexión (incluye terminales rojos) & Lote & \$9.000 & Karen García\\
+Organización del cableado & Amarres y canaleta & Lote & \$11.500 & Karen García\\
+\addlinespace[1pt]
+\multicolumn{3}{@{}r}{\textit{Subtotal}} & \textit{\$110.300} & \\
+\midrule
+\multicolumn{3}{@{}r}{\textbf{Total ejecutado}} & \textbf{\$1.328.830} & \\
+\end{longtable}
+\endgroup
