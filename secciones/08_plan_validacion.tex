@@ -1,13 +1,13 @@
-\section{Plan de validación}
+\section{Plan de validación}\label{sec:plan_validacion}
 
 El plan de validación del sistema portátil de limpieza CIP se estructura a partir de la matriz de
-requisitos definida en la Sección~3.1 (Tabla \ref{tab:matriz_requisitos}) y de las decisiones de diseño de control y
-comunicaciones presentadas en las Secciones~5 y~6. Para el segundo corte se prevé ejecutar como mínimo tres
-ciclos completos del proceso CIP (preenjuague, lavado y enjuague final) y una prueba continua,
- evaluando al menos tres valores de consigna de temperatura dentro del rango seguro
-(35\,°C, 40\,°C y 50\,°C) y aplicando una perturbación controlada mediante la adición de fluido frío
-durante la fase de lavado. En este corte se presenta únicamente el plan; los resultados experimentales
-se reportarán en el segundo corte, una vez ejecutadas las pruebas sobre el prototipo integrado.
+requisitos definida en la Sección~\ref{sec:matriz_requisitos} (Tabla~\ref{tab:matriz_requisitos}) y de las decisiones de diseño de control y
+comunicaciones presentadas en las Secciones~\ref{sec:control} y~\ref{sec:comunicaciones}. Sobre el prototipo integrado se prevé ejecutar como mínimo tres
+ciclos completos del proceso CIP (preenjuague, lavado con detergente y enjuague final) y una prueba continua,
+evaluando al menos tres valores de consigna de temperatura por debajo del límite de 40\,°C del sello mecánico de la bomba
+(\campo{valores por definir}) y aplicando una perturbación controlada mediante la adición de fluido frío
+durante la fase de lavado. Las pruebas realizadas en el segundo corte se reportan en la Sección~\ref{sec:montaje_pruebas}; la validación
+completa del prototipo frente a los requisitos se realizará en el tercer corte.
 
 Cada prueba se identifica con un código, que se relaciona con uno o más requisitos de la
 Tabla \ref{tab:matriz_validacion} y define el procedimiento, el instrumento de referencia y el criterio de aceptación que permitirá
@@ -16,18 +16,18 @@ declarar el requisito como cumplido.
 \input{tablas/tabla_matriz_validacion}
 
 Adicionalmente, para cada consigna evaluada se comparará la respuesta experimental de temperatura con
-la respuesta simulada del modelo obtenido en la Sección~5.5, con el fin de analizar las diferencias,
+la respuesta simulada del modelo obtenido en la Sección~\ref{sec:modelo_dinamico}, con el fin de analizar las diferencias,
 las saturaciones del actuador y las limitaciones del modelo de primer orden adoptado.
 
 \subsection{Métricas previstas}
 
-Las métricas que se calcularán a partir de los datos registrados durante las pruebas del segundo corte se
+Las métricas que se calcularán a partir de los datos registrados durante las pruebas se
 resumen en la Tabla \ref{tab:metricas_validacion}. El método de cálculo de cada métrica se apoya en los datos exportados desde el
-PLC, el HMI y la plataforma de supervisión IoT, evitando el uso de valores simulados como si fueran
+PLC, el HMI y la interfaz de supervisión remota, evitando el uso de valores simulados como si fueran
 mediciones reales.
 
 \input{tablas/tabla_metricas_validacion}
 
-Estas métricas permitirán, en el segundo corte, contrastar el desempeño experimental del sistema frente a las
-especificaciones preliminares definidas en la Tabla~10 y frente a los criterios mínimos de aceptación
+Estas métricas permitirán contrastar el desempeño experimental del sistema frente a las
+especificaciones preliminares definidas en la Tabla~\ref{tab:especificaciones_control} y frente a los criterios mínimos de aceptación
 establecidos para el proyecto.
