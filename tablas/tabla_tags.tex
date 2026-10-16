@@ -10,10 +10,10 @@
 \midrule
 \endhead
 Temp\_\allowbreak Consigna\_\allowbreak Fase & Consigna de temperatura activa según receta y fase CIP & REAL & $^\circ$C & PLC/HMI & PID/HMI & R/W \\
-Lectura\_\allowbreak Sensor\_\allowbreak PT100 & Valor crudo proveniente del módulo RTD asociado al PT100 & INT & -- & Sensor RTD & PID & Lectura \\
-Temp\_\allowbreak Actual\_\allowbreak Tanque & Temperatura escalada entregada por PID\_Compact & REAL & $^\circ$C & PID & HMI/IoT & Lectura \\
+Lectura\_\allowbreak Sensor\_\allowbreak PT100 & Valor crudo de la entrada analógica del PLC (transmisor 4--20\,mA del PT100) & INT & -- & TT-101 & Escalamiento & Lectura \\
+Temp\_\allowbreak Actual\_\allowbreak Tanque & Temperatura escalada con \texttt{NORM\_X} y \texttt{SCALE\_X} & REAL & $^\circ$C & Escalamiento & PID/HMI/IoT & Lectura \\
 Porcentaje\_\allowbreak Salida\_\allowbreak PID & Esfuerzo de control calculado por el controlador PI & REAL & \% & PID & HMI/IoT & Lectura \\
-Salida\_\allowbreak SSR\_\allowbreak Calentador & Salida PWM que gobierna el SSR del calentador & BOOL & -- & PID & SSR/Actuador & Lectura \\
+Salida\_\allowbreak SSR\_\allowbreak Calentador & Salida por proporción de tiempo que gobierna el SSR del calentador & BOOL & -- & PID & SSR/Actuador & Lectura \\
 HMI\_\allowbreak Modo\_\allowbreak Manual\_\allowbreak Calentador & Habilitación de modo manual desde HMI & BOOL & -- & HMI & PID & R/W \\
 HMI\_\allowbreak Potencia\_\allowbreak Manual & Duty Cycle aplicado en modo manual & REAL & \% & HMI & PID & R/W \\
 HMI\_\allowbreak Reconocer\_\allowbreak Error\_\allowbreak PID & Reconocimiento de alarmas del controlador & BOOL & -- & HMI & PID & R/W \\
