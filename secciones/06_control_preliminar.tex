@@ -1,12 +1,12 @@
 \section{Diseño preliminar de Sistemas de Control I}
 
-\subsection{Variable controlada (PV)}
+\subsection{Variable controlada (PV)}\label{sec:pv}
 
 La variable controlada es la temperatura del fluido de proceso (agua o agua con detergente diluido) en el tanque de mezcla del sistema CIP portátil, medida mediante un sensor RTD PT100 conectado al PLC, el cual realiza el escalamiento de la señal mediante las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X} de TIA Portal.
 
 De las variables de proceso disponibles (temperatura, caudal, nivel, presión y conductividad), la temperatura es la única con una dinámica lo suficientemente lenta y bien caracterizable con los recursos del laboratorio para diseñar y validar un controlador P/PI/PID completo dentro del alcance del curso de Sistemas de Control I.
 
-\subsection{Variable manipulada (MV)}
+\subsection{Variable manipulada (MV)}\label{sec:mv}
 
 La variable manipulada corresponde a la potencia eléctrica suministrada al elemento calefactor del sistema, constituido por una resistencia eléctrica sumergible de potencia de $2000\,\mathrm{W}$. Esta variable es modificada por el PLC mediante una estrategia de control por proporción de tiempo (\textit{Time Proportioning Control}), implementada mediante el bloque \texttt{PID\_Compact} de TIA Portal \cite{siemens2021pid}. La señal de control es aplicada a la resistencia a través de un relé de estado sólido (SSR) con conmutación en cruce por cero \cite{rashid2014power}.
 

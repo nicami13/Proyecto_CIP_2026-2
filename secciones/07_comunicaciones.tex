@@ -17,7 +17,7 @@
 \input{tablas/tabla_nodos_ip}
 {Esta información fue suministrada por el área de comunicaciones de la institución, y se utilizó para la configuración de los equipos de control y visualización. Son accesibles desde el software de programación del PLC (TIA PORTAL), tal como se puede observar en el Anexo G, H e I, donde se muestran las direcciones IP de cada uno de los equipos.}
 
-\subsection{Selección del protocolo}
+\subsection{Selección del protocolo}\label{sec:protocolo}
 \input{tablas/tabla_protocolos}
 {Teniendo en cuenta la comparación realizada con las características y requerimientos de diseño actuales, lo ideal es el unir e implementar una combinación entre PROFINET, para la integración entre el HMI y el PLC, y Modbus TCP, con el fin de conectar correctamente el ESP32 junto con el PLC, distribuir la información y usar un protocolo ya conocido para mostrar así mismo el HMI. Al tenerlos ya conectados, se facilita el establecimiento de una red local para el acceso y uso de los datos dentro de las pruebas, contando a su vez con las licencias y uso legal de los mismos \cite{cometa2025modbus}.
 

@@ -15,6 +15,9 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 - **Sección 1:** objetivo general "diseñar e implementar un prototipo funcional…", 5 objetivos específicos, pregunta de diseño, alcance por cortes (1, 2 y 3) y limitaciones actualizadas.
 - **Control (indicaciones de Fabián):** potencia de 2000 W en toda la parte de control; se quitaron las dos temperaturas (40/50 °C) y el termostato de seguridad; el PT100 va conectado al PLC, que hace `NORM_X`/`SCALE_X` (sin módulo SM 1231). El controlador de temperatura **aún no está terminado**.
 - **Ensayo del modelo:** sí se realizó (datos en `PRUEBAFINAL1.csv`, de Fabián).
+- **Sección 2:** texto con paso único a TK-103, tres bombas (P-101, P-102, P-103), transiciones por nivel/temperatura/temporizadores; tabla de fases (20–23 L, 35 °C, tiempo "por medir", destino TK-103); tabla de clasificación actualizada.
+- **Tolerancia de temperatura: ±1,75 °C** (5 % de la consigna de 35 °C). REQ-13 debe decir lo mismo.
+- **Umbral de seguridad de temperatura: "por definir"** (corte del calentador por programa del PLC; sin termostato).
 
 ---
 
@@ -112,7 +115,7 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 | Electroválvulas | **Dos** (SV-102 llenado, SV-103 descarga), 24 V DC. |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
-| Tanques | TK-102: **verde, de plástico**; la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
+| Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20–23 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
 | Tubería | **PVC** de 1" y 3/4". |
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
 | Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). |
@@ -142,8 +145,8 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 
 - [ ] Masa de agua del modelo térmico: 15 kg actual o 20–23 L reales.
 - [ ] Consignas del plan de validación (ya no sirven 40 y 50 °C).
-- [ ] Sobreimpulso máximo (con 15 % se pasa de 40 °C) y error ±2 °C con consigna de 35 °C.
-- [ ] Umbral de corte por sobretemperatura (hoy 60/70 °C, por encima del límite del sello).
+- [ ] Sobreimpulso máximo (con 15 % sobre 35 °C se llega a 40,25 °C, el límite del sello). *(Error ya decidido: ±1,75 °C.)*
+- [ ] Valor del umbral de corte por sobretemperatura (en el documento queda "por definir").
 - [ ] Termostato bimetálico: se cree que no se usa.
 - [ ] Valor real del breaker de ≈ 7 A y voltaje de la red (126 V medidos).
 - [ ] Protección de la bomba de impulsión si el SSR se queda pegado.
