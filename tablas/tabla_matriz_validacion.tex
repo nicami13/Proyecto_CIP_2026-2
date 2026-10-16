@@ -21,7 +21,7 @@
 
 VAL-01 & REQ01 & Ejecutar el ciclo completo (preenjuague, lavado con detergente y enjuague final) iniciado desde el panel de control, con el vaciado manual de TK-103 entre fases como única intervención del operario, repetido en 3 pruebas consecutivas & Cronómetro, registro del PLC & 3/3 ejecuciones completas en la secuencia correcta & Trazas de ciclo exportadas del HMI \\
 
-VAL-02 & REQ02 & Verificar la apertura y cierre de SV-102 y SV-103 en cada fase, confirmando ausencia de traslapes entre etapas incompatibles & Registro de estados digitales del PLC & Secuencia correcta sin traslapes en 3 pruebas consecutivas & Trazas de variables digitales \\
+VAL-02 & REQ02 & Verificar la apertura y cierre de XV-102 y XV-103 en cada fase, confirmando ausencia de traslapes entre etapas incompatibles & Registro de estados digitales del PLC & Secuencia correcta sin traslapes en 3 pruebas consecutivas & Trazas de variables digitales \\
 
 VAL-03 & REQ13 & Consignar SP = 35\,°C en el preenjuague y en el lavado con detergente y registrar la evolución de la temperatura hasta alcanzar el estado estable & TT-101 (PT100), termómetro patrón & Error en estado estable $\leq 1{,}75\,°C$ (5\,\% del SP) & Gráfica $T(t)$ vs. SP y datos exportados \\
 
@@ -29,9 +29,9 @@ VAL-04 & REQ14 & Forzar, de forma controlada, una condición de sobre temperatur
 
 VAL-05 & REQ09 & Dosificar, mediante la bomba peristáltica P-101, 3 repeticiones de un mismo tiempo de activación y medir el volumen de detergente entregado en cada una & Probeta graduada, cronómetro & Variación $\leq 10\,\%$ entre las 3 mediciones & Registro fotográfico y tabla de volúmenes \\
 
-VAL-06 & REQ06 & Ejecutar un ciclo completo e inspeccionar los tanques TK-101, TK-102 y TK-103 y sus conexiones (SV-102, SV-103, P-101, P-102) en busca de fugas & Inspección visual directa & Cero fugas visibles durante la prueba & Registro fotográfico \\
+VAL-06 & REQ06 & Ejecutar un ciclo completo e inspeccionar los tanques TK-101, TK-102 y TK-103 y sus conexiones (XV-102, XV-103, P-101, P-102) en busca de fugas & Inspección visual directa & Cero fugas visibles durante la prueba & Registro fotográfico \\
 
-VAL-07 & REQ06 & Medir el volumen de agua suministrado al ciclo (línea L-2) y el volumen recuperado en el tanque de efluentes TK-103 (línea L-4) al finalizar & Recipiente graduado o báscula & Porcentaje de recuperación calculado y reportado & Registro de volúmenes y cálculo de \% \\
+VAL-07 & REQ06 & Medir el volumen de agua suministrado al ciclo (línea 3/4"-AG-002-MG) y el volumen recuperado en el tanque de efluentes TK-103 (línea EF-005) al finalizar & Recipiente graduado o báscula & Porcentaje de recuperación calculado y reportado & Registro de volúmenes y cálculo de \% \\
 
 VAL-08 & REQ18 & Accionar el paro de emergencia durante la ejecución del ciclo y medir el tiempo de corte de bomba, calentador y dosificador & Cronómetro, registro de eventos del PLC & Corte de los actuadores principales en $\leq 1\,\text{s}$ & Captura de señal o video \\
 

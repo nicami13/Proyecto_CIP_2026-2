@@ -73,6 +73,8 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 
 ## 3. Glosario oficial (usar SOLO estos nombres)
 
+Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora y las siguientes son la función. Por eso las electroválvulas son **XV**, no SV (S como primera letra significa velocidad). Los símbolos de equipos siguen **ISO 10628-2**. TK-101 y TK-103 son tanques **cerrados**; TK-102 es **abierto**.
+
 | Tag | Nombre en el documento | Ya no se usa | Programa v1 |
 |---|---|---|---|
 | — | **Preenjuague** (fase 1) | prelavado, ciclo I | `CICLO = 0` |
@@ -84,12 +86,17 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 | P-103 | **Bomba de agitación sumergible** | agitador AG-101, motorreductor M-101 | `MOTOR` |
 | E-101 | **Resistencia de inmersión** | elemento calefactor, calentador | `RESISTENCIA` |
 | P-102 | **Bomba de impulsión** | bomba de limpieza, de recirculación, de drenado, principal | `BOMBA` |
-| SV-102 | **Electroválvula de llenado** | electroválvula 1 | `VALVULA1` |
-| SV-103 | **Electroválvula de descarga** | electroválvula 2 | `VALVULA2` |
+| XV-102 | **Electroválvula de llenado** (on/off, ISA-5.1) | electroválvula 1, SV-102 | `VALVULA1` |
+| XV-103 | **Electroválvula de descarga** (on/off, ISA-5.1) | electroválvula 2, SV-103 | `VALVULA2` |
 | SV-101 | **Se elimina** (no existe en el prototipo) | válvula solenoide de jabón | — |
 | LSL-101 | **Interruptor de nivel bajo** | LIT-101 | `NIVEL1` |
 | LSH-101 | **Interruptor de nivel alto** | LIT-101 | `NIVEL2` |
-| TT-101 | **Transmisor de temperatura** (PT100 + 4–20 mA) | sensor de temperatura | `TEMPERATURA` |
+| TE-101 | **Elemento primario de temperatura** (PT100) | sensor de temperatura | — |
+| TT-101 | **Transmisor de temperatura** (SITRANS, 4–20 mA) | sensor de temperatura | `TEMPERATURA` |
+| TIC-101 | **Controlador de temperatura** (función en el PLC) | — | — |
+| TY-101 | **SSR de la resistencia** (elemento auxiliar) | — | — |
+| KC-100 | **Secuencia del ciclo** (función en el PLC) | — | — |
+| Líneas | `DT-001` detergente; `3/4"-AG-002-MG` agua de red (manguera); `3/4"-PR-003-PVC` tanque → bomba; `1"-PR-004-PVC` bomba → tubería; `EF-005` tubería → TK-103; `EF-006` TK-103 → desagüe | L-1 a L-5 | — |
 | TK-103 | **Tanque de efluentes** | tanque de agua residual, de residuos | — |
 | HV-101 | **Válvula manual de vaciado** de TK-103 | — | — |
 | — | **Tubería de prueba** | circuito de prueba, línea a limpiar | — |
@@ -122,14 +129,14 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 | Bomba de impulsión P-102 | **Bomba periférica**, accionada por el SSR de 40 A. **Sin contactor ni guardamotor.** |
 | Bomba de agitación P-103 | Sumergible, **110 V AC, 22 W**, dentro de TK-102, accionada por un relé externo con bobina de 24 V. |
 | Dosificadora P-101 | Peristáltica de **12 V**, alimentada con un convertidor **LM2596**. **Aún no está instalada** (16 de octubre). |
-| Electroválvulas | **Dos** (SV-102 llenado, SV-103 descarga), 24 V DC. |
+| Electroválvulas | **Dos** (XV-102 llenado, XV-103 descarga), 24 V DC. |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
 | Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
 | Tubería | **PVC** de 1" y 3/4". |
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
 | Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). **Sí hay paro de emergencia** (confirmado el 16 de octubre); falta saber dónde va en el circuito. |
-| Electroválvulas instaladas | **Las dos**: SV-102 (de la llave de agua al tanque) y SV-103 (del tanque a la bomba). |
+| Electroválvulas instaladas | **Las dos**: XV-102 (de la llave de agua al tanque) y XV-103 (del tanque a la bomba). |
 | No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. Aún no: manómetro, válvulas de bola, antirretorno. |
 
 ### Alimentación

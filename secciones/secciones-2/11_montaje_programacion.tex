@@ -2,7 +2,7 @@
 
 La secuencia del ciclo CIP se programó en el PLC Siemens S7-1200 CPU 1214C con TIA Portal V13, en lenguaje Ladder (KOP). La lógica se diseñó primero como un GRAFCET y luego se trasladó al programa como una secuencia de etapas: cada etapa corresponde a un bit de memoria que se activa con la condición de transición de la etapa anterior y se desactiva al activarse la siguiente, y las acciones de cada etapa se asignan a las salidas del PLC.
 
-\paragraph{GRAFCET de la secuencia.} El GRAFCET de la Figura~\ref{fig:grafcet_cip} describe el ciclo completo con sus tres fases. Parte de una etapa inicial de reposo, que se abandona al presionar el pulsador de inicio. En la etapa de llenado se abre la electroválvula SV-102 y, mediante una divergencia simultánea, se ejecutan dos ramas en paralelo. La primera supervisa el nivel del tanque de mezcla y cierra SV-102 cuando el agua alcanza el nivel alto. La segunda selecciona, según el valor del contador de fases, las acciones de la fase en curso: en el preenjuague se enciende la resistencia E-101 hasta alcanzar 35\,$^{\circ}$C; en el lavado se activan la bomba dosificadora P-101 y la bomba de agitación P-103, y después la resistencia hasta 35\,$^{\circ}$C; en el enjuague final no se calienta el agua. Cuando ambas ramas terminan, se abre la electroválvula SV-103 y se enciende la bomba de impulsión P-102 hasta vaciar el tanque de mezcla; luego se cierra SV-103 y se incrementa el contador de fases. Si aún no se han completado las tres fases, la secuencia regresa al llenado; en caso contrario, el contador se reinicia y el sistema vuelve al reposo.
+\paragraph{GRAFCET de la secuencia.} El GRAFCET de la Figura~\ref{fig:grafcet_cip} describe el ciclo completo con sus tres fases. Parte de una etapa inicial de reposo, que se abandona al presionar el pulsador de inicio. En la etapa de llenado se abre la electroválvula XV-102 y, mediante una divergencia simultánea, se ejecutan dos ramas en paralelo. La primera supervisa el nivel del tanque de mezcla y cierra XV-102 cuando el agua alcanza el nivel alto. La segunda selecciona, según el valor del contador de fases, las acciones de la fase en curso: en el preenjuague se enciende la resistencia E-101 hasta alcanzar 35\,$^{\circ}$C; en el lavado se activan la bomba dosificadora P-101 y la bomba de agitación P-103, y después la resistencia hasta 35\,$^{\circ}$C; en el enjuague final no se calienta el agua. Cuando ambas ramas terminan, se abre la electroválvula XV-103 y se enciende la bomba de impulsión P-102 hasta vaciar el tanque de mezcla; luego se cierra XV-103 y se incrementa el contador de fases. Si aún no se han completado las tres fases, la secuencia regresa al llenado; en caso contrario, el contador se reinicia y el sistema vuelve al reposo.
 
 \insertarfigura{grafcet_cip.png}{GRAFCET de la secuencia CIP con las tres fases del ciclo.}{fig:grafcet_cip}
 
@@ -18,14 +18,14 @@ La secuencia del ciclo CIP se programó en el PLC Siemens S7-1200 CPU 1214C con 
 \textbf{Etapa} & \textbf{Acciones} & \textbf{Transición}\\
 \midrule
 E0 & Reposo; reinicio del contador \texttt{CICLO} & Pulsador de inicio (\texttt{\%I0.0}) $\rightarrow$ E1\\
-E1 & Abre SV-102 (\texttt{VALVULA1}); a los 3\,s cierra SV-103 (\texttt{VALVULA2}) & El agua alcanza el nivel bajo (LSL-101, \texttt{NIVEL1}) $\rightarrow$ Ea y Eb (divergencia simultánea)\\
+E1 & Abre XV-102 (\texttt{VALVULA1}); a los 3\,s cierra XV-103 (\texttt{VALVULA2}) & El agua alcanza el nivel bajo (LSL-101, \texttt{NIVEL1}) $\rightarrow$ Ea y Eb (divergencia simultánea)\\
 Ea & Espera del llenado & El agua alcanza el nivel alto (LSH-101, \texttt{NIVEL2}) $\rightarrow$ E2\\
-E2 & Cierra SV-102 (\texttt{VALVULA1}) & E2 y (Ec o Ed) $\rightarrow$ E5\\
+E2 & Cierra XV-102 (\texttt{VALVULA1}) & E2 y (Ec o Ed) $\rightarrow$ E5\\
 Eb & Selección de la fase & \texttt{CICLO} = 0 $\rightarrow$ Ed; \texttt{CICLO} = 1 $\rightarrow$ E3\\
 E3 & Activa P-103 (\texttt{MOTOR}) durante 10\,s y P-101 (\texttt{DOSI}) durante 5\,s & Fin del temporizador $\rightarrow$ Ec\\
 Ec / Ed & Espera de la convergencia & E2 y (Ec o Ed) $\rightarrow$ E5\\
 E5 & Enciende E-101 (\texttt{RESISTENCIA}) & \texttt{TEMPERATURA} $\geq$ 35,0\,$^{\circ}$C $\rightarrow$ E6\\
-E6 & Abre SV-103 (\texttt{VALVULA2}); temporizador de 3\,s & Fin del temporizador $\rightarrow$ E7\\
+E6 & Abre XV-103 (\texttt{VALVULA2}); temporizador de 3\,s & Fin del temporizador $\rightarrow$ E7\\
 E7 & Enciende P-102 (\texttt{BOMBA}); incrementa \texttt{CICLO} & Nivel bajo (LSL-101, \texttt{NIVEL1}): si \texttt{CICLO} $<$ 2 $\rightarrow$ E1; si \texttt{CICLO} $\geq$ 2 $\rightarrow$ E0\\
 \bottomrule
 \end{tabularx}
@@ -48,8 +48,8 @@ La lectura de la temperatura se obtiene de la entrada analógica del transmisor 
 LSL-101 & \texttt{NIVEL1} & Entrada digital & \campo{Por confirmar}\\
 LSH-101 & \texttt{NIVEL2} & Entrada digital & \campo{Por confirmar}\\
 TT-101 & \texttt{TEMPERATURA} & Entrada analógica (4--20\,mA) & \campo{Por confirmar}\\
-SV-102 & \texttt{VALVULA1} & Salida de relé & \campo{Por confirmar}\\
-SV-103 & \texttt{VALVULA2} & Salida de relé & \campo{Por confirmar}\\
+XV-102 & \texttt{VALVULA1} & Salida de relé & \campo{Por confirmar}\\
+XV-103 & \texttt{VALVULA2} & Salida de relé & \campo{Por confirmar}\\
 P-102 & \texttt{BOMBA} & Salida de relé (SSR de 40\,A) & \campo{Por confirmar}\\
 P-103 & \texttt{MOTOR} & Salida de relé (relé auxiliar) & \campo{Por confirmar}\\
 P-101 & \texttt{DOSI} & Salida de relé & \campo{Por confirmar}\\

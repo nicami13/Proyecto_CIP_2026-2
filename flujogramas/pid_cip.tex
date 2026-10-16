@@ -1,15 +1,28 @@
 % P&ID del sistema CIP portátil (prototipo del segundo corte).
+% Simbología e identificación de instrumentos según ISA-5.1; símbolos de equipos según ISO 10628-2.
 % Requiere: \usetikzlibrary{arrows.meta,decorations.pathmorphing} y el color AzulUSTA.
 \begin{tikzpicture}[
   font=\footnotesize,
-  proceso/.style={line width=0.8pt,-{Stealth[length=2.2mm]}},
-  tramo/.style={line width=0.8pt},
+  proceso/.style={line width=1.1pt,-{Stealth[length=2.4mm]}},
+  tramo/.style={line width=1.1pt},
+  conexion/.style={line width=0.5pt},
   senal/.style={AzulUSTA,dashed,line width=0.6pt},
-  aplc/.style={AzulUSTA,font=\scriptsize},
   tag/.style={font=\footnotesize\bfseries},
-  instrumento/.style={draw,circle,minimum size=0.9cm,inner sep=0pt,align=center,font=\scriptsize,fill=white},
+  linea/.style={font=\scriptsize,fill=white,inner sep=1pt},
+  % Instrumento discreto montado en campo (ISA-5.1): círculo sin línea
+  campo/.style={draw,circle,minimum size=1.0cm,inner sep=0pt,align=center,font=\scriptsize,fill=white},
+  % Función en el PLC, accesible al operador (ISA-5.1): rombo dentro de un cuadrado, con línea horizontal continua
+  plc/.style={draw,rectangle,minimum size=1.0cm,inner sep=0pt,align=center,font=\scriptsize,fill=white,
+    path picture={
+      \draw (path picture bounding box.north)--(path picture bounding box.east)--(path picture bounding box.south)--(path picture bounding box.west)--cycle;
+      \draw (path picture bounding box.west)--(path picture bounding box.east);}},
+  % Instrumento en ubicación auxiliar, no accesible al operador (ISA-5.1): círculo con doble línea discontinua
+  auxiliar/.style={draw,circle,minimum size=1.0cm,inner sep=0pt,align=center,font=\scriptsize,fill=white,
+    path picture={
+      \draw[dashed] ([yshift=0.5pt]path picture bounding box.west)--([yshift=0.5pt]path picture bounding box.east);
+      \draw[dashed] ([yshift=-1.5pt]path picture bounding box.west)--([yshift=-1.5pt]path picture bounding box.east);}},
   caja/.style={draw,rounded corners=3pt,align=center,fill=white,minimum height=0.7cm},
-  tanque/.style={draw,line width=0.8pt,rounded corners=8pt,fill=white},
+  cerrado/.style={draw,line width=0.8pt,rounded corners=10pt,fill=white},
   solenoide/.pic={
     \draw[fill=white] (-0.35,-0.2)--(-0.35,0.2)--(0.35,-0.2)--(0.35,0.2)--cycle;
     \draw (0,0)--(0,0.35);
@@ -33,97 +46,113 @@
   },
 ]
 
-% ---------------- Tanques ----------------
-\draw[tanque] (0,7.6) rectangle (1.8,9.8);
-\node[align=center] at (0.9,8.7) {Tanque de\\detergente};
-\node[tag] at (0.9,7.3) {TK-101};
+% ================= Equipos (ISO 10628-2) =================
+% TK-101: tanque cerrado
+\draw[cerrado] (0,8.2) rectangle (1.8,10.2);
+\node[align=center] at (0.9,9.2) {Tanque de\\detergente};
+\node[tag] at (0.9,7.9) {TK-101};
 
-\draw[tanque] (5.6,3.6) rectangle (9.4,7.4);
-\node[align=center] at (7.5,6.95) {Tanque de mezcla};
-\node[tag] at (7.5,7.65) {TK-102};
+% TK-102: tanque abierto (sin tapa)
+\draw[line width=0.8pt] (5.6,7.4)--(5.6,3.6)--(9.4,3.6)--(9.4,7.4);
+\node[align=center] at (7.5,7.0) {Tanque de mezcla};
+\node[tag] at (7.5,7.75) {TK-102};
 
-\draw[tanque] (14.8,3.8) rectangle (16.8,7.2);
-\node[align=center] at (15.8,5.5) {Tanque de\\efluentes\\(30 L)};
-\node[tag] at (15.8,7.45) {TK-103};
+% TK-103: tanque cerrado
+\draw[cerrado] (15.6,3.8) rectangle (17.6,7.2);
+\node[align=center] at (16.6,5.5) {Tanque de\\efluentes};
+\node[tag] at (16.6,7.5) {TK-103};
 
-% ---------------- Línea L-1: detergente ----------------
-\draw[tramo] (1.8,9.0)--(2.85,9.0);
-\draw[proceso] (3.55,9.0)--(6.6,9.0)--(6.6,7.4);
-\pic at (3.2,9.0) {peristaltica};
-\node[tag] at (3.2,8.4) {P-101};
-\draw[senal] (3.2,9.35)--(3.2,10.1) node[aplc,above] {a PLC};
-\node at (5.0,9.25) {L-1};
+% ================= Línea DT-001: detergente =================
+\draw[tramo] (1.8,9.2)--(2.85,9.2);
+\draw[proceso] (3.55,9.2)--(6.6,9.2)--(6.6,7.4);
+\pic at (3.2,9.2) {peristaltica};
+\node[tag] at (3.2,8.6) {P-101};
+\node[linea] at (5.0,9.45) {DT-001};
 
-% ---------------- Línea L-2: agua de red ----------------
-\node[caja] (red) at (15.8,9.0) {Red de agua};
-\draw[proceso] (red.west)--(8.4,9.0)--(8.4,7.4);
-\pic at (12.3,9.0) {solenoide};
-\node[tag] at (12.3,8.5) {SV-102};
-\draw[senal] (12.3,9.61)--(12.3,10.1) node[aplc,above] {a PLC};
-\node at (10.3,9.25) {L-2};
+% ================= Línea AG-002: agua de red =================
+\node[caja] (red) at (16.6,9.2) {Red de agua};
+\draw[proceso] (red.west)--(8.4,9.2)--(8.4,7.4);
+\pic at (12.3,9.2) {solenoide};
+\node[tag] at (12.3,8.7) {XV-102};
+\node[linea] at (10.3,9.45) {3/4"-AG-002-MG};
 
-% ---------------- Instrumentos y elementos de TK-102 ----------------
-% Resistencia de inmersión
-\draw[tramo] (5.0,4.6)--(5.75,4.6);
-\draw[line width=0.8pt,decorate,decoration={zigzag,segment length=4pt,amplitude=3pt}] (5.75,4.6)--(7.0,4.6);
-\fill (5.0,4.6) circle (0.06);
-\node[tag] at (5.0,4.25) {E-101};
-\draw[senal] (4.94,4.6)--(3.4,4.6) node[aplc,left] {a PLC (SSR)};
+% ================= Elementos dentro de TK-102 =================
+% Resistencia de inmersión E-101
+\draw[conexion] (5.6,4.4)--(5.75,4.4);
+\draw[line width=0.8pt,decorate,decoration={zigzag,segment length=4pt,amplitude=3pt}] (5.75,4.4)--(7.0,4.4);
+\fill (5.6,4.4) circle (0.06);
+\node[tag] at (6.4,4.0) {E-101};
 
-% Transmisor de temperatura
-\node[instrumento] (tt) at (4.4,6.0) {TT\\101};
-\draw[tramo] (tt.east)--(6.3,6.0);
-\draw[senal] (tt.west)--(3.4,6.0) node[aplc,left] {a PLC (4--20\,mA)};
+% Bomba de agitación sumergible P-103
+\pic[scale=0.75] at (8.1,4.3) {centrifuga};
+\node[tag] at (8.1,4.9) {P-103};
+\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (8.65,4.1) arc (-60:200:0.2);
 
-% Interruptores de nivel alto y bajo
-\node[instrumento] (lsh) at (10.6,6.8) {LSH\\101};
-\draw[tramo] (lsh.west)--(8.95,6.8);
-\draw[fill=white] (8.85,6.8) circle (0.1);
-\draw[senal] (lsh.east)--(11.7,6.8) node[aplc,right] {a PLC};
+% ================= Lazo de temperatura 101 =================
+\node[campo] (te) at (4.4,5.6) {TE\\101};
+\node[campo] (tt) at (2.9,5.6) {TT\\101};
+\node[plc] (tic) at (1.3,5.6) {TIC\\101};
+\node[auxiliar] (ty) at (2.9,4.0) {TY\\101};
+\draw[conexion] (te.east)--(6.2,5.6);
+\draw[senal] (te.west)--(tt.east);
+\draw[senal] (tt.west)--(tic.east);
+\draw[senal] (tic.south)|-(ty.west);
+\draw[senal] (ty.east)--(5.0,4.0)--(5.0,4.4)--(5.54,4.4);
 
-\node[instrumento] (lsl) at (10.6,4.4) {LSL\\101};
-\draw[tramo] (lsl.west)--(8.95,4.4);
-\draw[fill=white] (8.85,4.4) circle (0.1);
-\draw[senal] (lsl.east)--(11.7,4.4) node[aplc,right] {a PLC};
+% ================= Interruptores de nivel 101 =================
+\node[campo] (lsh) at (10.8,6.8) {LSH\\101};
+\draw[conexion] (lsh.west)--(9.5,6.8);
+\draw[fill=white] (9.4,6.8) circle (0.1);
+\node[campo] (lsl) at (10.8,4.4) {LSL\\101};
+\draw[conexion] (lsl.west)--(9.5,4.4);
+\draw[fill=white] (9.4,4.4) circle (0.1);
 
-% Bomba de agitación sumergible
-\pic[scale=0.75] at (7.9,4.15) {centrifuga};
-\node[tag] at (7.9,4.75) {P-103};
-\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (8.45,3.95) arc (-60:200:0.2);
-\draw[senal] (7.9,3.89)--(7.9,3.25)--(11.0,3.25) node[aplc,right] {a PLC (relé)};
+% ================= Secuencia del ciclo en el PLC =================
+\node[plc] (kc) at (13.3,5.6) {KC\\100};
+\draw[senal] (lsh.east)--(12.3,6.8)--(12.3,5.75)--(kc.west |- 0,5.75);
+\draw[senal] (lsl.east)--(12.3,4.4)--(12.3,5.45)--(kc.west |- 0,5.45);
+% Salidas hacia XV-102 y P-101
+\draw[senal] (kc.north)--(13.3,10.3)--(12.3,10.3)--(12.3,9.81);
+\draw[senal] (12.3,10.3)--(3.2,10.3)--(3.2,9.55);
+% Salidas hacia XV-103, P-102 y P-103
+\draw[senal] (kc.south)--(13.3,2.8)--(8.8,2.8)--(8.8,2.11);
+\draw[senal] (10.4,2.8)--(10.4,1.85);
+\draw[senal] (8.1,2.8)--(8.1,4.04);
 
-% ---------------- Línea L-3: descarga e impulsión ----------------
+% ================= Línea PR-003: descarga de TK-102 =================
 \draw[tramo] (7.5,3.6)--(7.5,1.5)--(10.05,1.5);
-\node at (7.15,2.55) {L-3};
+\node[linea,rotate=90] at (7.5,2.55) {3/4"-PR-003-PVC};
 \pic at (8.8,1.5) {solenoide};
-\node[tag] at (8.8,1.0) {SV-103};
-\draw[senal] (8.8,2.11)--(8.8,2.5) node[aplc,above] {a PLC};
-
+\node[tag] at (8.8,1.0) {XV-103};
 \pic at (10.4,1.5) {centrifuga};
-\node[tag] at (10.25,2.3) {P-102};
-\draw[senal] (10.4,1.15)--(10.4,0.55);
-\node[aplc] at (10.4,0.35) {a PLC (SSR)};
+\node[tag] at (10.4,0.95) {P-102};
 
-\node[caja,minimum width=2.4cm] (tub) at (12.65,1.85) {Tubería de prueba};
-\draw[tramo] (10.75,1.85)--(tub.west);
+% ================= Línea PR-004: impulsión hacia la tubería de prueba =================
+\node[caja] (tub) at (14.0,1.85) {Tubería\\de prueba};
+\draw[proceso] (10.75,1.85)--(tub.west);
+\node[linea] at (11.95,2.1) {1"-PR-004-PVC};
 
-% ---------------- Línea L-4: efluente ----------------
-\draw[proceso] (tub.east)--(14.2,1.85)--(14.2,6.6)--(14.8,6.6);
-\node at (13.85,4.5) {L-4};
+% ================= Línea EF-005: efluente hacia TK-103 =================
+\draw[proceso] (tub.east)--(15.1,1.85)--(15.1,6.6)--(15.6,6.6);
+\node[linea,rotate=90] at (15.1,4.3) {EF-005};
 
-% ---------------- Línea L-5: vaciado manual ----------------
-\node[caja] (des) at (15.8,0.9) {Desagüe};
-\draw[proceso] (15.8,3.8)--(des.north);
-\pic[rotate=-90] at (15.8,2.55) {manual};
-\node[tag,right] at (16.15,2.65) {HV-101};
-\node[font=\scriptsize,right] at (16.15,2.25) {(manual)};
-\node at (15.45,3.3) {L-5};
+% ================= Línea EF-006: vaciado manual de TK-103 =================
+\node[caja] (des) at (16.6,0.9) {Desagüe};
+\draw[proceso] (16.6,3.8)--(des.north);
+\pic[rotate=-90] at (16.6,2.55) {manual};
+\node[tag,right] at (16.95,2.65) {HV-101};
+\node[linea,left] at (16.45,3.3) {EF-006};
 
-% ---------------- Convenciones ----------------
-\draw[line width=0.8pt] (0,2.0)--(0.8,2.0);
-\node[right] at (0.9,2.0) {Línea de proceso};
-\draw[senal] (0,1.5)--(0.8,1.5);
-\node[right] at (0.9,1.5) {Señal eléctrica PLC};
-\node[right,font=\scriptsize,align=left] at (0,0.9) {Esquema de paso único:\\sin recirculación hacia TK-102};
+% ================= Convenciones =================
+\draw[line width=1.1pt] (0,3.0)--(0.8,3.0);
+\node[right] at (0.9,3.0) {Línea de proceso};
+\draw[conexion] (0,2.6)--(0.8,2.6);
+\node[right] at (0.9,2.6) {Conexión del instrumento al proceso};
+\draw[senal] (0,2.2)--(0.8,2.2);
+\node[right] at (0.9,2.2) {Señal eléctrica};
+\node[anchor=north west,font=\scriptsize,align=left,text width=6.6cm,inner sep=0pt] at (0,1.85) {
+Círculo: instrumento en campo. Cuadrado con rombo: función en el PLC, accesible al operador mediante la HMI. Círculo con doble línea discontinua: elemento en tablero, no accesible al operador.\\
+Líneas: diámetro--servicio--número--material. AG: agua de red; DT: detergente; PR: fluido de proceso; EF: efluente; MG: manguera. Líneas sin diámetro: por definir.\\
+X: válvula on/off accionada por la secuencia. K: secuencia (tiempo).};
 
 \end{tikzpicture}
