@@ -41,6 +41,8 @@
 \begin{figure}[H]\centering
 \IfFileExists{figuras/#2}{\includegraphics[width=#1]{#2}}{\fbox{\parbox[c][5cm][c]{0.82\textwidth}{\centering \textcolor{AzulUSTA}{\textit{Inserte en la carpeta figuras el archivo:}}\\[2mm]\texttt{\detokenize{#2}}}}}
 \caption{#3}\label{#4}\end{figure}}
+% Foto con su rótulo para figuras compuestas: \fotomontaje{ancho}{archivo}{(a) rótulo}
+\newcommand{\fotomontaje}[3]{\begin{minipage}[t]{#1}\centering\includegraphics[width=\linewidth,height=5.2cm,keepaspectratio]{#2}\\[1mm]{\footnotesize #3}\end{minipage}}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small Proyecto Integrador -- Segundo corte}

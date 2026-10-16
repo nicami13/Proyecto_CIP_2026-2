@@ -193,3 +193,19 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - IP del PLC según su servidor web: **172.16.140.112** (el documento decía .116).
 - `%I0.0` se llama `RESET` en el programa de control y `Tag_1` (inicio) en el de la secuencia: hay que unificarlo al integrarlos.
 - Los PDF de los programas están en `anexos/programa_plc/` y se incluyen en el **Anexo J**.
+
+### Fotos del montaje y audio (16 de octubre, tarde)
+- Fotos en `figuras/foto_*.jpg`, insertadas en **8.1** (registro fotográfico).
+- Datos de placa (de las fotos):
+  - **P-102**: Pretul BOAP-1/2P3, periférica, 127 V, 3 A, 30 L/min, 20 m, 3450 r/min, **agua máx. 40 °C**, ciclo 20 min de trabajo / 15 min de descanso, máx. 6 h diarias, IPX4.
+  - **P-103**: Pumpower HJ-1141, sumergible, 110–120 V, 22 W, 1000 L/h, 1,6 m, **agua 5–35 °C**, IPX8.
+  - **P-101**: peristáltica de 12 V DC (aún no instalada).
+  - **Electroválvula**: King Sheng, 24 V DC, normalmente cerrada, tipo "con presión" (posible válvula de pilotaje: puede necesitar presión mínima para abrir).
+  - **Fuente del banco**: Mean Well DR-120-24 (24 V DC, 5 A).
+  - **Paro de emergencia**: hongo rojo "PE" en el banco del PLC.
+- Por confirmar:
+  - La etiqueta del banco dice **PLC 172.16.140.128 y HMI 172.16.140.129** (módulo MSI01); el servidor web dio **.112**.
+  - La HMI del banco tiene **8 teclas de función** (como la KTP700 Basic); el documento dice KTP600 Basic.
+- Audio: en los ensayos las variables se supervisaron y forzaron desde la **tabla de observación** de TIA Portal (así se accionó la resistencia). Agregado en Programación.
+- Conclusiones y trabajo previsto reescritos para el **segundo corte** / **tercer corte**.
+- Anexos G, H e I marcados como **primer corte** (el G muestra la IP .116).
