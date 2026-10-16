@@ -2,20 +2,21 @@
 
 Con el fin de contrastar el modelo dinámico obtenido en la Sección~\ref{sec:modelo_dinamico} frente al comportamiento real de la planta, se diseñó un ensayo experimental de escalones múltiples de potencia sobre el elemento calefactor. Esta estrategia, en lugar de un único escalón llevado hasta el régimen permanente, permite obtener información suficiente para la identificación de parámetros en un intervalo de tiempo considerablemente menor al período característico del proceso ($\tau \approx 261{,}6\,\mathrm{min}$), mediante la introducción de excitación persistente en la señal de entrada \cite{seborg2016process}.
 
-El ensayo se ejecuta partiendo del sistema en equilibrio térmico con el ambiente, aplicando la secuencia de potencia promedio indicada en la Tabla~\ref{tab:escalones_potencia}, con registro continuo de temperatura y potencia aplicada a una frecuencia de muestreo de $0{,}1\,\mathrm{Hz}$ (un dato cada $10\,\mathrm{s}$).
+El ensayo se ejecuta partiendo del sistema en equilibrio térmico con el ambiente, aplicando la secuencia de potencia promedio indicada en la Tabla~\ref{tab:escalones_potencia}, con registro continuo de temperatura y potencia aplicada a una frecuencia de muestreo de $0{,}2\,\mathrm{Hz}$ (un dato cada $5\,\mathrm{s}$). El ensayo inicia con un intervalo de reposo de aproximadamente 2\,min con el calentador apagado.
 
 \begin{table}[H]
 \centering
-\caption{Secuencia de escalones de potencia aplicados durante el ensayo.}
+\caption{Secuencia de escalones de potencia aplicados durante el ensayo (intervalos redondeados al minuto según el registro).}
 \label{tab:escalones_potencia}
 \begin{tabular}{cccc}
 \toprule
 Segmento & Intervalo (min) & Potencia promedio (W) & \% de $P_{\mathrm{nom}}$ \\
 \midrule
-1 & 0 -- 10  & 2000 & 100 \\
-2 & 10 -- 25 & 1000 & 50  \\
-3 & 25 -- 35 & 2000 & 100 \\
-4 & 35 -- 40 & 0    & 0   \\
+0 & 0 -- 2   & 0    & 0   \\
+1 & 2 -- 11  & 2000 & 100 \\
+2 & 11 -- 24 & 1000 & 50  \\
+3 & 24 -- 34 & 2000 & 100 \\
+4 & 34 -- 54 & 0    & 0   \\
 \bottomrule
 \end{tabular}
 \end{table}

@@ -1,4 +1,53 @@
 
 \subsection{Comunicación}\label{sec:montaje_comunicaciones}
 
-\campo{Pendiente de redactar: Raspberry Pi con Node-RED, protocolo S7, API en AWS, interfaz en Streamlit y evidencias.}
+La arquitectura de comunicaciones implementada en el prototipo separa la red de control local de la capa de supervisión remota. El PLC Siemens S7-1200 CPU 1214C se comunica con el panel HMI KTP600 Basic mediante PROFINET sobre Ethernet industrial, a través del switch Siemens CSM1277, de forma que la operación y la visualización local no dependen de la conexión a Internet. La supervisión remota se realiza mediante una Raspberry Pi que actúa como pasarela (\textit{gateway}) entre el PLC y los servicios externos, por lo que el controlador no queda expuesto directamente a Internet, aspecto relevante para la seguridad de los sistemas de control conectados \cite{hajda2021security}. La Figura~\ref{fig:arquitectura_iot} resume el flujo de información.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  nodo/.style={draw=AzulUSTA,rounded corners=3pt,fill=AzulUSTA!8,align=center,minimum height=1.1cm,text width=2.6cm},
+  enlace/.style={-{Stealth[length=2.2mm]},line width=0.7pt,draw=AzulUSTA},
+  etiqueta/.style={font=\scriptsize,align=center,fill=white,inner sep=1pt}]
+  \node[nodo] (plc) at (0,0) {PLC S7-1200\\CPU 1214C};
+  \node[nodo] (sw) at (0,2.4) {Switch\\CSM1277};
+  \node[nodo] (hmi) at (4.6,2.4) {HMI\\KTP600 Basic};
+  \node[nodo] (rpi) at (4.6,0) {Raspberry Pi\\(Node-RED)};
+  \node[nodo] (api) at (9.0,0) {API en AWS};
+  \node[nodo] (web) at (13.4,0) {Interfaz web\\(Streamlit)};
+  \draw[enlace,<->] (plc) -- node[etiqueta,right=2pt] {PROFINET} (sw);
+  \draw[enlace,<->] (sw) -- node[etiqueta,above=2pt] {PROFINET} (hmi);
+  \draw[enlace] (plc) -- node[etiqueta,above=2pt] {Protocolo S7} (rpi);
+  \draw[enlace] (rpi) -- node[etiqueta,above=2pt] {HTTP} (api);
+  \draw[enlace] (api) -- node[etiqueta,above=2pt] {GET} (web);
+\end{tikzpicture}
+\caption{Arquitectura de comunicaciones implementada en el prototipo.}
+\label{fig:arquitectura_iot}
+\end{figure}
+
+En la Raspberry Pi se ejecuta Node-RED, que se inicia automáticamente como servicio mediante un \textit{script} de arranque. Node-RED lee las variables del PLC a través del protocolo S7, a partir de sus direcciones de memoria, y las envía por HTTP a una API desplegada en Amazon Web Services (AWS). La interfaz de usuario se desarrolló en Streamlit y se publica en un dominio gratuito; esta interfaz consume los datos de la API mediante una solicitud GET, lo que permite consultar el estado del sistema desde un navegador web en un computador o dispositivo móvil. La Tabla~\ref{tab:variables_api} presenta las variables que entrega la API.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Variables publicadas por la API de supervisión.}
+\label{tab:variables_api}
+\begin{tabularx}{\textwidth}{L{5.0cm}YL{2.4cm}}
+\toprule
+\textbf{Campo de la API} & \textbf{Descripción} & \textbf{Elemento}\\
+\midrule
+\texttt{temperatura} & Temperatura del fluido en el tanque de mezcla & TT-101\\
+\texttt{ciclo} & Fase activa del ciclo (preenjuague, lavado o enjuague final) & PLC\\
+\texttt{nivel\_cabina} & Nivel del tanque de mezcla & LSL-101 / LSH-101\\
+\texttt{estado\_bomba\_drenado} & Estado de la bomba de impulsión & P-102\\
+\texttt{estado\_bomba\_dosificadora} & Estado de la bomba dosificadora & P-101\\
+\texttt{estado\_resistencia} & Estado de la resistencia de inmersión & E-101\\
+\texttt{Bomba\_agitacion} & Estado de la bomba de agitación & P-103\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Si se pierde la comunicación con la capa de supervisión, el PLC mantiene el control local del proceso y la secuencia del ciclo; la supervisión remota se restablece al recuperarse el enlace.
+
+\campo{Pendiente: direcciones IP definitivas del PLC y de la Raspberry Pi, periodo de actualización de los datos y capturas de evidencia (flujo de Node-RED, interfaz de Streamlit y respuesta de la API).}
