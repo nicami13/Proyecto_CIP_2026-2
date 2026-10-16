@@ -32,7 +32,33 @@ E7 & Enciende P-102 (\texttt{BOMBA}); incrementa \texttt{CICLO} & Nivel bajo (LS
 \end{tabularx}
 \end{table}
 
-La lectura de la temperatura se obtiene de la entrada analógica del transmisor TT-101, escalada con las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X} (Sección~\ref{sec:montaje_instrumentacion}). En esta versión, el calentamiento consiste en mantener encendida la resistencia hasta que la temperatura alcanza la consigna de 35\,$^{\circ}$C; el controlador de temperatura se encuentra en desarrollo (Sección~\ref{sec:montaje_control}). Para el tercer corte quedan por implementar en el PLC la pausa para que el operario vacíe el tanque de efluentes TK-103 entre fases, el controlador de temperatura y el estado de parada segura descrito en la Sección~\ref{sec:caracterizacion}.
+La lectura de la temperatura se obtiene de la entrada analógica del transmisor TT-101, escalada con las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X} (Sección~\ref{sec:montaje_instrumentacion}). En esta versión, el calentamiento consiste en mantener encendida la resistencia hasta que la temperatura alcanza la consigna de 35\,$^{\circ}$C; el controlador de temperatura se implementó en un programa independiente, que se describe a continuación. Para el tercer corte quedan por implementar en el PLC la pausa para que el operario vacíe el tanque de efluentes TK-103 entre fases, la integración del controlador de temperatura en la secuencia y el estado de parada segura descrito en la Sección~\ref{sec:caracterizacion}. El programa completo de la secuencia se incluye en el Anexo~\ref{anx:programa_plc}.
+
+\paragraph{Programa de control de temperatura y registro de datos.} En un proyecto independiente de TIA Portal (\texttt{CONTROL}) se programaron el control de temperatura de la resistencia E-101 y el registro de datos de los ensayos. El control se ejecuta en una interrupción cíclica (OB30) cada 100\,ms y el registro de datos, en el bloque principal (OB1). La Tabla~\ref{tab:programa_control} resume las funciones del OB30.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Funciones del programa de control de temperatura (OB30, cada 100\,ms).}
+\label{tab:programa_control}
+\begin{tabularx}{\textwidth}{L{2.6cm}Y}
+\toprule
+\textbf{Función} & \textbf{Implementación}\\
+\midrule
+Escalamiento & \texttt{NORM\_X} (5530 a 27\,648 cuentas) y \texttt{SCALE\_X} (0 a 100\,$^{\circ}$C) de la entrada analógica \texttt{\%IW66}, que entrega la temperatura \texttt{T\_C}\\
+Protección & Aborto enclavado si \texttt{T\_C} $\geq$ 65\,$^{\circ}$C o si la entrada cae por debajo de 4800 cuentas (lazo de 4--20\,mA abierto); se rearma de forma manual\\
+Modos de operación & \texttt{Modo\_sel}: 0 inactivo, 3 automático y 4 manual. Cualquier otro valor, o el aborto, lleva el modo a 0; en modo 0 o con aborto se reinicia el controlador\\
+Controlador & Bloque \texttt{PID\_Compact} con consigna \texttt{SP\_C} (35\,$^{\circ}$C), entrada \texttt{T\_C} y valor manual \texttt{Duty\_man}. Su salida se limita a 0--100\,\% y se anula con el controlador inactivo o con el aborto\\
+Modulación de la potencia & Contador de 0 a 99 que avanza cada 100\,ms (periodo de 10\,s); la salida \texttt{Q\_SSR} (\texttt{\%Q0.2}) permanece activa mientras el contador es menor que el ciclo de trabajo (resolución de 1\,\%)\\
+Medición de la potencia & Acumulación del tiempo en que el SSR permanece activo (\texttt{t0n\_ms}) y del reloj del ensayo (\texttt{t\_exp\_ms})\\
+Registro & Cada 5\,s se copian el tiempo, la temperatura, el ciclo de trabajo aplicado, el tiempo en ON y la consigna, y se solicita la escritura de un registro\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+El bloque \texttt{PID\_Compact} está configurado como controlador PI, con ganancia proporcional de 12, tiempo de integración de 1800\,s, sin acción derivativa, ciclo de 1\,s, límites de salida de 0 a 100\,\% y advertencia de valor alto a 40\,$^{\circ}$C. Estos parámetros son preliminares; su ajuste y la prueba en lazo cerrado quedan para el tercer corte. La modulación por proporción de tiempo se programó directamente con el contador del OB30, en lugar de usar la salida \texttt{Output\_PWM} del bloque.
+
+En el OB1, una máquina de estados gestiona el registro con las instrucciones \texttt{DataLog}: reposo (0), creación del archivo (10), apertura (20), listo (30), escritura (40), cierre (50) y error (99). El archivo CSV se crea con un máximo de 1000 registros y el encabezado \texttt{t\_ms}, \texttt{T\_C}, \texttt{Duty\_pct}, \texttt{tOn\_ms} y \texttt{SP\_C}, y se descarga desde el servidor web del PLC. En la revisión del programa se identificaron dos ajustes pendientes en esta máquina de estados: la salida de error de \texttt{DataLogWrite} está asignada a la variable de ocupado, por lo que no se detectan los errores de escritura, y después del cierre el estado pasa a escritura en lugar de volver al reposo. Los bloques, la tabla de variables y la configuración del controlador se incluyen en el Anexo~\ref{anx:programa_plc}.
 
 \paragraph{Mapa de entradas y salidas.} La Tabla~\ref{tab:mapa_io} relaciona las variables del programa con los elementos del prototipo y con las direcciones del PLC.
 
@@ -48,15 +74,17 @@ La lectura de la temperatura se obtiene de la entrada analógica del transmisor 
 --- & \texttt{Tag\_1} (pulsador de inicio) & Entrada digital & \texttt{\%I0.0}\\
 LSL-101 & \texttt{NIVEL1} & Entrada digital & \campo{Por confirmar}\\
 LSH-101 & \texttt{NIVEL2} & Entrada digital & \campo{Por confirmar}\\
-TT-101 & \texttt{TEMPERATURA} & Entrada analógica (4--20\,mA) & \campo{Por confirmar}\\
+TT-101 & \texttt{TEMPERATURA} (\texttt{AI\_Temp\_Raw} en el programa de control) & Entrada analógica (4--20\,mA) & \texttt{\%IW66}\\
 XV-102 & \texttt{VALVULA1} & Salida de relé & \campo{Por confirmar}\\
 XV-103 & \texttt{VALVULA2} & Salida de relé & \campo{Por confirmar}\\
 P-102 & \texttt{BOMBA} & Salida de relé (SSR de 40\,A) & \campo{Por confirmar}\\
 P-103 & \texttt{MOTOR} & Salida de relé (relé auxiliar) & \campo{Por confirmar}\\
 P-101 & \texttt{DOSI} & Salida de relé & \campo{Por confirmar}\\
-E-101 & \texttt{RESISTENCIA} & Salida de relé (SSR de 60\,A) & \campo{Por confirmar}\\
+E-101 & \texttt{RESISTENCIA} (\texttt{Q\_SSR} en el programa de control) & Salida de relé (SSR de 60\,A) & \texttt{\%Q0.2}\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\campo{Pendiente: versión del GRAFCET ajustada a la norma IEC 60848, direcciones de las entradas y salidas según la tabla de variables de TIA Portal, y capturas del programa en Ladder.}
+Las direcciones \texttt{\%IW66} y \texttt{\%Q0.2} se tomaron de la tabla de variables del programa de control; en ese programa, la entrada \texttt{\%I0.0} se denomina \texttt{RESET}, mientras que en el programa de la secuencia corresponde al pulsador de inicio, por lo que su uso se unificará al integrar ambos programas.
+
+\campo{Pendiente: versión del GRAFCET ajustada a la norma IEC 60848 y direcciones de las demás entradas y salidas según la tabla de variables del programa de la secuencia.}

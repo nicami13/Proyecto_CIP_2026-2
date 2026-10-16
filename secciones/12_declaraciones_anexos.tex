@@ -78,4 +78,30 @@ disponible en el siguiente enlace:
 \begin{figure}[H] \centering \includegraphics[width=0.4\textwidth]{figuras/DATOSHMI.png} \end{figure}
 \item Anexo I: información IP del PC
 \begin{figure}[H] \centering \includegraphics[width=0.5\textwidth]{figuras/IPPC.png} \end{figure}
+\item \etiquetaanexo{J}{anx:programa_plc}Anexo J: programas del PLC (segundo corte). Se incluyen, como evidencia, las impresiones de TIA Portal de los dos programas descritos en la Sección~\ref{sec:montaje_programacion}:
+\begin{itemize}
+\item J.1: programa de la secuencia del ciclo CIP, bloque principal OB1 (Ladder v1.1).
+\item J.2: programa de control de temperatura, interrupción cíclica OB30.
+\item J.3: programa de control, bloque principal OB1 (registro de datos con \texttt{DataLog}).
+\item J.4: bloque de datos \texttt{EXP} (DB1), variables del control y del ensayo.
+\item J.5: bloque de datos \texttt{Datalog} (DB2), estructura del registro.
+\item J.6: configuración del controlador \texttt{PID\_Compact\_1} (DB4).
+\item J.7: tabla de variables del PLC del programa de control.
+\item J.8: tabla de observación usada en el ensayo.
+\item J.9: página \textit{Data logs} del servidor web del PLC, con los registros de los ensayos.
 \end{itemize}
+\end{itemize}
+
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.1 Programa de la secuencia (OB1, Ladder v1.1)}}]{anexos/programa_plc/secuencia_OB1_ladder_v1_1.pdf}
+\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/secuencia_OB1_ladder_v1_1.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.2 Programa de control: interrupción cíclica (OB30)}}]{anexos/programa_plc/control_OB30_cyclic_interrupt.pdf}
+\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/control_OB30_cyclic_interrupt.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.3 Programa de control: bloque principal (OB1, registro de datos)}}]{anexos/programa_plc/control_OB1_main_datalog.pdf}
+\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/control_OB1_main_datalog.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.4 Bloque de datos EXP (DB1)}}]{anexos/programa_plc/control_DB1_EXP.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.5 Bloque de datos Datalog (DB2)}}]{anexos/programa_plc/control_DB2_Datalog.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.6 Configuración del controlador PID\_Compact\_1 (DB4)}}]{anexos/programa_plc/control_DB4_PID_Compact.pdf}
+\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/control_DB4_PID_Compact.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.7 Tabla de variables del PLC (programa de control)}}]{anexos/programa_plc/control_variables_plc.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.8 Tabla de observación del ensayo}}]{anexos/programa_plc/control_tabla_observacion_ensayo.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.9 Registros del servidor web del PLC (Data logs)}}]{anexos/programa_plc/servidor_web_data_logs.pdf}

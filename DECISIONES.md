@@ -184,3 +184,12 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - A 126 V la resistencia consume **≈ 15,9 A**, más que el breaker de 15 A.
 - Los SSR **sin disipador** pueden recalentarse (≈ 20 W de calor en el de la resistencia).
 - Sin termostato, nada corta la resistencia si el SSR falla en cortocircuito.
+
+### Programa de control (16 de octubre, PDF del proyecto `CONTROL`)
+- Es el **más actualizado**. Lo que no cuadra se marca como **preliminar**.
+- OB30 cada 100 ms: escalamiento de `%IW66` (5530–27648 → 0–100 °C), aborto a ≥ 65 °C o con el lazo abierto (< 4800 cuentas), modos 0/3/4, `PID_Compact` (PI: Kp 12, Ti 1800 s, Td 0, ciclo 1 s, salida 0–100 %, aviso alto 40 °C) y proporción de tiempo de 10 s por `%Q0.2`.
+- OB1: `DataLog` con 1000 registros (Fabián había escrito 720); el encabezado incluye `SP_C`.
+- Errores a corregir en OB1: `ERROR` del `DataLogWrite` conectado a `WRITE.BUSY`, y después del cierre el estado pasa a 40 en lugar de 0.
+- IP del PLC según su servidor web: **172.16.140.112** (el documento decía .116).
+- `%I0.0` se llama `RESET` en el programa de control y `Tag_1` (inicio) en el de la secuencia: hay que unificarlo al integrarlos.
+- Los PDF de los programas están en `anexos/programa_plc/` y se incluyen en el **Anexo J**.
