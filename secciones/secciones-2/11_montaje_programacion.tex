@@ -72,19 +72,17 @@ En el OB1, una máquina de estados gestiona el registro con las instrucciones \t
 \textbf{Tag} & \textbf{Variable del programa} & \textbf{Tipo de señal} & \textbf{Dirección}\\
 \midrule
 --- & \texttt{Tag\_1} (pulsador de inicio) & Entrada digital & \texttt{\%I0.0}\\
-LSL-101 & \texttt{NIVEL1} & Entrada digital & \campo{Por confirmar}\\
-LSH-101 & \texttt{NIVEL2} & Entrada digital & \campo{Por confirmar}\\
+LSL-101 & \texttt{NIVEL1} & Entrada digital & Por definir\\
+LSH-101 & \texttt{NIVEL2} & Entrada digital & Por definir\\
 TT-101 & \texttt{TEMPERATURA} (\texttt{AI\_Temp\_Raw} en el programa de control) & Entrada analógica (4--20\,mA) & \texttt{\%IW66}\\
-XV-102 & \texttt{VALVULA1} & Salida de relé & \campo{Por confirmar}\\
-XV-103 & \texttt{VALVULA2} & Salida de relé & \campo{Por confirmar}\\
-P-102 & \texttt{BOMBA} & Salida de relé (SSR de 40\,A) & \campo{Por confirmar}\\
-P-103 & \texttt{MOTOR} & Salida de relé (relé auxiliar) & \campo{Por confirmar}\\
-P-101 & \texttt{DOSI} & Salida de relé & \campo{Por confirmar}\\
+XV-102 & \texttt{VALVULA1} & Salida de relé & Por definir\\
+XV-103 & \texttt{VALVULA2} & Salida de relé & Por definir\\
+P-102 & \texttt{BOMBA} & Salida de relé (SSR de 40\,A) & Por definir\\
+P-103 & \texttt{MOTOR} & Salida de relé (relé auxiliar) & Por definir\\
+P-101 & \texttt{DOSI} & Salida de relé & Por definir\\
 E-101 & \texttt{RESISTENCIA} (\texttt{Q\_SSR} en el programa de control) & Salida de relé (SSR de 60\,A) & \texttt{\%Q0.2}\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Las direcciones \texttt{\%IW66} y \texttt{\%Q0.2} se tomaron de la tabla de variables del programa de control; en ese programa, la entrada \texttt{\%I0.0} se denomina \texttt{RESET}, mientras que en el programa de la secuencia corresponde al pulsador de inicio, por lo que su uso se unificará al integrar ambos programas.
-
-\campo{Pendiente: versión del GRAFCET ajustada a la norma IEC 60848 y direcciones de las demás entradas y salidas según la tabla de variables del programa de la secuencia.}
+Las direcciones \texttt{\%IW66} y \texttt{\%Q0.2} se tomaron de la tabla de variables del programa de control; en ese programa, la entrada \texttt{\%I0.0} se denomina \texttt{RESET}, mientras que en el programa de la secuencia corresponde al pulsador de inicio, por lo que su uso se unificará al integrar ambos programas. Las direcciones de las demás entradas y salidas quedan por definir: se asignarán en el tercer corte, al integrar el programa de la secuencia con el de control y cablear la bomba dosificadora P-101 y la electroválvula XV-103, y se documentarán junto con la versión del GRAFCET ajustada a la norma IEC 60848.

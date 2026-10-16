@@ -8,13 +8,17 @@ La primera prueba de integración fue el enlace PROFINET entre el PLC S7-1200 y 
 
 \subsubsection{Supervisión remota}
 
-Con el prototipo montado se puso en funcionamiento la cadena de supervisión descrita en la Sección~\ref{sec:montaje_comunicaciones}: Node-RED se inicia automáticamente en la Raspberry Pi, lee las variables del PLC mediante el protocolo S7, las envía por HTTP a la API en AWS y la interfaz en Streamlit las consulta mediante solicitudes GET. La prueba confirmó que la cadena completa opera; queda por medir el periodo de actualización de los datos, que según REQ-16 no debe superar 30\,s, y por documentar las evidencias. \campo{Pendiente: periodo de actualización medido y capturas del flujo de Node-RED, de la interfaz de Streamlit y de la respuesta de la API.}
+Con el prototipo montado se puso en funcionamiento la cadena de supervisión descrita en la Sección~\ref{sec:montaje_comunicaciones}: Node-RED se inicia automáticamente en la Raspberry Pi, lee las variables del PLC mediante el protocolo S7, las envía por HTTP a la API en AWS y la interfaz en Streamlit las consulta mediante solicitudes GET. La prueba confirmó que la cadena completa opera; queda por medir el periodo de actualización de los datos, que según REQ-16 no debe superar 30\,s, y por documentar las evidencias. La medición del periodo y las capturas del flujo de Node-RED, de la interfaz de Streamlit y de la respuesta de la API se realizarán en el tercer corte (Sección~\ref{sec:montaje_comunicaciones}).
 
 \subsubsection{Ensayo de identificación térmica}
 
 Con el tanque de mezcla lleno se ejecutó el ensayo de escalones de potencia descrito en la Sección~\ref{sec:montaje_control}. La temperatura se adquirió con el PT100 y el transmisor SITRANS: la corriente de 4--20\,mA circula por la resistencia de 500\,$\Omega$ y produce entre 2 y 10\,V en la entrada analógica de 0--10\,V del PLC, que entrega 27\,648 cuentas a 10\,V. Por tanto, el rango útil de la señal va de 5\,530 cuentas (4\,mA, 0\,°C) a 27\,648 cuentas (20\,mA, 100\,°C), límites con los que se configuraron las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X}.
 
-El registro contiene 648 datos, uno cada 5\,s, a lo largo de 54\,min, con escalones de 0\,\% de potencia entre 0 y 2\,min, 100\,\% (2000\,W) entre 2 y 11\,min, 50\,\% (1000\,W) entre 11 y 24\,min, 100\,\% entre 24 y 34\,min y 0\,\% entre 34 y 54\,min. Durante el ensayo la temperatura del agua subió de 23,5\,°C a 60,1\,°C. Los parámetros experimentales del modelo ($UA$, $C$, $\tau$ y $K$) y su comparación con los valores teóricos se reportarán en la Tabla~\ref{tab:comparacion_parametros} \campo{Pendiente: resultados del ajuste, a cargo de Fabián Ruiz}. Como la temperatura alcanzada supera el límite de 40\,°C del sello mecánico de la bomba de impulsión, \campo{confirmar que P-102 permaneció apagada durante el ensayo}.
+El registro contiene 648 datos, uno cada 5\,s, a lo largo de 54\,min, con escalones de 0\,\% de potencia entre 0 y 2\,min, 100\,\% (2000\,W) entre 2 y 11\,min, 50\,\% (1000\,W) entre 11 y 24\,min, 100\,\% entre 24 y 34\,min y 0\,\% entre 34 y 54\,min. Durante el ensayo la temperatura del agua subió de 23,5\,°C a 60,1\,°C. Los parámetros experimentales del modelo ($UA$, $C$, $\tau$ y $K$) y su comparación con los valores teóricos se reportan en la Tabla~\ref{tab:comparacion_parametros}. Aunque la temperatura alcanzada supera el límite de 40\,°C de la bomba de impulsión, P-102 permaneció apagada durante todo el ensayo.
+
+\subsubsection{Pruebas de componentes}
+
+Las electroválvulas se probaron alimentando su bobina con una fuente externa, y se verificó que abren y cierran correctamente. También se probó el funcionamiento de la bomba de impulsión P-102. Estas pruebas verifican el accionamiento de cada componente por separado; la conmutación desde las salidas del PLC dentro de la secuencia se verificará con VAL-02. La unidad comprada para la descarga (XV-103) es servopilotada y, aunque su bobina funciona, necesita un diferencial de presión que la descarga por gravedad de TK-102 no ofrece, por lo que se reemplazará por una de acción directa.
 
 \subsubsection{Secuencia automática}
 
@@ -43,7 +47,7 @@ La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de 
 \bottomrule
 \endlastfoot
 VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1.1 incluye las tres fases; falta la pausa para el vaciado de TK-103 & ---\\
-VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & XV-103 pendiente de instalación & ---\\
+VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & Bobinas de las electroválvulas probadas con fuente externa; XV-103 pendiente de instalación & ---\\
 VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador PI programado con parámetros preliminares, sin prueba en lazo cerrado; consignas de prueba por definir & ---\\
 VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad & Pendiente & Umbral por definir & ---\\
 VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo y medición del detergente en probeta & Pendiente & P-101 pendiente de instalación & ---\\

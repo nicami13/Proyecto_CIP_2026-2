@@ -50,4 +50,10 @@ En la Raspberry Pi se ejecuta Node-RED, que se inicia automáticamente como serv
 
 Si se pierde la comunicación con la capa de supervisión, el PLC mantiene el control local del proceso y la secuencia del ciclo; la supervisión remota se restablece al recuperarse el enlace.
 
-\campo{Pendiente: direcciones IP definitivas del PLC y de la Raspberry Pi, periodo de actualización de los datos y capturas de evidencia (flujo de Node-RED, interfaz de Streamlit y respuesta de la API).}
+\paragraph{Actividades previstas para el tercer corte.} En el segundo corte la cadena de supervisión se puso en funcionamiento, pero su direccionamiento definitivo y su evidencia aún no se han documentado. Para el tercer corte se plantean las siguientes actividades:
+\begin{itemize}
+\item Asignar una dirección IP fija a la Raspberry Pi y confirmar la del PLC dentro de la red del laboratorio, en coordinación con el área de comunicaciones de la institución, y actualizar la Tabla~\ref{tab:nodos_ip}.
+\item Medir el periodo de actualización de los datos entre el PLC y la interfaz de Streamlit durante una prueba de 15\,min, para verificar el periodo máximo de 30\,s que exige el REQ-16.
+\item Registrar como evidencia capturas del flujo de Node-RED, de la interfaz de Streamlit y de la respuesta de la API.
+\item Comprobar que, ante una pérdida del enlace con la capa de supervisión, el PLC mantiene el control local y la supervisión se restablece al recuperarse la conexión.
+\end{itemize}

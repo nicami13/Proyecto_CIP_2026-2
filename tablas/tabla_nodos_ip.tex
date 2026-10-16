@@ -1,15 +1,16 @@
 \begin{table}[H]
 \centering
 \small
-\caption{Nodos y direccionamiento IP preliminar.}
+\caption{Nodos y direccionamiento IP previsto.}
+\label{tab:nodos_ip}
 \begin{tabularx}{\textwidth}{L{2.8cm}L{2.7cm}L{2.7cm}YL{2.3cm}}
 \toprule
 \textbf{Nodo} & \textbf{IP} & \textbf{Máscara} & \textbf{Función} & \textbf{Interfaz} \\
 \midrule
-PLC & 172.16.140.112 & \campo{255.255.252.0} & Control y adquisición & Ethernet \\
-HMI & \campo{172.16.140.117} & \campo{255.255.252.0} & Supervisión local & Ethernet \\
-Computador & \campo{172.16.140.1} & \campo{255.255.252.0} & Registro e integración & Ethernet \\
-Raspberry Pi & \campo{Por asignar} & \campo{Por asignar} & Pasarela hacia la API de supervisión (Node-RED) & \campo{Por confirmar} \\
+PLC & 172.16.140.112 & 255.255.252.0 & Control y adquisición & Ethernet \\
+HMI & 172.16.140.117 (primer corte) & 255.255.252.0 & Supervisión local & Ethernet \\
+Computador & 172.16.140.1 (primer corte) & 255.255.252.0 & Registro e integración & Ethernet \\
+Raspberry Pi & Por asignar en el tercer corte & Por asignar & Pasarela hacia la API de supervisión (Node-RED) & Ethernet (prevista) \\
 \bottomrule
 \end{tabularx}
 \end{table}

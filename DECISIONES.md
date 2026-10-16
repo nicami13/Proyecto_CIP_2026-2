@@ -213,3 +213,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - **XV-103 NO está instalada** (confirmado por Karen): la unidad comprada es servopilotada y no abre con la descarga por gravedad; se comprará una de acción directa. Solo está instalada XV-102. Aplicado en 8.1, tabla del P&ID, conclusiones, sección 8 y presupuestos.
 - **P-101**: 0–100 mL/min. Los ~300 mL por lavado necesitan **al menos 3 min**; el tiempo de 5 s del ladder es preliminar y debe ajustarse.
 - **Unifilar**: la 8.1 usa ahora la imagen de la compañera (`figuras/diagrama_unifilar.png`).
+- **Pruebas de componentes** (Karen, 16 oct.): las electroválvulas se probaron con una fuente externa (abren y cierran) y se probó la bomba de impulsión **P-102**. Agregado en 8.6.
+- **IPs y capturas de Camilo**: no hay; se redactan como **actividades del tercer corte** (8.3, tabla de IP, 8.6).
+- **Direcciones %I/%Q** de la secuencia: **por definir** (se asignan en el tercer corte).
+- **Declaración de IA**: Karen pidió NO mencionar transcripción de audios, diagramas TikZ ni análisis de programas del PLC.
