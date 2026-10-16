@@ -2,7 +2,7 @@
 
 \subsection{Variable controlada (PV)}\label{sec:pv}
 
-La variable controlada es la temperatura del fluido de proceso (agua o agua con detergente diluido) en el tanque de mezcla del sistema CIP portátil, medida mediante un sensor RTD PT100 conectado al PLC, el cual realiza el escalamiento de la señal mediante las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X} de TIA Portal.
+La variable controlada es la temperatura del fluido de proceso (agua o agua con detergente diluido) en el tanque de mezcla del sistema CIP portátil, medida mediante un sensor RTD PT100 con transmisor de 4--20\,mA conectado a la entrada analógica del PLC, el cual realiza el escalamiento de la señal mediante las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X} de TIA Portal.
 
 De las variables de proceso disponibles (temperatura, caudal, nivel, presión y conductividad), la temperatura es la única con una dinámica lo suficientemente lenta y bien caracterizable con los recursos del laboratorio para diseñar y validar un controlador P/PI/PID completo dentro del alcance del curso de Sistemas de Control I.
 
@@ -12,7 +12,7 @@ La variable manipulada corresponde a la potencia eléctrica suministrada al elem
 
 Para la modulación de la potencia de la resistencia se evaluaron dos estrategias de control para una carga resistiva de corriente alterna (CA): el control por ángulo de fase mediante TRIAC y el control proporcional en el tiempo mediante SSR con conmutación en cruce por cero \cite{mohan2007power}. La selección de la estrategia se realizó considerando principalmente la dinámica térmica del proceso y los requerimientos de implementación del sistema CIP portátil.
 
-La constante de tiempo térmica estimada del proceso es del orden de varias horas, con un valor aproximado de $\tau \approx 261{,}6\,\mathrm{min}$, correspondiente al modelo obtenido en la sección 3. Este valor es considerablemente superior al período de conmutación empleado para la modulación proporcional en el tiempo mediante el SSR, cuyo orden de magnitud es de segundos. En consecuencia, desde el punto de vista de la dinámica térmica, el proceso no responde a las conmutaciones individuales del SSR, sino al valor promedio de la potencia suministrada durante cada período de modulación \cite{ogata2010modern, dorf2021modern}.
+La constante de tiempo térmica estimada del proceso es del orden de varias horas, con un valor aproximado de $\tau \approx 261{,}6\,\mathrm{min}$, correspondiente al modelo obtenido en la Sección~\ref{sec:modelo_dinamico}. Este valor es considerablemente superior al período de conmutación empleado para la modulación proporcional en el tiempo mediante el SSR, cuyo orden de magnitud es de segundos. En consecuencia, desde el punto de vista de la dinámica térmica, el proceso no responde a las conmutaciones individuales del SSR, sino al valor promedio de la potencia suministrada durante cada período de modulación \cite{ogata2010modern, dorf2021modern}.
 
 Por lo anterior, ambas estrategias pueden producir un efecto térmico equivalente siempre que entreguen el mismo valor promedio de potencia a la resistencia. Sin embargo, el control por ángulo de fase mediante TRIAC presenta como desventaja la generación de componentes armónicas y mayores niveles de interferencia electromagnética (EMI) conducida, además de requerir una etapa de disparo más compleja \cite{rashid2014power, mohan2007power}.
 
@@ -47,17 +47,14 @@ Se modela el tanque de mezcla como un sistema térmico de parámetros concentrad
 El balance de energía instantáneo, análogo al de un tanque agitado con calentamiento eléctrico [10], se expresa mediante:
 
 \begin{equation}
-Q_h(t) - UA\left(T(t)-T_{\mathrm{amb}}\right)
+m\,c_p\,\frac{dT(t)}{dt} = Q_h(t) - UA\left(T(t)-T_{\mathrm{amb}}\right)
 \end{equation}
 
-donde $m$ es la masa activa de fluido, expresada en $\mathrm{kg}$; $c_p$ es el calor específico del agua, con un valor aproximado de $4186,\mathrm{J/(kg,K)}$ [9]; $Q_h(t)$ es la potencia térmica entregada por la resistencia, expresada en $\mathrm{W}$; $UA$ es el coeficiente global de transferencia de calor asociado a las pérdidas hacia el ambiente, expresado en $\mathrm{W/K}$; y $T_{\mathrm{amb}}$ es la temperatura ambiente, considerada como una perturbación del sistema.
+donde $m$ es la masa activa de fluido, expresada en $\mathrm{kg}$; $c_p$ es el calor específico del agua, con un valor aproximado de $4186\,\mathrm{J/(kg\cdot K)}$ [9]; $Q_h(t)$ es la potencia térmica entregada por la resistencia, expresada en $\mathrm{W}$; $UA$ es el coeficiente global de transferencia de calor asociado a las pérdidas hacia el ambiente, expresado en $\mathrm{W/K}$; y $T_{\mathrm{amb}}$ es la temperatura ambiente, considerada como una perturbación del sistema.
 
 Linealizando el modelo alrededor de un punto de operación y aplicando la transformada de Laplace, bajo la condición inicial $T(0)=T_{\mathrm{amb}}$, se obtiene el modelo de primer orden estándar [2], [3]:
 \begin{equation}
-\frac{\Delta T(s)}{Q_h(s)}
-\end{equation}
-\begin{equation}
-\frac{K}{\tau s+1}
+\frac{\Delta T(s)}{Q_h(s)} = \frac{K}{\tau s+1}
 \end{equation}
 
 donde la ganancia estática del proceso y la constante de tiempo están dadas, respectivamente, por:

@@ -18,9 +18,9 @@
 \endfoot
 \bottomrule
 \endlastfoot
-Variable controlada&Temperatura del agua o solución (PT100 conectado al PLC)&$^{\circ}$C&Desarrollo completo en la Sección~5.1.\\
-Variable manipulada&Potencia entregada al calentador (resistencia 2000\,W vía SSR+PWM)&0--2000\,W / 0--100\,\% ciclo de trabajo&Desarrollo completo en la Sección~5.2.\\
-Perturbaciones&Pérdidas térmicas hacia el ambiente (agrupadas en $UA$), $T_{amb}$, adición de fluido frío entre fases, pérdidas en mangueras externas&$UA\approx4$\,W/K (supuesto, a validar); $T_{amb}=18$--$25\,^{\circ}$C&$UA$ es la hipótesis más débil del modelo; pendiente de ensayo de enfriamiento libre en el Corte~2. La adición de fluido frío es la perturbación más crítica y descarta el control puramente P.\\
+Variable controlada&Temperatura del agua o solución (PT100 conectado al PLC)&$^{\circ}$C&Desarrollo completo en la Sección~\ref{sec:pv}.\\
+Variable manipulada&Potencia entregada al calentador (resistencia 2000\,W vía SSR+PWM)&0--2000\,W / 0--100\,\% ciclo de trabajo&Desarrollo completo en la Sección~\ref{sec:mv}.\\
+Perturbaciones&Pérdidas térmicas hacia el ambiente (agrupadas en $UA$), $T_{amb}$, adición de fluido frío entre fases, pérdidas en mangueras externas&$UA\approx4$\,W/K (supuesto, a validar); $T_{amb}=18$--$25\,^{\circ}$C&$UA$ es la hipótesis más débil del modelo; a contrastar con el ensayo experimental de la Sección~\ref{sec:montaje_control}. La adición de fluido frío es la perturbación más crítica y descarta el control puramente P.\\
 Limitaciones&Saturación por sobredimensionamiento; actuador unidireccional&---&Obliga a usar anti-windup en PID\_Compact; el enfriamiento solo ocurre por pérdidas naturales, mucho más lento que el calentamiento.\\
 \end{longtable}
 \end{footnotesize}

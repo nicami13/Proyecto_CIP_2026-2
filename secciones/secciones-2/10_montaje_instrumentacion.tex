@@ -11,7 +11,7 @@ La instrumentación del prototipo se organiza alrededor del PLC Siemens S7-1200 
 \toprule
 \textbf{Tag} & \textbf{Elemento} & \textbf{Descripción} & \textbf{Conexión con el PLC}\\
 \midrule
-TT-101 & Transmisor de temperatura & Sensor RTD PT100 de 3 hilos con transmisor SITRANS de 4--20\,mA, instalado en el tanque de mezcla & Entrada analógica, mediante una resistencia de 500\,$\Omega$; escalamiento con \texttt{NORM\_X} y \texttt{SCALE\_X}\\
+TT-101 & Transmisor de temperatura & Sensor RTD PT100 de 3 hilos con transmisor SITRANS de 4--20\,mA (0--100\,$^{\circ}$C), instalado en el tanque de mezcla & Entrada analógica, mediante una resistencia de 500\,$\Omega$; escalamiento con \texttt{NORM\_X} y \texttt{SCALE\_X}\\
 LSL-101 / LSH-101 & Interruptores de nivel bajo y alto & Flotador doble instalado en el tanque de mezcla & Entradas digitales\\
 E-101 & Resistencia de inmersión & Resistencia de 1500\,W de placa, que entrega aproximadamente 2000\,W a la tensión del laboratorio (126\,V) & Salida de relé que activa un SSR de 60\,A\\
 P-102 & Bomba de impulsión & Bomba periférica de 110\,V\,AC & Salida de relé que activa un SSR de 40\,A\\
@@ -28,6 +28,59 @@ SV-103 & Electroválvula de descarga & Electroválvula de 24\,V\,DC entre el tan
 
 \paragraph{Protecciones.} La resistencia de inmersión cuenta con un interruptor automático de 15\,A de un polo, y la bomba de impulsión y la bomba de agitación comparten un interruptor automático independiente de 7\,A. El sistema dispone además de un paro de emergencia tipo hongo.
 
+\paragraph{Diagrama unifilar.} La Figura~\ref{fig:unifilar} presenta el diagrama unifilar de potencia del prototipo. Desde la red monofásica de 110\,V\,AC se alimentan el PLC, la fuente de 24\,V\,DC, el circuito de la resistencia de inmersión y el circuito de las bombas de impulsión y de agitación, cada uno con su elemento de conmutación. Los SSR, el relé auxiliar y las electroválvulas se accionan desde las salidas de relé del PLC con los 24\,V\,DC de la fuente. Las protecciones del PLC y de la fuente se indican como pendientes de confirmar.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  equipo/.style={draw=AzulUSTA,rounded corners=3pt,fill=AzulUSTA!8,align=center,minimum height=1.1cm,text width=2.2cm},
+  prot/.style={draw=AzulUSTA,line width=0.9pt,fill=white,align=center,minimum height=0.8cm,text width=2.2cm},
+  pend/.style={draw=gray,dashed,fill=white,align=center,minimum height=0.8cm,text width=2.4cm,text=gray},
+  linea/.style={line width=0.8pt,draw=AzulUSTA},
+  etiqueta/.style={font=\scriptsize,align=left,fill=white,inner sep=1pt}]
+  % Barra de alimentación
+  \draw[linea,line width=1.6pt] (-1.2,0) -- (13.2,0);
+  \node[font=\footnotesize\bfseries,anchor=south] at (6.0,0.1) {Red monofásica 110\,V\,AC (126\,V medidos en el laboratorio)};
+  % PLC
+  \node[pend] (pplc) at (0,-1.3) {Protección\\por confirmar};
+  \node[equipo] (plc) at (0,-2.8) {PLC S7-1200\\CPU 1214C};
+  % Fuente de 24 V
+  \node[pend] (pfte) at (3.0,-1.3) {Protección\\por confirmar};
+  \node[equipo,text width=2.6cm] (fte) at (3.0,-2.8) {Fuente WDR-120-24\\24\,V\,DC, 120\,W};
+  \node[equipo,text width=4.6cm] (c24) at (4.0,-6.4) {Circuitos de 24\,V\,DC: sensores, mando, electroválvulas SV-102 y SV-103, entradas de los SSR y bobina del relé auxiliar};
+  \node[equipo] (lm) at (0,-4.6) {Convertidor\\LM2596\\(12\,V\,DC)};
+  \node[equipo] (p101) at (0,-6.6) {P-101\\Bomba\\dosificadora};
+  % Resistencia
+  \node[prot] (b15) at (6.0,-1.3) {Interruptor\\15\,A, 1 polo};
+  \node[equipo] (ssr60) at (6.0,-2.8) {SSR 60\,A};
+  \node[equipo] (e101) at (6.0,-4.6) {E-101\\Resistencia\\($\approx$2000\,W)};
+  % Bombas
+  \node[prot] (b7) at (10.5,-1.3) {Interruptor 7\,A};
+  \node[equipo] (ssr40) at (9.0,-2.8) {SSR 40\,A};
+  \node[equipo] (rel) at (12.0,-2.8) {Contacto del\\relé auxiliar};
+  \node[equipo] (p102) at (9.0,-4.6) {P-102\\Bomba de impulsión};
+  \node[equipo] (p103) at (12.0,-4.6) {P-103\\Bomba de agitación (22\,W)};
+  % Conexiones
+  \foreach \x/\n in {0/pplc,3.0/pfte,6.0/b15,10.5/b7} \draw[linea] (\x,0) -- (\n.north);
+  \draw[linea] (pplc) -- (plc);
+  \draw[linea] (pfte) -- (fte);
+  \draw[linea] (fte.south) -- (3.0,-3.8) -- (3.0,-3.8 |- c24.north);
+  \draw[linea] (3.0,-3.8) -- (0,-3.8) -- (lm.north);
+  \draw[linea] (lm) -- node[etiqueta,left=2pt,align=right] {Salida de relé\\del PLC} (p101);
+  \draw[linea] (b15) -- (ssr60);
+  \draw[linea] (ssr60) -- (e101);
+  \draw[linea] (b7.south) -- (10.5,-2.05) -| (ssr40.north);
+  \draw[linea] (10.5,-2.05) -| (rel.north);
+  \draw[linea] (ssr40) -- (p102);
+  \draw[linea] (rel) -- (p103);
+\end{tikzpicture}
+\caption{Diagrama unifilar de potencia del prototipo.}
+\label{fig:unifilar}
+\end{figure}
+
 \paragraph{Montaje y conexionado.} Los disyuntores, la fuente de alimentación y el transmisor de temperatura se ubicaron en un tablero elaborado por el equipo. Las conexiones de sensores y actuadores se realizaron con tornillería métrica y se protegieron con termoencogible, de modo que quedaran fijas, seguras y aisladas de la humedad.
 
-\campo{Pendiente: diagrama unifilar de potencia, diagrama de conexiones del PLC (mapa de entradas y salidas con sus direcciones) y fotografías del tablero.}
+Las direcciones de las entradas y salidas del PLC se presentan en el mapa de la Sección~\ref{sec:montaje_programacion}.
+
+\campo{Pendiente: protecciones del PLC y de la fuente de 24\,V, ubicación del paro de emergencia en el circuito, diagrama de conexiones del PLC y fotografías del tablero.}
