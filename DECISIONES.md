@@ -107,7 +107,7 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 | Elemento | Decisión |
 |---|---|
 | Resistencia E-101 | Comprada como **1500 W**; a los 126 V del laboratorio entrega **≈ 2000 W**. **El modelo térmico usa 2000 W.** |
-| Protecciones | Breaker de **15 A, 1 polo** (resistencia) y otro de **≈ 7 A** (bomba de impulsión y bomba de agitación). Ya no se usa el taco de 20 A. |
+| Protecciones | Breaker de **15 A, 1 polo** (resistencia) y otro de **7 A** (bomba de impulsión y bomba de agitación). Ya no se usa el taco de 20 A. Transmisor de temperatura: **SITRANS** (en el tablero). |
 | SSR | **Dos:** 60 A para la resistencia y 40 A para la bomba de impulsión. **Sin disipador ni ventilador** (solo la placa metálica propia). |
 | Bomba de impulsión P-102 | **Bomba periférica**, accionada por el SSR de 40 A. **Sin contactor ni guardamotor.** |
 | Bomba de agitación P-103 | Sumergible, **110 V AC, 22 W**, dentro de TK-102, accionada por un relé externo con bobina de 24 V. |
@@ -150,7 +150,7 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 - [ ] Sobreimpulso máximo (con 15 % sobre 35 °C se llega a 40,25 °C, el límite del sello). *(Error ya decidido: ±1,75 °C.)*
 - [ ] Valor del umbral de corte por sobretemperatura (en el documento queda "por definir").
 - [ ] Termostato bimetálico: se cree que no se usa.
-- [ ] Valor real del breaker de ≈ 7 A y voltaje de la red (126 V medidos).
+- [x] Breaker de las bombas: 7 A (confirmado). Voltaje de la red: 126 V medidos.
 - [ ] Protección de la bomba de impulsión si el SSR se queda pegado.
 - [ ] Justificación de temperatura uniforme en el modelo sin agitación durante el calentamiento.
 - [ ] Tanque de detergente (TK-101): cuál es y de cuántos litros.
