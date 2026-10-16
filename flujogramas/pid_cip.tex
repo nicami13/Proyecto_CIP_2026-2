@@ -1,0 +1,129 @@
+% P&ID del sistema CIP portátil (prototipo del segundo corte).
+% Requiere: \usetikzlibrary{arrows.meta,decorations.pathmorphing} y el color AzulUSTA.
+\begin{tikzpicture}[
+  font=\footnotesize,
+  proceso/.style={line width=0.8pt,-{Stealth[length=2.2mm]}},
+  tramo/.style={line width=0.8pt},
+  senal/.style={AzulUSTA,dashed,line width=0.6pt},
+  aplc/.style={AzulUSTA,font=\scriptsize},
+  tag/.style={font=\footnotesize\bfseries},
+  instrumento/.style={draw,circle,minimum size=0.9cm,inner sep=0pt,align=center,font=\scriptsize,fill=white},
+  caja/.style={draw,rounded corners=3pt,align=center,fill=white,minimum height=0.7cm},
+  tanque/.style={draw,line width=0.8pt,rounded corners=8pt,fill=white},
+  solenoide/.pic={
+    \draw[fill=white] (-0.35,-0.2)--(-0.35,0.2)--(0.35,-0.2)--(0.35,0.2)--cycle;
+    \draw (0,0)--(0,0.35);
+    \draw[fill=white] (-0.13,0.35) rectangle (0.13,0.61);
+    \node[font=\tiny] at (0,0.48) {S};
+  },
+  manual/.pic={
+    \draw[fill=white] (-0.35,-0.2)--(-0.35,0.2)--(0.35,-0.2)--(0.35,0.2)--cycle;
+    \draw (0,0)--(0,0.35);
+    \draw[line width=0.8pt] (-0.2,0.35)--(0.2,0.35);
+  },
+  centrifuga/.pic={
+    \draw[fill=white] (0,0) circle (0.35);
+    \draw (0,0.35)--(0.35,0.35);
+    \draw (-0.2,-0.12)--(0.2,0)--(-0.2,0.12);
+  },
+  peristaltica/.pic={
+    \draw[fill=white] (0,0) circle (0.35);
+    \draw (0,0) circle (0.13);
+    \foreach \a in {90,210,330} \fill (\a:0.24) circle (0.04);
+  },
+]
+
+% ---------------- Tanques ----------------
+\draw[tanque] (0,7.6) rectangle (1.8,9.8);
+\node[align=center] at (0.9,8.7) {Tanque de\\detergente};
+\node[tag] at (0.9,7.3) {TK-101};
+
+\draw[tanque] (5.6,3.6) rectangle (9.4,7.4);
+\node[align=center] at (7.5,6.95) {Tanque de mezcla};
+\node[tag] at (7.5,7.65) {TK-102};
+
+\draw[tanque] (14.8,3.8) rectangle (16.8,7.2);
+\node[align=center] at (15.8,5.5) {Tanque de\\efluentes\\(30 L)};
+\node[tag] at (15.8,7.45) {TK-103};
+
+% ---------------- Línea L-1: detergente ----------------
+\draw[tramo] (1.8,9.0)--(2.85,9.0);
+\draw[proceso] (3.55,9.0)--(6.6,9.0)--(6.6,7.4);
+\pic at (3.2,9.0) {peristaltica};
+\node[tag] at (3.2,8.4) {P-101};
+\draw[senal] (3.2,9.35)--(3.2,10.1) node[aplc,above] {a PLC};
+\node at (5.0,9.25) {L-1};
+
+% ---------------- Línea L-2: agua de red ----------------
+\node[caja] (red) at (15.8,9.0) {Red de agua};
+\draw[proceso] (red.west)--(8.4,9.0)--(8.4,7.4);
+\pic at (12.3,9.0) {solenoide};
+\node[tag] at (12.3,8.5) {SV-102};
+\draw[senal] (12.3,9.61)--(12.3,10.1) node[aplc,above] {a PLC};
+\node at (10.3,9.25) {L-2};
+
+% ---------------- Instrumentos y elementos de TK-102 ----------------
+% Resistencia de inmersión
+\draw[tramo] (5.0,4.6)--(5.75,4.6);
+\draw[line width=0.8pt,decorate,decoration={zigzag,segment length=4pt,amplitude=3pt}] (5.75,4.6)--(7.0,4.6);
+\fill (5.0,4.6) circle (0.06);
+\node[tag] at (5.0,4.25) {E-101};
+\draw[senal] (4.94,4.6)--(3.4,4.6) node[aplc,left] {a PLC (SSR)};
+
+% Transmisor de temperatura
+\node[instrumento] (tt) at (4.4,6.0) {TT\\101};
+\draw[tramo] (tt.east)--(6.3,6.0);
+\draw[senal] (tt.west)--(3.4,6.0) node[aplc,left] {a PLC (4--20\,mA)};
+
+% Interruptores de nivel alto y bajo
+\node[instrumento] (lsh) at (10.6,6.8) {LSH\\101};
+\draw[tramo] (lsh.west)--(8.95,6.8);
+\draw[fill=white] (8.85,6.8) circle (0.1);
+\draw[senal] (lsh.east)--(11.7,6.8) node[aplc,right] {a PLC};
+
+\node[instrumento] (lsl) at (10.6,4.4) {LSL\\101};
+\draw[tramo] (lsl.west)--(8.95,4.4);
+\draw[fill=white] (8.85,4.4) circle (0.1);
+\draw[senal] (lsl.east)--(11.7,4.4) node[aplc,right] {a PLC};
+
+% Bomba de agitación sumergible
+\pic[scale=0.75] at (7.9,4.15) {centrifuga};
+\node[tag] at (7.9,4.75) {P-103};
+\draw[-{Stealth[length=1.5mm]},line width=0.5pt] (8.45,3.95) arc (-60:200:0.2);
+\draw[senal] (7.9,3.89)--(7.9,3.25)--(11.0,3.25) node[aplc,right] {a PLC (relé)};
+
+% ---------------- Línea L-3: descarga e impulsión ----------------
+\draw[tramo] (7.5,3.6)--(7.5,1.5)--(10.05,1.5);
+\node at (7.15,2.55) {L-3};
+\pic at (8.8,1.5) {solenoide};
+\node[tag] at (8.8,1.0) {SV-103};
+\draw[senal] (8.8,2.11)--(8.8,2.5) node[aplc,above] {a PLC};
+
+\pic at (10.4,1.5) {centrifuga};
+\node[tag] at (10.25,2.3) {P-102};
+\draw[senal] (10.4,1.15)--(10.4,0.55);
+\node[aplc] at (10.4,0.35) {a PLC (SSR)};
+
+\node[caja,minimum width=2.4cm] (tub) at (12.65,1.85) {Tubería de prueba};
+\draw[tramo] (10.75,1.85)--(tub.west);
+
+% ---------------- Línea L-4: efluente ----------------
+\draw[proceso] (tub.east)--(14.2,1.85)--(14.2,6.6)--(14.8,6.6);
+\node at (13.85,4.5) {L-4};
+
+% ---------------- Línea L-5: vaciado manual ----------------
+\node[caja] (des) at (15.8,0.9) {Desagüe};
+\draw[proceso] (15.8,3.8)--(des.north);
+\pic[rotate=-90] at (15.8,2.55) {manual};
+\node[tag,right] at (16.15,2.65) {HV-101};
+\node[font=\scriptsize,right] at (16.15,2.25) {(manual)};
+\node at (15.45,3.3) {L-5};
+
+% ---------------- Convenciones ----------------
+\draw[line width=0.8pt] (0,2.0)--(0.8,2.0);
+\node[right] at (0.9,2.0) {Línea de proceso};
+\draw[senal] (0,1.5)--(0.8,1.5);
+\node[right] at (0.9,1.5) {Señal eléctrica PLC};
+\node[right,font=\scriptsize,align=left] at (0,0.9) {Esquema de paso único:\\sin recirculación hacia TK-102};
+
+\end{tikzpicture}

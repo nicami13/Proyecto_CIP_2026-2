@@ -1,68 +1,111 @@
-\section{Diseño conceptual mecatrónico}
+\section{Diseño conceptual mecatrónico}\label{sec:diseno_conceptual}
 
 \subsection{Descripción de la solución propuesta}
-El diseño del sistema CIP se ha concebido como una solución compacta e integrada, orientada a optimizar los procesos de limpieza y desinfección de tuberías mediante una secuencia automatizada de etapas. La arquitectura funcional del equipo se articula en torno a tres subsistemas de almacenamiento: un tanque para la recogida de agua residual —cuyo llenado se realiza por gravedad al término de cada ciclo—, un tanque destinado al agente de limpieza y desinfección, y una cabina de operaciones que constituye el núcleo reactivo del sistema, donde se acondicionan los fluidos antes de su descarga a la línea objetivo.
+El sistema CIP se concibe como una unidad portátil que limpia una tubería de prueba mediante una secuencia automatizada de fases, en un esquema de paso único: en cada fase, el fluido se prepara en el tanque de mezcla, se impulsa una sola vez a través de la tubería de prueba y se recoge en el tanque de efluentes, sin recircular hacia el tanque de mezcla. La arquitectura del equipo se articula en torno a tres tanques: el tanque de detergente (TK-101), el tanque de mezcla (TK-102), de plástico y con capacidad de 50\,L, donde se acondiciona el fluido de cada fase con un llenado de 20 a 23\,L, y el tanque de efluentes (TK-103), metálico y de 30\,L, que el operario vacía manualmente al drenaje entre fases mediante la válvula HV-101.
 
-El proceso productivo se estructura en tres ciclos diferenciados, ejecutados de manera secuencial dentro de la cabina de operaciones:
+El ciclo se compone de tres fases, ejecutadas de manera secuencial en el tanque de mezcla:
 
-Ciclo I (preenjuague térmico): se procede al llenado de la cabina con agua hasta alcanzar un nivel preestablecido, monitorizado por sensor. Acto seguido, se activa la resistencia de inmersión hasta lograr la temperatura de consigna, tras lo cual el volumen acondicionado es evacuado hacia la tubería a limpiar.
+\textbf{Preenjuague:} el tanque de mezcla se llena con agua de red hasta el nivel alto. Luego se enciende la resistencia de inmersión hasta alcanzar la consigna de 35\,°C y el fluido se impulsa hacia la tubería de prueba.
 
-Ciclo II (lavado químico y mecánico): nuevamente se carga la cabina con agua hasta el nivel de referencia. En esta etapa se incorpora una dosificación controlada del agente jabonoso, al tiempo que se activa el calentamiento y se acciona el agitador (motoreductor) para asegurar la homogeneización y la eficacia térmica de la solución. Finalizada la preparación, la mezcla es impulsada hacia la tubería.
+\textbf{Lavado con detergente:} el tanque se llena nuevamente con agua y la bomba dosificadora agrega el detergente. La bomba de agitación homogeniza la mezcla antes del calentamiento; después, la resistencia calienta el fluido hasta 35\,°C y la solución se impulsa hacia la tubería de prueba.
 
-Ciclo III (enjuague final): se realiza un último llenado con agua hasta el nivel establecido, para ser descargado directamente sin tratamiento térmico ni aditivos, garantizando el arrastre de los residuos remanentes y concluyendo la secuencia de limpieza.
+\textbf{Enjuague final:} se realiza un último llenado con agua, que se impulsa hacia la tubería de prueba sin calentamiento ni detergente, para arrastrar los residuos remanentes.
 
-El abastecimiento de agua proviene de la red general, cuyo ingreso a la cabina es regulado mediante una electroválvula de paso, gobernada por la lógica de control, que habilita o interrumpe el flujo según la demanda de cada ciclo.
+El agua de red ingresa al tanque de mezcla a través de la electroválvula de llenado SV-102, gobernada por el PLC. El sistema cuenta con tres bombas de funciones diferenciadas: la bomba dosificadora peristáltica (P-101), que agrega el detergente desde TK-101; la bomba de agitación sumergible (P-103), ubicada dentro del tanque de mezcla; y la bomba de impulsión (P-102), que envía el fluido hacia la tubería de prueba una vez se abre la electroválvula de descarga SV-103. El calentamiento se realiza mediante una resistencia de inmersión (E-101) que entrega aproximadamente 2000\,W a la tensión del laboratorio.
 
-En cuanto al manejo de fluidos, el sistema dispone de dos bombas con cometidos claramente diferenciados: una destinada a la extracción de los insumos procesados desde la cabina hacia la tubería, y otra encargada de la dosificación precisa del jabón desde su tanque de almacenamiento. Con el fin de garantizar la estanqueidad y evitar el reflujo o la contaminación cruzada entre fluidos, a la salida de cada bomba se ha dispuesto una configuración de doble bloqueo mediante dos electroválvulas en serie, que aseguran el aislamiento hidráulico cuando la bomba no se encuentra en operación.
-
-El acondicionamiento térmico del agua se efectúa exclusivamente a través de una resistencia de inmersión, cuya potencia de $2000\,\mathrm{W}$ permite alcanzar los rangos de temperatura requeridos en los tiempos establecidos.
-
-Finalmente, la instrumentación de seguridad incorpora sensores de nivel tanto en el tanque de agua residual como en la cabina de operaciones, cuyas señales permiten prevenir condiciones de rebose y garantizar la integridad operativa del conjunto, deteniendo el llenado de forma automática al alcanzar los límites máximos permitidos.
-\insertarfigura[0.5\textwidth]{GENERAL CIP.jpeg}{CAD general del sistema CIP.}{fig:general}
+La instrumentación del tanque de mezcla comprende un transmisor de temperatura (TT-101), basado en un sensor PT100 con salida de 4--20\,mA, y un flotador doble con interruptores de nivel bajo (LSL-101) y alto (LSH-101). El nivel alto termina el llenado y el nivel bajo detiene la bomba de impulsión al vaciarse el tanque, lo que evita su funcionamiento en vacío. Las diferencias entre esta solución y el diseño de referencia del primer corte se explican en la Sección~\ref{sec:cambios_prototipo}.
 
 \subsection{Diagrama general de bloques}
-\insertarfigura{diagrama_general.pdf}{Diagrama general del sistema.}{fig:general-bloques}
 
-Esta configuración responde directamente a las especificaciones 
-técnicas del proyecto. La integración del agitador AG-101 resuelve 
-la exigencia de homogeneidad y valida la hipótesis de temperatura 
-uniforme en el tanque. El lazo de control entre el sensor TT-101 
-y la válvula SV-101 asegura la precisión térmica. Por su parte, 
-la bomba P-102 garantiza el dinamismo hidráulico para la limpieza 
-de la tubería, mientras que la disposición final en TK-103 o 
-desagüe cumple con el manejo seguro de efluentes en paso directo. La identificación y función 
-de los equipos e instrumentos mencionados se encuentran detalladas en la Tabla~\ref{tab:pid_elementos}
+La Figura~\ref{fig:general-bloques} presenta el diagrama general de bloques del sistema. Las flechas continuas indican el recorrido del fluido y las líneas punteadas, las señales del PLC.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  blk/.style={draw=AzulUSTA,rounded corners=3pt,fill=AzulUSTA!8,align=center,minimum height=0.9cm,text width=1.9cm},
+  flujo/.style={-{Stealth[length=2.2mm]},line width=0.8pt},
+  senal/.style={AzulUSTA,dashed,line width=0.6pt}]
+  \node[blk] (red) at (0,0) {Red de agua};
+  \node[blk] (sv102) at (2.5,0) {SV-102\\Llenado};
+  \node[blk] (tk101) at (0,-1.4) {TK-101\\Detergente};
+  \node[blk] (p101) at (2.5,-1.4) {P-101\\Dosificadora};
+  \node[blk,text width=2.4cm,minimum height=2.3cm] (tk102) at (5.4,-0.7) {\textbf{TK-102}\\Tanque de mezcla\\[1mm] E-101, P-103\\TT-101\\LSL/LSH-101};
+  \node[blk] (sv103) at (8.3,-0.7) {SV-103\\Descarga};
+  \node[blk] (p102) at (10.8,-0.7) {P-102\\Impulsión};
+  \node[blk] (tub) at (13.3,-0.7) {Tubería\\de prueba};
+  \node[blk] (tk103) at (13.3,-2.8) {TK-103\\Efluentes};
+  \node[blk] (hv) at (10.8,-2.8) {HV-101\\(manual)};
+  \node[blk] (dren) at (8.3,-2.8) {Drenaje};
+  \node[blk,text width=4.8cm] (plc) at (5.4,1.9) {PLC S7-1200\\Secuencia y control\\de temperatura};
+  \node[blk,text width=4.0cm] (sup) at (12.2,3.2) {HMI y supervisión remota};
+  \draw[flujo] (red) -- (sv102);
+  \draw[flujo] (sv102) -- (sv102 -| tk102.west);
+  \draw[flujo] (tk101) -- (p101);
+  \draw[flujo] (p101) -- (p101 -| tk102.west);
+  \draw[flujo] (tk102) -- (sv103);
+  \draw[flujo] (sv103) -- (p102);
+  \draw[flujo] (p102) -- (tub);
+  \draw[flujo] (tub) -- (tk103);
+  \draw[flujo] (tk103) -- (hv);
+  \draw[flujo] (hv) -- (dren);
+  \draw[senal] (plc.west) -- (1.25,1.9) -- (1.25,-0.75) -- (2.5,-0.75) -- (p101.north);
+  \draw[senal] (plc) -| (sv102.north);
+  \draw[senal] (plc) -- (tk102);
+  \draw[senal] (plc.east) -| (sv103.north);
+  \draw[senal] (plc.east) -| (p102.north);
+  \draw[senal,<->] (plc.east) -| (sup.south);
+\end{tikzpicture}
+\caption{Diagrama general de bloques del sistema CIP.}
+\label{fig:general-bloques}
+\end{figure}
 
 \subsection{Arquitectura funcional}
-La Figura~\ref{fig:arq_funcional} presenta la arquitectura propuesta para el sistema portátil de limpieza CIP, en la cual se integran los elementos de proceso, control, instrumentación y supervisión.
-La operación del sistema se centraliza en el PLC, encargado de coordinar las señales de los instrumentos y el accionamiento de los diferentes actuadores. En la etapa de preparación, el agua ingresa 
-al tanque de mezcla TK-102, mientras que el jabón almacenado en TK-101 es incorporado mediante la bomba dosificadora P-101. Posteriormente, el motorreductor M-101 acciona el agitador AG-101 para favorecer
-la homogeneización de la mezcla, mientras que el elemento calefactor E-101 permite elevar su temperatura. Durante esta etapa, el nivel y la temperatura son supervisados mediante LIT-101 y TT-101, respectivamente.
+La Figura~\ref{fig:arq_funcional} presenta la arquitectura funcional del sistema, organizada en tres niveles: campo, control y supervisión. La operación se centraliza en el PLC, que recibe las señales de los sensores y de los elementos de mando y acciona los actuadores, directamente mediante sus salidas de relé o a través de relés de estado sólido (SSR) y de un relé auxiliar. La instrumentación y la conexión de cada elemento se detallan en la Sección~\ref{sec:montaje_instrumentacion}.
 
-Una vez preparada la solución de limpieza, la bomba P-102 impulsa el fluido hacia la tubería de limpieza CIP, donde se realiza el lavado del equipo de prueba. Finalmente, el fluido utilizado es conducido hacia 
-TK-103 o al sistema de desagüe, de acuerdo con la disposición hidráulica planteada. La identificación, denominación y función de los equipos, válvulas, instrumentos y líneas mencionados se encuentran detalladas en la Tabla~\ref{tab:pid_elementos}
+En el nivel de supervisión, el panel HMI permite la operación y visualización local, mientras que una Raspberry Pi actúa como pasarela hacia una API en la nube y una interfaz web. De esta manera, variables como la temperatura, el nivel y el estado de las bombas y de la resistencia pueden consultarse de forma remota, manteniendo separada la función de control local de la capa de supervisión (Sección~\ref{sec:montaje_comunicaciones}).
 
-La arquitectura también incorpora una capa de comunicación y supervisión. El gateway recibe la información generada por el sistema de control, realiza el procesamiento y empaquetado de los datos y permite su envío hacia
- la capa de visualización y supervisión. De esta manera, variables como temperatura, nivel y estados de operación pueden ser monitoreados y registrados, manteniendo separada la función de control local de la capa de supervisión IoT.
-
-\insertarfigura{arquitectura_funcional.pdf}{Diagrama de la arquitectura propuesta.}{fig:arq_funcional}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  blk/.style={draw=AzulUSTA,rounded corners=3pt,fill=AzulUSTA!8,align=center,minimum height=1.0cm},
+  enlace/.style={-{Stealth[length=2.2mm]},line width=0.7pt,draw=AzulUSTA},
+  etiqueta/.style={font=\scriptsize,align=center,fill=white,inner sep=1pt},
+  nivel/.style={font=\footnotesize\bfseries,anchor=west,text=AzulUSTA}]
+  \node[nivel] at (-1.2,3.1) {Supervisión};
+  \node[nivel] at (-1.2,1.0) {Control};
+  \node[nivel] at (-1.2,-1.4) {Campo};
+  \node[blk,text width=3.4cm] (hmi) at (3.4,3.1) {HMI KTP600 Basic\\(supervisión local)};
+  \node[blk,text width=5.2cm] (rem) at (10.2,3.1) {Raspberry Pi (Node-RED) $\rightarrow$ API en AWS $\rightarrow$ interfaz en Streamlit\\(supervisión remota)};
+  \node[blk,text width=4.6cm] (plc) at (6.8,1.0) {PLC S7-1200 CPU 1214C\\Secuencia del ciclo y control de temperatura};
+  \node[blk,text width=4.4cm] (sen) at (3.4,-1.4) {\textbf{Sensores y mando}\\TT-101 (PT100, 4--20\,mA)\\LSL-101 y LSH-101\\Pulsadores y selector};
+  \node[blk,text width=5.6cm] (act) at (10.4,-1.4) {\textbf{Actuadores}\\SV-102, SV-103 y P-101\\(salidas de relé)\\E-101 (SSR de 60\,A)\\P-102 (SSR de 40\,A)\\P-103 (relé auxiliar)};
+  \draw[enlace] (sen.north) |- node[etiqueta,pos=0.25,left=2pt] {Entradas} (plc.west);
+  \draw[enlace] (plc.east) -| node[etiqueta,pos=0.75,right=2pt] {Salidas} (act.north);
+  \draw[enlace,<->] ([xshift=0.6cm]plc.north west) -- node[etiqueta,left=2pt] {PROFINET} ([xshift=0.6cm]plc.north west |- hmi.south);
+  \draw[enlace] ([xshift=-0.6cm]plc.north east) -- node[etiqueta,right=2pt] {Protocolo S7} ([xshift=-0.6cm]plc.north east |- rem.south);
+\end{tikzpicture}
+\caption{Arquitectura funcional del sistema CIP.}
+\label{fig:arq_funcional}
+\end{figure}
 
 \subsection{Arquitectura operacional}
 
-La arquitectura operacional del sistema CIP organiza el proceso como una secuencia controlada de etapas, desde la preparación de la solución hasta la descarga final. En cada etapa, la lógica de control coordina el ingreso de agua, la dosificación de jabón, la agitación, el calentamiento, la impulsión del fluido y la supervisión de los niveles, con el propósito de garantizar una operación segura y repetible durante la limpieza de la tubería.
+La arquitectura operacional del sistema CIP organiza el proceso como una secuencia controlada de etapas, desde la preparación de la solución hasta la descarga final. En cada etapa, la lógica de control coordina el ingreso de agua, la dosificación del detergente, la agitación, el calentamiento, la impulsión del fluido y la supervisión de los niveles, con el propósito de garantizar una operación segura y repetible durante la limpieza de la tubería.
 
-Esta secuencia se representa de manera preliminar mediante CadeSimu, permitiendo visualizar la integración de un Grafcet inicial y comprender el funcionamiento general del sistema. Este Grafcet corresponde a una propuesta preliminar y podrá ser ajustado durante el desarrollo posterior del sistema de control. Las etapas principales de funcionamiento se presentan de forma general en las Figuras~\ref{fig:etapa-01}--\ref{fig:etapa-09}.
-\insertarfigura[0.6\textwidth]{Cade_Pi.png}{Arquitectura funcional del sistema.}{fig:arquitectura}
+En el primer corte, esta secuencia se representó de manera preliminar mediante CADe\_SIMU (Figura~\ref{fig:arquitectura}), con un GRAFCET inicial cuyas etapas principales se presentan en las Figuras~\ref{fig:etapa-01}--\ref{fig:etapa-09}. Esta propuesta se conserva como antecedente del diseño: emplea la nomenclatura del primer corte (cabina de operaciones y jabón) y contempla la verificación del nivel del tanque de agua residual antes de cada descarga, que no se implementó porque el tanque de efluentes no cuenta con sensor de nivel y se vacía manualmente entre fases. La secuencia vigente, con su GRAFCET y su implementación en Ladder, se presenta en la Sección~\ref{sec:montaje_programacion}.
+\insertarfigura[0.6\textwidth]{Cade_Pi.png}{Modelo preliminar de la secuencia en CADe\_SIMU (primer corte).}{fig:arquitectura}
 
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 1. El proceso inicia al darle la señal de arranque el cual permite el accionamiento de la electrovalvula 1 la cual permite el llenado de la cabina con agua}\\[2mm]
+\raggedright\textbf{Etapa 1. El proceso inicia con la señal de arranque, que acciona la electroválvula 1 y permite el llenado de la cabina con agua.}\\[2mm]
 \IfFileExists{figuras/etapa-01.png}{\includegraphics[width=\textwidth]{etapa-01.png}}{\fbox{\parbox[c][4cm][c]{1.0\textwidth}{\centering Inserte la imagen de la etapa 1}}}
 \captionof{figure}{Etapa 1: Llenado de la cabina de operaciones.}\label{fig:etapa-01}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 2. Al llegar al nivel de referencia se acciona la resistencia de inmersión para calentamiento del agua hasta una temperatura determinada por el controlador PID}\\[2mm]
+\raggedright\textbf{Etapa 2. Al llegar al nivel de referencia se acciona la resistencia de inmersión para calentar el agua hasta la temperatura de consigna.}\\[2mm]
 \IfFileExists{figuras/etapa-02.png}{\includegraphics[width=\textwidth]{etapa-02.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 2}}}
 \captionof{figure}{Etapa 2: Calentamiento del agua mediante resistencia de inmersión.}\label{fig:etapa-02}
 \end{minipage}
@@ -71,12 +114,12 @@ Esta secuencia se representa de manera preliminar mediante CadeSimu, permitiendo
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 3. Al cumplirse la condición de calentamiento se acciona la bomba de drenado de la cabina de operacion llevado el agua de prejuagado a la tuberia a limpiar (esto solo puede suceder si el tanque de agua resifual se encuentra en el nivel optimo para no desbordar y generar derramamiento)}\\[2mm]
+\raggedright\textbf{Etapa 3. Al cumplirse la condición de calentamiento se acciona la bomba de drenado de la cabina, que lleva el agua de preenjuague a la tubería a limpiar, siempre que el tanque de agua residual tenga capacidad para no desbordarse.}\\[2mm]
 \IfFileExists{figuras/etapa-03.png}{\includegraphics[width=\textwidth]{etapa-03.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 3}}}
 \captionof{figure}{Etapa 3: Bomba de drenado de la cabina de operaciones.}\label{fig:etapa-03}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 4. se realiza el rellenado de la cabina de operaciones esto se realizara cuando ya el nivel del tanque se detecta como bajo}\\[2mm]
+\raggedright\textbf{Etapa 4. Se realiza el rellenado de la cabina de operaciones cuando el nivel del tanque se detecta como bajo.}\\[2mm]
 \IfFileExists{figuras/etapa-04.png}{\includegraphics[width=\textwidth]{etapa-04.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 4}}}
 \captionof{figure}{Etapa 4: Rellenado de la cabina de operaciones.}\label{fig:etapa-04}
 \end{minipage}
@@ -85,12 +128,12 @@ Esta secuencia se representa de manera preliminar mediante CadeSimu, permitiendo
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 5. Dosificacion del jabon, al estar lleno el tanque se accionara la bomba de dosificación del la sustancia de limpieza}\\[2mm]
+\raggedright\textbf{Etapa 5. Con el tanque lleno se acciona la bomba de dosificación de la sustancia de limpieza.}\\[2mm]
 \IfFileExists{figuras/etapa-05.png}{\includegraphics[width=\textwidth]{etapa-05.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 5}}}
 \captionof{figure}{Etapa 5: Dosificación del jabón.}\label{fig:etapa-05}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 6. Se realiza la agitacion y el calentamiento de la mezcla de agua y sustancia de limpieza esto se hara luego de se tenga en cuentra que se estuvo accionado un tiempo determinado la bomba de dosificacion de sustencia de limpieza}\\[2mm]
+\raggedright\textbf{Etapa 6. Tras el tiempo de accionamiento de la bomba de dosificación, se realizan la agitación y el calentamiento de la mezcla de agua y sustancia de limpieza.}\\[2mm]
 \IfFileExists{figuras/etapa-06.png}{\includegraphics[width=\textwidth]{etapa-06.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 6}}}
 \captionof{figure}{Etapa 6: Agitación y calentamiento de la mezcla de agua y sustancia de limpieza.}\label{fig:etapa-06}
 \end{minipage}
@@ -98,82 +141,53 @@ Esta secuencia se representa de manera preliminar mediante CadeSimu, permitiendo
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 7. Se realiza el proceso de calentar y agitar durante un tiempo determinado y si el tanque de agua residual se encuentra en un nivel aceptable se realiza la operación de drenado de la cabina de operación de nuevo a la tubería a limpiar}\\[2mm]
+\raggedright\textbf{Etapa 7. Tras calentar y agitar durante un tiempo determinado, y si el tanque de agua residual se encuentra en un nivel aceptable, se drena la cabina de operaciones hacia la tubería a limpiar.}\\[2mm]
 \IfFileExists{figuras/etapa-07.png}{\includegraphics[width=\textwidth]{etapa-07.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 7}}}
-\captionof{figure}{Etapa 7: circulación de la solución de limpieza en la tubería.}\label{fig:etapa-07}
+\captionof{figure}{Etapa 7: Circulación de la solución de limpieza en la tubería.}\label{fig:etapa-07}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 8. luego de ya drenar la mezcla si el nivel del tanque ya que se encuentra en un nivel aceptable se realiza la operacion de rellenado del tanque para el ultimo ciclo}\\[2mm]
+\raggedright\textbf{Etapa 8. Después de drenar la mezcla, y si el nivel del tanque es aceptable, se rellena el tanque para el último ciclo.}\\[2mm]
 \IfFileExists{figuras/etapa-08.png}{\includegraphics[width=\textwidth]{etapa-08.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 8}}}
-\captionof{figure}{Etapa 8: rellenado del tanque para el ultimo ciclo.}\label{fig:etapa-08}
+\captionof{figure}{Etapa 8: Rellenado del tanque para el último ciclo.}\label{fig:etapa-08}
 \end{minipage}
 \end{figure}
 \begin{figure}[H]
 \centering
 \begin{minipage}[t]{0.47\textwidth}
-\raggedright\textbf{Etapa 9. Se realiza el proceso de enjuague con agua para eliminar residuos remanentes}\\[2mm]
+\raggedright\textbf{Etapa 9. Se realiza el enjuague con agua para eliminar los residuos remanentes.}\\[2mm]
 \IfFileExists{figuras/etapa-09.png}{\includegraphics[width=\textwidth]{etapa-09.png}}{\fbox{\parbox[c][4cm][c]{0.9\textwidth}{\centering Inserte la imagen de la etapa 9}}}
-\captionof{figure}{Etapa 9: enjuague con agua para eliminar residuos remanentes.}\label{fig:etapa-09}
+\captionof{figure}{Etapa 9: Enjuague con agua para eliminar residuos remanentes.}\label{fig:etapa-09}
 \end{minipage}\hfill
 \end{figure}
-\subsection{P\&ID conceptual y recorrido del fluido}
-\insertarfigura{pid_conceptual (2).pdf}{P\&ID conceptual del sistema CIP.}{fig:pid}
+
+\subsection{P\&ID y recorrido del fluido}
+La Figura~\ref{fig:pid} presenta el P\&ID del sistema, actualizado con los elementos del prototipo del segundo corte, y la Tabla~\ref{tab:pid_elementos} identifica cada equipo, válvula, instrumento y línea. El recorrido del fluido sigue el esquema de paso único: el agua de red ingresa al tanque de mezcla TK-102 por la línea L-2, a través de SV-102, y en la fase de lavado la bomba P-101 agrega el detergente desde TK-101 por la línea L-1. Una vez preparado, el fluido sale de TK-102 por la línea L-3, atraviesa SV-103 y es impulsado por P-102 hacia la tubería de prueba; el efluente llega a TK-103 por la línea L-4 y, entre fases, se vacía manualmente al desagüe por la línea L-5 mediante la válvula HV-101.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{\input{flujogramas/pid_cip}}
+\caption{P\&ID del sistema CIP portátil.}
+\label{fig:pid}
+\end{figure}
+
 \input{tablas/tabla_pid}
-\insertarfigura{recorrido_fluidos.pdf}{Recorrido preliminar de fluidos.}{fig:fluidos}
 
-\subsection{Distribución preliminar y diseño CAD}
-\begin{itemize}
-    \item \textbf{Tanque principal}: recipiente cilíndrico de acero inoxidable donde se preparan y recirculan las soluciones de limpieza. Incorpora un agitador de tres aspas para homogenizar la solución.
-    \item \textbf{Sistema de agitación}: motor eléctrico acoplado al agitador, ubicado en la parte superior del tanque.
-    \item \textbf{Bomba de recirculación}: ubicada en la parte inferior del bastidor, responsable de enviar la solución CIP hacia el equipo a limpiar y de retornarla al tanque.
-    \item \textbf{Tanque de dosificación de químicos} (color rojo): contenedor destinado a la solución detergente, álcali o ácido.
-    \item \textbf{Tanque auxiliar} (color verde): utilizado para agua de enjuague, recuperación de solución o almacenamiento temporal.
-    \item \textbf{Instrumentación}:
-    \begin{itemize}
-        \item Transmisor de temperatura con display digital.
-        \item Sonda de conductividad / nivel instalada en el tanque.
-    \end{itemize}
-    \item \textbf{Tuberías y accesorios}: líneas de impulsión, retorno y drenaje en material compatible con soluciones CIP.
-\end{itemize}
+\subsection{Estructura y distribución}
+El prototipo se construyó sobre dos carros móviles, cuyas bases tienen casi las mismas dimensiones: 1000 × 500\,mm, fabricadas en tubo cuadrado de 40 × 40 × 4\,mm, con zonas para ruedas en las esquinas y una placa de 1000 × 500\,mm como superficie de apoyo (Figura~\ref{fig:plano_bases}). Las dos bases solo difieren en la altura de la barra donde se ubican las ruedas: en el carro del PLC esta altura es de 50\,mm, para que la barra pueda adaptarse al unirse con el otro carro. La unión entre los dos carros queda pendiente y se resolverá con un producto comercial que se adapte.
 
-\subsection{Vistas del sistema}
+\insertarfigura{plano_bases.jpg}{Plano de las bases de los carros.}{fig:plano_bases}
 
-A continuación se presentan las diferentes vistas del diseño CAD del sistema CIP:
+El primer carro soporta los tanques y el circuito hidráulico. Sobre su base se instala una estructura de soporte de 780 × 460\,mm en planta, con alojamientos de 200\,mm y 500\,mm de altura para los tanques (Figura~\ref{fig:plano_soporte_tanques}). Las dimensiones de los alojamientos priorizan una tolerancia positiva, de modo que se garantice el ajuste y montaje correctos de los tanques.
 
-\insertarfigura[0.55\textwidth]{cip_vista_superior.jpeg}{Vista superior del sistema CIP. Se observa el tanque principal con el agitador, el sensor de temperatura, la sonda lateral y el tanque de químicos (rojo).}{fig:cip_vista_superior}
+\insertarfigura{plano_soporte_tanques.jpg}{Plano de la estructura de soporte de los tanques.}{fig:plano_soporte_tanques}
 
-\insertarfigura[0.35\textwidth]{cip_isometrica_1.jpeg}{Vista isométrica general del sistema CIP. Se aprecia la estructura con ruedas, el tanque principal, el motor del agitador, la bomba inferior y los contenedores de químicos (rojo) y auxiliar (verde).}{fig:cip_isometrica_1}
+El segundo carro aloja el PLC, el panel HMI y el tablero eléctrico, e incorpora un banco para relés y demás elementos del tablero, de 340 × 300 × 370\,mm, elaborado con perfiles de 20 × 20 × 2\,mm (Figura~\ref{fig:plano_banco_reles}). La estructura se diseñó para que el sistema pueda transportarse en un vehículo, pasar por puertas y ascensores y mantenerse estable durante la operación.
 
-\insertarfigura[0.55\textwidth]{cip_isometrica_2.jpeg}{Vista isométrica lateral del sistema CIP. Destaca la disposición de la bomba de recirculación en la parte inferior y las líneas de tubería de impulsión y retorno.}{fig:cip_isometrica_2}
+\insertarfigura[0.8\textwidth]{plano_banco_reles.jpg}{Plano del banco para relés del carro del PLC.}{fig:plano_banco_reles}
 
-\insertarfigura[0.55\textwidth]{cip_vista_lateral.jpeg}{Vista lateral detallada del tanque CIP. Se observa el impulsor de tres aspas, el sensor de temperatura, el sensor de nivel, la sonda y la conexión del motor del agitador.}{fig:cip_detalle_tanque}
-
-\subsection{Funcionamiento general}
-
-El sistema opera de la siguiente manera:
-
-\begin{enumerate}
-    \item Se prepara la solución de limpieza en el tanque principal (agua + químico dosificado desde el contenedor rojo).
-    \item El agitador homogeniza la solución y, si aplica, se calienta hasta la temperatura de proceso.
-    \item La bomba recircula la solución hacia el equipo a limpiar (tanque, tubería, intercambiador, etc.).
-    \item La solución retorna al tanque CIP para continuar el ciclo durante el tiempo programado.
-    \item Posteriormente se realizan los enjuagues con agua limpia almacenada en el tanque auxiliar (verde).
-\end{enumerate}
-
-Este diseño permite realizar ciclos CIP de forma flexible, con bajo consumo de agua y químicos, y con la ventaja de ser una unidad móvil.
 \subsection{Equipo o circuito de prueba}
-El circuito de prueba estará conformado por una tubería de una pulgada de diámetro nominal, seleccionada por ser representativa de una línea de proceso de pequeña escala. Antes de cada ensayo, la superficie interna de la tubería se contaminará de manera controlada con tinta. Este fluido permitirá evidenciar visualmente la remoción de suciedad y comparar el estado interno de la línea antes y después de cada ciclo de limpieza.
+El circuito de prueba está conformado por una tubería de PVC de una pulgada de diámetro nominal y una longitud aproximada de 6\,m (REQ-05), representativa de una línea de proceso de pequeña escala. Su entrada se conecta a la descarga de la bomba de impulsión P-102 y su salida conduce el efluente al tanque de efluentes TK-103, de modo que el agua de preenjuague, la solución de limpieza y el agua de enjuague final se recogen sin vertimientos sobre el área de trabajo. Entre fases, el operario vacía TK-103 al drenaje mediante la válvula manual HV-101.
 
-La entrada de la tubería se conectará a la línea de impulsión del sistema CIP mediante una conexión desmontable y sellada. La salida se dirigirá hacia la línea de retorno o drenaje y, posteriormente, al tanque de agua residual. Esta disposición permite conducir de forma controlada el agua de preenjuague, la solución de limpieza y el agua de enjuague final, evitando vertimientos sobre el área de trabajo.
+Durante cada ensayo se registrarán el tiempo de cada fase, la temperatura alcanzada en las fases con calentamiento y el estado de los interruptores de nivel, y se verificarán la estanqueidad de las conexiones y el funcionamiento de las electroválvulas y de las bombas. Ante una fuga o el accionamiento de la parada de emergencia, el sistema deberá interrumpir el llenado y la impulsión del fluido de manera segura.
 
-La prueba se realizará siguiendo la secuencia operativa definida para el sistema:
-
-\begin{enumerate}
-    \item \textbf{Preenjuague térmico:} se llenará la cabina de operaciones con agua, se calentará hasta la temperatura de consigna y se impulsará hacia la tubería para desprender la mayor cantidad posible de tinta adherida.
-    \item \textbf{Lavado químico y mecánico:} se preparará una solución de agua y jabón mediante dosificación controlada, calentamiento y agitación. La solución se circulará por la tubería durante el tiempo definido para favorecer la remoción de los residuos restantes.
-    \item \textbf{Enjuague final:} se hará circular agua limpia por la tubería para retirar los restos de jabón y tinta. El efluente será recolectado en el tanque de agua residual o conducido al drenaje dispuesto para la prueba.
-\end{enumerate}
-
-La efectividad del ciclo se evaluará mediante inspección visual de la tubería y del efluente descargado. Se registrarán la presencia de tinta residual, el color del agua de salida, el tiempo de cada etapa, la temperatura alcanzada durante los ciclos térmicos y el estado de los sensores de nivel. La prueba se considerará satisfactoria cuando no se observen residuos visibles de tinta en el interior de la tubería y el agua del enjuague final presente una apariencia clara, sin restos apreciables de detergente o colorante.
-
-Durante el ensayo se verificará la estanqueidad de las conexiones, el funcionamiento de las electroválvulas, la operación de las bombas y el nivel del tanque de agua residual. Ante una condición de rebose, fuga o parada de emergencia, el sistema deberá interrumpir el llenado y la impulsión del fluido de manera segura.
+\campo{Pendiente: método para evaluar la efectividad de la limpieza de la tubería de prueba.}

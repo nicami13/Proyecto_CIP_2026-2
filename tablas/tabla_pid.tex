@@ -22,25 +22,25 @@
 \bottomrule
 \endlastfoot
 
-TK-101 & Tanque de jabón & Equipo (Tanque) & Almacena la materia prima (jabón) antes de la dosificación. \\
-P-101 & Bomba de jabón & Equipo (Bomba) & Impulsa el jabón hacia el tanque de mezcla. \\
-TK-102 & Tanque de mezcla & Equipo (Tanque) & Recipiente principal donde se realiza la mezcla y calentamiento. \\
-AG-101 & Agitador & Equipo (Interno) & Agita e homogeniza la mezcla dentro de TK-102. \\
-M-101 & Motorreductor & Equipo (Motor) & Acciona mecánicamente el eje del agitador AG-101. \\
-E-101 & Resistencia eléctrica calefactora & Equipo (Calefactor) & Proporciona energía térmica para calentar el agua/mezcla. \\
-P-102 & Bomba de limpieza & Equipo (Bomba) & Impulsa la mezcla de limpieza hacia el circuito. \\
-TK-103 & Tanque de almacenamiento de agua & Equipo (Tanque) & Almacena el efluente/agua de retorno tras el proceso de limpieza. \\
-SV-101 & Válvula solenoide de jabón & Válvula de control & Permite o interrumpe el paso de jabón desde TK-101 a P-101. \\
-SV-102 & Válvula solenoide de agua & Válvula de control & Regula el ingreso de agua de red hacia el tanque de mezcla. \\
-SV-103 & Válvula solenoide de descarga & Válvula de control & Controla la salida de mezcla de TK-102 hacia la bomba P-102. \\
-LIT-101 & Transmisor indicador de nivel & Instrumento & Mide e indica localmente el nivel de líquido en TK-102. \\
-TT-101 & Transmisor de temperatura & Instrumento & Mide la temperatura del fluido dentro de TK-102. \\
-L-1 & Línea de jabón & Tubería de proceso & Transporta jabón impulsado hacia la mezcla. \\
-L-2 & Línea de agua & Tubería de proceso & Alimenta agua de proceso a TK-102. \\
-L-3 & Línea de descarga de mezcla & Tubería de proceso & Salida de fluido desde la base de TK-102. \\
-L-4 & Línea de efluente de limpieza & Tubería de proceso & Conduce el fluido que retorna de la tubería de limpieza. \\
-L-5 & Línea de desagüe de agua & Tubería de proceso & Drena o evacúa el agua almacenada en TK-103. \\
---- & Señales de control (PLC) & Línea de instrumentación & Transmite señales eléctricas/datos de entrada y salida entre el PLC y los equipos/instrumentos (SV-101, SV-102, SV-103, LIT-101, TT-101, E-101, M-101, P-102). \\
+TK-101 & Tanque de detergente & Equipo (Tanque) & Almacena el detergente antes de la dosificación. \\
+P-101 & Bomba dosificadora peristáltica & Equipo (Bomba) & Agrega el detergente desde TK-101 al tanque de mezcla durante la fase de lavado. \\
+TK-102 & Tanque de mezcla & Equipo (Tanque) & Tanque de plástico de 50\,L donde se prepara y calienta el fluido de cada fase. \\
+P-103 & Bomba de agitación sumergible & Equipo (Bomba) & Homogeniza la mezcla dentro de TK-102 antes del calentamiento. \\
+E-101 & Resistencia de inmersión & Equipo (Calefactor) & Calienta el fluido en TK-102 hasta la consigna. \\
+P-102 & Bomba de impulsión & Equipo (Bomba) & Impulsa el fluido desde TK-102 hacia la tubería de prueba. \\
+TK-103 & Tanque de efluentes & Equipo (Tanque) & Tanque metálico de 30\,L que recoge el efluente de la tubería de prueba. \\
+SV-102 & Electroválvula de llenado & Válvula de control & Permite o interrumpe el ingreso de agua de red al tanque de mezcla. \\
+SV-103 & Electroválvula de descarga & Válvula de control & Permite o interrumpe la salida del fluido de TK-102 hacia la bomba P-102. \\
+HV-101 & Válvula manual de vaciado & Válvula manual & Permite vaciar TK-103 al desagüe entre fases. \\
+LSL-101 & Interruptor de nivel bajo & Instrumento & Detecta el nivel bajo en TK-102; detiene la bomba de impulsión al vaciarse el tanque. \\
+LSH-101 & Interruptor de nivel alto & Instrumento & Detecta el nivel alto en TK-102; termina el llenado. \\
+TT-101 & Transmisor de temperatura & Instrumento & Mide la temperatura del fluido en TK-102 (PT100 con salida de 4--20\,mA). \\
+L-1 & Línea de detergente & Tubería de proceso & Conduce el detergente desde TK-101 hacia TK-102. \\
+L-2 & Línea de agua & Tubería de proceso & Alimenta agua de red a TK-102. \\
+L-3 & Línea de descarga & Tubería de proceso & Conduce el fluido desde la base de TK-102 hacia SV-103 y P-102. \\
+L-4 & Línea de efluente & Tubería de proceso & Conduce el efluente desde la tubería de prueba hasta TK-103. \\
+L-5 & Línea de vaciado & Tubería de proceso & Conduce el contenido de TK-103 al desagüe a través de HV-101. \\
+--- & Señales de control (PLC) & Línea de instrumentación & Transmite las señales de entrada y salida entre el PLC y los equipos e instrumentos (SV-102, SV-103, P-101, P-102, P-103, E-101, TT-101, LSL-101 y LSH-101). \\
 
 \end{longtable}
 \end{scriptsize}
