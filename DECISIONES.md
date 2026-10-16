@@ -73,7 +73,7 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 
 ## 3. Glosario oficial (usar SOLO estos nombres)
 
-Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora y las siguientes son la función. Por eso las electroválvulas son **XV**, no SV (S como primera letra significa velocidad). Los símbolos de equipos siguen **ISO 10628-2**. TK-101 y TK-103 son tanques **cerrados**; TK-102 es **abierto**.
+Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora y las siguientes son la función. Por eso las electroválvulas son **XV**, no SV (S como primera letra significa velocidad). Los símbolos de equipos siguen **ISO 10628-2**. Todos los tanques (TK-101, TK-102 y TK-103) son **cerrados**.
 
 | Tag | Nombre en el documento | Ya no se usa | Programa v1 |
 |---|---|---|---|
