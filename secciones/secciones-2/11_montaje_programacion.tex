@@ -1,4 +1,61 @@
 \subsection{Programación}\label{sec:montaje_programacion}
 
-\campo{Pendiente de redactar: GRAFCET de la secuencia del segundo corte, mapa de entradas y salidas del PLC e implementación en Ladder (versión v1).}
+La secuencia del ciclo CIP se programó en el PLC Siemens S7-1200 CPU 1214C con TIA Portal V13, en lenguaje Ladder (KOP). La lógica se diseñó primero como un GRAFCET y luego se trasladó al programa como una secuencia de etapas: cada etapa corresponde a un bit de memoria que se activa con la condición de transición de la etapa anterior y se desactiva al activarse la siguiente, y las acciones de cada etapa se asignan a las salidas del PLC.
 
+\paragraph{GRAFCET de la secuencia.} El GRAFCET de la Figura~\ref{fig:grafcet_cip} describe el ciclo completo con sus tres fases. Parte de una etapa inicial de reposo, que se abandona al presionar el pulsador de inicio. En la etapa de llenado se abre la electroválvula SV-102 y, mediante una divergencia simultánea, se ejecutan dos ramas en paralelo. La primera supervisa el nivel del tanque de mezcla y cierra SV-102 cuando el agua alcanza el nivel alto. La segunda selecciona, según el valor del contador de fases, las acciones de la fase en curso: en el preenjuague se enciende la resistencia E-101 hasta alcanzar 35\,$^{\circ}$C; en el lavado se activan la bomba dosificadora P-101 y la bomba de agitación P-103, y después la resistencia hasta 35\,$^{\circ}$C; en el enjuague final no se calienta el agua. Cuando ambas ramas terminan, se abre la electroválvula SV-103 y se enciende la bomba de impulsión P-102 hasta vaciar el tanque de mezcla; luego se cierra SV-103 y se incrementa el contador de fases. Si aún no se han completado las tres fases, la secuencia regresa al llenado; en caso contrario, el contador se reinicia y el sistema vuelve al reposo.
+
+\insertarfigura{grafcet_cip.png}{GRAFCET de la secuencia CIP con las tres fases del ciclo.}{fig:grafcet_cip}
+
+\paragraph{Implementación en Ladder (versión v1).} La primera versión del programa implementa las dos primeras fases del ciclo: el preenjuague y el lavado con detergente. La fase en curso se identifica con la variable \texttt{CICLO}, que lleva un contador ascendente (CTU): vale 0 durante el preenjuague y 1 durante el lavado. La Tabla~\ref{tab:etapas_ladder} resume las etapas del programa, sus acciones y sus condiciones de transición, con los nombres de las variables del programa y los tags del P\&ID. La etapa E0 se activa en el primer ciclo de ejecución del PLC (\textit{first scan}) y al terminar la secuencia.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Etapas de la secuencia implementada en Ladder (versión v1).}
+\label{tab:etapas_ladder}
+\begin{tabularx}{\textwidth}{L{1.3cm}YY}
+\toprule
+\textbf{Etapa} & \textbf{Acciones} & \textbf{Transición}\\
+\midrule
+E0 & Reposo; reinicio del contador \texttt{CICLO} & Pulsador de inicio (\texttt{\%I0.0}) $\rightarrow$ E1\\
+E1 & Abre SV-102 (\texttt{VALVULA1}); a los 3\,s cierra SV-103 (\texttt{VALVULA2}) & El agua alcanza el nivel bajo (LSL-101, \texttt{NIVEL1}) $\rightarrow$ Ea y Eb (divergencia simultánea)\\
+Ea & Espera del llenado & El agua alcanza el nivel alto (LSH-101, \texttt{NIVEL2}) $\rightarrow$ E2\\
+E2 & Cierra SV-102 (\texttt{VALVULA1}) & E2 y (Ec o Ed) $\rightarrow$ E5\\
+Eb & Selección de la fase & \texttt{CICLO} = 0 $\rightarrow$ Ed; \texttt{CICLO} = 1 $\rightarrow$ E3\\
+E3 & Activa P-103 (\texttt{MOTOR}) durante 10\,s y P-101 (\texttt{DOSI}) durante 5\,s & Fin del temporizador $\rightarrow$ Ec\\
+Ec / Ed & Espera de la convergencia & E2 y (Ec o Ed) $\rightarrow$ E5\\
+E5 & Enciende E-101 (\texttt{RESISTENCIA}) & \texttt{TEMPERATURA} $\geq$ 35,0\,$^{\circ}$C $\rightarrow$ E6\\
+E6 & Abre SV-103 (\texttt{VALVULA2}); temporizador de 3\,s & Fin del temporizador $\rightarrow$ E7\\
+E7 & Enciende P-102 (\texttt{BOMBA}); incrementa \texttt{CICLO} & Nivel bajo (LSL-101, \texttt{NIVEL1}): si \texttt{CICLO} $<$ 2 $\rightarrow$ E1; si \texttt{CICLO} $\geq$ 2 $\rightarrow$ E0\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+La lectura de la temperatura se obtiene de la entrada analógica del transmisor TT-101, escalada con las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X} (Sección~\ref{sec:montaje_instrumentacion}). En esta versión, el calentamiento consiste en mantener encendida la resistencia hasta que la temperatura alcanza la consigna de 35\,$^{\circ}$C; el controlador de temperatura se encuentra en desarrollo (Sección~\ref{sec:montaje_control}). Para el tercer corte quedan por implementar en el PLC el enjuague final, la pausa para que el operario vacíe el tanque de efluentes TK-103 entre fases y el estado de parada segura descrito en la Sección~\ref{sec:caracterizacion}.
+
+\paragraph{Mapa de entradas y salidas.} La Tabla~\ref{tab:mapa_io} relaciona las variables del programa con los elementos del prototipo y con las direcciones del PLC.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Mapa de entradas y salidas del PLC.}
+\label{tab:mapa_io}
+\begin{tabularx}{\textwidth}{L{1.8cm}L{3.0cm}YL{2.6cm}}
+\toprule
+\textbf{Tag} & \textbf{Variable del programa} & \textbf{Tipo de señal} & \textbf{Dirección}\\
+\midrule
+--- & \texttt{Tag\_1} (pulsador de inicio) & Entrada digital & \texttt{\%I0.0}\\
+LSL-101 & \texttt{NIVEL1} & Entrada digital & \campo{Por confirmar}\\
+LSH-101 & \texttt{NIVEL2} & Entrada digital & \campo{Por confirmar}\\
+TT-101 & \texttt{TEMPERATURA} & Entrada analógica (4--20\,mA) & \campo{Por confirmar}\\
+SV-102 & \texttt{VALVULA1} & Salida de relé & \campo{Por confirmar}\\
+SV-103 & \texttt{VALVULA2} & Salida de relé & \campo{Por confirmar}\\
+P-102 & \texttt{BOMBA} & Salida de relé (SSR de 40\,A) & \campo{Por confirmar}\\
+P-103 & \texttt{MOTOR} & Salida de relé (relé auxiliar) & \campo{Por confirmar}\\
+P-101 & \texttt{DOSI} & Salida de relé & \campo{Por confirmar}\\
+E-101 & \texttt{RESISTENCIA} & Salida de relé (SSR de 60\,A) & \campo{Por confirmar}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\campo{Pendiente: versión corregida del GRAFCET (archivo figuras/grafcet\_cip.png), direcciones de las entradas y salidas según la tabla de variables de TIA Portal, y capturas del programa en Ladder.}
