@@ -5,6 +5,16 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 
 - Se trabaja directamente en la rama `main`. Solo Karen García y su compañera redactan el documento en este corte; el resto del equipo envía la información y no edita el informe sin avisar.
 - Última actualización: 15 de octubre de 2026.
+- **Fecha de entrega del segundo corte: 16 de octubre de 2026.**
+
+---
+
+## 0. Ya aplicado en el documento
+
+- **Título:** "Diseño e implementación de un sistema portátil de limpieza CIP". Portada: "Informe técnico de avance — Proyecto Integrador, Segundo corte". Encabezado de página: "Segundo corte".
+- **Sección 1:** objetivo general "diseñar e implementar un prototipo funcional…", 5 objetivos específicos, pregunta de diseño, alcance por cortes (1, 2 y 3) y limitaciones actualizadas.
+- **Control (indicaciones de Fabián):** potencia de 2000 W en toda la parte de control; se quitaron las dos temperaturas (40/50 °C) y el termostato de seguridad; el PT100 va conectado al PLC, que hace `NORM_X`/`SCALE_X` (sin módulo SM 1231). El controlador de temperatura **aún no está terminado**.
+- **Ensayo del modelo:** sí se realizó (datos en `PRUEBAFINAL1.csv`, de Fabián).
 
 ---
 

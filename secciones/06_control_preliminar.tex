@@ -2,13 +2,13 @@
 
 \subsection{Variable controlada (PV)}
 
-La variable controlada es la temperatura del fluido de proceso (agua o agua con detergente diluido) en el tanque de mezcla del sistema CIP portátil, medida mediante un sensor RTD PT100 conectado a un módulo de expansión analógica SM 1231 (escalamiento \texttt{NORM\_X/SCALE\_X} en TIA Portal).
+La variable controlada es la temperatura del fluido de proceso (agua o agua con detergente diluido) en el tanque de mezcla del sistema CIP portátil, medida mediante un sensor RTD PT100 conectado al PLC, el cual realiza el escalamiento de la señal mediante las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X} de TIA Portal.
 
 De las variables de proceso disponibles (temperatura, caudal, nivel, presión y conductividad), la temperatura es la única con una dinámica lo suficientemente lenta y bien caracterizable con los recursos del laboratorio para diseñar y validar un controlador P/PI/PID completo dentro del alcance del curso de Sistemas de Control I.
 
 \subsection{Variable manipulada (MV)}
 
-La variable manipulada corresponde a la potencia eléctrica suministrada al elemento calefactor del sistema, constituido por una resistencia eléctrica sumergible de potencia nominal de $1500\,\mathrm{W}$. Esta variable es modificada por el PLC mediante una estrategia de control por proporción de tiempo (\textit{Time Proportioning Control}), implementada mediante el bloque \texttt{PID\_Compact} de TIA Portal \cite{siemens2021pid}. La señal de control es aplicada a la resistencia a través de un relé de estado sólido (SSR) con conmutación en cruce por cero \cite{rashid2014power}.
+La variable manipulada corresponde a la potencia eléctrica suministrada al elemento calefactor del sistema, constituido por una resistencia eléctrica sumergible de potencia de $2000\,\mathrm{W}$. Esta variable es modificada por el PLC mediante una estrategia de control por proporción de tiempo (\textit{Time Proportioning Control}), implementada mediante el bloque \texttt{PID\_Compact} de TIA Portal \cite{siemens2021pid}. La señal de control es aplicada a la resistencia a través de un relé de estado sólido (SSR) con conmutación en cruce por cero \cite{rashid2014power}.
 
 Para la modulación de la potencia de la resistencia se evaluaron dos estrategias de control para una carga resistiva de corriente alterna (CA): el control por ángulo de fase mediante TRIAC y el control proporcional en el tiempo mediante SSR con conmutación en cruce por cero \cite{mohan2007power}. La selección de la estrategia se realizó considerando principalmente la dinámica térmica del proceso y los requerimientos de implementación del sistema CIP portátil.
 
@@ -23,7 +23,7 @@ En términos de control, la variable manipulada puede expresarse como la potenci
 \insertarfigura{potencia_preliminar.pdf}{Circuito de potencia preliminar.}{fig:potencia}
 
 \begin{equation}
-0 \leq P_{\mathrm{prom}} \leq 1500\,\mathrm{W}
+0 \leq P_{\mathrm{prom}} \leq 2000\,\mathrm{W}
 \end{equation}
 
 Cuando se utiliza control proporcional en el tiempo, la potencia promedio puede aproximarse mediante:
@@ -32,7 +32,7 @@ Cuando se utiliza control proporcional en el tiempo, la potencia promedio puede 
 P_{\mathrm{prom}} = D P_{\mathrm{nom}}
 \end{equation}
 
-donde $D$ corresponde al ciclo de trabajo, definido como la fracción del período de modulación durante la cual el SSR permanece conduciendo, y $P_{\mathrm{nom}} = 1500\,\mathrm{W}$ corresponde a la potencia nominal de la resistencia. Por tanto, para un ciclo de trabajo comprendido entre $0$ y $1$, la potencia promedio puede regularse entre $0$ y $1500\,\mathrm{W}$.
+donde $D$ corresponde al ciclo de trabajo, definido como la fracción del período de modulación durante la cual el SSR permanece conduciendo, y $P_{\mathrm{nom}} = 2000\,\mathrm{W}$ corresponde a la potencia de la resistencia. Por tanto, para un ciclo de trabajo comprendido entre $0$ y $1$, la potencia promedio puede regularse entre $0$ y $2000\,\mathrm{W}$.
 
 \subsection{Definición del lazo de control}
 \input{tablas/tabla_variables_control}
@@ -83,11 +83,7 @@ G(s)=\frac{0{,}25}{15697{,}5s+1}
 
 \begin{itemize}
 
-\item A potencia máxima, el modelo lineal alcanzaría el límite de seguridad de $70\,^{\circ}\mathrm{C}$ en aproximadamente $37{,}4$ minutos. En la práctica, este es precisamente el comportamiento que debe evitar el controlador durante la operación normal. Este resultado confirma que el actuador posee suficiente autoridad para calentar rápidamente el fluido en cualquiera de las dos fases; por tanto, el riesgo principal corresponde al sobreimpulso y no a una falta de potencia del actuador.
-
-\item A un ciclo de trabajo fijo correspondiente al régimen permanente de cada fase ($8{,}0\,\%$ para $50\,^{\circ}\mathrm{C}$ y $5{,}33\,\%$ para $40\,^{\circ}\mathrm{C}$), el sistema alcanza el punto de operación de forma extremadamente lenta. Considerando los tiempos de establecimiento aproximados, se obtiene $t_s(5\,\%) \approx 3\tau \approx 785$ minutos y $t_s(2\,\%) \approx 4\tau \approx 1047$ minutos. Esto ocurre porque en un esquema de ciclo de trabajo fijo no se aprovecha la potencia disponible durante el transitorio de calentamiento.
-
-\item La diferencia entre las curvas de respuesta constituye la justificación cuantitativa central para emplear un controlador realimentado, en lugar de un ciclo de trabajo fijo en lazo abierto. Asimismo, evidencia la necesidad de incorporar acción integral con mecanismo anti-windup. El controlador debe permitir la saturación deliberada del actuador ($MV \approx 100\,\%$) durante el arranque para acelerar el calentamiento hacia cualquiera de las dos consignas y, posteriormente, reducir el ciclo de trabajo de manera gradual al aproximarse al valor de referencia, evitando el sobreimpulso.
+\item La diferencia entre las curvas de respuesta constituye la justificación cuantitativa central para emplear un controlador realimentado, en lugar de un ciclo de trabajo fijo en lazo abierto. Asimismo, evidencia la necesidad de incorporar acción integral con mecanismo anti-windup. El controlador debe permitir la saturación deliberada del actuador ($MV \approx 100\,\%$) durante el arranque para acelerar el calentamiento hacia la consigna y, posteriormente, reducir el ciclo de trabajo de manera gradual al aproximarse al valor de referencia, evitando el sobreimpulso.
 
 \item Al aumentar la masa activa hasta $15\,\mathrm{L}$, la constante de tiempo $\tau$ crece proporcionalmente, alcanzando aproximadamente $261{,}6$ minutos. El proceso se vuelve, por tanto, térmicamente más lento, lo que refuerza la necesidad de aprovechar el transitorio mediante la saturación controlada del actuador. Además, se justifica el empleo de una sintonía PI, en lugar de un controlador P, para eliminar el error de estado estacionario producido por la perturbación asociada a la adición de fluido frío entre fases.
 

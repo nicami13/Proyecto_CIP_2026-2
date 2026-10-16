@@ -23,7 +23,7 @@ VAL-01 & REQ01 & Ejecutar el ciclo completo automático (preenjuague, lavado, en
 
 VAL-02 & REQ02 & Verificar la apertura y cierre de SV-101, SV-102 y SV-103 en cada fase, confirmando ausencia de traslapes entre etapas incompatibles & Registro de estados digitales del PLC & Secuencia correcta sin traslapes en 3 pruebas consecutivas & Trazas de variables digitales \\
 
-VAL-03 & REQ13 & Consignar SP = 50\,°C (prelavado) y SP = 40\,°C (lavado) y registrar la evolución de la temperatura hasta alcanzar el estado estable & TT-101 (PT100 0 SM1231), termómetro patrón & Error en estado estable $ \leq 2\,°C $ respecto al SP & Gráfica $T(t)$ vs. SP y datos exportados \\
+VAL-03 & REQ13 & Consignar SP = 50\,°C (prelavado) y SP = 40\,°C (lavado) y registrar la evolución de la temperatura hasta alcanzar el estado estable & TT-101 (PT100), termómetro patrón & Error en estado estable $ \leq 2\,°C $ respecto al SP & Gráfica $T(t)$ vs. SP y datos exportados \\
 
 VAL-04 & REQ14 & Forzar, de forma controlada, una condición de sobre temperatura y verificar el corte del calentador E-101 (vía SSR)  & Registro de eventos del PLC, cronómetro & Corte del SSR y aviso activado al superar 60\,°C & Registro de evento y captura de HMI \\
 
