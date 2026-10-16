@@ -1,8 +1,6 @@
-\section{Validación experimental del modelo dinámico}
+\subsubsection{Procedimiento experimental}
 
-\subsection{Procedimiento experimental}
-
-Con el fin de contrastar el modelo dinámico obtenido en la sección anterior frente al comportamiento real de la planta, se diseñó un ensayo experimental de escalones múltiples de potencia sobre el elemento calefactor. Esta estrategia, en lugar de un único escalón llevado hasta el régimen permanente, permite obtener información suficiente para la identificación de parámetros en un intervalo de tiempo considerablemente menor al período característico del proceso ($\tau \approx 261{,}6\,\mathrm{min}$), mediante la introducción de excitación persistente en la señal de entrada \cite{seborg2016process}.
+Con el fin de contrastar el modelo dinámico obtenido en la Sección~\ref{sec:modelo_dinamico} frente al comportamiento real de la planta, se diseñó un ensayo experimental de escalones múltiples de potencia sobre el elemento calefactor. Esta estrategia, en lugar de un único escalón llevado hasta el régimen permanente, permite obtener información suficiente para la identificación de parámetros en un intervalo de tiempo considerablemente menor al período característico del proceso ($\tau \approx 261{,}6\,\mathrm{min}$), mediante la introducción de excitación persistente en la señal de entrada \cite{seborg2016process}.
 
 El ensayo se ejecuta partiendo del sistema en equilibrio térmico con el ambiente, aplicando la secuencia de potencia promedio indicada en la Tabla~\ref{tab:escalones_potencia}, con registro continuo de temperatura y potencia aplicada a una frecuencia de muestreo de $0{,}1\,\mathrm{Hz}$ (un dato cada $10\,\mathrm{s}$).
 
@@ -24,7 +22,7 @@ Segmento & Intervalo (min) & Potencia promedio (W) & \% de $P_{\mathrm{nom}}$ \\
 
 El segmento~4, correspondiente al apagado del calentador, no se emplea en la estimación de parámetros; se reserva como conjunto de validación independiente para verificar la consistencia del modelo ajustado.
 
-\subsection{Procesamiento de datos}
+\subsubsection{Procesamiento de datos}
 
 El registro de temperatura $T(t)$ se filtra mediante un suavizado tipo Savitzky--Golay, con el propósito de atenuar el ruido de medición del sensor PT100 antes de calcular derivadas numéricas \cite{ogata2010modern}. Sobre la señal suavizada se estima la derivada $dT/dt$ mediante diferencias centradas.
 
@@ -53,7 +51,7 @@ C_{\mathrm{exp}} = \frac{1}{a}, \qquad UA_{\mathrm{exp}} = b\,C_{\mathrm{exp}}, 
 
 Como verificación independiente, los datos del segmento~4 ($P = 0$) se contrastan contra la predicción del modelo ajustado, la cual, al no existir aporte de potencia, se reduce a $dT/dt = -b\,\Delta T$.
 
-\subsection{Parámetros obtenidos}
+\subsubsection{Parámetros obtenidos}
 
 El procedimiento anterior permite obtener, sin necesidad de alcanzar el régimen permanente del proceso, una estimación experimental de la ganancia y la constante de tiempo del sistema, contrastable frente a los valores teóricos definidos en la sección de modelado preliminar (Tabla~\ref{tab:comparacion_parametros}).
 
