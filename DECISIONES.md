@@ -117,24 +117,27 @@ Orden de trabajo: (1) ajustar secciones 1–7 → (2) redactar sección 8 → (3
 | Elemento | Decisión |
 |---|---|
 | Resistencia E-101 | Comprada como **1500 W**; a los 126 V del laboratorio entrega **≈ 2000 W**. **El modelo térmico usa 2000 W.** |
-| Protecciones | Breaker de **15 A, 1 polo** (resistencia) y otro de **7 A** (bomba de impulsión y bomba de agitación). Ya no se usa el taco de 20 A. Transmisor de temperatura: **SITRANS** (en el tablero). |
+| Protecciones | **Dos** breakers: **15 A, 1 polo** (resistencia) y **7 A** (resto: bomba de impulsión, bomba de agitación, PLC y Raspberry Pi). Ya no se usa el taco de 20 A. Transmisor de temperatura: **SITRANS** (en el tablero). |
 | SSR | **Dos:** 60 A para la resistencia y 40 A para la bomba de impulsión. **Sin disipador ni ventilador** (solo la placa metálica propia). |
 | Bomba de impulsión P-102 | **Bomba periférica**, accionada por el SSR de 40 A. **Sin contactor ni guardamotor.** |
 | Bomba de agitación P-103 | Sumergible, **110 V AC, 22 W**, dentro de TK-102, accionada por un relé externo con bobina de 24 V. |
-| Dosificadora P-101 | Peristáltica de **12 V**, alimentada con un convertidor **LM2596**. |
+| Dosificadora P-101 | Peristáltica de **12 V**, alimentada con un convertidor **LM2596**. **Aún no está instalada** (16 de octubre). |
 | Electroválvulas | **Dos** (SV-102 llenado, SV-103 descarga), 24 V DC. |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
 | Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
 | Tubería | **PVC** de 1" y 3/4". |
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
-| Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). |
+| Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). **Sí hay paro de emergencia** (confirmado el 16 de octubre); falta saber dónde va en el circuito. |
+| Electroválvulas instaladas | **Las dos**: SV-102 (de la llave de agua al tanque) y SV-103 (del tanque a la bomba). |
 | No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. Aún no: manómetro, válvulas de bola, antirretorno. |
 
 ### Alimentación
-- El PLC se alimenta a **110 V AC** del tomacorriente.
-- Los **24 V DC** salen de la fuente **WDR-120-24 (24 V, 120 W, ≈ 5 A)** montada en el tablero del banco (no del PLC). De ahí se alimentan los sensores, el transmisor y las salidas de relé del PLC.
-- Electroválvulas: el contacto de relé del PLC conmuta el **+24 V** de la fuente del banco hacia la bobina; el otro terminal va al **0 V** de la misma fuente.
+- El PLC y la Raspberry Pi se alimentan a **110 V AC** desde tomacorrientes, detrás del breaker de 7 A.
+- Los **24 V DC** se toman de la **salida de 24 V DC del banco del PLC** y se distribuyen con una bornera común de 24 V y 0 V. (No se sabe si esa salida es la fuente WDR-120-24 del CAD, así que el documento no nombra la WDR.)
+- Las salidas de relé del PLC conmutan el **+24 V** hacia la entrada del SSR, del relé o de la bobina de la electroválvula; el retorno va al **común de 0 V**. En el informe se dice "común de 0 V", no "tierra".
+- Potencia: red → breaker → bornes de potencia del SSR o del relé → tomacorriente → carga. **No hay ningún contactor.**
+- Montaje: zona de potencia con paredes de acrílico, riel atornillado, bornera de 24 V y 0 V, y extensiones de cable soldadas hasta el banco del PLC.
 
 ### Comunicaciones
 - **PLC → (protocolo S7) → Raspberry Pi con Node-RED → (HTTP) → API en AWS → interfaz en Streamlit.**
