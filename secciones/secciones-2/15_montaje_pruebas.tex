@@ -1,3 +1,80 @@
 \subsection{Pruebas}\label{sec:montaje_pruebas}
 
-\campo{Pendiente de redactar: pruebas realizadas, resultados y trazabilidad requisito--prueba--resultado.}
+Las pruebas del prototipo siguen la rama ascendente del modelo en V adoptado en el proyecto: primero se verifican los componentes y los enlaces por separado, después los subsistemas integrados y, por último, el sistema completo frente a los requisitos. Este orden permite aislar las fallas, ya que una prueba superada en un nivel inferior descarta ese elemento como causa de un error en un nivel superior. Todas las pruebas se realizan con agua y, en las fases con detergente, con una sustancia segura que lo representa, de acuerdo con las restricciones de seguridad del proyecto. A continuación se describen las pruebas ejecutadas durante el segundo corte, su relación con los requisitos y las que quedan para el tercer corte.
+
+\subsubsection{Comunicación entre el PLC y la HMI}
+
+La primera prueba de integración fue el enlace PROFINET entre el PLC S7-1200 y la HMI KTP600 Basic, realizado desde el primer corte. Se transmitieron dos señales: la variable \texttt{CONTADOR\_HMI} (tipo INT, dirección \texttt{\%MW2}), enviada por el PLC y visualizada en la HMI, y la variable \texttt{C1\_Estado\_HMI}, vinculada a una barra gráfica que representa el estado del sistema. El intercambio de datos y su visualización en la interfaz de operador se verificaron correctamente (Tabla~\ref{tab:evidencia_comunicacion}), lo que confirmó la base de comunicación local sobre la que se construyó la operación del prototipo.
+
+\subsubsection{Supervisión remota}
+
+Con el prototipo montado se puso en funcionamiento la cadena de supervisión descrita en la Sección~\ref{sec:montaje_comunicaciones}: Node-RED se inicia automáticamente en la Raspberry Pi, lee las variables del PLC mediante el protocolo S7, las envía por HTTP a la API en AWS y la interfaz en Streamlit las consulta mediante solicitudes GET. La prueba confirmó que la cadena completa opera; queda por medir el periodo de actualización de los datos, que según REQ-16 no debe superar 30\,s, y por documentar las evidencias. \campo{Pendiente: periodo de actualización medido y capturas del flujo de Node-RED, de la interfaz de Streamlit y de la respuesta de la API.}
+
+\subsubsection{Ensayo de identificación térmica}
+
+Con el tanque de mezcla lleno se ejecutó el ensayo de escalones de potencia descrito en la Sección~\ref{sec:montaje_control}. La temperatura se adquirió con el PT100 y el transmisor SITRANS: la corriente de 4--20\,mA circula por la resistencia de 500\,$\Omega$ y produce entre 2 y 10\,V en la entrada analógica de 0--10\,V del PLC, que entrega 27\,648 cuentas a 10\,V. Por tanto, el rango útil de la señal va de 5\,530 cuentas (4\,mA, 0\,°C) a 27\,648 cuentas (20\,mA, 100\,°C), límites con los que se configuraron las instrucciones \texttt{NORM\_X} y \texttt{SCALE\_X}.
+
+El registro contiene 648 datos, uno cada 5\,s, a lo largo de 54\,min, con escalones de 0\,\% de potencia entre 0 y 2\,min, 100\,\% (2000\,W) entre 2 y 11\,min, 50\,\% (1000\,W) entre 11 y 24\,min, 100\,\% entre 24 y 34\,min y 0\,\% entre 34 y 54\,min. Durante el ensayo la temperatura del agua subió de 23,5\,°C a 60,1\,°C. Los parámetros experimentales del modelo ($UA$, $C$, $\tau$ y $K$) y su comparación con los valores teóricos se reportarán en la Tabla~\ref{tab:comparacion_parametros} \campo{Pendiente: resultados del ajuste, a cargo de Fabián Ruiz}. Como la temperatura alcanzada supera el límite de 40\,°C del sello mecánico de la bomba de impulsión, \campo{confirmar que P-102 permaneció apagada durante el ensayo}.
+
+\subsubsection{Secuencia automática}
+
+\campo{Pendiente: confirmar si el programa Ladder v1 (\texttt{prueba1\_cip}), que implementa el preenjuague y el lavado con detergente, se probó en el prototipo y con qué resultado.}
+
+\subsubsection{Trazabilidad requisito--prueba--resultado}
+
+La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de validación definida en el plan de validación (Tabla~\ref{tab:matriz_validacion}), la prueba realizada sobre el prototipo, el resultado y la evidencia. Se conservan los mismos códigos VAL del plan de validación; la descripción de cada prueba se ajustó a los componentes realmente instalados. El estado se clasifica como \emph{cumple}, \emph{parcial} o \emph{pendiente}.
+
+\begingroup
+\footnotesize
+\begin{longtable}{L{1.1cm}L{1.3cm}L{5.0cm}L{1.4cm}L{\dimexpr\textwidth-11.1cm-10\tabcolsep\relax}L{2.3cm}}
+\caption{Matriz requisito--prueba--resultado--evidencia del segundo corte.}\label{tab:resultados_pruebas}\\
+\toprule
+\textbf{VAL} & \textbf{Req.} & \textbf{Prueba sobre el prototipo} & \textbf{Estado} & \textbf{Resultado} & \textbf{Evidencia}\\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\small \tablename\ \thetable{} -- continuación}\\
+\toprule
+\textbf{VAL} & \textbf{Req.} & \textbf{Prueba sobre el prototipo} & \textbf{Estado} & \textbf{Resultado} & \textbf{Evidencia}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\small Continúa en la siguiente página}\\
+\endfoot
+\bottomrule
+\endlastfoot
+VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1 aún no incluye el enjuague final ni la pausa para el vaciado & ---\\
+VAL-02 & REQ-02 & Secuencia de SV-102 y SV-103 sin traslapes en 3 pruebas & Pendiente & \campo{Por confirmar} & ---\\
+VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador de temperatura en desarrollo; consignas de prueba por definir & ---\\
+VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad & Pendiente & Umbral por definir & ---\\
+VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo y medición del detergente en probeta & Pendiente & \campo{Por confirmar} & ---\\
+VAL-06 & REQ-06 & Inspección de fugas en TK-102, TK-103, SV-102, SV-103, P-101 y P-102 durante un ciclo & Pendiente & \campo{Por confirmar} & ---\\
+VAL-07 & REQ-06 & Volumen suministrado frente al recibido en el tanque de efluentes TK-103 & Pendiente & --- & ---\\
+VAL-08 & REQ-18 & Tiempo de corte de P-102, E-101 y P-101 al accionar el paro de emergencia & Pendiente & \campo{Por confirmar} & ---\\
+VAL-09 & REQ-19 & Alarma ante nivel bajo, sobretemperatura y falla de bomba & Pendiente & \campo{Confirmar si existe alarma sonora} & ---\\
+VAL-10 & REQ-15, REQ-16 & Actualización de variables en la HMI y en la interfaz de Streamlit & Parcial & Enlace PLC--HMI verificado; cadena Node-RED, API y Streamlit en funcionamiento; periodo de actualización por medir & Tabla~\ref{tab:evidencia_comunicacion}; capturas pendientes\\
+VAL-11 & REQ-11 & Conmutación de LSL-101 (nivel bajo) y LSH-101 (nivel alto) en 3 pruebas & Pendiente & \campo{Por confirmar} & ---\\
+VAL-12 & REQ-01 & Mezcla del detergente con la bomba de agitación P-103 hasta obtener una mezcla homogénea, en 3 pruebas & Pendiente & \campo{Por confirmar} & ---\\
+--- & Modelo (Sección~\ref{sec:montaje_control}) & Ensayo de escalones de potencia sobre E-101 & Ejecutado & 648 datos; temperatura de 23,5 a 60,1\,°C; parámetros por reportar & Archivo \texttt{PRUEBAFINAL1.csv}\\
+\end{longtable}
+\endgroup
+
+\insertarfigura[0.6\textwidth]{prueba_montaje_01.jpg}{Registro fotográfico de las pruebas sobre el prototipo.}{fig:prueba_montaje_01}
+
+\campo{Pendiente: insertar las demás fotografías de las pruebas (\texttt{prueba\_montaje\_02.jpg}, \texttt{prueba\_montaje\_03.jpg}, etc.).}
+
+\subsubsection{Observaciones de seguridad derivadas del montaje}
+
+Durante el montaje se identificaron cuatro aspectos de seguridad que se revisarán antes de las pruebas del tercer corte y se incorporarán a la matriz de riesgos:
+
+\begin{itemize}
+\item A la tensión medida de 126\,V, la resistencia de inmersión entrega cerca de 2000\,W y consume aproximadamente 15,9\,A ($2000\,\mathrm{W}/126\,\mathrm{V}$), un valor superior a la corriente nominal del interruptor automático de 15\,A que la protege.
+\item Los SSR operan sin disipador adicional, solo con su placa metálica; el SSR de la resistencia disipa del orden de 20\,W a plena carga, por lo que su temperatura debe vigilarse durante los periodos largos de calentamiento.
+\item Sin termostato bimetálico, el único corte por sobretemperatura es el programado en el PLC, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
+\item La bomba de impulsión no cuenta con guardamotor, por lo que carece de protección térmica propia frente a sobrecarga.
+\end{itemize}
+
+\campo{Pendiente: acciones definidas por el equipo frente a estas observaciones.}
+
+\subsubsection{Pruebas previstas para el tercer corte}
+
+Una vez implementados el enjuague final, la pausa para el vaciado de TK-103 y el controlador de temperatura, se completarán las pruebas pendientes de la Tabla~\ref{tab:resultados_pruebas} y las de aceptación exigidas para el proyecto: tres ciclos completos, una prueba continua de 30\,min, tres valores de consigna dentro del rango seguro con una perturbación controlada, la comparación entre la respuesta experimental y la simulada, la medición de la latencia y del porcentaje de registros recibidos (meta de al menos 99\,\%) y la verificación de que las alarmas se detectan y visualizan en un máximo de 3\,s.
