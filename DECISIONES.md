@@ -55,7 +55,7 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 | 7 | Plan de validación | `08_plan_validacion.tex` | Ajustar (consignas, REQ-01) |
 | 8 | **Montaje físico** (nueva) | `secciones-2/09_montaje_fisico.tex` | Redactar introducción |
 | 8.1 | Instrumentación electrónica | `secciones-2/10_montaje_instrumentacion.tex` | Sensores, actuadores, SSR, alimentación, protecciones |
-| 8.2 | Programación | `secciones-2/11_montaje_programacion.tex` | GRAFCET, mapa de E/S, Ladder v1 |
+| 8.2 | Programación | `secciones-2/11_montaje_programacion.tex` | GRAFCET, mapa de E/S, Ladder v1.1 (3 fases) |
 | 8.3 | Comunicación | `secciones-2/12_montaje_comunicaciones.tex` | Node-RED, API, Streamlit, evidencias |
 | 8.4 | Cambios entre el diseño conceptual y el prototipo | `secciones-2/13_cambios_prototipo.tex` | Tabla hecha; completar los "Motivo por confirmar" |
 | 8.5 | Control | `secciones-2/14_montaje_control.tex` → `09_5_validacion_modelo.tex` | Texto de Fabián (validación del modelo) |
@@ -117,8 +117,10 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 
 ### Programa
 - Se documenta **el GRAFCET del equipo, corregido**, como diseño de la secuencia del corte 2 (incluye las 3 fases).
-- El **Ladder v1** (`prueba1_cip`) queda como **primera implementación** (solo preenjuague y lavado).
-- Pendiente de implementar en el PLC: enjuague final y pausa para que el operario vacíe TK-103.
+- El **Ladder v1.1** (`prueba1_cip`, PDF `CIP_main_v1_1.pdf`, 16 de octubre) ya implementa **las tres fases** (CICLO 0, 1 y 2; termina en CICLO = 3). Sus tiempos son **preliminares**: dosificadora 5 s (el GRAFCET dice 7 s), agitación 10 s, y 3 s en E0, E1 y E6.
+- El GRAFCET de grafcet.io va en la 8.2 como **preliminar**. Hay que ajustarlo a IEC 60848: CICLO=0 y CICLO=2 en serie, dos etapas llamadas "Ed", divergencia simultánea con línea sencilla.
+- Observación: en E1, XV-102 y XV-103 quedan abiertas a la vez 3 s.
+- Pendiente de implementar en el PLC: pausa para que el operario vacíe TK-103, controlador de temperatura y parada segura.
 
 ### Componentes del prototipo
 | Elemento | Decisión |
