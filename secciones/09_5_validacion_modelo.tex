@@ -22,7 +22,7 @@ El registro se realizó con la función DataLog del PLC S7-1200, que guarda los 
 \item \texttt{DataLogClose}: cierra el archivo.
 \end{itemize}
 
-El archivo se descarga después desde la página \textit{Data logs} del servidor web integrado del PLC. La secuencia se implementó en el OB1 como una máquina de estados (reposo, creación, apertura, listo, escritura, cierre y error). La captura de cada muestra se realiza en el OB30 cada 5\,s (50 ciclos): se copian en la estructura de datos los valores del mismo instante y se activa una bandera que dispara la escritura, la cual se desactiva al terminar. Cada registro contiene el reloj del ensayo (ms), la temperatura (°C), el ciclo de trabajo aplicado (\%) y el tiempo acumulado en ON (ms); en la versión actual del programa se agrega además la consigna de temperatura y el archivo admite un máximo de 1000 registros (valores preliminares, Sección~\ref{sec:montaje_programacion}).
+El archivo se descarga después desde la página \textit{Data logs} del servidor web integrado del PLC. La secuencia se implementó en el OB1 como una máquina de estados (reposo, creación, apertura, listo, escritura, cierre y error). La captura de cada muestra se realiza en el OB30 cada 5\,s (50 ciclos): se copian en la estructura de datos los valores del mismo instante y se activa una bandera que dispara la escritura, la cual se desactiva al terminar. Cada registro contiene el reloj del ensayo (ms), la temperatura (°C), el ciclo de trabajo aplicado (\%) y el tiempo acumulado en ON (ms). Para este ensayo se configuró un máximo de 720 registros, equivalentes a 60\,min. En la versión actual del programa, preparada para la prueba del controlador, se agrega además la consigna de temperatura y el archivo admite hasta 1000 registros (Sección~\ref{sec:montaje_programacion}).
 
 \subsubsection{Procedimiento experimental}
 
@@ -138,7 +138,7 @@ G_p(s) = \frac{1{,}50}{5305\,s + 1}\quad [°\mathrm{C}/\%].
 \label{eq:modelo_experimental_duty}
 \end{equation}
 
-El modelo también se extrapoló al volumen de diseño de 20\,L, con lo que $\tau$ pasaría a 5919\,s (98,7\,min). Esa extrapolación no se adopta, porque la capacidad térmica identificada es menor que la del agua sola, lo que impide separar la masa térmica del recipiente y escalar el modelo con confianza. Aun así, los 5919\,s quedan dentro de la envolvente de $\tau$ que se usa en el diseño del controlador (Sección~\ref{sec:diseno_pi}).
+El modelo también se extrapoló al volumen de diseño de 20\,L, con lo que $\tau$ pasaría a 5919\,s (98,7\,min). Esa extrapolación no se adopta, porque la capacidad térmica identificada es menor que la del agua sola ($C_{\mathrm{resto}} = -3018\,\mathrm{J/K}$ con 18\,L), lo que impide separar la masa térmica del recipiente y escalar el modelo con confianza. Aun así, los 5919\,s quedan dentro de la envolvente de $\tau$ que se usa en el diseño del controlador (Sección~\ref{sec:diseno_pi}).
 
 \subsubsection{Discusión y limitaciones}
 

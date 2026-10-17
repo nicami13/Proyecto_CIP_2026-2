@@ -188,7 +188,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 ### Programa de control (16 de octubre, PDF del proyecto `CONTROL`)
 - Es el **más actualizado**. Lo que no cuadra se marca como **preliminar**.
 - OB30 cada 100 ms: escalamiento de `%IW66` (5530–27648 → 0–100 °C), aborto a ≥ 65 °C o con el lazo abierto (< 4800 cuentas), modos 0/3/4, `PID_Compact` (PI: Kp 12, Ti 1800 s, Td 0, ciclo 1 s, salida 0–100 %, aviso alto 40 °C) y proporción de tiempo de 10 s por `%Q0.2`.
-- OB1: `DataLog` con 1000 registros (Fabián había escrito 720); el encabezado incluye `SP_C`.
+- OB1: `DataLog` con 1000 registros y `SP_C` en el encabezado: es la configuración para la **prueba del controlador**. Los **720 registros** fueron los del **ensayo de identificación** (Fabián, 16 oct.).
 - Errores a corregir en OB1: `ERROR` del `DataLogWrite` conectado a `WRITE.BUSY`, y después del cierre el estado pasa a 40 en lugar de 0.
 - IP del PLC según su servidor web: **172.16.140.112** (el documento decía .116).
 - `%I0.0` se llama `RESET` en el programa de control y `Tag_1` (inicio) en el de la secuencia: hay que unificarlo al integrarlos.
@@ -230,3 +230,5 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Salidas: **%Q0.0 BOMBA (P-102)**, **%Q0.1 MOTOR (P-103)**, **%Q0.2 DOSI (P-101)**, **%Q0.3 VALVULA1 (XV-102)**, **%Q0.4 VALVULA2 (XV-103)**, **%Q0.5 RESISTENCIA (E-101)**.
 - CONFLICTO al integrar: **%Q0.2** es DOSI en la secuencia y el SSR de la resistencia (Q_SSR) en el programa de control; **%I0.0** es inicio en la secuencia y RESET en control.
 - Anexo J.1 ahora es el PDF v1.2.
+- **Fabián (16 oct., noche)**: el afinamiento se hizo **solo con SP = 35 °C** → se usa la versión del **script** (ya está en la 8.5). 720 registros = ensayo de identificación; 1000 = prueba de control. Su texto de validación repite "termostato de 70 °C": se omite porque está confirmado que **no hay termostato**.
+- %Q0.2 (DOSI vs SSR): el equipo lo corrige el 17 de octubre; cuando pasen la nueva asignación, actualizar `tab:mapa_io` y quitar el aviso de conflicto.
