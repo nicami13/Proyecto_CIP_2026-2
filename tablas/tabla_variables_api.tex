@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Variables previstas para la supervisión remota.}
+\label{tab:variables_api}
+\begin{tabularx}{\textwidth}{L{5.0cm}YL{2.4cm}}
+\toprule
+\textbf{Campo de la API} & \textbf{Descripción} & \textbf{Elemento}\\
+\midrule
+\texttt{temperatura} & Temperatura del fluido en el tanque de mezcla & TT-101\\
+\texttt{ciclo} & Fase activa del ciclo (preenjuague, lavado o enjuague final) & PLC\\
+\texttt{nivel\_cabina} & Nivel del tanque de mezcla & LSL-101 / LSH-101\\
+\texttt{estado\_bomba\_drenado} & Estado de la bomba de impulsión & P-102\\
+\texttt{estado\_bomba\_dosificadora} & Estado de la bomba dosificadora & P-101\\
+\texttt{estado\_resistencia} & Estado de la resistencia de inmersión & E-101\\
+\texttt{Bomba\_agitacion} & Estado de la bomba de agitación & P-103\\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -53,8 +53,14 @@ H.~E.~G. Martínez, {\em ESP32 \& AWS Report}.
 \newblock Universidad Politécnica de Yucatán, Ucú, Yucatán, México, 2024.
 \newblock Reporte técnico sobre integración de ESP32 con AWS IoT utilizando Arduino IDE y MQTT.
 
+\bibitem{ruiz2026lab4}
+F.~Ruiz~Mateus and F.~Pati{\~n}o~Ojeda, ``Laboratorio 4: integraci{\'o}n de un transmisor {SITRANS TH200} con {PLC} y {HMI},'' informe de laboratorio, comunicaciones industriales y laboratorio, Universidad Santo Tom{\'a}s, Facultad de Ingenier{\'i}a Mecatr{\'o}nica, Bucaramanga, Colombia, Sept. 2026.
+
 \bibitem{seborg2016process}
 D.~E. Seborg, T.~F. Edgar, D.~A. Mellichamp, and F.~J. Doyle~III, {\em Process Dynamics and Control}.
 \newblock Hoboken, NJ, USA: Wiley, 4th~ed., 2016.
+
+\bibitem{ruiz2026lab3}
+F.~Ruiz~Mateus and F.~Pati{\~n}o~Ojeda, ``Laboratorio 3: inventario de recursos para la implementaci{\'o}n de la m{\'a}quina {CIP},'' informe de laboratorio, comunicaciones industriales y laboratorio, Universidad Santo Tom{\'a}s, Facultad de Ingenier{\'i}a Mecatr{\'o}nica, Bucaramanga, Colombia, Sept. 2026.
 
 \end{thebibliography}

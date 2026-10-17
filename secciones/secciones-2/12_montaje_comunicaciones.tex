@@ -1,59 +1,55 @@
 
 \subsection{Comunicación}\label{sec:montaje_comunicaciones}
 
-La arquitectura de comunicaciones implementada en el prototipo separa la red de control local de la capa de supervisión remota. El PLC Siemens S7-1200 CPU 1214C se comunica con el panel HMI KTP600 Basic mediante PROFINET sobre Ethernet industrial, a través del switch Siemens CSM1277, de forma que la operación y la visualización local no dependen de la conexión a Internet. La supervisión remota se realiza mediante una Raspberry Pi que actúa como pasarela (\textit{gateway}) entre el PLC y los servicios externos, por lo que el controlador no queda expuesto directamente a Internet, aspecto relevante para la seguridad de los sistemas de control conectados \cite{hajda2021security}. La Figura~\ref{fig:arquitectura_iot} resume el flujo de información.
+En el segundo corte el equipo priorizó la construcción física del prototipo y el control de temperatura, por lo que la capa de comunicaciones se encuentra en definición: la arquitectura está decidida, pero la red del prototipo aún no se ha montado y las pruebas de comunicación de extremo a extremo se realizarán en el tercer corte. Esta subsección presenta la arquitectura propuesta, el estado de cada parte y las verificaciones previstas. La propuesta completa, elaborada por el integrante Juan Camilo Díaz Gamboa, se incluye en el Anexo~\ref{anx:arquitectura_com}.
+
+\paragraph{Arquitectura propuesta.} La arquitectura separa la red de control local de la capa de supervisión remota (Figura~\ref{fig:arquitectura_iot}). En el nivel de control, el PLC Siemens S7-1200 CPU 1214C adquiere las señales de campo y acciona los actuadores, de modo que el ciclo de limpieza no depende de ningún equipo externo. El PLC, la HMI KTP600 Basic y la pasarela de supervisión se conectan en estrella a través del switch Siemens CSM 1277, que solo conmuta tramas (capa 2). La Raspberry Pi, con Node-RED, actúa como pasarela entre el PLC y los servicios externos: lee las variables del PLC y las envía a una API, desde donde las consume la interfaz de supervisión remota. Como la Raspberry Pi concentra la conexión con el exterior, el PLC no queda expuesto directamente a Internet \cite{hajda2021security}. En la propuesta, la Raspberry Pi se une a la misma red local por WiFi, mediante un punto de acceso o router conectado al switch en modo puente; este enlace es condicional y se confirmará al montar la red. En la etapa final no se requiere un computador: este solo se usa para programar el PLC y la HMI.
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
   font=\footnotesize,
-  nodo/.style={draw=AzulUSTA,rounded corners=3pt,fill=AzulUSTA!8,align=center,minimum height=1.1cm,text width=2.6cm},
-  enlace/.style={-{Stealth[length=2.2mm]},line width=0.7pt,draw=AzulUSTA},
+  nodo/.style={draw=AzulUSTA,rounded corners=3pt,fill=AzulUSTA!8,align=center,minimum height=1.1cm,text width=2.5cm},
+  cond/.style={draw=AzulUSTA,dashed,rounded corners=3pt,fill=white,align=center,minimum height=1.1cm,text width=2.5cm},
+  enlace/.style={line width=0.7pt,draw=AzulUSTA},
   etiqueta/.style={font=\scriptsize,align=center,fill=white,inner sep=1pt}]
-  \node[nodo] (plc) at (0,0) {PLC S7-1200\\CPU 1214C};
-  \node[nodo] (sw) at (0,2.4) {Switch\\CSM1277};
-  \node[nodo] (hmi) at (4.6,2.4) {HMI\\KTP600 Basic};
-  \node[nodo] (rpi) at (4.6,0) {Raspberry Pi\\(Node-RED)};
-  \node[nodo] (api) at (9.0,0) {API en AWS};
-  \node[nodo] (web) at (13.4,0) {Interfaz web\\(Streamlit)};
-  \draw[enlace,<->] (plc) -- node[etiqueta,right=2pt] {PROFINET} (sw);
-  \draw[enlace,<->] (sw) -- node[etiqueta,above=2pt] {PROFINET} (hmi);
-  \draw[enlace] (plc) -- node[etiqueta,above=2pt] {Protocolo S7} (rpi);
-  \draw[enlace] (rpi) -- node[etiqueta,above=2pt] {HTTP} (api);
-  \draw[enlace] (api) -- node[etiqueta,above=2pt] {GET} (web);
+  \node[nodo] (plc) at (0,2.6) {PLC S7-1200\\CPU 1214C};
+  \node[nodo] (sw) at (0,0) {Switch\\CSM 1277};
+  \node[nodo] (hmi) at (-4.2,0) {HMI\\KTP600 Basic};
+  \node[cond] (ap) at (4.2,0) {Punto de acceso\\WiFi\\(condicional)};
+  \node[nodo] (rpi) at (8.4,0) {Raspberry Pi\\(Node-RED)};
+  \node[nodo] (api) at (8.4,-2.6) {API de\\supervisión};
+  \node[nodo] (web) at (4.2,-2.6) {Interfaz remota\\(navegador)};
+  \draw[enlace] (plc) -- node[etiqueta,right=2pt] {Ethernet} (sw);
+  \draw[enlace] (hmi) -- node[etiqueta,above=2pt] {Ethernet} (sw);
+  \draw[enlace] (sw) -- node[etiqueta,above=2pt] {Ethernet} (ap);
+  \draw[enlace,dashed] (ap) -- node[etiqueta,above=2pt] {WiFi} (rpi);
+  \draw[enlace,-{Stealth[length=2.2mm]}] (rpi) -- node[etiqueta,right=2pt] {HTTPS} (api);
+  \draw[enlace,-{Stealth[length=2.2mm]}] (api) -- node[etiqueta,above=2pt] {GET} (web);
+  \node[font=\scriptsize,align=left,anchor=north west] at (-5.5,-1.9) {S7 / ISO-on-TCP (puerto 102):\\HMI $\leftrightarrow$ PLC y Raspberry Pi $\leftrightarrow$ PLC.\\Línea discontinua: enlace condicional.};
 \end{tikzpicture}
-\caption{Arquitectura de comunicaciones implementada en el prototipo.}
+\caption{Arquitectura de comunicaciones propuesta para el prototipo.}
 \label{fig:arquitectura_iot}
 \end{figure}
 
-En la Raspberry Pi se ejecuta Node-RED, que se inicia automáticamente como servicio mediante un \textit{script} de arranque. Node-RED lee las variables del PLC a través del protocolo S7, a partir de sus direcciones de memoria, y las envía por HTTP a una API desplegada en Amazon Web Services (AWS). La interfaz de usuario se desarrolló en Streamlit y se publica en un dominio gratuito; esta interfaz consume los datos de la API mediante una solicitud GET, lo que permite consultar el estado del sistema desde un navegador web en un computador o dispositivo móvil. La Tabla~\ref{tab:variables_api} presenta las variables que entrega la API.
+\paragraph{Protocolo entre el PLC y la pasarela.} Se definieron una opción principal y una alternativa. En la principal, Node-RED lee los bloques de datos del PLC mediante el protocolo S7 (ISO-on-TCP, puerto 102), con un nodo S7 basado en la librería Snap7 y direccionamiento absoluto (rack 0, slot 1), que es el mismo protocolo que usa la HMI. Su ventaja es que lee las variables directamente del bloque de datos, sin mapeo intermedio; a cambio, exige desactivar el acceso optimizado del bloque de datos y habilitar el acceso PUT/GET en el PLC, lo que reduce la seguridad del controlador y obliga a usarlo solo en una red aislada. La alternativa es Modbus TCP (puerto 502), con el PLC como servidor mediante la instrucción \texttt{MB\_SERVER} y un mapa de registros 40001--40008 leído con el nodo \texttt{modbus-read}; es un protocolo abierto que no requiere PUT/GET, pero obliga a programar el servidor Modbus y a mapear cada variable.
 
-\begin{table}[H]
-\centering
-\small
-\caption{Variables publicadas por la API de supervisión.}
-\label{tab:variables_api}
-\begin{tabularx}{\textwidth}{L{5.0cm}YL{2.4cm}}
-\toprule
-\textbf{Campo de la API} & \textbf{Descripción} & \textbf{Elemento}\\
-\midrule
-\texttt{temperatura} & Temperatura del fluido en el tanque de mezcla & TT-101\\
-\texttt{ciclo} & Fase activa del ciclo (preenjuague, lavado o enjuague final) & PLC\\
-\texttt{nivel\_cabina} & Nivel del tanque de mezcla & LSL-101 / LSH-101\\
-\texttt{estado\_bomba\_drenado} & Estado de la bomba de impulsión & P-102\\
-\texttt{estado\_bomba\_dosificadora} & Estado de la bomba dosificadora & P-101\\
-\texttt{estado\_resistencia} & Estado de la resistencia de inmersión & E-101\\
-\texttt{Bomba\_agitacion} & Estado de la bomba de agitación & P-103\\
-\bottomrule
-\end{tabularx}
-\end{table}
+\paragraph{Cadena de información.} La temperatura se mide con el PT100 y el transmisor SITRANS TH200, cuya señal de 4--20\,mA pasa por la resistencia de 500\,$\Omega$ y llega como 2--10\,V a la entrada analógica del PLC. El PLC la escala a grados Celsius con $T = (\mathrm{RAW} - 5530)\cdot 100/(27648 - 5530)$, para el rango de 0 a 100\,\textdegree C, y la guarda en un bloque de datos, desde donde la leen la HMI y la Raspberry Pi. El nivel se lee como una entrada digital de 24\,V\,DC desde el flotador doble y sigue el mismo camino. Desde la Raspberry Pi, los datos se envían a la API y de allí a la interfaz remota. La Tabla~\ref{tab:variables_api} resume las variables previstas para la supervisión.
 
-Si se pierde la comunicación con la capa de supervisión, el PLC mantiene el control local del proceso y la secuencia del ciclo; la supervisión remota se restablece al recuperarse el enlace.
+\input{tablas/tabla_variables_api}
 
-\paragraph{Actividades previstas para el tercer corte.} En el segundo corte la cadena de supervisión se puso en funcionamiento, pero su direccionamiento definitivo y su evidencia aún no se han documentado. Para el tercer corte se plantean las siguientes actividades:
+\paragraph{Direccionamiento.} La red del laboratorio corresponde a la subred 172.16.140.0/22 (máscara 255.255.252.0, puerta de enlace 172.16.140.1). La propuesta asigna las direcciones 172.16.140.21 al PLC, 172.16.140.24 a la HMI y 172.16.140.28 a la Raspberry Pi. Durante los ensayos del segundo corte el PLC respondió en la dirección 172.16.140.112 (Tabla~\ref{tab:nodos_ip}), por lo que las direcciones definitivas se confirmarán con el área de comunicaciones de la institución al montar la red.
+
+\paragraph{Estado de implementación.} En el segundo corte quedaron definidas la topología, los equipos, el protocolo principal y su alternativa, y la cadena de información, y se avanzó en los componentes de software de la supervisión: un flujo de Node-RED, una API y una interfaz web en Streamlit. La propuesta del Anexo~\ref{anx:arquitectura_com} contempla además una aplicación móvil en Flutter como cliente de la API. Quedan pendientes para el tercer corte el montaje de la red del prototipo, la configuración de las direcciones, la habilitación del acceso PUT/GET o del servidor Modbus, y la elección definitiva de la interfaz remota.
+
+\paragraph{Comportamiento ante pérdida de enlace.} La arquitectura está pensada para que una falla en la supervisión no afecte el proceso. Si se pierde la Raspberry Pi o el enlace WiFi, el PLC y la HMI siguen operando y Node-RED marca el sistema como fuera de línea. Si se pierde la HMI, el PLC continúa su ciclo, y si el PLC se desconecta del switch, mantiene el control local del proceso. El caso de la HMI ya se verificó en el laboratorio 4 de Comunicaciones Industriales, con los mismos equipos: al desconectar la HMI durante 5\,s, el PLC siguió actualizando la temperatura y la HMI recuperó la visualización en 11,57\,s \cite{ruiz2026lab4}.
+
+\paragraph{Pruebas previstas para el tercer corte.} Para validar la cadena de comunicaciones se plantean las siguientes pruebas:
 \begin{itemize}
-\item Asignar una dirección IP fija a la Raspberry Pi y confirmar la del PLC dentro de la red del laboratorio, en coordinación con el área de comunicaciones de la institución, y actualizar la Tabla~\ref{tab:nodos_ip}.
-\item Medir el periodo de actualización de los datos entre el PLC y la interfaz de Streamlit durante una prueba de 15\,min, para verificar el periodo máximo de 30\,s que exige el REQ-16.
-\item Registrar como evidencia capturas del flujo de Node-RED, de la interfaz de Streamlit y de la respuesta de la API.
-\item Comprobar que, ante una pérdida del enlace con la capa de supervisión, el PLC mantiene el control local y la supervisión se restablece al recuperarse la conexión.
+\item Intercambio de dos variables: con un calibrador Fluke 726 se inyectan 4, 12 y 20\,mA en la entrada de temperatura y se verifica que Node-RED muestre el 0, el 50 y el 100\,\% del rango, como ya se verificó en el PLC y en la HMI en el laboratorio 4 (Sección~\ref{sec:montaje_pruebas}); además, se fuerza el nivel alto y se verifica el cambio de \texttt{false} a \texttt{true} en la HMI y en Node-RED.
+\item Periodo de actualización: medir, durante una prueba de 15\,min, el tiempo entre el PLC y la interfaz remota, para verificar el periodo máximo de 30\,s que exige el REQ-16.
+\item Pérdida de enlace: desconectar la Raspberry Pi, la HMI y el enlace WiFi, uno a la vez, y verificar que el PLC mantiene el control local.
+\item Evidencia: registrar capturas del flujo de Node-RED, de la interfaz remota y de la respuesta de la API.
 \end{itemize}
+
+El rango del transmisor TH200 (0 a 100\,\textdegree C) y el uso de la entrada analógica integrada de 0--10\,V con la resistencia de 500\,$\Omega$ ya se confirmaron en el laboratorio 4 \cite{ruiz2026lab4}. Antes de las pruebas del tercer corte deben confirmarse la referencia exacta de la CPU y el tipo de sus salidas, las direcciones IP libres y la puerta de enlace reales, y que el punto de acceso WiFi opere en modo puente sin aislamiento de clientes.

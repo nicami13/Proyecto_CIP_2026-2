@@ -18,20 +18,20 @@
 \endlastfoot
 Esquema hidráulico & Lazo cerrado con recirculación (A2) & Paso único hacia el tanque de efluentes (TK-103), vaciado manualmente al drenaje entre fases & Simplifica la arquitectura hidráulica y evita la acumulación de residuos en el circuito de preparación (Sección~\ref{sec:caracterizacion})\\
 Temperatura de consigna & 50\,°C (preenjuague) y 40\,°C (lavado) & 35\,°C en ambas fases & Margen frente al límite de 40\,°C del sello mecánico de la bomba\\
-Bomba de impulsión & Truper BOAC-1/2 EXPERT, centrífuga & Bomba periférica (P-102) & \campo{Motivo por confirmar}\\
-Agitación & Motorreductor de 100\,rpm con agitador & Bomba sumergible de 22\,W (P-103), activa antes del calentamiento & \campo{Motivo por confirmar}\\
-Protección térmica de la resistencia & Termostato bimetálico en serie & Sin termostato; corte del calentador por programa del PLC (umbral por definir) & Descartado en este corte por costo y por simplificación del diseño\\
-Conmutación de potencia & Un SSR de 40\,A para la resistencia & SSR de 60\,A para la resistencia y SSR de 40\,A para la bomba de impulsión & \campo{Motivo por confirmar}\\
-Disipación de los SSR & Disipador $\leq 1{,}2$\,°C/W y ventilación forzada & Solo la placa metálica propia de cada SSR & \campo{Motivo por confirmar}\\
-Accionamiento de la bomba & Contactor y guardamotor & SSR de 40\,A e interruptor automático & \campo{Motivo por confirmar}\\
-Electroválvulas & Una electroválvula de llenado & Dos electroválvulas: llenado (XV-102), instalada, y descarga (XV-103), de solenoide y de acción directa, pendiente de compra & \campo{Motivo por confirmar}\\
+Bomba de impulsión & Truper BOAC-1/2 EXPERT, centrífuga & Bomba periférica (P-102) & Costo y disponibilidad\\
+Agitación & Motorreductor de 100\,rpm con agitador & Bomba sumergible de 22\,W (P-103), activa antes del calentamiento & Evita sumergir un eje en el tanque y sellar su paso por la tapa, que añadía un punto de fuga y piezas móviles en contacto con el fluido\\
+Protección térmica de la resistencia & Termostato bimetálico en serie & Sin termostato; corte del calentador por programa del PLC (umbral de 35\,°C) & Descartado en este corte por costo y por simplificación del diseño\\
+Conmutación de potencia & Un SSR de 40\,A para la resistencia & SSR de 60\,A para la resistencia y SSR de 40\,A para la bomba de impulsión & El SSR de 60\,A da margen frente a los 16\,A de la resistencia; el de 40\,A estaba disponible en la universidad\\
+Disipación de los SSR & Disipador $\leq 1{,}2$\,°C/W y ventilación forzada & Solo la placa metálica propia de cada SSR & Costo; la temperatura de los SSR se vigila durante el calentamiento\\
+Accionamiento de la bomba & Contactor y guardamotor & SSR de 40\,A e interruptor automático & Simplificación y costo: la bomba se conmuta con el SSR de 40\,A\\
+Electroválvulas & Una electroválvula de llenado & Dos electroválvulas: llenado (XV-102), instalada, y descarga (XV-103), de solenoide y de acción directa, pendiente de compra & Automatizar desde el PLC la descarga de TK-102 hacia la bomba de impulsión\\
 Válvulas de bola (regulación y desvío) y válvula antirretorno & Incluidas en el diseño & No se instalan & Descartadas en este corte por costo y por simplificación del diseño hidráulico\\
-Filtro Y & Incluido en el diseño & No se usa & \campo{Motivo por confirmar}\\
+Filtro Y & Incluido en el diseño & No se usa & Costo y simplificación del circuito de paso único\\
 Manómetro & Incluido en el diseño & Aún no instalado & Pendiente de compra\\
-Bomba dosificadora & Peristáltica de 24\,V con tubo Norprene & Peristáltica de 12\,V (P-101) alimentada con un convertidor LM2596 & \campo{Motivo por confirmar}\\
-Sensor de nivel & Dos flotadores reed de 115\,mm & Un flotador doble (LSL-101 y LSH-101) & \campo{Motivo por confirmar}\\
-Tanque de mezcla & Acero inoxidable con buje soldado para la resistencia & Tanque de plástico de 50\,L; la resistencia atraviesa la pared con contratuerca y empaques & \campo{Motivo por confirmar}\\
-Tubería & Acero inoxidable / CPVC & PVC de 1 y 3/4 de pulgada & \campo{Motivo por confirmar}\\
-Supervisión remota & MQTT con ThingsBoard autohospedado & Raspberry Pi con Node-RED (protocolo S7), API en AWS e interfaz en Streamlit & \campo{Motivo por confirmar}\\
+Bomba dosificadora & Peristáltica de 24\,V con tubo Norprene & Peristáltica de 12\,V (P-101) alimentada con un convertidor LM2596 & Disponibilidad y costo\\
+Sensor de nivel & Dos flotadores reed de 115\,mm & Un flotador doble (LSL-101 y LSH-101) & Mide el nivel bajo y el alto en una sola unidad y con una sola perforación\\
+Tanque de mezcla & Acero inoxidable con buje soldado para la resistencia & Tanque de plástico de 50\,L; la resistencia atraviesa la pared con contratuerca y empaques & Tras un percance con el tanque metálico durante el montaje, el tanque de plástico resultó más fácil de perforar y sellar; además, es de menor costo\\
+Tubería & Acero inoxidable / CPVC & PVC de 1 y 3/4 de pulgada & Costo y facilidad de montaje, dentro de la temperatura de operación (máximo 35\,°C)\\
+Supervisión remota & MQTT con ThingsBoard autohospedado & Raspberry Pi con Node-RED (protocolo S7), API en AWS e interfaz en Streamlit & Arquitectura en definición; propuesta en el Anexo~\ref{anx:arquitectura_com}, a confirmar en el tercer corte\\
 \end{longtable}
 \endgroup

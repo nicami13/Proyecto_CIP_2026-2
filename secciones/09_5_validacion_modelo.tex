@@ -140,7 +140,7 @@ G_p(s) = \frac{1{,}50}{5305\,s + 1}\quad [^{\circ}\mathrm{C}/\%].
 
 Para el volumen de operación del sistema (20\,L), el script de identificación extrapola el modelo con la misma $UA$, lo que da una constante de tiempo de 5919\,s (98,7\,min) y las funciones de transferencia
 \begin{equation}
-G_{20}(s) = \frac{0{,}0733}{5919\,s + 1}\quad [^{\circ}\mathrm{C/W}], \qquad G_{p,20}(s) = \frac{1{,}5007}{5919\,s + 1}\quad [^{\circ}\mathrm{C}/\%].
+G_{20}(s) = \frac{0{,}0733}{5919\,s + 1}\quad [^{\circ}\mathrm{C/W}], \qquad G_{p,20}(s) = \frac{1{,}50}{5919\,s + 1}\quad [^{\circ}\mathrm{C}/\%].
 \label{eq:modelo_20L}
 \end{equation}
 Esta extrapolación tiene una limitación: la capacidad térmica identificada es menor que la del agua sola ($C_{\mathrm{resto}} = -3018\,\mathrm{J/K}$ con 18\,L), lo que impide separar la masa térmica del recipiente y escalar el modelo con total confianza. Por eso el diseño del controlador usa como planta nominal el modelo identificado con 18\,L, y los 5919\,s quedan dentro de la envolvente de $\tau$ con la que se verificó (Sección~\ref{sec:diseno_pi}).

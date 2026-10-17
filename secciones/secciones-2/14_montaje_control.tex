@@ -53,7 +53,7 @@ con $K_i = K_p/T_i = 6{,}667 \times 10^{-3}\,\%/(^{\circ}\mathrm{C}\cdot\mathrm{
   \node[suma] (s) at (2.0,0) {};
   \node[bloque] (c) at (4.6,0) {Controlador PI\\[1mm] $C(s) = 12\left(1 + \dfrac{1}{1800\,s}\right)$};
   \node[bloque] (sat) at (7.6,0) {Saturación\\ 0--100\,\%};
-  \node[bloque] (g) at (11.0,0) {Planta (20\,L)\\[1mm] $\dfrac{1{,}5007\,e^{-\theta s}}{5919\,s + 1}$\\[1mm] $\theta \leq 35\,\mathrm{s}$};
+  \node[bloque] (g) at (11.0,0) {Planta (20\,L)\\[1mm] $\dfrac{1{,}50\,e^{-\theta s}}{5919\,s + 1}$\\[1mm] $\theta \leq 35\,\mathrm{s}$};
   \node (y) at (14.0,0) {$T$ [$^{\circ}$C]};
   \node[bloque] (tt) at (7.6,-2.1) {TT-101\\ (PT100, 4--20\,mA)};
   \draw[flecha] (sp) -- (s);
@@ -66,7 +66,7 @@ con $K_i = K_p/T_i = 6{,}667 \times 10^{-3}\,\%/(^{\circ}\mathrm{C}\cdot\mathrm{
   \node at (1.75,0.35) {$+$};
   \node at (2.3,-0.4) {$-$};
 \end{tikzpicture}
-\caption{Lazo de control de temperatura con el controlador PI y la función de transferencia de la planta para 20\,L.}
+\caption{Lazo de control de temperatura con el controlador PI y la función de transferencia de la planta para el volumen de operación de 20\,L. El controlador se diseñó con el modelo nominal de 18\,L y se verificó en la envolvente de incertidumbre, que incluye este caso.}
 \label{fig:lazo_control_pi}
 \end{figure}
 

@@ -25,7 +25,7 @@
 Temperatura de preenjuague & 35\,°C & Tabla~\ref{tab:fases_cip}, definida por el equipo para mantener margen frente al límite de 40\,°C del sello mecánico de la bomba & Supuesto (por validar)\\
 Temperatura de lavado & 35\,°C & Tabla~\ref{tab:fases_cip} y REQ-13 (error en estado estacionario $\leq 5$\,\%, equivalente a $\pm 1{,}75$\,°C para la consigna de 35\,°C; ver Nota 1) & Requisito\\
 Temperatura de enjuague final & Ambiente (sin calentamiento) & Tabla~\ref{tab:fases_cip} & Confirmado\\
-Umbral de seguridad de temperatura & Por definir (corte del calentador por programa del PLC) & REQ-14 & Requisito (por definir)\\
+Umbral de seguridad de temperatura & 35\,°C: corte del calentador por programa del PLC, fijado por la temperatura máxima del líquido de la bomba de agitación P-103 & REQ-14 & Confirmado\\
 Sensor de temperatura & RTD Pt100 de 3 hilos, clase B, con transmisor 4--20\,mA (0--100\,°C) y resistencia de 500\,$\Omega$ hacia la entrada analógica del PLC & REQ-12, matriz Pugh de sensores (Sección~\ref{sec:pugh}), presupuesto preliminar (Tabla~\ref{tab:presupuesto_preliminar}) y Sección~\ref{sec:pv} (escalamiento NORM\_X/SCALE\_X en TIA Portal) & Confirmado\\
 Potencia del calentador & Una (1) resistencia sumergible de 1500\,W de placa, que entrega aproximadamente 2000\,W a la tensión del laboratorio (126\,V); el modelo térmico usa 2000\,W & Sección~\ref{sec:mv}, variable manipulada & Confirmado\\
 Masa activa de fluido en el modelo térmico & 20\,kg (20\,L de agua por fase) & Sección~\ref{sec:modelo_dinamico}, parámetro del modelo de primer orden ($\tau \approx 348{,}8$\,min) & Confirmado\\

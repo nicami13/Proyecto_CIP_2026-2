@@ -18,11 +18,33 @@ El registro contiene 648 datos, uno cada 5\,s, a lo largo de 54\,min, con escalo
 
 \subsubsection{Pruebas de componentes}
 
-Las electroválvulas de solenoide compradas se probaron alimentando su bobina con una fuente externa, y se verificó que conmutan correctamente. También se probó el funcionamiento de la bomba de impulsión P-102. Estas pruebas verifican el accionamiento de cada componente por separado; la conmutación desde las salidas del PLC dentro de la secuencia se verificará con VAL-02. La electroválvula de descarga (XV-103) aún no se ha comprado; será de solenoide de acción directa, porque la descarga desde TK-102 ocurre por gravedad.
+\paragraph{Pruebas realizadas en los laboratorios de Comunicaciones Industriales.} La identificación y caracterización de varios componentes del prototipo se realizó dentro de las prácticas de laboratorio 3 y 4 del segundo corte de la asignatura Comunicaciones Industriales y Laboratorio, con autorización de la docente, sobre los mismos equipos que usa el proyecto. En el laboratorio 3 se inventariaron los equipos del banco y se verificaron sus especificaciones con la documentación del fabricante, entre ellos el PLC S7-1200 CPU 1214C AC/DC/RLY, la HMI KTP600 Basic PN, el switch CSM 1277 y la fuente Mean Well DR-120-24, que son los que se integraron en el prototipo \cite{ruiz2026lab3}. En el laboratorio 4 se integró el transmisor SITRANS TH200 con el PLC y la HMI \cite{ruiz2026lab4}: se confirmó que el sensor es una PT100 de tres hilos, se implementó el lazo de 4--20\,mA con la resistencia de 500\,$\Omega$ hacia la entrada analógica de 0--10\,V del PLC, y se programó el escalamiento con \texttt{NORM\_X} y \texttt{SCALE\_X} entre 5530 y 27648 cuentas. El prototipo reutiliza esta misma conexión y este mismo escalamiento.
+
+Para caracterizar la configuración almacenada en el transmisor, el calibrador Fluke 726 simuló una PT100 en cinco temperaturas (Tabla~\ref{tab:caracterizacion_th200}). La corriente de salida varió de forma prácticamente lineal entre 4,10 y 20,36\,mA, con una desviación máxima de 0,36\,mA y una desviación promedio de 0,22\,mA respecto a los valores teóricos, lo que confirma que el TH200 está configurado para un rango de 0 a 100\,\textdegree C con salida de 4--20\,mA. Con la PT100 real calentada, la temperatura mostrada en la HMI difirió de la referencia en 1,41\,\textdegree C como máximo, a 60\,\textdegree C. Además, al desconectar la HMI durante 5\,s, el PLC siguió actualizando la temperatura y la HMI recuperó la visualización en 11,57\,s \cite{ruiz2026lab4}.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Caracterización del transmisor SITRANS TH200 con el Fluke 726 simulando una PT100 \cite{ruiz2026lab4}.}
+\label{tab:caracterizacion_th200}
+\begin{tabular}{ccccc}
+\toprule
+\textbf{T simulada (°C)} & \textbf{Corriente (mA)} & \textbf{Tensión en 500\,$\Omega$ (V)} & \textbf{Lectura del PLC} & \textbf{T en la HMI (°C)}\\
+\midrule
+0 & 4,10 & 2,05 & 5699 & 1\\
+25 & 8,16 & 4,08 & 11297 & 26\\
+50 & 12,22 & 6,11 & 16922 & 52\\
+75 & 16,26 & 8,13 & 22525 & 77\\
+100 & 20,36 & 10,18 & 28157 & 102\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Pruebas en el prototipo.} Las electroválvulas de solenoide compradas se probaron alimentando su bobina con una fuente externa, y se verificó que conmutan correctamente. También se probó el funcionamiento de la bomba de impulsión P-102. Estas pruebas verifican el accionamiento de cada componente por separado; la conmutación desde las salidas del PLC dentro de la secuencia se verificará con VAL-02. La electroválvula de descarga (XV-103) aún no se ha comprado; será de solenoide de acción directa, porque la descarga desde TK-102 ocurre por gravedad.
 
 \subsubsection{Secuencia automática}
 
-\campo{Pendiente: confirmar si el programa Ladder v1 (\texttt{prueba1\_cip}), que implementa el preenjuague y el lavado con detergente, se probó en el prototipo y con qué resultado.}
+La prueba de la secuencia completa (Ladder v1.2) sobre el prototipo queda pendiente para el tercer corte.
 
 \subsubsection{Trazabilidad requisito--prueba--resultado}
 
@@ -49,22 +71,25 @@ La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de 
 VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1.2 incluye las tres fases; falta la pausa para el vaciado de TK-103 & ---\\
 VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & Bobinas de las electroválvulas probadas con fuente externa; XV-103 pendiente de compra & ---\\
 VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador PI diseñado ($K_p = 12$, $T_i = 1800$\,s) y programado, sin prueba en lazo cerrado & ---\\
-VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad & Pendiente & Umbral por definir & ---\\
+VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad de 35\,°C & Pendiente & Pendiente para el tercer corte & ---\\
 VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo y medición del detergente en probeta & Pendiente & P-101 pendiente de instalación & ---\\
 VAL-06 & REQ-06 & Inspección de fugas en TK-102, TK-103, XV-102, XV-103, P-101 y P-102 durante un ciclo & Pendiente & XV-103 pendiente de compra y P-101 pendiente de instalación & ---\\
 VAL-07 & REQ-06 & Volumen suministrado frente al recibido en el tanque de efluentes TK-103 & Pendiente & --- & ---\\
-VAL-08 & REQ-18 & Tiempo de corte de P-102, E-101 y P-101 al accionar el paro de emergencia & Pendiente & \campo{Por confirmar} & ---\\
+VAL-08 & REQ-18 & Tiempo de corte de P-102, E-101 y P-101 al accionar el paro de emergencia & Pendiente & Pendiente para el tercer corte & ---\\
 VAL-09 & REQ-19 & Alarma ante nivel bajo, sobretemperatura y falla de bomba & Pendiente & Solo indicación visual; el prototipo no tiene alarma sonora & ---\\
 VAL-10 & REQ-15, REQ-16 & Actualización de variables en la HMI y en la interfaz de Streamlit & Parcial & Enlace PLC--HMI verificado; cadena Node-RED, API y Streamlit en funcionamiento; periodo de actualización por medir & Tabla~\ref{tab:evidencia_comunicacion}; capturas pendientes\\
-VAL-11 & REQ-11 & Conmutación de LSL-101 (nivel bajo) y LSH-101 (nivel alto) en 3 pruebas & Pendiente & \campo{Por confirmar} & ---\\
-VAL-12 & REQ-01 & Mezcla del detergente con la bomba de agitación P-103 hasta obtener una mezcla homogénea, en 3 pruebas & Pendiente & \campo{Por confirmar} & ---\\
+VAL-11 & REQ-11 & Conmutación de LSL-101 (nivel bajo) y LSH-101 (nivel alto) en 3 pruebas & Pendiente & Pendiente para el tercer corte & ---\\
+VAL-12 & REQ-01 & Mezcla del detergente con la bomba de agitación P-103 hasta obtener una mezcla homogénea, en 3 pruebas & Pendiente & Pendiente para el tercer corte & ---\\
 --- & Modelo (Sección~\ref{sec:montaje_control}) & Ensayo de escalones de potencia sobre E-101 & Ejecutado & 648 datos; temperatura de 23,5 a 60,1\,°C; $\tau = 88{,}4$\,min y $K = 0{,}0733$\,°C/W & Archivo \texttt{PRUEBAFINAL1.csv}\\
 \end{longtable}
 \endgroup
 
-\insertarfigura[0.6\textwidth]{prueba_montaje_01.jpg}{Registro fotográfico de las pruebas sobre el prototipo.}{fig:prueba_montaje_01}
-
-\campo{Pendiente: insertar las demás fotografías de las pruebas (\texttt{prueba\_montaje\_02.jpg}, \texttt{prueba\_montaje\_03.jpg}, etc.).}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{archivos_complementarios/evidencias-fotograficas/montaje1-16oct-tablero.jpeg}
+\caption{Conexionado y verificación del tablero de potencia durante las pruebas (16 de octubre de 2026).}
+\label{fig:prueba_montaje_01}
+\end{figure}
 
 \subsubsection{Observaciones de seguridad derivadas del montaje}
 
@@ -73,11 +98,11 @@ Durante el montaje se identificaron cuatro aspectos de seguridad que se revisar�
 \begin{itemize}
 \item A la tensión medida de 126,3\,V, la resistencia de inmersión consume 16,2\,A medidos con pinza amperimétrica (2046\,W, Sección~\ref{sec:montaje_control}), un valor superior a la corriente nominal del interruptor automático de 15\,A que la protege.
 \item Los SSR operan sin disipador adicional, solo con su placa metálica; el SSR de la resistencia disipa del orden de 20\,W a plena carga, por lo que su temperatura debe vigilarse durante los periodos largos de calentamiento.
-\item Sin el termostato bimetálico, descartado en este corte, el único corte por sobretemperatura es el programado en el PLC, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
+\item Sin el termostato bimetálico, que no se adquirió en este corte por presupuesto, el único corte por sobretemperatura es el programado en el PLC, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
 \item La bomba de impulsión no cuenta con guardamotor, por lo que carece de protección térmica propia frente a sobrecarga.
 \end{itemize}
 
-\campo{Pendiente: acciones definidas por el equipo frente a estas observaciones.}
+Las acciones frente a estas observaciones se definirán en el tercer corte. Por ahora, la temperatura de los SSR se vigila durante los calentamientos, y la incorporación de un termostato bimetálico, que no se adquirió por presupuesto, se evaluará como decisión del tercer corte.
 
 \subsubsection{Pruebas previstas para el tercer corte}
 

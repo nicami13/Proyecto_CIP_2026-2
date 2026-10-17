@@ -17,7 +17,7 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 - **Ensayo del modelo:** sí se realizó (datos en `PRUEBAFINAL1.csv`, de Fabián).
 - **Sección 2:** texto con paso único a TK-103, tres bombas (P-101, P-102, P-103), transiciones por nivel/temperatura/temporizadores; tabla de fases (20 L, 35 °C, tiempo "por medir", destino TK-103); tabla de clasificación actualizada.
 - **Tolerancia de temperatura: ±1,75 °C** (5 % de la consigna de 35 °C). REQ-13 debe decir lo mismo.
-- **Umbral de seguridad de temperatura: "por definir"** (corte del calentador por programa del PLC). Los 65 °C del ensayo de Fabián son **solo el límite de ese ensayo**.
+- **Umbral de seguridad de temperatura: 35 °C** (corte del calentador por programa del PLC; decidido el 16 de octubre por la temperatura máxima de P-103). Los 65 °C del ensayo de Fabián son **solo el límite de ese ensayo**.
 
 ### Decisiones del 16 de octubre
 - **Volumen del sistema: 20 L por fase** (en todo el documento). La sección 5 y el Anexo D usan 20 kg: τ = 20 930 s ≈ 348,8 min, G(s) = 0,25/(20 930 s + 1).
@@ -27,7 +27,7 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 - **No se hace la prueba de tinta.** Falta definir cómo se evaluará la limpieza de la tubería.
 - **La validación completa** del prototipo frente a los requisitos queda para el **tercer corte**.
 - **Dos carros:** uno con los tanques y la tubería, y otro con el PLC, la HMI y el tablero.
-- **Pendiente de corregir en Gestión:** el termostato del presupuesto ajustado y el riesgo R-01. Además, los 16,2 A medidos superan el breaker de 15 A.
+- **Gestión:** el presupuesto preliminar (primer corte) conserva el termostato como referencia; el texto aclara que no se adquirió. Sigue pendiente (tercer corte) que los 16,2 A medidos superan el breaker de 15 A.
 
 ---
 
@@ -131,15 +131,15 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 | Bomba de impulsión P-102 | **Bomba periférica**, accionada por el SSR de 40 A. **Sin contactor ni guardamotor.** |
 | Bomba de agitación P-103 | Sumergible, **110 V AC, 22 W**, dentro de TK-102, accionada por un relé externo con bobina de 24 V. |
 | Dosificadora P-101 | Peristáltica de **12 V**, alimentada con un convertidor **LM2596**. **Aún no está instalada** (16 de octubre). |
-| Electroválvulas | **Dos** (XV-102 llenado, XV-103 descarga), 24 V DC. |
+| Electroválvulas | **De solenoide**, 24 V DC. Se compraron dos: una es XV-102 (instalada) y la otra no se usa (servopilotada). **XV-103 aún no se ha comprado**: será de acción directa. |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
 | Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
 | Tubería | **PVC** de 1" y 3/4". |
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
 | Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). **Sí hay paro de emergencia** (confirmado el 16 de octubre); falta saber dónde va en el circuito. |
-| Electroválvulas instaladas | **Las dos**: XV-102 (de la llave de agua al tanque) y XV-103 (del tanque a la bomba). |
-| No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. Aún no: manómetro, válvulas de bola, antirretorno. |
+| Electroválvulas instaladas | **Solo XV-102**. XV-103 pendiente de compra. |
+| No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. **Descartados en este corte (presupuesto y diseño): válvulas de bola, antirretorno y termostato.** Por comprar: XV-103, HV-101 y manómetro. |
 
 ### Alimentación
 - El PLC y la Raspberry Pi se alimentan a **110 V AC** desde tomacorrientes, detrás del breaker de 7 A.
@@ -168,9 +168,9 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 ## 5. Pendientes por confirmar con el equipo
 
 - [x] Masa de agua del modelo térmico: 20 L (decidido el 16 de octubre).
-- [ ] Consignas del plan de validación (ya no sirven 40 y 50 °C).
+- [x] Consignas del plan de validación: 30, 32 y 35 °C (máximo).
 - [ ] Sobreimpulso máximo (con 15 % sobre 35 °C se llega a 40,25 °C, el límite del sello). *(Error ya decidido: ±1,75 °C.)*
-- [ ] Valor del umbral de corte por sobretemperatura (en el documento queda "por definir").
+- [x] Valor del umbral de corte por sobretemperatura: 35 °C.
 - [x] Termostato bimetálico: no hay.
 - [x] Breaker de las bombas: 7 A (confirmado). Voltaje de la red: 126 V medidos.
 - [ ] Protección de la bomba de impulsión si el SSR se queda pegado.
@@ -210,7 +210,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Audio: en los ensayos las variables se supervisaron y forzaron desde la **tabla de observación** de TIA Portal (así se accionó la resistencia). Agregado en Programación.
 - Conclusiones y trabajo previsto reescritos para el **segundo corte** / **tercer corte**.
 - Anexos G, H e I marcados como **primer corte** (el G muestra la IP .116).
-- **XV-103 NO está instalada** (confirmado por Karen): la unidad comprada es servopilotada y no abre con la descarga por gravedad; se comprará una de acción directa. Solo está instalada XV-102. Aplicado en 8.1, tabla del P&ID, conclusiones, sección 8 y presupuestos.
+- **XV-103 NO está instalada ni comprada**: la segunda unidad comprada es servopilotada y no se usa; se comprará una de solenoide de acción directa. Solo está instalada XV-102. Aplicado en 8.1, tabla del P&ID, conclusiones, sección 8 y presupuestos.
 - **P-101**: 0–100 mL/min. Los ~300 mL por lavado necesitan **al menos 3 min**; el tiempo de 5 s del ladder es preliminar y debe ajustarse.
 - **Unifilar**: la 8.1 usa ahora la imagen de la compañera (`figuras/diagrama_unifilar.png`).
 - **Pruebas de componentes** (Karen, 16 oct.): las electroválvulas se probaron con una fuente externa (abren y cierran) y se probó la bomba de impulsión **P-102**. Agregado en 8.6.
@@ -221,7 +221,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 ### Diseño del PI (16 de octubre, noche; Word y scripts de Fabián)
 - 8.5 tiene ahora la subsección **Diseño del controlador PI** (`sec:diseno_pi`), con la versión del **script** (afinamiento con SP = 35 °C, sobreimpulso ≤ 0,6 °C, PM ≥ 60°, GM ≥ 19 dB, C2). Resultado: Kp = 12, Ti = 1800 s, como en el PLC.
 - Gráficas: `control_ident_temperatura`, `control_ident_validacion`, `control_lgr`, `control_antiwindup`, `control_envolvente` (PDF en `figuras/`), generadas con los scripts en `Desktop/Analisis_control_PI`.
-- Validación: retardo de 35 s como cota conservadora (ajuste 0–5 s), extrapolación a 20 L (5919 s) no adoptada.
+- Validación: retardo de 35 s como cota conservadora (ajuste 0–5 s). La extrapolación a 20 L (τ = 5919 s, G_p,20 = 1,50/(5919 s + 1)) se presenta en 8.5 y se usa en el diagrama del lazo; el diseño del PI usa como planta nominal el modelo de 18 L (5305 s).
 - **Pendiente con Fabián**: confirmar la versión del afinamiento (el Word dice 40–50 °C y 2 %), el riesgo de P-103 (máx. 35 °C = consigna) y si ya hay prueba en lazo cerrado.
 
 ### Direcciones de E/S (programa de la secuencia v1.2, 16 de octubre)
@@ -232,3 +232,15 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Anexo J.1 ahora es el PDF v1.2.
 - **Fabián (16 oct., noche)**: el afinamiento se hizo **solo con SP = 35 °C** → se usa la versión del **script** (ya está en la 8.5). 720 registros = ensayo de identificación; 1000 = prueba de control. Su texto de validación repite "termostato de 70 °C": se omite porque está confirmado que **no hay termostato**.
 - %Q0.2 (DOSI vs SSR): el equipo lo corrige el 17 de octubre; cuando pasen la nueva asignación, actualizar `tab:mapa_io` y quitar el aviso de conflicto.
+
+### Decisiones del 16 de octubre (noche, Karen Villaronga)
+- **Detergente: 1,5 % v/v** (300 mL en 20 L) es el valor **definido**, no una dosis de referencia.
+- **Umbral de seguridad: 35 °C**. Consignas de prueba: 30, 32 y 35 °C.
+- **HV-101**: válvula manual de vaciado de TK-103; **aún no existe** y se debe comprar.
+- Masa de los carros, método de evaluación de la limpieza, pruebas VAL-04/08/11/12, secuencia completa en el prototipo, acciones de seguridad y R-03: **pendientes para el tercer corte**.
+- **Video**: https://youtube.com/shorts/MtHrvh1YOZc?si=SyIyqCzNe6HC_9Ia (subsección "Evidencia en video").
+- **Laboratorios 3 y 4 de Comunicaciones Industriales** (Fabián y Ferney, con permiso de la docente): inventario de equipos y caracterización del TH200 (0–100 °C, 4,10–20,36 mA; error máx. 1,41 °C con la PT100 real; recuperación de la HMI en 11,57 s). Citados como `ruiz2026lab3` y `ruiz2026lab4` en 8.6 (pruebas) y 8.3 (comunicaciones).
+- Acrílico del banco de relés: **4 láminas de 1 m × 0,5 m**.
+- Motivos de la tabla de cambios confirmados; tanque de plástico por un percance con el tanque metálico.
+- **Comunicaciones**: arquitectura propuesta por Camilo (Anexo K, `anexos/comunicaciones/propuesta_arquitectura_cip.pdf`); red aún no montada; pruebas en el tercer corte. Por confirmar: IP definitivas (.21/.24/.28 propuestas frente a .112 medida), interfaz remota (Streamlit o App Flutter) y si la bomba lleva contactor (la propuesta lo dibuja; el prototipo usa SSR).
+
