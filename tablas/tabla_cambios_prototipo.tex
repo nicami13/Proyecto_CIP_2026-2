@@ -20,12 +20,14 @@ Esquema hidráulico & Lazo cerrado con recirculación (A2) & Paso único hacia e
 Temperatura de consigna & 50\,°C (preenjuague) y 40\,°C (lavado) & 35\,°C en ambas fases & Margen frente al límite de 40\,°C del sello mecánico de la bomba\\
 Bomba de impulsión & Truper BOAC-1/2 EXPERT, centrífuga & Bomba periférica (P-102) & \campo{Motivo por confirmar}\\
 Agitación & Motorreductor de 100\,rpm con agitador & Bomba sumergible de 22\,W (P-103), activa antes del calentamiento & \campo{Motivo por confirmar}\\
-Protección térmica de la resistencia & Termostato bimetálico en serie & Sin termostato; corte del calentador por programa del PLC (umbral por definir) & \campo{Motivo por confirmar}\\
+Protección térmica de la resistencia & Termostato bimetálico en serie & Sin termostato; corte del calentador por programa del PLC (umbral por definir) & Descartado en este corte por costo y por simplificación del diseño\\
 Conmutación de potencia & Un SSR de 40\,A para la resistencia & SSR de 60\,A para la resistencia y SSR de 40\,A para la bomba de impulsión & \campo{Motivo por confirmar}\\
 Disipación de los SSR & Disipador $\leq 1{,}2$\,°C/W y ventilación forzada & Solo la placa metálica propia de cada SSR & \campo{Motivo por confirmar}\\
 Accionamiento de la bomba & Contactor y guardamotor & SSR de 40\,A e interruptor automático & \campo{Motivo por confirmar}\\
-Electroválvulas & Una electroválvula de llenado & Dos electroválvulas: llenado (XV-102), instalada, y descarga (XV-103), pendiente de instalación & \campo{Motivo por confirmar}\\
-Válvulas manuales, filtro Y, manómetro y antirretorno & Incluidos en el diseño & Aún no instalados & Pendientes de instalación\\
+Electroválvulas & Una electroválvula de llenado & Dos electroválvulas: llenado (XV-102), instalada, y descarga (XV-103), de solenoide y de acción directa, pendiente de compra & \campo{Motivo por confirmar}\\
+Válvulas de bola (regulación y desvío) y válvula antirretorno & Incluidas en el diseño & No se instalan & Descartadas en este corte por costo y por simplificación del diseño hidráulico\\
+Filtro Y & Incluido en el diseño & No se usa & \campo{Motivo por confirmar}\\
+Manómetro & Incluido en el diseño & Aún no instalado & Pendiente de compra\\
 Bomba dosificadora & Peristáltica de 24\,V con tubo Norprene & Peristáltica de 12\,V (P-101) alimentada con un convertidor LM2596 & \campo{Motivo por confirmar}\\
 Sensor de nivel & Dos flotadores reed de 115\,mm & Un flotador doble (LSL-101 y LSH-101) & \campo{Motivo por confirmar}\\
 Tanque de mezcla & Acero inoxidable con buje soldado para la resistencia & Tanque de plástico de 50\,L; la resistencia atraviesa la pared con contratuerca y empaques & \campo{Motivo por confirmar}\\

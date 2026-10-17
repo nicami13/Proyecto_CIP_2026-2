@@ -18,7 +18,7 @@ El registro contiene 648 datos, uno cada 5\,s, a lo largo de 54\,min, con escalo
 
 \subsubsection{Pruebas de componentes}
 
-Las electroválvulas se probaron alimentando su bobina con una fuente externa, y se verificó que abren y cierran correctamente. También se probó el funcionamiento de la bomba de impulsión P-102. Estas pruebas verifican el accionamiento de cada componente por separado; la conmutación desde las salidas del PLC dentro de la secuencia se verificará con VAL-02. La unidad comprada para la descarga (XV-103) es servopilotada y, aunque su bobina funciona, necesita un diferencial de presión que la descarga por gravedad de TK-102 no ofrece, por lo que se reemplazará por una de acción directa.
+Las electroválvulas de solenoide compradas se probaron alimentando su bobina con una fuente externa, y se verificó que conmutan correctamente. También se probó el funcionamiento de la bomba de impulsión P-102. Estas pruebas verifican el accionamiento de cada componente por separado; la conmutación desde las salidas del PLC dentro de la secuencia se verificará con VAL-02. La electroválvula de descarga (XV-103) aún no se ha comprado; será de solenoide de acción directa, porque la descarga desde TK-102 ocurre por gravedad.
 
 \subsubsection{Secuencia automática}
 
@@ -46,12 +46,12 @@ La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de 
 \endfoot
 \bottomrule
 \endlastfoot
-VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1.2 incluye las tres fases; falta la pausa para el vaciado de TK-103 & ---\\
-VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & Bobinas de las electroválvulas probadas con fuente externa; XV-103 pendiente de instalación & ---\\
-VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador PI diseñado ($K_p = 12$, $T_i = 1800$\,s) y programado, sin prueba en lazo cerrado & ---\\
+VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1.1 incluye las tres fases; falta la pausa para el vaciado de TK-103 & ---\\
+VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & Bobinas de las electroválvulas probadas con fuente externa; XV-103 pendiente de compra & ---\\
+VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador PI programado con parámetros preliminares, sin prueba en lazo cerrado; consignas de prueba por definir & ---\\
 VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad & Pendiente & Umbral por definir & ---\\
 VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo y medición del detergente en probeta & Pendiente & P-101 pendiente de instalación & ---\\
-VAL-06 & REQ-06 & Inspección de fugas en TK-102, TK-103, XV-102, XV-103, P-101 y P-102 durante un ciclo & Pendiente & XV-103 y P-101 pendientes de instalación & ---\\
+VAL-06 & REQ-06 & Inspección de fugas en TK-102, TK-103, XV-102, XV-103, P-101 y P-102 durante un ciclo & Pendiente & XV-103 pendiente de compra y P-101 pendiente de instalación & ---\\
 VAL-07 & REQ-06 & Volumen suministrado frente al recibido en el tanque de efluentes TK-103 & Pendiente & --- & ---\\
 VAL-08 & REQ-18 & Tiempo de corte de P-102, E-101 y P-101 al accionar el paro de emergencia & Pendiente & \campo{Por confirmar} & ---\\
 VAL-09 & REQ-19 & Alarma ante nivel bajo, sobretemperatura y falla de bomba & Pendiente & Solo indicación visual; el prototipo no tiene alarma sonora & ---\\
@@ -71,9 +71,9 @@ VAL-12 & REQ-01 & Mezcla del detergente con la bomba de agitación P-103 hasta o
 Durante el montaje se identificaron cuatro aspectos de seguridad que se revisarán antes de las pruebas del tercer corte y se incorporarán a la matriz de riesgos:
 
 \begin{itemize}
-\item A la tensión medida de 126,3\,V, la resistencia de inmersión consume 16,2\,A medidos con pinza amperimétrica (2046\,W, Sección~\ref{sec:montaje_control}), un valor superior a la corriente nominal del interruptor automático de 15\,A que la protege.
+\item A la tensión medida de 126\,V, la resistencia de inmersión entrega cerca de 2000\,W y consume aproximadamente 15,9\,A ($2000\,\mathrm{W}/126\,\mathrm{V}$), un valor superior a la corriente nominal del interruptor automático de 15\,A que la protege.
 \item Los SSR operan sin disipador adicional, solo con su placa metálica; el SSR de la resistencia disipa del orden de 20\,W a plena carga, por lo que su temperatura debe vigilarse durante los periodos largos de calentamiento.
-\item Sin termostato bimetálico, el único corte por sobretemperatura es el programado en el PLC, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
+\item Sin el termostato bimetálico, descartado en este corte, el único corte por sobretemperatura es el programado en el PLC, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
 \item La bomba de impulsión no cuenta con guardamotor, por lo que carece de protección térmica propia frente a sobrecarga.
 \end{itemize}
 

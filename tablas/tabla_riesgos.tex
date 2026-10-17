@@ -22,15 +22,15 @@
 
 \multicolumn{6}{@{}l}{\textit{Térmicos y de calentamiento}} \\
 \addlinespace[2pt]
-R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Termostato bimetálico en serie, alarma alta por RTD y límite de consigna \\
+R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Corte de E-101 por programa del PLC al superar el umbral de seguridad, alarma alta por RTD y límite de consigna (el termostato bimetálico se descartó en este corte) \\
 R-02 & Trabajo en seco de la resistencia & 3 & 4 & 12 & Enclavamiento por flotador de nivel mínimo como condición de habilitación \\
-R-03 & Falla del SSR en cortocircuito & 2 & 5 & 10 & Corte térmico independiente, no programable, en serie con la línea \\
+R-03 & Falla del SSR en cortocircuito & 2 & 5 & 10 & \campo{Pendiente: protección independiente del PLC; el termostato bimetálico del primer corte se descartó en este corte} \\
 R-04 & Sobrecalentamiento del SSR por disipación insuficiente & 3 & 3 & 9 & Disipador $\leq$1,2\,\textdegree C/W con ventilación forzada de tablero \\
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Hidráulicos}} \\
 \addlinespace[2pt]
 R-05 & Velocidad inferior a 1,5\,m/s: limpieza no efectiva & 3 & 5 & \textbf{15} & Aforo volumétrico en puesta en marcha y manómetro con zona marcada \\
-R-06 & Operación de la bomba contra válvula cerrada & 3 & 4 & 12 & Válvula de regulación precintada, sin cierre automático en descarga \\
+R-06 & Operación de la bomba contra válvula cerrada & 3 & 4 & 12 & Descarga de P-102 sin válvulas de cierre hacia TK-103 (la válvula de regulación del primer corte se descartó) \\
 R-07 & Cavitación de la bomba & 3 & 3 & 9 & Succión inundada obligatoria, línea corta de 1\textquotedbl{} y filtro accesible \\
 R-08 & Fuga hidráulica en acoples y uniones & 3 & 3 & 9 & Prueba hidrostática a 1,5\texttimes{} la presión de trabajo antes de cada campaña \\
 R-09 & Formación de espuma: cavitación y arrastre & 4 & 3 & 12 & Retorno sumergido y tangencial, detergente de bajo poder espumante \\

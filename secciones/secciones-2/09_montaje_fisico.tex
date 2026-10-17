@@ -2,11 +2,21 @@
  
 Durante el segundo corte se construyó el prototipo funcional del sistema portátil de limpieza CIP a partir del diseño conceptual presentado en las secciones anteriores. El montaje se ejecutó de forma secuencial y en el mismo orden en que se presenta esta sección: primero se instalaron los elementos de instrumentación que irían integrados en el tanque, como la PT100 y la resistencia, y en simultáneo se fabricó la estructura del prototipo. Segundo, se ubicaron los tanques y el circuito hidráulico; después se instalaron la instrumentación electrónica y el tablero (Sección~\ref{sec:montaje_instrumentacion}); luego, se programó la secuencia en el PLC (Sección~\ref{sec:montaje_programacion}) y se integró la capa de comunicaciones y supervisión (Sección~\ref{sec:montaje_comunicaciones}). Las diferencias entre el diseño de referencia del primer corte y lo realmente construido se justifican en la Sección~\ref{sec:cambios_prototipo}; el avance del controlador de temperatura se presenta en la Sección~\ref{sec:montaje_control}, y las pruebas realizadas, en la Sección~\ref{sec:montaje_pruebas}.
  
-La Figura~\ref{fig:montaje_cad} muestra el modelo CAD de la estructura que sirvió de guía para la fabricación, y la Figura~\ref{fig:montaje_lab}, el prototipo ensamblado en el laboratorio de la Facultad. El modelo CAD representa una HMI KTP700 en el tablero; la HMI realmente instalada es la KTP600 Basic, por lo que esa vista se usa solo como referencia de la estructura.
- 
-\insertarfigura[0.62\textwidth]{cad_estructura_v3.png}{Modelo CAD de los dos carros del prototipo (versión 3).}{fig:montaje_cad}
- 
-\insertarfigura[0.38\textwidth]{montaje_prototipo_lab.png}{Prototipo ensamblado en el laboratorio durante las pruebas.}{fig:montaje_lab}
+La Figura~\ref{fig:montaje_cad} muestra el modelo CAD de la estructura que sirvió de guía para la fabricación, y la Figura~\ref{fig:montaje4_15oct}, el banco del PLC y el carro del tablero durante el montaje realizado en el laboratorio de la Facultad. El modelo CAD representa una HMI KTP700 en el tablero; la HMI realmente instalada es la KTP600 Basic, por lo que esa vista se usa solo como referencia de la estructura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.62\textwidth]{archivos_complementarios/evidencias-fotograficas/montaje_cad.jpeg}
+\caption{Modelo CAD de los dos carros del prototipo (versión 3).}
+\label{fig:montaje_cad}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.38\textwidth]{archivos_complementarios/evidencias-fotograficas/montaje4-15oct.jpeg}
+\caption{Banco del PLC y carro del tablero durante el montaje del prototipo en el laboratorio (15 de octubre de 2026).}
+\label{fig:montaje4_15oct}
+\end{figure}
  
 \subsection{Estructura mecánica}\label{sec:montaje_estructura}
  
@@ -14,11 +24,16 @@ La Figura~\ref{fig:montaje_cad} muestra el modelo CAD de la estructura que sirvi
  
 \paragraph{Carro de tanques.} El bastidor tiene una base de 1000\,mm $\times$ 500\,mm en tubo cuadrado de 40\,mm $\times$ 40\,mm $\times$ 4\,mm, con un soporte de 780\,mm $\times$ 460\,mm para los tanques y niveles a alturas de 500, 300 y 200\,mm. En el nivel superior se ubica el tanque de mezcla (TK-102) y en el inferior el tanque de efluentes (TK-103), de modo que el tanque de mezcla queda por encima de la succión de la bomba de impulsión.
  
-\paragraph{Carro del PLC y el tablero.} Este carro soporta el PLC, la HMI, la fuente de alimentación y las protecciones. Sobre él se construyó un banco de relés de 340\,mm $\times$ 300\,mm $\times$ 370\,mm en perfil cuadrado de 20\,mm $\times$ 20\,mm $\times$ 2\,mm, que aloja la etapa de potencia. Este banco se cerró con láminas de acrílico, que protegen los componentes frente a salpicaduras y contactos accidentales y, por ser transparentes, permiten inspeccionar los equipos y los pilotos sin abrir la caja (Figura~\ref{fig:montaje_caja}).
+\paragraph{Carro del PLC y el tablero.} Este carro soporta el PLC, la HMI, la fuente de alimentación y las protecciones. Sobre él se construyó un banco de relés de 340\,mm $\times$ 300\,mm $\times$ 370\,mm en perfil cuadrado de 20\,mm $\times$ 20\,mm $\times$ 2\,mm, que aloja la etapa de potencia. Este banco se cerró con láminas de acrílico, en parte donadas a un integrante del equipo, que protegen los componentes frente a salpicaduras y contactos accidentales y, por ser transparentes, permiten inspeccionar los equipos y los pilotos sin abrir la caja (Figura~\ref{fig:montaje_caja}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{archivos_complementarios/evidencias-fotograficas/montaje_caja.JPG}
+\caption{Banco de relés del carro del PLC con cerramiento en láminas de acrílico.}
+\label{fig:montaje_caja}
+\end{figure}
  
-\insertarfigura[0.5\textwidth]{montaje_caja_electrica.jpg}{Banco de relés del carro del PLC con cerramiento en láminas de acrílico.}{fig:montaje_caja}
- 
-\paragraph{Materiales.} La Tabla~\ref{tab:materiales_estructura} presenta las cantidades calculadas a partir de los planos. Las longitudes de tubo se agruparon en tubos comerciales de 6\,m: los 20,28\,m de tubo de 40\,mm requirieron 4 tubos (24\,m, con un sobrante de 3,72\,m, cerca del 15\,\%), y los 4,07\,m de perfil de 20\,mm, un solo tubo (sobrante de 1,93\,m).
+\paragraph{Materiales.} La Tabla~\ref{tab:materiales_estructura} presenta las cantidades calculadas a partir de los planos. Las longitudes de tubo se agruparon en tubos comerciales de 6\,m: los 20,28\,m de tubo de 40\,mm requirieron 4 tubos (24\,m, con un sobrante de 3,72\,m, cerca del 15\,\%), y los 4,07\,m de perfil de 20\,mm, un solo tubo (sobrante de 1,93\,m). El costo de estos materiales fue de \$500.000 (Tabla~\ref{tab:presupuesto_ejecutado}).
 
 \input{tablas/tabla_materiales_estructura}
 
@@ -28,8 +43,25 @@ La Figura~\ref{fig:montaje_cad} muestra el modelo CAD de la estructura que sirvi
  
 \subsection{Montaje hidráulico}\label{sec:montaje_hidraulico}
  
-\paragraph{Tanques.} El tanque azul previsto en el CAD se reemplazó por un tanque verde de plástico de 50\,L como tanque de mezcla (TK-102), del que se utilizan 20\,L por fase para dejar espacio libre en la parte superior. En su pared se realizaron y sellaron las perforaciones para el sensor RTD, el flotador de nivel, la entrada de agua, la salida hacia la bomba de impulsión y la resistencia de inmersión (E-101); esta última atraviesa la pared y se fija con contratuerca y empaques. El tanque de efluentes (TK-103) es un recipiente metálico de 30\,L, ubicado en el nivel inferior del carro y vaciado manualmente entre fases mediante la válvula HV-101. El tanque de detergente (TK-101) es una garrafa plástica de 1,8\,L, fijada con amarres en la parte inferior del carro de tanques.
+\paragraph{Tanques.} El tanque azul previsto en el CAD se reemplazó por un tanque verde de plástico de 50\,L como tanque de mezcla (TK-102), del que se utilizan 20\,L por fase para dejar espacio libre en la parte superior. En su pared se realizaron y sellaron las perforaciones para el sensor RTD, el flotador de nivel, la entrada de agua, la salida hacia la bomba de impulsión y la resistencia de inmersión (E-101); esta última atraviesa la pared y se fija con contratuerca y empaques. Los elementos instalados dentro de TK-102 se muestran en la Figura~\ref{fig:fotos_tk102}. El tanque azul, que tenía perforaciones, se reparó sellándolas y se reutilizó como tanque de efluentes (TK-103): un recipiente metálico de 30\,L, ubicado en el nivel inferior del carro y vaciado manualmente entre fases mediante la válvula HV-101.
+
+\paragraph{Tanque de detergente.} Para esta etapa del prototipo, el tanque de detergente (TK-101) es una garrafa plástica reutilizada de 1,8\,L, fijada con amarres en la parte inferior del carro de tanques (Figura~\ref{fig:fotos_actuadores}, f). Esta solución permitió poner a prueba la línea de dosificación sin adquirir un tanque dedicado, y su capacidad resulta adecuada para la escala del sistema: con una dosis preliminar de 300\,mL de detergente por lavado, cerca del 1,5\,\% del volumen de 20\,L de la fase, alcanza para unos seis ciclos de lavado antes de recargarse. Para la siguiente versión se prevé un tanque de detergente dedicado, de capacidad similar. La dosis de 300\,mL es un valor de referencia, pues la proporción definitiva de detergente en agua aún no se ha establecido.
  
-\paragraph{Mezcla del detergente.} Para mezclar el detergente con el agua en TK-102 se descartó el agitador de eje accionado por motorreductor del diseño de referencia, porque exige sumergir el eje en el tanque y sellar su paso por la tapa, lo que añade un punto de fuga y piezas móviles en contacto con el fluido. Por practicidad, se compró una bomba sumergible de 22\,W (P-103) que se ubica dentro de TK-102: la bomba aspira el líquido del tanque y lo expulsa de nuevo en él, y el chorro de descarga genera el movimiento necesario para mezclar el agua con el detergente. La bomba opera antes de iniciar el calentamiento, de acuerdo con la secuencia definida.
+\paragraph{Mezcla del detergente.} Para mezclar el detergente con el agua en TK-102 se descartó el agitador de eje accionado por motorreductor del diseño de referencia, porque exige sumergir el eje en el tanque y sellar su paso por la tapa, lo que añade un punto de fuga y piezas móviles en contacto con el fluido. Por practicidad, se compró una bomba sumergible Pumpower HJ-1141 de 22\,W (P-103), con temperatura máxima del líquido de 35\,\textdegree C, que se ubica dentro de TK-102 (Figura~\ref{fig:fotos_tk102}): la bomba aspira el líquido del tanque y lo devuelve a él a través de una manguera transparente que recorre el interior de TK-102, y el chorro de descarga genera el movimiento necesario para mezclar el agua con el detergente. La bomba opera antes de iniciar el calentamiento, de acuerdo con la secuencia definida; durante el calentamiento permanece sumergida y apagada, por lo que el umbral de seguridad de temperatura se fija en 35\,\textdegree C, el límite de operación de la bomba.
  
-\paragraph{Tubería.} El circuito se construyó en PVC de 1 y 3/4 de pulgada. La electroválvula de llenado (XV-102) se instaló en la entrada de agua de red hacia TK-102. La electroválvula de descarga (XV-103), prevista entre la salida de TK-102 y la bomba de impulsión (P-102), está pendiente de instalación: la unidad comprada es servopilotada y necesita un diferencial de presión que la descarga por gravedad no ofrece, por lo que se reemplazará por una de acción directa. La bomba de impulsión envía el fluido por la tubería de prueba, de unos 6\,m de longitud (REQ-05), hasta TK-103 en un esquema de paso único. Las válvulas manuales, el filtro Y, el manómetro y la válvula antirretorno previstos en el diseño aún no se han instalado. La Figura~\ref{fig:fotos_actuadores} muestra la bomba de impulsión instalada con su tubería.
+\paragraph{Tubería.} El circuito se construyó en PVC de 1 y 3/4 de pulgada. La electroválvula de llenado (XV-102) se instaló en la entrada de agua de red hacia TK-102. La electroválvula de descarga (XV-103), prevista entre la salida de TK-102 y la bomba de impulsión (P-102), aún no se ha comprado: será una electroválvula de solenoide de acción directa, porque la descarga desde TK-102 ocurre por gravedad y no ofrece el diferencial de presión que necesita una válvula servopilotada. La bomba de impulsión envía el fluido por la tubería de prueba, de unos 6\,m de longitud (REQ-05), hasta TK-103 en un esquema de paso único. Las válvulas de bola de regulación y de desvío y la válvula antirretorno, contempladas en el diseño de referencia del primer corte, se descartaron en este corte por costo y por simplificación del diseño hidráulico; el manómetro aún no se ha instalado. La Figura~\ref{fig:hidraulica-bomba} muestra la bomba de impulsión instalada con su tubería.
+\subsection{Adquisición de componentes y decisiones asociadas}\label{sec:montaje_adquisiciones}
+
+Los componentes del prototipo se adquirieron a medida que avanzaba el montaje, entre el 14 de septiembre y el 15 de octubre de 2026, y cada compra quedó registrada en el formulario de compras del proyecto (Tabla~\ref{tab:presupuesto_ejecutado}). Los equipos de control y buena parte del material eléctrico fueron prestados por la universidad, y parte de las láminas de acrílico del banco de relés fue donada a un integrante del equipo (Tabla~\ref{tab:presupuesto_complementario}).
+
+\paragraph{Resistencia de inmersión.} Fue la primera compra (14 de septiembre). Se mandó a fabricar a la medida, por lo que no tiene marca ni referencia comercial. Su potencia teórica es de 1500\,W, pero en función de la tensión de la línea entrega entre 1500 y 2000\,W: con los 126\,V del laboratorio ha operado a cerca de 2000\,W (2046\,W medidos en el ensayo de la Sección~\ref{sec:montaje_control}), valor que se adoptó en el modelo térmico.
+
+\paragraph{Tanques.} El tanque azul metálico, previsto inicialmente como tanque de mezcla, se reemplazó por el tanque verde de plástico de 50\,L (TK-102), en el que se realizaron las perforaciones para los instrumentos con una sierra copa. El tanque azul se reparó y se reutilizó como tanque de efluentes (TK-103), y una garrafa de 1,8\,L se adaptó como tanque de detergente (TK-101), lo que evitó comprar tanques adicionales.
+
+\paragraph{Actuadores e instrumentación.} El 14 de octubre se adquirieron la bomba periférica de impulsión (P-102), el SSR de 60\,A de la resistencia, el flotador doble (LSL-101 y LSH-101), la bomba dosificadora peristáltica (P-101) y dos electroválvulas de 24\,V\,DC. Una de ellas se instaló como electroválvula de llenado (XV-102); para la descarga se requiere una de acción directa, porque las unidades compradas son servopilotadas. El SSR de 40\,A de la bomba de impulsión y el relé auxiliar de la bomba de agitación se tomaron del material de la universidad. Para el lazo de 4--20\,mA del transmisor de temperatura se compró la resistencia de 500\,$\Omega$ que convierte la corriente en tensión para la entrada analógica del PLC.
+
+\paragraph{Agitación y dosificación.} En lugar del motorreductor con agitador de eje se compró la bomba sumergible HJ-1141 (P-103), con caudal máximo de 1000\,L/h y protección IPX8. La bomba dosificadora es una peristáltica de 12\,V\,DC y 80\,mA, con caudal de 0 a 100\,mL/min; como el banco del PLC solo entrega 24\,V\,DC, se compró un convertidor reductor LM2596 ajustado a 12\,V\,DC. Con ese caudal, la dosis de referencia de 300\,mL requiere al menos 3\,min de dosificación. La bomba está pendiente de instalación.
+
+\paragraph{Circuito hidráulico, estructura y tablero.} Entre el 14 y el 15 de octubre se compraron la tubería de PVC de 1 y 3/4 de pulgada con sus accesorios y la soldadura líquida para PVC, los materiales de la estructura de los dos carros y el material menor del tablero: el interruptor automático de 15\,A de la resistencia, conectores tipo banana, terminales, amarres y canaleta. El interruptor de 7\,A, los cables, el riel, la bornera y los tomacorrientes fueron prestados por la universidad.
+
+\paragraph{Compras pendientes.} Falta adquirir la electroválvula de descarga (XV-103) de acción directa, y el tanque de detergente definitivo (TK-101).

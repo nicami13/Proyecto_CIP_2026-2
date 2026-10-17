@@ -17,8 +17,8 @@ E-101 & Resistencia de inmersión & Resistencia de 1500\,W de placa, que entrega
 P-102 & Bomba de impulsión & Bomba periférica Pretul BOAP-1/2P3 de 127\,V\,AC y 3\,A; caudal máximo de 30\,L/min y altura máxima de 20\,m & Salida de relé que activa un SSR de 40\,A\\
 P-103 & Bomba de agitación & Bomba sumergible Pumpower HJ-1141 de 22\,W y 110--120\,V\,AC, con caudal máximo de 1000\,L/h, ubicada dentro del tanque de mezcla & Salida de relé que activa un relé auxiliar con bobina de 24\,V\\
 P-101 & Bomba dosificadora & Bomba peristáltica de 12\,V\,DC y 80\,mA, con caudal de 0 a 100\,mL/min, alimentada mediante un convertidor reductor LM2596 (pendiente de instalación) & Salida de relé (encendido y apagado temporizado)\\
-XV-102 & Electroválvula de llenado & Electroválvula de 24\,V\,DC en la entrada de agua de red & Salida de relé\\
-XV-103 & Electroválvula de descarga & Electroválvula de 24\,V\,DC entre el tanque de mezcla y la bomba de impulsión (pendiente de instalación: la unidad comprada es servopilotada y no abre con la descarga por gravedad, por lo que se requiere una de acción directa) & Salida de relé\\
+XV-102 & Electroválvula de llenado & Electroválvula de solenoide de 24\,V\,DC, normalmente cerrada, en la entrada de agua de red & Salida de relé\\
+XV-103 & Electroválvula de descarga & Electroválvula de 24\,V\,DC entre el tanque de mezcla y la bomba de impulsión (pendiente de compra: será de solenoide de acción directa, porque la descarga desde el tanque de mezcla ocurre por gravedad) & Salida de relé\\
 --- & Elementos de mando & Paro de emergencia tipo hongo, pulsadores, selector y pilotos luminosos & Entradas y salidas digitales\\
 \bottomrule
 \end{tabularx}
@@ -71,4 +71,4 @@ Las direcciones de las entradas y salidas del PLC se presentan en el mapa de la 
 
 \insertarfigura[0.8\textwidth]{foto_banco_plc.jpg}{Banco del PLC: fuente Mean Well DR-120-24, PLC S7-1200 CPU 1214C AC/DC/RLY, switch CSM 1277, HMI, elementos de mando y paro de emergencia.}{fig:foto_banco_plc}
 
-\campo{Pendiente: instalación de la bomba dosificadora P-101 y de la electroválvula de descarga XV-103 (de acción directa), conexión del paro de emergencia en el circuito y diagrama de conexiones del PLC.}
+\campo{Pendiente: instalación de la bomba dosificadora P-101, compra e instalación de la electroválvula de descarga XV-103 (de solenoide, de acción directa), conexión del paro de emergencia en el circuito y diagrama de conexiones del PLC.}
