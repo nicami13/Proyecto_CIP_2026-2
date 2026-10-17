@@ -93,6 +93,12 @@ C & 72\,330 & 13,63 & 88,4 & 0,0733 & 0,163 \\
 \end{tabular}
 \end{table}
 
+La Figura~\ref{fig:control_ident_temperatura} compara la temperatura medida con la simulada por los tres modelos durante todo el ensayo, y la Figura~\ref{fig:control_ident_validacion}, la predicción de cada modelo en el tramo de enfriamiento, que no se usó en el ajuste de los métodos A y B.
+
+\insertarfigura[0.85\textwidth]{control_ident_temperatura.pdf}{Temperatura medida durante el ensayo y temperatura simulada con los modelos identificados por los métodos A, B y C.}{fig:control_ident_temperatura}
+
+\insertarfigura[0.85\textwidth]{control_ident_validacion.pdf}{Validación de los modelos con el tramo de enfriamiento libre (potencia nula).}{fig:control_ident_validacion}
+
 La Tabla~\ref{tab:comparacion_parametros} compara los parámetros experimentales con los teóricos del modelo del primer corte, calculados con el volumen de agua del ensayo (18\,L).
 
 \begin{table}[H]
@@ -132,11 +138,13 @@ G_p(s) = \frac{1{,}50}{5305\,s + 1}\quad [°\mathrm{C}/\%].
 \label{eq:modelo_experimental_duty}
 \end{equation}
 
+El modelo también se extrapoló al volumen de diseño de 20\,L, con lo que $\tau$ pasaría a 5919\,s (98,7\,min). Esa extrapolación no se adopta, porque la capacidad térmica identificada es menor que la del agua sola, lo que impide separar la masa térmica del recipiente y escalar el modelo con confianza. Aun así, los 5919\,s quedan dentro de la envolvente de $\tau$ que se usa en el diseño del controlador (Sección~\ref{sec:diseno_pi}).
+
 \subsubsection{Discusión y limitaciones}
 
 \begin{itemize}
 \item El volumen de agua se estimó, no se midió. La capacidad térmica identificada resulta un 4\,\% inferior a la del agua sola, diferencia que cae dentro de esa incertidumbre.
-\item El modelo de primer orden ignora un retardo de unos 35\,s entre la resistencia y el sensor, visible en los residuales al encender. Este retardo es menor al 1\,\% de $\tau$, por lo que es despreciable para el diseño del controlador.
+\item El modelo de primer orden no incluye retardo. En los datos se observa un retardo aparente de unos 30\,s al encender: la temperatura permanece dentro del ruido ($\pm 0{,}06\,^{\circ}\mathrm{C}$) durante los primeros 30\,s y a los 35\,s ha subido 0,40\,°C, cuando el modelo predice cerca de 1\,°C. Se atribuye al transporte de calor en agua sin agitación y a la inercia del sensor. Sin embargo, al estimar el retardo por mínimos cuadrados sobre todo el registro, el valor óptimo es de 0 a 5\,s (RMSE de 0,19\,°C sin retardo, frente a 0,59\,°C con 35\,s), porque el ajuste global compensa ese retraso inicial con los demás parámetros. Por ello, en el diseño del controlador se adopta un retardo de 35\,s como cota superior conservadora, y no como valor identificado. Este valor es menor al 1\,\% de $\tau$ (0,66\,\%).
 \item Las pérdidas no son del todo lineales, ya que la convección y la evaporación crecen con la temperatura; por ello, $UA$ es un valor efectivo para el rango de 23 a 60\,°C. Esto explica la peor validación del método B.
 \item Los tres métodos difieren cerca de un 14\,\% en $UA$, y esa dispersión se toma como incertidumbre del modelo. La sensibilidad a $T_{\mathrm{amb}}$ es baja: una variación de $\pm 2\,°\mathrm{C}$ cambia $UA$ en cerca de $\pm 4\,\%$.
 \end{itemize}

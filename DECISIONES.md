@@ -217,3 +217,9 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - **IPs y capturas de Camilo**: no hay; se redactan como **actividades del tercer corte** (8.3, tabla de IP, 8.6).
 - **Direcciones %I/%Q** de la secuencia: **por definir** (se asignan en el tercer corte).
 - **Declaración de IA**: Karen pidió NO mencionar transcripción de audios, diagramas TikZ ni análisis de programas del PLC.
+
+### Diseño del PI (16 de octubre, noche; Word y scripts de Fabián)
+- 8.5 tiene ahora la subsección **Diseño del controlador PI** (`sec:diseno_pi`), con la versión del **script** (afinamiento con SP = 35 °C, sobreimpulso ≤ 0,6 °C, PM ≥ 60°, GM ≥ 19 dB, C2). Resultado: Kp = 12, Ti = 1800 s, como en el PLC.
+- Gráficas: `control_ident_temperatura`, `control_ident_validacion`, `control_lgr`, `control_antiwindup`, `control_envolvente` (PDF en `figuras/`), generadas con los scripts en `Desktop/Analisis_control_PI`.
+- Validación: retardo de 35 s como cota conservadora (ajuste 0–5 s), extrapolación a 20 L (5919 s) no adoptada.
+- **Pendiente con Fabián**: confirmar la versión del afinamiento (el Word dice 40–50 °C y 2 %), el riesgo de P-103 (máx. 35 °C = consigna) y si ya hay prueba en lazo cerrado.
