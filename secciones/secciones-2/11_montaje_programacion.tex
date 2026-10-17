@@ -6,12 +6,12 @@ La secuencia del ciclo CIP se programó en el PLC Siemens S7-1200 CPU 1214C con 
 
 \insertarfigura[0.85\textwidth]{grafcet_cip.jpg}{GRAFCET preliminar de la secuencia CIP con las tres fases del ciclo.}{fig:grafcet_cip}
 
-\paragraph{Implementación en Ladder (versión v1.1).} La versión actual del programa implementa las tres fases del ciclo: el preenjuague, el lavado con detergente y el enjuague final. La fase en curso se identifica con la variable \texttt{CICLO}, que lleva un contador ascendente (CTU): vale 0 durante el preenjuague, 1 durante el lavado y 2 durante el enjuague final, y llega a 3 al terminar el ciclo. La Tabla~\ref{tab:etapas_ladder} resume las etapas del programa, sus acciones y sus condiciones de transición, con los nombres de las variables del programa y los tags del P\&ID. La etapa E0 se activa en el primer ciclo de ejecución del PLC (\textit{first scan}) y al terminar la secuencia. Los tiempos de los temporizadores son valores preliminares, que se ajustarán durante las pruebas del prototipo.
+\paragraph{Implementación en Ladder (versión v1.2).} La versión actual del programa implementa las tres fases del ciclo: el preenjuague, el lavado con detergente y el enjuague final. Conserva las etapas y los temporizadores de la versión 1.1 y agrega dos segmentos al inicio: uno que asigna las variables del bloque de datos a las entradas y salidas físicas del PLC (Tabla~\ref{tab:mapa_io}) y otro que activa las marcas \texttt{CICLO1}, \texttt{CICLO2} y \texttt{CICLO3} según la fase en curso. La fase en curso se identifica con la variable \texttt{CICLO}, que lleva un contador ascendente (CTU): vale 0 durante el preenjuague, 1 durante el lavado y 2 durante el enjuague final, y llega a 3 al terminar el ciclo. La Tabla~\ref{tab:etapas_ladder} resume las etapas del programa, sus acciones y sus condiciones de transición, con los nombres de las variables del programa y los tags del P\&ID. La etapa E0 se activa en el primer ciclo de ejecución del PLC (\textit{first scan}) y al terminar la secuencia. Los tiempos de los temporizadores son valores preliminares, que se ajustarán durante las pruebas del prototipo.
 
 \begin{table}[H]
 \centering
 \footnotesize
-\caption{Etapas de la secuencia implementada en Ladder (versión v1.1, tiempos preliminares).}
+\caption{Etapas de la secuencia implementada en Ladder (versión v1.2, tiempos preliminares).}
 \label{tab:etapas_ladder}
 \begin{tabularx}{\textwidth}{L{1.3cm}YY}
 \toprule
@@ -72,17 +72,17 @@ En el OB1, una máquina de estados gestiona el registro con las instrucciones \t
 \textbf{Tag} & \textbf{Variable del programa} & \textbf{Tipo de señal} & \textbf{Dirección}\\
 \midrule
 --- & \texttt{Tag\_1} (pulsador de inicio) & Entrada digital & \texttt{\%I0.0}\\
-LSL-101 & \texttt{NIVEL1} & Entrada digital & Por definir\\
-LSH-101 & \texttt{NIVEL2} & Entrada digital & Por definir\\
+LSL-101 & \texttt{NIVEL1} & Entrada digital & \texttt{\%I0.5}\\
+LSH-101 & \texttt{NIVEL2} & Entrada digital & \texttt{\%I0.6}\\
 TT-101 & \texttt{TEMPERATURA} (\texttt{AI\_Temp\_Raw} en el programa de control) & Entrada analógica (4--20\,mA) & \texttt{\%IW66}\\
-XV-102 & \texttt{VALVULA1} & Salida de relé & Por definir\\
-XV-103 & \texttt{VALVULA2} & Salida de relé & Por definir\\
-P-102 & \texttt{BOMBA} & Salida de relé (SSR de 40\,A) & Por definir\\
-P-103 & \texttt{MOTOR} & Salida de relé (relé auxiliar) & Por definir\\
-P-101 & \texttt{DOSI} & Salida de relé & Por definir\\
-E-101 & \texttt{RESISTENCIA} (\texttt{Q\_SSR} en el programa de control) & Salida de relé (SSR de 60\,A) & \texttt{\%Q0.2}\\
+XV-102 & \texttt{VALVULA1} & Salida de relé & \texttt{\%Q0.3}\\
+XV-103 & \texttt{VALVULA2} & Salida de relé & \texttt{\%Q0.4}\\
+P-102 & \texttt{BOMBA} & Salida de relé (SSR de 40\,A) & \texttt{\%Q0.0}\\
+P-103 & \texttt{MOTOR} & Salida de relé (relé auxiliar) & \texttt{\%Q0.1}\\
+P-101 & \texttt{DOSI} & Salida de relé & \texttt{\%Q0.2}\\
+E-101 & \texttt{RESISTENCIA} (\texttt{Q\_SSR} en el programa de control) & Salida de relé (SSR de 60\,A) & \texttt{\%Q0.5} en la secuencia; \texttt{\%Q0.2} en el programa de control\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Las direcciones \texttt{\%IW66} y \texttt{\%Q0.2} se tomaron de la tabla de variables del programa de control; en ese programa, la entrada \texttt{\%I0.0} se denomina \texttt{RESET}, mientras que en el programa de la secuencia corresponde al pulsador de inicio, por lo que su uso se unificará al integrar ambos programas. Las direcciones de las demás entradas y salidas quedan por definir: se asignarán en el tercer corte, al integrar el programa de la secuencia con el de control y cablear la bomba dosificadora P-101 y la electroválvula XV-103, y se documentarán junto con la versión del GRAFCET ajustada a la norma IEC 60848.
+Las direcciones de los interruptores de nivel y de las salidas se tomaron del segmento de direcciones del programa de la secuencia (versión 1.2), y las de \texttt{\%IW66} y \texttt{Q\_SSR}, de la tabla de variables del programa de control. Al integrar ambos programas deben unificarse dos direcciones: \texttt{\%I0.0}, que en el programa de control se denomina \texttt{RESET} y en el de la secuencia corresponde al pulsador de inicio, y \texttt{\%Q0.2}, que en el programa de la secuencia acciona la bomba dosificadora (\texttt{DOSI}) y en el de control acciona el SSR de la resistencia (\texttt{Q\_SSR}), mientras que en la secuencia la resistencia usa \texttt{\%Q0.5}.

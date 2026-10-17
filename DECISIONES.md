@@ -223,3 +223,10 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Gráficas: `control_ident_temperatura`, `control_ident_validacion`, `control_lgr`, `control_antiwindup`, `control_envolvente` (PDF en `figuras/`), generadas con los scripts en `Desktop/Analisis_control_PI`.
 - Validación: retardo de 35 s como cota conservadora (ajuste 0–5 s), extrapolación a 20 L (5919 s) no adoptada.
 - **Pendiente con Fabián**: confirmar la versión del afinamiento (el Word dice 40–50 °C y 2 %), el riesgo de P-103 (máx. 35 °C = consigna) y si ya hay prueba en lazo cerrado.
+
+### Direcciones de E/S (programa de la secuencia v1.2, 16 de octubre)
+- `CIP_main_v1_2_direcc.pdf`: igual a la v1.1 (mismas etapas y tiempos) más dos segmentos: **Direcciones** y **Ciclos** (marcas CICLO1–CICLO3).
+- Entradas: %I0.0 inicio, **%I0.5 NIVEL1 (LSL-101)**, **%I0.6 NIVEL2 (LSH-101)**; analógica %IW66 (programa de control).
+- Salidas: **%Q0.0 BOMBA (P-102)**, **%Q0.1 MOTOR (P-103)**, **%Q0.2 DOSI (P-101)**, **%Q0.3 VALVULA1 (XV-102)**, **%Q0.4 VALVULA2 (XV-103)**, **%Q0.5 RESISTENCIA (E-101)**.
+- CONFLICTO al integrar: **%Q0.2** es DOSI en la secuencia y el SSR de la resistencia (Q_SSR) en el programa de control; **%I0.0** es inicio en la secuencia y RESET en control.
+- Anexo J.1 ahora es el PDF v1.2.
