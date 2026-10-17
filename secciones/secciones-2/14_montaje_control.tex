@@ -40,6 +40,36 @@ C(s) = 12\left(1 + \frac{1}{1800\,s}\right) = \frac{12\,(s + 5{,}556 \times 10^{
 \end{equation}
 con $K_i = K_p/T_i = 6{,}667 \times 10^{-3}\,\%/(^{\circ}\mathrm{C}\cdot\mathrm{s})$. Con la planta nominal y sin retardo, la ecuación característica es $s^2 + 3{,}584 \times 10^{-3}\,s + 1{,}886 \times 10^{-6} = 0$, con polos reales en $-6{,}41 \times 10^{-4}$ y $-2{,}94 \times 10^{-3}\,\mathrm{rad/s}$ (constantes de tiempo de 26 y 5,7\,min; $\zeta = 1{,}30$). El polo lento queda 3,4 veces más rápido que el de la planta, como exige C2. Estos son los parámetros cargados en el bloque \texttt{PID\_Compact} (Sección~\ref{sec:montaje_programacion}), con $T_d = 0$ y salida de 0 a 100\,\%. El anti-windup lo aporta el propio bloque, cuyo mecanismo no está descrito en detalle en la documentación consultada; por eso su efecto se verificará comparando el sobreimpulso medido con el simulado.
 
+\paragraph{Lazo de control.} La Figura~\ref{fig:lazo_control_pi} resume el lazo de temperatura con las funciones de transferencia del controlador y de la planta. El controlador $C(s)$ de la Ecuación~\eqref{eq:controlador_pi} entrega el ciclo de trabajo, limitado de 0 a 100\,\%, que el SSR aplica a la resistencia E-101. La planta se representa con el modelo para el volumen de operación de 20\,L (Ecuación~\eqref{eq:modelo_20L}) y con el retardo de hasta 35\,s adoptado como cota en el diseño, y el transmisor TT-101 cierra el lazo con la medición de la temperatura.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  bloque/.style={draw=AzulUSTA,line width=0.8pt,fill=AzulUSTA!8,align=center,minimum height=1.25cm,inner sep=4pt},
+  flecha/.style={-{Stealth[length=2.2mm]},line width=0.7pt},
+  suma/.style={draw,circle,minimum size=0.55cm,inner sep=0pt}]
+  \node (sp) at (0,0) {$T_{\mathrm{ref}} = 35\,^{\circ}\mathrm{C}$};
+  \node[suma] (s) at (2.0,0) {};
+  \node[bloque] (c) at (4.6,0) {Controlador PI\\[1mm] $C(s) = 12\left(1 + \dfrac{1}{1800\,s}\right)$};
+  \node[bloque] (sat) at (7.6,0) {Saturación\\ 0--100\,\%};
+  \node[bloque] (g) at (11.0,0) {Planta (20\,L)\\[1mm] $\dfrac{1{,}5007\,e^{-\theta s}}{5919\,s + 1}$\\[1mm] $\theta \leq 35\,\mathrm{s}$};
+  \node (y) at (14.0,0) {$T$ [$^{\circ}$C]};
+  \node[bloque] (tt) at (7.6,-2.1) {TT-101\\ (PT100, 4--20\,mA)};
+  \draw[flecha] (sp) -- (s);
+  \draw[flecha] (s) -- node[above] {$e$} (c);
+  \draw[flecha] (c) -- (sat);
+  \draw[flecha] (sat) -- node[above,align=center] {$u$ [\%]} (g);
+  \draw[flecha] (g) -- (y);
+  \draw[flecha] (12.9,0) |- (tt);
+  \draw[flecha] (tt) -| (s);
+  \node at (1.75,0.35) {$+$};
+  \node at (2.3,-0.4) {$-$};
+\end{tikzpicture}
+\caption{Lazo de control de temperatura con el controlador PI y la función de transferencia de la planta para 20\,L.}
+\label{fig:lazo_control_pi}
+\end{figure}
+
 \paragraph{Verificación con la consigna de 35\,°C.} En la simulación con la planta nominal y anti-windup por acotación, el actuador se satura al 100\,\% durante unos 2,5\,min, la temperatura alcanza 34,8\,°C a los 14,2\,min y el sobreimpulso es de 0,34\,°C (3,0\,\%), con un tiempo de establecimiento (banda de 2\,\%) de 41,6\,min. En régimen permanente el ciclo de trabajo es de 7,66\,\% (unos 157\,W). En las cinco plantas y con los dos esquemas, el sobreimpulso queda entre 0,19 y 0,58\,°C; sin anti-windup llega a 0,88\,°C en la planta nominal y a 1,03\,°C en el peor caso, de modo que el anti-windup lo reduce cerca de un 61\,\% (Figura~\ref{fig:control_antiwindup}). Con estos valores se cumplen las especificaciones de la Tabla~\ref{tab:especificaciones_control}: el sobreimpulso de peor caso (5,0\,\%) es menor que el 15\,\% admitido, y la acción integral anula el error en régimen permanente, dentro de la banda de $\pm 1{,}75\,^{\circ}\mathrm{C}$ del REQ-13 (Figura~\ref{fig:control_envolvente}). La consigna de 35\,°C coincide con la temperatura máxima del líquido que admite la bomba de agitación P-103 según su placa, por lo que el sobreimpulso, de 0,19 a 0,45\,°C con anti-windup por acotación, la supera ligeramente.
 
 \insertarfigura[0.85\textwidth]{control_antiwindup.pdf}{Respuesta simulada del lazo con $K_p = 12\,\%/^{\circ}\mathrm{C}$ y $T_i = 1800\,\mathrm{s}$ a la consigna de 35\,°C (planta nominal), sin anti-windup y con los dos esquemas de anti-windup.}{fig:control_antiwindup}

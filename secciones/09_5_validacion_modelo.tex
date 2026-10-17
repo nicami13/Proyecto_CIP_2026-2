@@ -26,7 +26,7 @@ El archivo se descarga después desde la página \textit{Data logs} del servidor
 
 \subsubsection{Procedimiento experimental}
 
-Con el agua en equilibrio con el ambiente ($T_{\mathrm{amb}} \approx 23{,}5\,°\mathrm{C}$, tomada como el promedio de la línea base previa al calentamiento), se ejecutó la secuencia de la Tabla~\ref{tab:escalones_potencia}, cuyos tiempos son aproximados sobre el eje del registro. La variación de la potencia entre escalones proporciona la excitación necesaria para identificar la capacidad térmica y las pérdidas con un ensayo mucho más corto que la constante de tiempo del proceso \cite{seborg2016process}. La temperatura máxima alcanzada fue cercana a 60\,°C, inferior al límite de aborto.
+Con el agua en equilibrio con el ambiente ($T_{\mathrm{amb}} \approx 23{,}5\,^{\circ}\mathrm{C}$, tomada como el promedio de la línea base previa al calentamiento), se ejecutó la secuencia de la Tabla~\ref{tab:escalones_potencia}, cuyos tiempos son aproximados sobre el eje del registro. La variación de la potencia entre escalones proporciona la excitación necesaria para identificar la capacidad térmica y las pérdidas con un ensayo mucho más corto que la constante de tiempo del proceso \cite{seborg2016process}. La temperatura máxima alcanzada fue cercana a 60\,°C, inferior al límite de aborto.
 
 \begin{table}[H]
 \centering
@@ -127,18 +127,23 @@ Se estableció como criterio de aceptación una diferencia relativa máxima del 
 Como la diferencia en $UA$ supera este criterio, el modelo teórico no queda confirmado y se actualiza con los valores experimentales: las pérdidas térmicas reales son aproximadamente 3,4 veces las supuestas inicialmente. El modelo adoptado, con la potencia como entrada, es:
 
 \begin{equation}
-G(s) = \frac{0{,}0733}{5305\,s + 1}\quad [°\mathrm{C/W}],
+G(s) = \frac{0{,}0733}{5305\,s + 1}\quad [^{\circ}\mathrm{C/W}],
 \label{eq:modelo_experimental}
 \end{equation}
 
 y, con el ciclo de trabajo del SSR como entrada:
 
 \begin{equation}
-G_p(s) = \frac{1{,}50}{5305\,s + 1}\quad [°\mathrm{C}/\%].
+G_p(s) = \frac{1{,}50}{5305\,s + 1}\quad [^{\circ}\mathrm{C}/\%].
 \label{eq:modelo_experimental_duty}
 \end{equation}
 
-El modelo también se extrapoló al volumen de diseño de 20\,L, con lo que $\tau$ pasaría a 5919\,s (98,7\,min). Esa extrapolación no se adopta, porque la capacidad térmica identificada es menor que la del agua sola ($C_{\mathrm{resto}} = -3018\,\mathrm{J/K}$ con 18\,L), lo que impide separar la masa térmica del recipiente y escalar el modelo con confianza. Aun así, los 5919\,s quedan dentro de la envolvente de $\tau$ que se usa en el diseño del controlador (Sección~\ref{sec:diseno_pi}).
+Para el volumen de operación del sistema (20\,L), el script de identificación extrapola el modelo con la misma $UA$, lo que da una constante de tiempo de 5919\,s (98,7\,min) y las funciones de transferencia
+\begin{equation}
+G_{20}(s) = \frac{0{,}0733}{5919\,s + 1}\quad [^{\circ}\mathrm{C/W}], \qquad G_{p,20}(s) = \frac{1{,}5007}{5919\,s + 1}\quad [^{\circ}\mathrm{C}/\%].
+\label{eq:modelo_20L}
+\end{equation}
+Esta extrapolación tiene una limitación: la capacidad térmica identificada es menor que la del agua sola ($C_{\mathrm{resto}} = -3018\,\mathrm{J/K}$ con 18\,L), lo que impide separar la masa térmica del recipiente y escalar el modelo con total confianza. Por eso el diseño del controlador usa como planta nominal el modelo identificado con 18\,L, y los 5919\,s quedan dentro de la envolvente de $\tau$ con la que se verificó (Sección~\ref{sec:diseno_pi}).
 
 \subsubsection{Discusión y limitaciones}
 
@@ -146,5 +151,5 @@ El modelo también se extrapoló al volumen de diseño de 20\,L, con lo que $\ta
 \item El volumen de agua se estimó, no se midió. La capacidad térmica identificada resulta un 4\,\% inferior a la del agua sola, diferencia que cae dentro de esa incertidumbre.
 \item El modelo de primer orden no incluye retardo. En los datos se observa un retardo aparente de unos 30\,s al encender: la temperatura permanece dentro del ruido ($\pm 0{,}06\,^{\circ}\mathrm{C}$) durante los primeros 30\,s y a los 35\,s ha subido 0,40\,°C, cuando el modelo predice cerca de 1\,°C. Se atribuye al transporte de calor en agua sin agitación y a la inercia del sensor. Sin embargo, al estimar el retardo por mínimos cuadrados sobre todo el registro, el valor óptimo es de 0 a 5\,s (RMSE de 0,19\,°C sin retardo, frente a 0,59\,°C con 35\,s), porque el ajuste global compensa ese retraso inicial con los demás parámetros. Por ello, en el diseño del controlador se adopta un retardo de 35\,s como cota superior conservadora, y no como valor identificado. Este valor es menor al 1\,\% de $\tau$ (0,66\,\%).
 \item Las pérdidas no son del todo lineales, ya que la convección y la evaporación crecen con la temperatura; por ello, $UA$ es un valor efectivo para el rango de 23 a 60\,°C. Esto explica la peor validación del método B.
-\item Los tres métodos difieren cerca de un 14\,\% en $UA$, y esa dispersión se toma como incertidumbre del modelo. La sensibilidad a $T_{\mathrm{amb}}$ es baja: una variación de $\pm 2\,°\mathrm{C}$ cambia $UA$ en cerca de $\pm 4\,\%$.
+\item Los tres métodos difieren cerca de un 14\,\% en $UA$, y esa dispersión se toma como incertidumbre del modelo. La sensibilidad a $T_{\mathrm{amb}}$ es baja: una variación de $\pm 2\,^{\circ}\mathrm{C}$ cambia $UA$ en cerca de $\pm 4\,\%$.
 \end{itemize}
