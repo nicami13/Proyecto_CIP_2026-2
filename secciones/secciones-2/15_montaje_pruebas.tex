@@ -46,9 +46,9 @@ La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de 
 \endfoot
 \bottomrule
 \endlastfoot
-VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1.1 incluye las tres fases; falta la pausa para el vaciado de TK-103 & ---\\
+VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1.2 incluye las tres fases; falta la pausa para el vaciado de TK-103 & ---\\
 VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & Bobinas de las electroválvulas probadas con fuente externa; XV-103 pendiente de compra & ---\\
-VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador PI programado con parámetros preliminares, sin prueba en lazo cerrado; consignas de prueba por definir & ---\\
+VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador PI diseñado ($K_p = 12$, $T_i = 1800$\,s) y programado, sin prueba en lazo cerrado & ---\\
 VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad & Pendiente & Umbral por definir & ---\\
 VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo y medición del detergente en probeta & Pendiente & P-101 pendiente de instalación & ---\\
 VAL-06 & REQ-06 & Inspección de fugas en TK-102, TK-103, XV-102, XV-103, P-101 y P-102 durante un ciclo & Pendiente & XV-103 pendiente de compra y P-101 pendiente de instalación & ---\\
@@ -71,7 +71,7 @@ VAL-12 & REQ-01 & Mezcla del detergente con la bomba de agitación P-103 hasta o
 Durante el montaje se identificaron cuatro aspectos de seguridad que se revisarán antes de las pruebas del tercer corte y se incorporarán a la matriz de riesgos:
 
 \begin{itemize}
-\item A la tensión medida de 126\,V, la resistencia de inmersión entrega cerca de 2000\,W y consume aproximadamente 15,9\,A ($2000\,\mathrm{W}/126\,\mathrm{V}$), un valor superior a la corriente nominal del interruptor automático de 15\,A que la protege.
+\item A la tensión medida de 126,3\,V, la resistencia de inmersión consume 16,2\,A medidos con pinza amperimétrica (2046\,W, Sección~\ref{sec:montaje_control}), un valor superior a la corriente nominal del interruptor automático de 15\,A que la protege.
 \item Los SSR operan sin disipador adicional, solo con su placa metálica; el SSR de la resistencia disipa del orden de 20\,W a plena carga, por lo que su temperatura debe vigilarse durante los periodos largos de calentamiento.
 \item Sin el termostato bimetálico, descartado en este corte, el único corte por sobretemperatura es el programado en el PLC, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
 \item La bomba de impulsión no cuenta con guardamotor, por lo que carece de protección térmica propia frente a sobrecarga.
