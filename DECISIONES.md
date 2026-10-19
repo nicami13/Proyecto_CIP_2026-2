@@ -4,7 +4,7 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 **Todo lo que se escriba en el documento debe coincidir con este archivo.** Si algo no coincide, no se corrige por cuenta propia: se avisa a Karen García para consultarlo con el equipo.
 
 - Se trabaja directamente en la rama `main`. Solo Karen García y su compañera redactan el documento en este corte; el resto del equipo envía la información y no edita el informe sin avisar.
-- Última actualización: 15 de octubre de 2026.
+- Última actualización: 16 de octubre de 2026 (noche).
 - **Fecha de entrega del segundo corte: 16 de octubre de 2026.**
 
 ---
@@ -117,7 +117,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 
 ### Programa
 - Se documenta **el GRAFCET del equipo, corregido**, como diseño de la secuencia del corte 2 (incluye las 3 fases).
-- El **Ladder v1.1** (`prueba1_cip`, PDF `CIP_main_v1_1.pdf`, 16 de octubre) ya implementa **las tres fases** (CICLO 0, 1 y 2; termina en CICLO = 3). Sus tiempos son **preliminares**: dosificadora 5 s (el GRAFCET dice 7 s), agitación 10 s, y 3 s en E0, E1 y E6.
+- El **Ladder v1.2** (`CIP_main_v1_2_direcc.pdf`, 16 de octubre; igual a la v1.1 más direcciones) ya implementa **las tres fases** (CICLO 0, 1 y 2; termina en CICLO = 3). Sus tiempos son **preliminares**: dosificadora 5 s (el GRAFCET dice 7 s), agitación 10 s, y 3 s en E0, E1 y E6.
 - El GRAFCET de grafcet.io va en la 8.2 como **preliminar**. Hay que ajustarlo a IEC 60848: CICLO=0 y CICLO=2 en serie, dos etapas llamadas "Ed", divergencia simultánea con línea sencilla.
 - Observación: en E1, XV-102 y XV-103 quedan abiertas a la vez 3 s.
 - Pendiente de implementar en el PLC: pausa para que el operario vacíe TK-103, controlador de temperatura y parada segura.
@@ -134,7 +134,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 | Electroválvulas | **De solenoide**, 24 V DC. Se compraron dos: una es XV-102 (instalada) y la otra no se usa (servopilotada). **XV-103 aún no se ha comprado**: será de acción directa. |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
-| Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L**. TK-101: pendiente. |
+| Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L** (tanque azul reparado). TK-101: **garrafa de 1,8 L**. |
 | Tubería | **PVC** de 1" y 3/4". |
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
 | Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). **Sí hay paro de emergencia** (confirmado el 16 de octubre); falta saber dónde va en el circuito. |
@@ -149,7 +149,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Montaje: zona de potencia con paredes de acrílico, riel atornillado, bornera de 24 V y 0 V, y extensiones de cable soldadas hasta el banco del PLC.
 
 ### Comunicaciones
-- **PLC → (protocolo S7) → Raspberry Pi con Node-RED → (HTTP) → API en AWS → interfaz en Streamlit.**
+- **PLC → (protocolo S7) → Raspberry Pi con Node-RED → (HTTP) → API en AWS → interfaz remota (Streamlit o App Flutter).** La red aún no está montada: en todo el documento la supervisión se describe como **arquitectura definida**, no como implementada.
 - PLC ↔ HMI por PROFINET, a través del **switch Siemens CSM1277** (no un router).
 - HMI real: **KTP600 Basic** (el CAD muestra una KTP700; no usar esa vista como evidencia de la HMI).
 - Estructura: dos carritos (planos en `PlanosEstructuras.pdf` y CAD en `version3.zip`).
@@ -175,10 +175,10 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - [x] Breaker de las bombas: 7 A (confirmado). Voltaje de la red: 126 V medidos.
 - [ ] Protección de la bomba de impulsión si el SSR se queda pegado.
 - [ ] Justificación de temperatura uniforme en el modelo sin agitación durante el calentamiento.
-- [ ] Tanque de detergente (TK-101): cuál es y de cuántos litros.
+- [x] Tanque de detergente (TK-101): garrafa plástica de 1,8 L.
 - [ ] GRAFCET: qué sensor es SN1 y cuál SN2, qué significa "(N)" y los tiempos de los temporizadores.
-- [ ] IP del PLC y de la Raspberry.
-- [ ] Precios de lo comprado (para el presupuesto).
+- [ ] IP del PLC y de la Raspberry (propuestas .21/.24/.28 frente a .112 medida; tercer corte).
+- [x] Precios de lo comprado (para el presupuesto): total ejecutado $1.328.830.
 
 ### Observaciones de seguridad para revisar
 - A 126 V la resistencia consume **≈ 15,9 A**, más que el breaker de 15 A.

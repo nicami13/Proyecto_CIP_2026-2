@@ -15,7 +15,7 @@
 \input{tablas/tabla_protocolos}
 {A partir de la comparación de la Tabla~\ref{tab:protocolos}, se seleccionó PROFINET para la comunicación entre el PLC y la HMI, ya que ambos equipos lo soportan de forma nativa y se configura directamente en TIA Portal. Para la supervisión remota se seleccionó el protocolo S7, también nativo del PLC, mediante el cual Node-RED, en la Raspberry Pi, lee las variables del proceso a partir de sus direcciones de memoria; los datos se envían luego por HTTP a la API en AWS. De este modo, el PLC no requiere módulos de comunicación adicionales ni licencias de ejecución, y la Raspberry Pi concentra la conexión con los servicios externos.
 
-En el primer corte se había propuesto Modbus TCP para conectar un gateway ESP32 con el PLC y MQTT, mediante un módulo SIM, para el envío de los datos a AWS \cite{cometa2025modbus,gonzalez2024awsesp32}. Esta propuesta se reemplazó por la arquitectura descrita, implementada en el prototipo.}
+En el primer corte se había propuesto Modbus TCP para conectar un gateway ESP32 con el PLC y MQTT, mediante un módulo SIM, para el envío de los datos a AWS \cite{cometa2025modbus,gonzalez2024awsesp32}. Esta propuesta se reemplazó por la arquitectura descrita, cuyo montaje y pruebas sobre el prototipo quedan para el tercer corte (Sección~\ref{sec:montaje_comunicaciones}).}
 
 \subsection{Mapa inicial de etiquetas}
 La Tabla~\ref{tab:tags_pid} presenta las variables previstas para el lazo de control de temperatura, que se encuentra en desarrollo (Sección~\ref{sec:montaje_control}). Las variables del programa de la secuencia implementado en el segundo corte se presentan en la Sección~\ref{sec:montaje_programacion}.

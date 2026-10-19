@@ -25,35 +25,35 @@
 R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Corte de E-101 por programa del PLC al superar el umbral de seguridad, alarma alta por RTD y límite de consigna (el termostato bimetálico se descartó en este corte) \\
 R-02 & Trabajo en seco de la resistencia & 3 & 4 & 12 & Enclavamiento por flotador de nivel mínimo como condición de habilitación \\
 R-03 & Falla del SSR en cortocircuito & 2 & 5 & 10 & Pendiente para el tercer corte: protección independiente del PLC (el termostato bimetálico no se adquirió por presupuesto); mientras tanto, vigilancia de la temperatura durante el calentamiento \\
-R-04 & Sobrecalentamiento del SSR por disipación insuficiente & 3 & 3 & 9 & Disipador $\leq$1,2\,\textdegree C/W con ventilación forzada de tablero \\
+R-04 & Sobrecalentamiento del SSR por disipación insuficiente & 3 & 3 & 9 & Sin disipador adicional en este corte: vigilancia de la temperatura de los SSR durante el calentamiento; disipador por evaluar en el tercer corte \\
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Hidráulicos}} \\
 \addlinespace[2pt]
 R-05 & Velocidad inferior a 1,5\,m/s: limpieza no efectiva & 3 & 5 & \textbf{15} & Aforo volumétrico en puesta en marcha y manómetro con zona marcada \\
 R-06 & Operación de la bomba contra válvula cerrada & 3 & 4 & 12 & Descarga de P-102 sin válvulas de cierre hacia TK-103 (la válvula de regulación del primer corte se descartó) \\
-R-07 & Cavitación de la bomba & 3 & 3 & 9 & Succión inundada obligatoria, línea corta de 1\textquotedbl{} y filtro accesible \\
+R-07 & Cavitación de la bomba & 3 & 3 & 9 & Succión inundada (TK-102 por encima de la succión de P-102) y línea corta \\
 R-08 & Fuga hidráulica en acoples y uniones & 3 & 3 & 9 & Prueba hidrostática a 1,5\texttimes{} la presión de trabajo antes de cada campaña \\
-R-09 & Formación de espuma: cavitación y arrastre & 4 & 3 & 12 & Retorno sumergido y tangencial, detergente de bajo poder espumante \\
+R-09 & Formación de espuma: cavitación y arrastre & 4 & 3 & 12 & Detergente de bajo poder espumante; la bomba de agitación P-103 opera solo antes del calentamiento \\
 R-10 & Obstrucción del filtro: caída de caudal & 4 & 2 & 8 & No aplica en este corte: el filtro Y no se usa en el prototipo \\
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Materiales y compatibilidad química}} \\
 \addlinespace[2pt]
-R-11 & Falla del sello mecánico por operar sobre 40\,\textdegree C & 4 & 3 & 12 & Consigna limitada a 50\,\textdegree C, enjuague frío final, kit de sello en stock \\
+R-11 & Falla del sello mecánico por operar sobre 40\,\textdegree C & 4 & 3 & 12 & Consigna limitada a 35\,\textdegree C, por debajo del límite de 40\,\textdegree C de P-102, y enjuague final sin calentar \\
 R-12 & Descincado del impulsor de latón & 3 & 3 & 9 & Detergente pH 8,0--10,5 sin amoniaco ni cáusticos clorados \\
 R-13 & Degradación del tubo peristáltico: dosificación errática & 4 & 2 & 8 & Tubo Norprene, reemplazo cada 500\,h, verificación volumétrica mensual \\
-R-14 & Residuo de detergente en la tubería tras el ciclo & 3 & 4 & 12 & Enjuague $\geq$3\texttimes{} el volumen del lazo y verificación de conductividad \\
+R-14 & Residuo de detergente en la tubería tras el ciclo & 3 & 4 & 12 & Enjuague final de 20\,L en paso único; el método para verificar la ausencia de residuos se definirá en el tercer corte \\
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Eléctricos y de control}} \\
 \addlinespace[2pt]
-R-15 & Sobrecarga del ramal eléctrico (22,2\,A simultáneos) & 3 & 3 & 9 & Enclavamiento por software: resistencia y bomba mutuamente excluyentes \\
+R-15 & Sobrecarga de los circuitos eléctricos & 3 & 3 & 9 & Circuitos separados: Q1 (15\,A) para la resistencia y Q2 (7\,A) para las demás cargas; los 16,2\,A medidos en la resistencia superan Q1 (pendiente para el tercer corte) \\
 R-16 & Descarga eléctrica al operador & 2 & 5 & 10 & DDR 30\,mA, gabinete IP54, puesta a tierra y 24\,V SELV en campo \\
 R-17 & Lectura de temperatura errónea & 3 & 3 & 9 & Verificación con termómetro patrón en dos puntos, referencia común a 2M \\
-R-18 & Agotamiento de las salidas de relé por ciclado & 3 & 3 & 9 & Control ON/OFF con histéresis \textpm2\,\textdegree C, snubber RC y diodos volantes \\
-R-19 & Pérdida de red & 3 & 2 & 6 & Control local independiente en el PLC, ThingsBoard autohospedado \\
+R-18 & Agotamiento de las salidas de relé por ciclado & 3 & 3 & 9 & Proporción de tiempo con periodo de 10\,s: la salida de relé del PLC conmuta el SSR en cada periodo, por lo que su desgaste se evaluará en el tercer corte \\
+R-19 & Pérdida de red & 3 & 2 & 6 & Control local independiente en el PLC; Node-RED marca el sistema como fuera de línea \\
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Operativos y de proyecto}} \\
 \addlinespace[2pt]
-R-20 & Quemadura del operador por fluido o superficie a 50\,\textdegree C & 3 & 4 & 12 & Aislamiento, etiquetado y enjuague frío enclavado antes del desacople \\
+R-20 & Quemadura del operador por contacto con la resistencia o el fluido caliente & 3 & 4 & 12 & Aislamiento, etiquetado y enjuague frío enclavado antes del desacople \\
 R-21 & Presupuesto excedido & 5 & 3 & \textbf{15} & Recortes priorizados y solicitud formal de ampliación \\
 R-22 & Retraso por importación de componentes & 4 & 2 & 8 & Pedido con seis semanas de anticipación o sustitución local \\
 \end{longtable}

@@ -10,7 +10,7 @@
 
 \item El ensayo en lazo abierto con escalones de potencia permitió identificar experimentalmente el modelo térmico del tanque de mezcla, con una constante de tiempo de 88,4\,min y una ganancia de 0,0733\,$^{\circ}$C/W (Ecuación~\eqref{eq:modelo_experimental}). Con este modelo se diseñó un controlador PI por lugar de las raíces, afinado por simulación con saturación, retardo y anti-windup ($K_p = 12\,\%/^{\circ}\mathrm{C}$, $T_i = 1800\,\mathrm{s}$), que en simulación tiene un sobreimpulso de 0,58\,°C en el peor caso de la envolvente con anti-windup. Se programó en el PLC con el bloque \texttt{PID\_Compact} y modulación de la potencia por proporción de tiempo, pero todavía no se ha probado en lazo cerrado (Sección~\ref{sec:diseno_pi}).
 
-\item La cadena de supervisión remota quedó implementada: la Raspberry Pi lee las variables del PLC con Node-RED mediante el protocolo S7 y las envía a una API en AWS, que se consulta desde una interfaz en Streamlit. El control permanece en el PLC y no depende de esta capa (Sección~\ref{sec:montaje_comunicaciones}).
+\item Se definió la arquitectura de supervisión remota (Anexo~\ref{anx:arquitectura_com}): la Raspberry Pi leerá las variables del PLC con Node-RED mediante el protocolo S7 y las enviará a una API en AWS, que se consultará desde una interfaz remota. El control permanece en el PLC y no depende de esta capa. La red del prototipo aún no se ha montado; su montaje, la confirmación de las direcciones IP y de la interfaz remota, y las pruebas de extremo a extremo quedan para el tercer corte (Sección~\ref{sec:montaje_comunicaciones}).
 
 \item La validación del prototipo frente a los requisitos sigue incompleta. El ensayo térmico y el registro de datos del PLC dieron la base experimental del control, pero quedan pendientes las pruebas de la secuencia, de los niveles, de la dosificación, de las protecciones y del controlador en lazo cerrado (Sección~\ref{sec:montaje_pruebas}).
 
@@ -25,8 +25,8 @@
 \par\medskip
 \noindent\textbf{Control de temperatura:} Se probará el controlador PI en lazo cerrado sobre el prototipo, se comparará su respuesta con la simulada y, si es necesario, se reajustarán sus parámetros. Después se integrará en la secuencia del ciclo, con una consigna compatible con los límites de temperatura de las bombas. También se corregirán los dos ajustes identificados en la máquina de estados del registro de datos.
 \par\medskip
-\noindent\textbf{Supervisión:} Se confirmarán las direcciones IP definitivas y el periodo de actualización de los datos, y se documentará la evidencia de funcionamiento de la cadena de supervisión remota.
+\noindent\textbf{Supervisión:} Se montará la red del prototipo, se confirmarán las direcciones IP definitivas y la interfaz remota (Streamlit o aplicación en Flutter), se medirá el periodo de actualización de los datos y se documentará la evidencia de funcionamiento de la cadena de supervisión remota.
 \par\medskip
 \noindent\textbf{Validación experimental:} Se ejecutarán las pruebas del plan de validación (Sección~\ref{sec:plan_validacion}) y se registrará para cada requisito si se cumple. Se definirá además el método para evaluar la efectividad de la limpieza de la tubería de prueba.
 \par\medskip
-\noindent\textbf{Documentación:} Se cerrará el informe técnico con los resultados, se completará el artículo en inglés y se grabará el video del proceso.
+\noindent\textbf{Documentación:} Se cerrará el informe técnico con los resultados, se completará el artículo en inglés y se grabará el video final del proceso, de unos 5\,min.
