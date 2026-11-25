@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Conversión de los datos del PLC en la API.}
+\label{tab:conversion_api}
+\begin{tabularx}{\textwidth}{L{4.6cm}L{4.2cm}Y}
+\toprule
+\textbf{Dato} & \textbf{Valor recibido} & \textbf{Valor guardado}\\
+\midrule
+Fase del ciclo & 0 & \texttt{PRE-ENJUAGUE} (preenjuague)\\
+ & 1 & \texttt{ENJABONADO} (lavado con detergente)\\
+ & 2 & \texttt{ENJUAGUE} (enjuague final)\\
+Estado de los equipos & \texttt{true}, 1 u \texttt{ON} & \texttt{ON}\\
+ & \texttt{false}, 0 u \texttt{OFF} & \texttt{OFF}\\
+Nivel superior de TK-102 & \texttt{true} o 1 & \texttt{VACIO} (el agua no alcanza el nivel superior)\\
+ & \texttt{false} o 0 & \texttt{LLENO} (el agua alcanza el nivel superior)\\
+Temperatura & Número finito & El mismo valor, en \textdegree C\\
+\bottomrule
+\end{tabularx}
+\end{table}

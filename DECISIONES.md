@@ -4,7 +4,7 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 **Todo lo que se escriba en el documento debe coincidir con este archivo.** Si algo no coincide, no se corrige por cuenta propia: se avisa a Karen García para consultarlo con el equipo.
 
 - Se trabaja directamente en la rama `main`. Solo Karen García y su compañera redactan el documento en este corte; el resto del equipo envía la información y no edita el informe sin avisar.
-- Última actualización: 16 de octubre de 2026 (noche).
+- Última actualización: 25 de noviembre de 2026.
 - **Fecha de entrega del segundo corte: 16 de octubre de 2026.**
 
 ---
@@ -119,7 +119,8 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Se documenta **el GRAFCET del equipo, corregido**, como diseño de la secuencia del corte 2 (incluye las 3 fases).
 - El **Ladder v1.2** (`CIP_main_v1_2_direcc.pdf`, 16 de octubre; igual a la v1.1 más direcciones) ya implementa **las tres fases** (CICLO 0, 1 y 2; termina en CICLO = 3). Sus tiempos son **preliminares**: dosificadora 5 s (el GRAFCET dice 7 s), agitación 10 s, y 3 s en E0, E1 y E6.
 - El GRAFCET de grafcet.io va en la 8.2 como **preliminar**. Hay que ajustarlo a IEC 60848: CICLO=0 y CICLO=2 en serie, dos etapas llamadas "Ed", divergencia simultánea con línea sencilla.
-- Observación: en E1, XV-102 y XV-103 quedan abiertas a la vez 3 s.
+- **Tercer corte (25 de noviembre): Ladder v3 (`Main_cip_v3.pdf`) + OB30 v2 (`Cyclic_control_v2.pdf`) integran secuencia y control.** E3 30 s, E7→E1 a los 25 s, `temp_ok` (30 s en banda) o %I0.2, `Alarma_Calent` (falla, 30 min, 2 s), `Perm_hw` por NIVEL1, SSR en %Q0.5, entrada %IW64. Por verificar: marca `init` (segmento 16 del OB30).
+- Observación: en E1, XV-102 y XV-103 quedan abiertas a la vez hasta 3 s (sigue en v3).
 - Pendiente de implementar en el PLC: pausa para que el operario vacíe TK-103, controlador de temperatura y parada segura.
 
 ### Componentes del prototipo
@@ -130,16 +131,16 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 | SSR | **Dos:** 60 A para la resistencia y 40 A para la bomba de impulsión. **Sin disipador ni ventilador** (solo la placa metálica propia). |
 | Bomba de impulsión P-102 | **Bomba periférica**, accionada por el SSR de 40 A. **Sin contactor ni guardamotor.** |
 | Bomba de agitación P-103 | Sumergible, **110 V AC, 22 W**, dentro de TK-102, accionada por un relé externo con bobina de 24 V. |
-| Dosificadora P-101 | Peristáltica de **12 V**, alimentada con un convertidor **LM2596**. **Aún no está instalada** (16 de octubre). |
-| Electroválvulas | **De solenoide**, 24 V DC. Se compraron dos: una es XV-102 (instalada) y la otra no se usa (servopilotada). **XV-103 aún no se ha comprado**: será de acción directa. |
+| Dosificadora P-101 | Peristáltica de **12 V**, alimentada con un convertidor **LM2596**. **Ya está instalada** (Karen, 25 de noviembre). |
+| Electroválvulas | **De solenoide**, 24 V DC. Se compraron dos: una es XV-102 (instalada) y la otra no se usa (servopilotada). **XV-103 ya está instalada** (25 de noviembre); falta confirmar si es esa segunda unidad o una de acción directa. |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
 | Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L** (tanque azul reparado). TK-101: **garrafa de 1,8 L**. |
 | Tubería | **PVC** de 1" y 3/4". |
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
 | Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). **Sí hay paro de emergencia** (confirmado el 16 de octubre); falta saber dónde va en el circuito. |
-| Electroválvulas instaladas | **Solo XV-102**. XV-103 pendiente de compra. |
-| No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. **Descartados en este corte (presupuesto y diseño): válvulas de bola, antirretorno y termostato.** Por comprar: XV-103, HV-101 y manómetro. |
+| Electroválvulas instaladas | **XV-102 y XV-103** (Karen, 25 de noviembre). Por confirmar: tipo y referencia de XV-103. |
+| No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. **Descartados en este corte (presupuesto y diseño): válvulas de bola, antirretorno y termostato.** Por comprar: HV-101 y manómetro. |
 
 ### Alimentación
 - El PLC y la Raspberry Pi se alimentan a **110 V AC** desde tomacorrientes, detrás del breaker de 7 A.
@@ -149,7 +150,8 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Montaje: zona de potencia con paredes de acrílico, riel atornillado, bornera de 24 V y 0 V, y extensiones de cable soldadas hasta el banco del PLC.
 
 ### Comunicaciones
-- **PLC → (protocolo S7) → Raspberry Pi con Node-RED → (HTTP) → API en AWS → interfaz remota (Streamlit o App Flutter).** La red aún no está montada: en todo el documento la supervisión se describe como **arquitectura definida**, no como implementada.
+- **PLC → (protocolo S7) → Raspberry Pi con Node-RED → (HTTP) → API en AWS (FastAPI + SQLite) → interfaz web en Streamlit** (decidido el 25 de noviembre; Flutter no queda; motivo del cambio frente a ThingsBoard redactado en 3.3 y 8.7). La red aún no está montada: en el documento el **software está desarrollado**, pero el montaje y las pruebas de extremo a extremo siguen pendientes.
+- `Nivel_Cabina` es el interruptor de arriba (**NIVEL2 = LSH-101**), con señal inversa: `true` = el agua no llega al nivel superior (VACIO); `false` = sí llega (LLENO).
 - PLC ↔ HMI por PROFINET, a través del **switch Siemens CSM1277** (no un router).
 - HMI real: **KTP600 Basic** (el CAD muestra una KTP700; no usar esa vista como evidencia de la HMI).
 - Estructura: dos carritos (planos en `PlanosEstructuras.pdf` y CAD en `version3.zip`).
@@ -199,7 +201,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Datos de placa (de las fotos):
   - **P-102**: Pretul BOAP-1/2P3, periférica, 127 V, 3 A, 30 L/min, 20 m, 3450 r/min, **agua máx. 40 °C**, ciclo 20 min de trabajo / 15 min de descanso, máx. 6 h diarias, IPX4.
   - **P-103**: Pumpower HJ-1141, sumergible, 110–120 V, 22 W, 1000 L/h, 1,6 m, **agua 5–35 °C**, IPX8.
-  - **P-101**: peristáltica de 12 V DC (aún no instalada).
+  - **P-101**: peristáltica de 12 V DC (instalada en el tercer corte).
   - **Electroválvula**: King Sheng, 24 V DC, normalmente cerrada, tipo "con presión" (posible válvula de pilotaje: puede necesitar presión mínima para abrir).
   - **Fuente del banco**: Mean Well DR-120-24 (24 V DC, 5 A).
   - **Paro de emergencia**: hongo rojo "PE" en el banco del PLC.
@@ -210,7 +212,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - Audio: en los ensayos las variables se supervisaron y forzaron desde la **tabla de observación** de TIA Portal (así se accionó la resistencia). Agregado en Programación.
 - Conclusiones y trabajo previsto reescritos para el **segundo corte** / **tercer corte**.
 - Anexos G, H e I marcados como **primer corte** (el G muestra la IP .116).
-- **XV-103 NO está instalada ni comprada**: la segunda unidad comprada es servopilotada y no se usa; se comprará una de solenoide de acción directa. Solo está instalada XV-102. Aplicado en 8.1, tabla del P&ID, conclusiones, sección 8 y presupuestos.
+- (Superado el 25 de noviembre: ya están instaladas las dos electroválvulas.) El 16 de octubre XV-103 no estaba instalada ni comprada, y la segunda unidad comprada es servopilotada.
 - **P-101**: 0–100 mL/min. Los ~300 mL por lavado necesitan **al menos 3 min**; el tiempo de 5 s del ladder es preliminar y debe ajustarse.
 - **Unifilar**: la 8.1 usa ahora la imagen de la compañera (`figuras/diagrama_unifilar.png`).
 - **Pruebas de componentes** (Karen, 16 oct.): las electroválvulas se probaron con una fuente externa (abren y cierran) y se probó la bomba de impulsión **P-102**. Agregado en 8.6.

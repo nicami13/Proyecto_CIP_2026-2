@@ -8,7 +8,7 @@ De las variables de proceso disponibles (temperatura, caudal, nivel, presión y 
 
 \subsection{Variable manipulada (MV)}\label{sec:mv}
 
-La variable manipulada corresponde a la potencia eléctrica suministrada al elemento calefactor del sistema, constituido por una resistencia eléctrica sumergible de potencia de $2000\,\mathrm{W}$. Esta variable es modificada por el PLC mediante una estrategia de control por proporción de tiempo (\textit{Time Proportioning Control}), implementada mediante el bloque \texttt{PID\_Compact} de TIA Portal \cite{siemens2021pid}. La señal de control es aplicada a la resistencia a través de un relé de estado sólido (SSR) con conmutación en cruce por cero \cite{rashid2014power}.
+La variable manipulada corresponde a la potencia eléctrica suministrada al elemento calefactor del sistema, constituido por una resistencia eléctrica sumergible de potencia de $2000\,\mathrm{W}$. Esta variable es modificada por el PLC mediante una estrategia de control por proporción de tiempo (\textit{Time Proportioning Control}), en la que el bloque \texttt{PID\_Compact} de TIA Portal \cite{siemens2021pid} calcula el ciclo de trabajo y una interrupción cíclica lo convierte en tiempos de conexión y desconexión (Sección~\ref{sec:montaje_programacion}). La señal de control es aplicada a la resistencia a través de un relé de estado sólido (SSR) con conmutación en cruce por cero \cite{rashid2014power}.
 
 Para la modulación de la potencia de la resistencia se evaluaron dos estrategias de control para una carga resistiva de corriente alterna (CA): el control por ángulo de fase mediante TRIAC y el control proporcional en el tiempo mediante SSR con conmutación en cruce por cero \cite{mohan2007power}. La selección de la estrategia se realizó considerando principalmente la dinámica térmica del proceso y los requerimientos de implementación del sistema CIP portátil.
 
@@ -42,7 +42,7 @@ donde $D$ corresponde al ciclo de trabajo, definido como la fracción del perío
 
 \subsection{Modelo dinámico preliminar}\label{sec:modelo_dinamico}
 
-Se modela el tanque de mezcla como un sistema térmico de parámetros concentrados (\textit{lumped capacitance}), es decir, se asume una temperatura uniforme en todo el volumen activo en cada instante. Este supuesto es razonable debido al efecto de mezclado producido por la circulación del propio sistema CIP y es válido cuando el número de Biot del sistema es suficientemente pequeño ($Bi \ll 1$) [9].
+Se modela el tanque de mezcla como un sistema térmico de parámetros concentrados (\textit{lumped capacitance}), es decir, se asume una temperatura uniforme en todo el volumen activo en cada instante. Este supuesto es una simplificación: el prototipo no recircula el fluido y la bomba de agitación P-103 permanece apagada durante el calentamiento, por lo que pueden presentarse diferencias de temperatura dentro del tanque que el modelo no representa. El supuesto es válido cuando el número de Biot del sistema es suficientemente pequeño ($Bi \ll 1$) [9].
 
 El balance de energía instantáneo, análogo al de un tanque agitado con calentamiento eléctrico [10], se expresa mediante:
 

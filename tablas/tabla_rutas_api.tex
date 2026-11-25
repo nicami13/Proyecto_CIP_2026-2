@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Rutas de la API de supervisión.}
+\label{tab:rutas_api}
+\begin{tabularx}{\textwidth}{L{1.6cm}L{3.0cm}Y}
+\toprule
+\textbf{Método} & \textbf{Ruta} & \textbf{Función}\\
+\midrule
+GET & \texttt{/} & Comprueba que la API está activa\\
+POST & \texttt{/api/dato} & Recibe, valida y guarda una lectura; responde con el código 201 si la guarda y con el 422 si algún dato no es válido\\
+GET & \texttt{/api/dato} & Entrega la última lectura; responde con el código 404 si aún no hay datos\\
+GET & \texttt{/api/datos} & Entrega el historial, de la lectura más reciente a la más antigua, con un máximo de 1000 registros por consulta (100 de forma predeterminada)\\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -22,8 +22,8 @@
 
 \multicolumn{6}{@{}l}{\textit{Térmicos y de calentamiento}} \\
 \addlinespace[2pt]
-R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Corte de E-101 por programa del PLC al superar el umbral de seguridad, alarma alta por RTD y límite de consigna (el termostato bimetálico se descartó en este corte) \\
-R-02 & Trabajo en seco de la resistencia & 3 & 4 & 12 & Enclavamiento por flotador de nivel mínimo como condición de habilitación \\
+R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Corte de E-101 por programa del PLC al superar el umbral de seguridad (por implementar), alarma alta por RTD y límite de consigna (el termostato bimetálico se descartó en este corte) \\
+R-02 & Trabajo en seco de la resistencia & 3 & 4 & 12 & Enclavamiento por nivel bajo (LSL-101) como condición de habilitación, programado en el Ladder v3 (\texttt{Perm\_hw}) \\
 R-03 & Falla del SSR en cortocircuito & 2 & 5 & 10 & Pendiente para el tercer corte: protección independiente del PLC (el termostato bimetálico no se adquirió por presupuesto); mientras tanto, vigilancia de la temperatura durante el calentamiento \\
 R-04 & Sobrecalentamiento del SSR por disipación insuficiente & 3 & 3 & 9 & Sin disipador adicional en este corte: vigilancia de la temperatura de los SSR durante el calentamiento; disipador por evaluar en el tercer corte \\
 \addlinespace
@@ -49,7 +49,7 @@ R-15 & Sobrecarga de los circuitos eléctricos & 3 & 3 & 9 & Circuitos separados
 R-16 & Descarga eléctrica al operador & 2 & 5 & 10 & DDR 30\,mA, gabinete IP54, puesta a tierra y 24\,V SELV en campo \\
 R-17 & Lectura de temperatura errónea & 3 & 3 & 9 & Verificación con termómetro patrón en dos puntos, referencia común a 2M \\
 R-18 & Agotamiento de las salidas de relé por ciclado & 3 & 3 & 9 & Proporción de tiempo con periodo de 10\,s: la salida de relé del PLC conmuta el SSR en cada periodo, por lo que su desgaste se evaluará en el tercer corte \\
-R-19 & Pérdida de red & 3 & 2 & 6 & Control local independiente en el PLC; Node-RED marca el sistema como fuera de línea \\
+R-19 & Pérdida de red & 3 & 2 & 6 & Control local independiente en el PLC; la interfaz avisa si la API no responde, y el aviso de lecturas antiguas está pendiente \\
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Operativos y de proyecto}} \\
 \addlinespace[2pt]

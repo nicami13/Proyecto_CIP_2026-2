@@ -40,15 +40,15 @@ Para caracterizar la configuración almacenada en el transmisor, el calibrador F
 \end{tabular}
 \end{table}
 
-\paragraph{Pruebas en el prototipo.} Las electroválvulas de solenoide compradas se probaron alimentando su bobina con una fuente externa, y se verificó que conmutan correctamente. También se probó el funcionamiento de la bomba de impulsión P-102. Estas pruebas verifican el accionamiento de cada componente por separado; la conmutación desde las salidas del PLC dentro de la secuencia se verificará con VAL-02. La electroválvula de descarga (XV-103) aún no se ha comprado; será de solenoide de acción directa, porque la descarga desde TK-102 ocurre por gravedad.
+\paragraph{Pruebas en el prototipo.} Las electroválvulas de solenoide compradas se probaron alimentando su bobina con una fuente externa, y se verificó que conmutan correctamente. También se probó el funcionamiento de la bomba de impulsión P-102. Estas pruebas verifican el accionamiento de cada componente por separado; la conmutación desde las salidas del PLC dentro de la secuencia se verificará con VAL-02. La electroválvula de descarga (XV-103) se instaló en el tercer corte; su apertura con la descarga por gravedad está pendiente de verificar.
 
 \subsubsection{Secuencia automática}
 
-La prueba de la secuencia completa (Ladder v1.2) sobre el prototipo queda pendiente para el tercer corte.
+La prueba de la secuencia completa con el programa integrado (Ladder v3) sobre el prototipo está pendiente.
 
 \subsubsection{Trazabilidad requisito--prueba--resultado}
 
-La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de validación definida en el plan de validación (Tabla~\ref{tab:matriz_validacion}), la prueba realizada sobre el prototipo, el resultado y la evidencia. Se conservan los mismos códigos VAL del plan de validación; la descripción de cada prueba se ajustó a los componentes realmente instalados. El estado se clasifica como \emph{cumple}, \emph{parcial} o \emph{pendiente}.
+La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de validación definida en el plan de validación (Tabla~\ref{tab:matriz_validacion}), la prueba realizada sobre el prototipo, el resultado y la evidencia. Se conservan los mismos códigos VAL del plan de validación; la descripción de cada prueba se ajustó a los componentes realmente instalados. El estado se clasifica como \emph{cumple}, \emph{parcial} o \emph{pendiente}; el ensayo de identificación, que no corresponde a un código VAL, se indica como \emph{ejecutado}.
 
 \begingroup
 \footnotesize
@@ -68,12 +68,12 @@ La Tabla~\ref{tab:resultados_pruebas} relaciona cada requisito con la prueba de 
 \endfoot
 \bottomrule
 \endlastfoot
-VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v1.2 incluye las tres fases; falta la pausa para el vaciado de TK-103 & ---\\
-VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & Bobinas de las electroválvulas probadas con fuente externa; XV-103 pendiente de compra & ---\\
+VAL-01 & REQ-01 & Ejecución automática de cada fase, con vaciado manual de TK-103 entre fases, en 3 pruebas & Pendiente & El Ladder v3 incluye las tres fases y el control de temperatura; falta la pausa para el vaciado de TK-103 & ---\\
+VAL-02 & REQ-02 & Secuencia de XV-102 y XV-103 sin traslapes en 3 pruebas & Pendiente & Bobinas probadas con fuente externa en el segundo corte; XV-103 instalada en el tercer corte, sin prueba en la secuencia; el Ladder v3 tiene un traslape de hasta 3\,s en E1 por corregir & ---\\
 VAL-03 & REQ-13 & Estabilización en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Pendiente & Controlador PI diseñado ($K_p = 12$, $T_i = 1800$\,s) y programado, sin prueba en lazo cerrado & ---\\
 VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad de 35\,°C & Pendiente & Pendiente para el tercer corte & ---\\
-VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo y medición del detergente en probeta & Pendiente & P-101 pendiente de instalación & ---\\
-VAL-06 & REQ-06 & Inspección de fugas en TK-102, TK-103, XV-102, XV-103, P-101 y P-102 durante un ciclo & Pendiente & XV-103 pendiente de compra y P-101 pendiente de instalación & ---\\
+VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo y medición del detergente en probeta & Pendiente & P-101 instalada en el tercer corte, sin prueba de volumen & ---\\
+VAL-06 & REQ-06 & Inspección de fugas en TK-102, TK-103, XV-102, XV-103, P-101 y P-102 durante un ciclo & Pendiente & XV-103 y P-101 instaladas en el tercer corte; inspección pendiente & ---\\
 VAL-07 & REQ-06 & Volumen suministrado frente al recibido en el tanque de efluentes TK-103 & Pendiente & --- & ---\\
 VAL-08 & REQ-18 & Tiempo de corte de P-102, E-101 y P-101 al accionar el paro de emergencia & Pendiente & Pendiente para el tercer corte & ---\\
 VAL-09 & REQ-19 & Alarma ante nivel bajo, sobretemperatura y falla de bomba & Pendiente & Solo indicación visual; el prototipo no tiene alarma sonora & ---\\
@@ -98,7 +98,7 @@ Durante el montaje se identificaron cuatro aspectos de seguridad que se revisar�
 \begin{itemize}
 \item A la tensión medida de 126,3\,V, la resistencia de inmersión consume 16,2\,A medidos con pinza amperimétrica (2046\,W, Sección~\ref{sec:montaje_control}), un valor superior a la corriente nominal del interruptor automático de 15\,A que la protege.
 \item Los SSR operan sin disipador adicional, solo con su placa metálica; el SSR de la resistencia disipa del orden de 20\,W a plena carga, por lo que su temperatura debe vigilarse durante los periodos largos de calentamiento.
-\item Sin el termostato bimetálico, que no se adquirió en este corte por presupuesto, el único corte por sobretemperatura es el programado en el PLC, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
+\item Sin el termostato bimetálico, que no se adquirió en este corte por presupuesto, el único corte por sobretemperatura es el previsto en el programa del PLC, cuyo umbral de 35\,°C aún no está programado, de modo que una falla del SSR en cortocircuito no tendría un respaldo independiente.
 \item La bomba de impulsión no cuenta con guardamotor, por lo que carece de protección térmica propia frente a sobrecarga.
 \end{itemize}
 
@@ -106,4 +106,4 @@ Las acciones frente a estas observaciones se definirán en el tercer corte. Por 
 
 \subsubsection{Pruebas previstas para el tercer corte}
 
-Una vez implementados la pausa para el vaciado de TK-103 y el estado de parada segura, e integrado el controlador de temperatura en la secuencia, se completarán las pruebas pendientes de la Tabla~\ref{tab:resultados_pruebas} y las de aceptación exigidas para el proyecto: tres ciclos completos, una prueba continua de 30\,min, tres valores de consigna dentro del rango seguro con una perturbación controlada, la comparación entre la respuesta experimental y la simulada, la medición de la latencia y del porcentaje de registros recibidos (meta de al menos 99\,\%) y la verificación de que las alarmas se detectan y visualizan en un máximo de 3\,s.
+Una vez implementados la pausa para el vaciado de TK-103 y el estado de parada segura, se completarán las pruebas pendientes de la Tabla~\ref{tab:resultados_pruebas} y las de aceptación exigidas para el proyecto: tres ciclos completos, una prueba continua de 30\,min, tres valores de consigna dentro del rango seguro con una perturbación controlada, la comparación entre la respuesta experimental y la simulada, la medición de la latencia y del porcentaje de registros recibidos (meta de al menos 99\,\%) y la verificación de que las alarmas se detectan y visualizan en un máximo de 3\,s.

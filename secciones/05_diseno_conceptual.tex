@@ -13,7 +13,7 @@ El ciclo se compone de tres fases, ejecutadas de manera secuencial en el tanque 
 
 El agua de red ingresa al tanque de mezcla a través de la electroválvula de llenado XV-102, gobernada por el PLC. El sistema cuenta con tres bombas de funciones diferenciadas: la bomba dosificadora peristáltica (P-101), que agrega el detergente desde TK-101; la bomba de agitación sumergible (P-103), ubicada dentro del tanque de mezcla; y la bomba de impulsión (P-102), que envía el fluido hacia la tubería de prueba una vez se abre la electroválvula de descarga XV-103. El calentamiento se realiza mediante una resistencia de inmersión (E-101) que entrega aproximadamente 2000\,W a la tensión del laboratorio.
 
-La instrumentación del tanque de mezcla comprende un transmisor de temperatura (TT-101), basado en un sensor PT100 con salida de 4--20\,mA, y un flotador doble con interruptores de nivel bajo (LSL-101) y alto (LSH-101). El nivel alto termina el llenado y el nivel bajo detiene la bomba de impulsión al vaciarse el tanque, lo que evita su funcionamiento en vacío. Las diferencias entre esta solución y el diseño de referencia del primer corte se explican en la Sección~\ref{sec:cambios_prototipo}.
+La instrumentación del tanque de mezcla comprende un transmisor de temperatura (TT-101), basado en un sensor PT100 con salida de 4--20\,mA, y un flotador doble con interruptores de nivel bajo (LSL-101) y alto (LSH-101). El nivel alto termina el llenado y el nivel bajo inicia el apagado de la bomba de impulsión al vaciarse el tanque. Las diferencias entre esta solución y el diseño de referencia del primer corte se explican en la Sección~\ref{sec:cambios_prototipo}.
 
 \subsection{Diagrama general de bloques}
 
@@ -63,7 +63,7 @@ La Figura~\ref{fig:general-bloques} presenta el diagrama general de bloques del 
 \subsection{Arquitectura funcional}
 La Figura~\ref{fig:arq_funcional} presenta la arquitectura funcional del sistema, organizada en tres niveles: campo, control y supervisión. La operación se centraliza en el PLC, que recibe las señales de los sensores y de los elementos de mando y acciona los actuadores, directamente mediante sus salidas de relé o a través de relés de estado sólido (SSR) y de un relé auxiliar. La instrumentación y la conexión de cada elemento se detallan en la Sección~\ref{sec:montaje_instrumentacion}.
 
-En el nivel de supervisión, el panel HMI permite la operación y visualización local, mientras que una Raspberry Pi actúa como pasarela hacia una API en la nube y una interfaz web. De esta manera, variables como la temperatura, el nivel y el estado de las bombas y de la resistencia pueden consultarse de forma remota, manteniendo separada la función de control local de la capa de supervisión (Sección~\ref{sec:montaje_comunicaciones}).
+En el nivel de supervisión, el panel HMI permite la operación y visualización local, mientras que una Raspberry Pi actúa como pasarela hacia una API en la nube, desarrollada con FastAPI, y una interfaz web en Streamlit. De esta manera, variables como la temperatura, el nivel y el estado de las bombas y de la resistencia podrán consultarse de forma remota, manteniendo separada la función de control local de la capa de supervisión (Sección~\ref{sec:montaje_comunicaciones}).
 
 \begin{figure}[H]
 \centering
