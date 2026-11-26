@@ -134,7 +134,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 | Bomba de impulsión P-102 | **Bomba periférica**, accionada por el SSR de 40 A. **Sin contactor ni guardamotor.** |
 | Bomba de agitación P-103 | Sumergible, **110 V AC, 22 W**, dentro de TK-102, accionada por un relé externo con bobina de 24 V. |
 | Dosificadora P-101 | Peristáltica de **12 V**, alimentada con un convertidor **LM2596**. **Ya está instalada** (Karen, 25 de noviembre). |
-| Electroválvulas | **De solenoide**, 24 V DC. Se compraron dos: una es XV-102 (instalada) y la otra no se usa (servopilotada). **XV-103 ya está instalada** (25 de noviembre); falta confirmar si es esa segunda unidad o una de acción directa. |
+| Electroválvulas | **De solenoide**, 24 V DC. Se compraron dos: una es XV-102 (instalada) y la otra no se usa (servopilotada). **XV-103 ya está instalada** (25 de noviembre); es **la segunda unidad de la compra; las dos electroválvulas son iguales** (las de las fotos) (Karen, 25 de noviembre). |
 | Nivel | **Un flotador doble** en TK-102 (LSL-101 y LSH-101). |
 | Temperatura | **PT100 + transmisor 4–20 mA** con resistencia de **500 Ω** hacia la entrada analógica del PLC (de la universidad). |
 | Tanques | TK-102: **verde, de plástico, de 50 L** (se llenan 20 L por fase); la resistencia atraviesa la pared con contratuerca y empaques. TK-103: **metálico de 30 L** (tanque azul reparado). TK-101: **garrafa de 1,8 L**. |
@@ -142,7 +142,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 | PLC y HMI | S7-1200 CPU 1214C AC/DC/RLY y HMI KTP600 (de la universidad). |
 | Mando | Paro de emergencia, pulsadores, selector y pilotos (de la universidad). **Sí hay paro de emergencia** (confirmado el 16 de octubre); falta saber dónde va en el circuito. |
 | Electroválvulas instaladas | **XV-102 y XV-103** (Karen, 25 de noviembre). Por confirmar: tipo y referencia de XV-103. |
-| No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. **Descartados en este corte (presupuesto y diseño): válvulas de bola, antirretorno y termostato.** Por comprar: HV-101 y manómetro. |
+| No se usan / aún no | Motorreductor, ESP32, W5500, filtro Y, contactor, guardamotor. **Descartados en este corte (presupuesto y diseño): válvulas de bola, antirretorno y termostato.** HV-101 y manómetro: no se adquirieron (no se listan en el presupuesto). |
 
 ### Alimentación
 - El PLC y la Raspberry Pi se alimentan a **110 V AC** desde tomacorrientes, detrás del breaker de 7 A.
