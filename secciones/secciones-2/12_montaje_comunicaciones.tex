@@ -38,7 +38,7 @@ La arquitectura de comunicaciones se definió en el segundo corte y el software 
 
 \input{tablas/tabla_variables_api}
 
-\paragraph{Direccionamiento.} La red del laboratorio corresponde a la subred 172.16.140.0/22 (máscara 255.255.252.0, puerta de enlace 172.16.140.1). La propuesta asigna las direcciones 172.16.140.21 al PLC, 172.16.140.24 a la HMI y 172.16.140.28 a la Raspberry Pi. Durante los ensayos del segundo corte el PLC respondió en la dirección 172.16.140.112 (Tabla~\ref{tab:nodos_ip}), por lo que las direcciones definitivas se confirmarán con el área de comunicaciones de la institución al montar la red.
+\paragraph{Direccionamiento.} La red del laboratorio corresponde a la subred 172.16.140.0/22 (máscara 255.255.252.0, puerta de enlace 172.16.140.1). La propuesta asigna las direcciones 172.16.140.21 al PLC, 172.16.140.24 a la HMI y 172.16.140.28 a la Raspberry Pi. Durante los ensayos del segundo corte el PLC respondió en la dirección 172.16.140.112, y en el tercer corte la conexión de Node-RED se configuró con la dirección 172.16.141.12, que pertenece a la misma subred (Tabla~\ref{tab:nodos_ip}). La dirección de la Raspberry Pi aún no está definida.
 
 \paragraph{Software de supervisión.} El software de la supervisión remota se desarrolló en Python y consta de una API construida con FastAPI, una base de datos SQLite y una interfaz web en Streamlit. La versión documentada corresponde a la del 19 de octubre de 2026 (\campo{Pendiente: enlace al repositorio GateWay\_CIP}). La API se ejecuta en una instancia EC2 de AWS y atiende por el puerto 8010. Recibe cada lectura, la valida, la convierte a un formato único y la guarda con la fecha y la hora del servidor, en tiempo universal coordinado (UTC). Como la base de datos es un archivo en el disco del servidor, el historial se conserva al reiniciar la API. La Tabla~\ref{tab:rutas_api} presenta las rutas disponibles.
 
@@ -48,7 +48,31 @@ La arquitectura de comunicaciones se definió en el segundo corte y el software 
 
 \input{tablas/tabla_conversion_api}
 
-\paragraph{Función de Node-RED.} Antes de cada envío, un nodo de función en Node-RED toma las variables leídas del PLC, comprueba que la temperatura, el nivel y la fase estén presentes y sean válidos, y construye el mensaje que se envía a la API con el método POST. Si un dato no es válido, la lectura no se envía y el error queda registrado en Node-RED. \campo{Pendiente: flujo de Node-RED, periodo de envío y captura}
+\paragraph{Lectura del PLC en Node-RED.} Node-RED lee el PLC con el nodo \texttt{s7 in} de la librería \texttt{node-red-contrib-s7} (versión 3.1.3), configurado con el protocolo ISO-on-TCP (puerto 102), rack 0, slot 1, un tiempo de ciclo de 10\,s y un tiempo de espera de 1\,s. El nodo lee las siete variables de la Tabla~\ref{tab:variables_s7} del bloque de datos DB1 en cada ciclo y, como está configurado para enviar solo cuando cambia algún valor, entrega un mensaje cada 10\,s como máximo y ninguno mientras los valores permanecen iguales.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Variables del PLC leídas por Node-RED.}
+\label{tab:variables_s7}
+\begin{tabularx}{\textwidth}{L{4.4cm}L{2.4cm}Y}
+\toprule
+\textbf{Nombre en Node-RED} & \textbf{Dirección S7} & \textbf{Variable del PLC (Tabla~\ref{tab:db1_supervision})}\\
+\midrule
+\texttt{Nivel\_Cabina} & \texttt{DB1,X1.1} & \texttt{NIVEL2} (LSH-101)\\
+\texttt{Temperatura} & \texttt{DB1,REAL2} & \texttt{TEMPERATURA}\\
+\texttt{Estado\_bomba\_dosificadora} & \texttt{DB1,X6.1} & \texttt{DOSI} (P-101)\\
+\texttt{Estado\_resistencia} & \texttt{DB1,X6.4} & \texttt{RESISTENCIA} (calentamiento en marcha)\\
+\texttt{Estado\_bomba\_dreando} & \texttt{DB1,X6.5} & \texttt{BOMBA} (P-102)\\
+\texttt{ciclo} & \texttt{DB1,INT8} & \texttt{CICLO}\\
+\texttt{motor\_agitacion} & \texttt{DB1,X6.0} & \texttt{MOTOR} (P-103)\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Las direcciones coinciden con las del bloque DB1 del Ladder v3. La fase se toma del contador \texttt{CICLO} y no de las marcas \texttt{CICLO1} a \texttt{CICLO3}, y no se leen \texttt{Alarma\_Calent} ni un nivel del tanque de efluentes.
+
+\paragraph{Función de Node-RED.} Antes de cada envío, un nodo de función en Node-RED toma las variables leídas del PLC, comprueba que la temperatura, el nivel y la fase estén presentes y sean válidos, y construye el mensaje que se envía a la API con el método POST. Si un dato no es válido, la lectura no se envía y el error queda registrado en Node-RED. \campo{Pendiente: captura del flujo completo de Node-RED}
 
 \paragraph{Interfaz web.} La interfaz en Streamlit consulta la API cada 5\,s de forma predeterminada, con un intervalo ajustable entre 2 y 60\,s. Muestra la fase en curso y su posición dentro del ciclo, la temperatura, los niveles, el estado de la bomba de impulsión, la bomba dosificadora, la resistencia y la bomba de agitación, la gráfica de la temperatura y el historial de lecturas. La dirección de la API se guarda en la configuración de la aplicación y no se muestra en la pantalla. La interfaz solo consulta datos: no envía órdenes al PLC, por lo que no interviene en el control del proceso. La interfaz está publicada en Streamlit Community Cloud y las Figuras~\ref{fig:interfaz_streamlit} y~\ref{fig:interfaz_tendencia} muestran sus pantallas.
 
@@ -78,7 +102,8 @@ La arquitectura de comunicaciones se definió en el segundo corte y el software 
 \item La interfaz avisa cuando la API no responde, pero no cuando la última lectura es antigua: en la Figura~\ref{fig:interfaz_streamlit} aparece \emph{lectura en vivo} aunque el último dato es de más de un mes antes.
 \item El eje de tiempo de la gráfica indica UTC, pero muestra la hora local.
 \item Cada lectura guarda solo la hora del servidor y no la hora del PLC, por lo que con estos datos no es posible calcular la latencia entre ambos.
-\item El tanque de efluentes TK-103 no tiene sensor de nivel, pero la interfaz muestra \texttt{VACIO} en ese campo. \campo{Pendiente: confirmar de dónde proviene este dato}
+\item El tanque de efluentes TK-103 no tiene sensor de nivel y Node-RED no lee ese dato, pero la interfaz muestra \texttt{VACIO} en ese campo. \campo{Pendiente: confirmar de dónde proviene este dato}
+\item En la función de Node-RED documentada en el repositorio, la variable de la bomba de impulsión se llama \texttt{Estado\_bomba\_drenado}, mientras que en la conexión S7 se llama \texttt{Estado\_bomba\_dreando}. Si la función instalada es la del repositorio, no encuentra esa variable y no envía la lectura, por lo que debe verificarse que ambos nombres coincidan.
 \item La API trabaja con HTTP, sin cifrado ni autenticación, por lo que esta versión es solo para pruebas; antes de un uso permanente se deben incorporar HTTPS y autenticación.
 \end{itemize}
 

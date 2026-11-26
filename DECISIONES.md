@@ -156,7 +156,8 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - HMI real: **KTP600 Basic** (el CAD muestra una KTP700; no usar esa vista como evidencia de la HMI).
 - Estructura: dos carritos (planos en `PlanosEstructuras.pdf` y CAD en `version3.zip`).
 - Reemplaza lo que decía el primer corte (ESP32, Modbus TCP, MQTT, ThingsBoard).
-- IP del PLC y de la Raspberry: **pendientes** (las confirma Camilo).
+- IP del PLC en Node-RED: **172.16.141.12** (flujo enviado por Karen, 25 de noviembre). IP de la Raspberry: pendiente.
+- Node-RED: `s7 in`, ISO-on-TCP 102, rack 0, slot 1, ciclo 10 s, envía solo si cambian los valores; lee DB1 (NIVEL2, TEMPERATURA, DOSI, RESISTENCIA, BOMBA, CICLO, MOTOR). Ojo: `Estado_bomba_dreando` en la conexión y `Estado_bomba_drenado` en la función del repositorio.
 
 ### Matrices Pugh
 - **Se quedan como diseño de referencia del primer corte.**
@@ -179,7 +180,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - [ ] Justificación de temperatura uniforme en el modelo sin agitación durante el calentamiento.
 - [x] Tanque de detergente (TK-101): garrafa plástica de 1,8 L.
 - [ ] GRAFCET: qué sensor es SN1 y cuál SN2, qué significa "(N)" y los tiempos de los temporizadores.
-- [ ] IP del PLC y de la Raspberry (propuestas .21/.24/.28 frente a .112 medida; tercer corte).
+- [ ] IP de la Raspberry (la del PLC en Node-RED es 172.16.141.12).
 - [x] Precios de lo comprado (para el presupuesto): total ejecutado $1.328.830.
 
 ### Observaciones de seguridad para revisar
