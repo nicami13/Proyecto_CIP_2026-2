@@ -6,6 +6,7 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 - Se trabaja directamente en la rama `main`. Solo Karen García y su compañera redactan el documento en este corte; el resto del equipo envía la información y no edita el informe sin avisar.
 - Última actualización: 25 de noviembre de 2026.
 - **Fecha de entrega del segundo corte: 16 de octubre de 2026.**
+- **Fecha de entrega del tercer corte: 26 de noviembre de 2026.**
 
 ---
 
@@ -24,7 +25,8 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 - **Ensayo del modelo (8.5):** volumen de **18 L** estimado, solo para analizar el ensayo. Modelo adoptado (método C): C = 72 330 J/K, UA = 13,63 W/K, τ = 88,4 min, K = 0,0733 °C/W, G(s) = 0,0733/(5305 s + 1). El modelo teórico no se confirmó (UA +240,9 %).
 - **Potencia:** 2000 W es el valor **nominal**; **2046 W** (126,3 V y 16,2 A) es el valor **medido** en el ensayo.
 - **No hay termostato.** Tampoco hay **alarma sonora**: REQ-19 y VAL-09 dicen solo "alarma visual".
-- **No se hace la prueba de tinta.** Falta definir cómo se evaluará la limpieza de la tubería.
+- **Prueba de tinta: SÍ se hace**, el 26 de noviembre de 2026 (Karen, 25 de noviembre; reemplaza la decisión del 16 de octubre). Es VAL-13.
+- **El prototipo ya ejecuta el ciclo completo** (Karen, 25 de noviembre). Falta registrar las 3 ejecuciones de VAL-01.
 - **La validación completa** del prototipo frente a los requisitos queda para el **tercer corte**.
 - **Dos carros:** uno con los tanques y la tubería, y otro con el PLC, la HMI y el tablero.
 - **Gestión:** el presupuesto preliminar (primer corte) conserva el termostato como referencia; el texto aclara que no se adquirió. Sigue pendiente (tercer corte) que los 16,2 A medidos superan el breaker de 15 A.
@@ -240,7 +242,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - **Detergente: 1,5 % v/v** (300 mL en 20 L) es el valor **definido**, no una dosis de referencia.
 - **Umbral de seguridad: 35 °C**. Consignas de prueba: 30, 32 y 35 °C.
 - **HV-101**: válvula manual de vaciado de TK-103; **aún no existe** y se debe comprar.
-- Masa de los carros, método de evaluación de la limpieza, pruebas VAL-04/08/11/12, secuencia completa en el prototipo, acciones de seguridad y R-03: **pendientes para el tercer corte**.
+- Masa de los carros, pruebas VAL-04/08/11/12, registro de la secuencia completa (ya funciona) y prueba de tinta (26 de noviembre), acciones de seguridad y R-03: **pendientes para el tercer corte**.
 - **Video**: https://youtube.com/shorts/MtHrvh1YOZc?si=SyIyqCzNe6HC_9Ia (subsección "Evidencia en video").
 - **Laboratorios 3 y 4 de Comunicaciones Industriales** (Fabián y Ferney, con permiso de la docente): inventario de equipos y caracterización del TH200 (0–100 °C, 4,10–20,36 mA; error máx. 1,41 °C con la PT100 real; recuperación de la HMI en 11,57 s). Citados como `ruiz2026lab3` y `ruiz2026lab4` en 8.6 (pruebas) y 8.3 (comunicaciones).
 - Acrílico del banco de relés: **4 láminas de 1 m × 0,5 m**.

@@ -1,4 +1,4 @@
-\section{Conclusiones del segundo corte}
+\section{Conclusiones}
 
 \begin{enumerate}
 
@@ -10,14 +10,14 @@
 
 \item El ensayo en lazo abierto con escalones de potencia permitió identificar experimentalmente el modelo térmico del tanque de mezcla, con una constante de tiempo de 88,4\,min y una ganancia de 0,0733\,$^{\circ}$C/W (Ecuación~\eqref{eq:modelo_experimental}). Con este modelo se diseñó un controlador PI por lugar de las raíces, afinado por simulación con saturación, retardo y anti-windup ($K_p = 12\,\%/^{\circ}\mathrm{C}$, $T_i = 1800\,\mathrm{s}$), que en simulación tiene un sobreimpulso de 0,58\,°C en el peor caso de la envolvente con anti-windup. Se programó en el PLC con el bloque \texttt{PID\_Compact} y modulación de la potencia por proporción de tiempo, pero todavía no se ha probado en lazo cerrado (Sección~\ref{sec:diseno_pi}).
 
-\item Se definió la arquitectura de supervisión remota (Anexo~\ref{anx:arquitectura_com}) y se desarrolló su software, con la API en FastAPI, la base de datos en SQLite y la interfaz web en Streamlit: la Raspberry Pi leerá las variables del PLC con Node-RED mediante el protocolo S7 y las enviará a una API en AWS, que se consultará desde una interfaz web. El control permanece en el PLC y no depende de esta capa. La red del prototipo aún no se ha montado; su montaje, la confirmación de las direcciones IP, los ajustes pendientes del software y las pruebas de extremo a extremo quedan para el tercer corte (Sección~\ref{sec:montaje_comunicaciones}).
+\item Se definió la arquitectura de supervisión remota (Anexo~\ref{anx:arquitectura_com}) y se desarrolló su software, con la API en FastAPI, la base de datos en SQLite y la interfaz web en Streamlit: la Raspberry Pi leerá las variables del PLC con Node-RED mediante el protocolo S7 y las enviará a una API en AWS, que se consultará desde una interfaz web. El control permanece en el PLC y no depende de esta capa. La red del prototipo aún no se ha montado; su montaje, la confirmación de las direcciones IP, los ajustes pendientes del software y las pruebas de extremo a extremo están pendientes (Sección~\ref{sec:montaje_comunicaciones}).
 
 \item La validación del prototipo frente a los requisitos sigue incompleta. El ensayo térmico y el registro de datos del PLC dieron la base experimental del control, pero quedan pendientes las pruebas de la secuencia, de los niveles, de la dosificación, de las protecciones y del controlador en lazo cerrado (Sección~\ref{sec:montaje_pruebas}).
 
 \end{enumerate}
 
-\section{Trabajo previsto para el tercer corte}
-\noindent Durante el tercer corte el proyecto pasará del prototipo construido a su validación experimental frente a los requisitos.
+\section{Trabajo pendiente}
+\noindent Para cerrar el proyecto falta completar la validación experimental del prototipo frente a los requisitos.
 \par\medskip
 \noindent\textbf{Completar el prototipo:} Se probará la dosificación con P-101 y se ajustará su tiempo, se verificará la apertura de la electroválvula de descarga XV-103 con la descarga por gravedad, se comprará e instalará la válvula manual de vaciado HV-101, y se terminarán y documentarán el conexionado del paro de emergencia y el diagrama de conexiones del PLC.
 \par\medskip
@@ -27,6 +27,6 @@
 \par\medskip
 \noindent\textbf{Supervisión:} Se montará la red del prototipo, se confirmarán las direcciones IP definitivas, se harán los ajustes pendientes del software (Sección~\ref{sec:montaje_comunicaciones}), se medirá el periodo de actualización de los datos y se documentará la evidencia de funcionamiento de la cadena de supervisión remota.
 \par\medskip
-\noindent\textbf{Validación experimental:} Se ejecutarán las pruebas del plan de validación (Sección~\ref{sec:plan_validacion}) y se registrará para cada requisito si se cumple. Se definirá además el método para evaluar la efectividad de la limpieza de la tubería de prueba.
+\noindent\textbf{Validación experimental:} Se ejecutarán las pruebas del plan de validación (Sección~\ref{sec:plan_validacion}) y se registrará para cada requisito si se cumple. La efectividad de la limpieza se evaluará con la prueba de tinta (VAL-13).
 \par\medskip
 \noindent\textbf{Documentación:} Se cerrará el informe técnico con los resultados, se completará el artículo en inglés y se grabará el video final del proceso, de unos 5\,min.
