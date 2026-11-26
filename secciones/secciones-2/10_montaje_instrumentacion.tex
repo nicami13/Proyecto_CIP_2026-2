@@ -30,7 +30,7 @@ Según los datos de placa, la temperatura máxima del agua es de 40\,$^{\circ}$C
 
 \paragraph{Circuitos de potencia.} La resistencia de inmersión y las bombas se conectan siguiendo el recorrido: red de 110\,V\,AC, interruptor automático, bornes de potencia del SSR o del relé, tomacorriente y carga. El control de las cargas de potencia se realiza con los SSR y el relé auxiliar, sin contactores.
 
-\paragraph{Protecciones.} El sistema cuenta con dos interruptores automáticos: uno de 15\,A, de un polo, para la resistencia de inmersión, y uno de 7\,A para el resto de las cargas (bombas de impulsión y de agitación, PLC y Raspberry Pi). El sistema dispone además de un paro de emergencia tipo hongo, ubicado en el banco del PLC.
+\paragraph{Protecciones.} El sistema cuenta con dos interruptores automáticos: uno de 15\,A, de un polo, para la resistencia de inmersión, y uno de 7\,A para el resto de las cargas (bombas de impulsión y de agitación, PLC y Raspberry Pi). El sistema dispone además de un paro de emergencia tipo hongo, ubicado en el banco del PLC, que corta mecánicamente la alimentación eléctrica de los actuadores: al accionarlo se detienen el calentamiento y las bombas sin depender del programa del PLC.
 
 \paragraph{Diagrama unifilar.} La Figura~\ref{fig:unifilar} presenta el diagrama unifilar de potencia del prototipo. Desde la red monofásica de 110\,V\,AC se alimentan, a través de los dos interruptores automáticos, el circuito de la resistencia de inmersión (Q1, 15\,A) y el de las demás cargas (Q2, 7\,A): el banco del PLC, la Raspberry Pi y las bombas de impulsión y de agitación, cada bomba con su elemento de conmutación (SSR de 40\,A y relé auxiliar KA1). Cada carga se conecta a su tomacorriente. Los SSR, el relé auxiliar y las electroválvulas se accionan desde las salidas de relé del PLC con los 24\,V\,DC del banco. La bomba dosificadora y su convertidor se indican con línea discontinua porque el diagrama se elaboró en el segundo corte, antes de su instalación.
 
@@ -71,4 +71,4 @@ Las direcciones de las entradas y salidas del PLC se presentan en el mapa de la 
 
 \insertarfigura[0.8\textwidth]{foto_banco_plc.jpg}{Banco del PLC: fuente Mean Well DR-120-24, PLC S7-1200 CPU 1214C AC/DC/RLY, switch CSM 1277, HMI, elementos de mando y paro de emergencia.}{fig:foto_banco_plc}
 
-\paragraph{Pendientes de instalación.} Queda pendiente documentar la conexión del paro de emergencia en el circuito; la válvula manual de vaciado HV-101 no se adquirió.
+\paragraph{Elementos no instalados.} La válvula manual de vaciado HV-101 no se adquirió.
