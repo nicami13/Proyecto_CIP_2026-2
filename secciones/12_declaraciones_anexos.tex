@@ -7,109 +7,30 @@
 
 
 \section{Evidencia del artículo en inglés}
-Como evidencia del desarrollo del artículo científico, se adjunta la versión en inglés del 19 de octubre de 2026.
-
-\includepdf[pages=-,scale=0.85,pagecommand={\thispagestyle{fancy}}]{archivos_complementarios/CIP_IEEE_article.pdf}
+La versión en inglés del artículo científico, del 19 de octubre de 2026, se encuentra en el repositorio del proyecto (\texttt{archivos\_complementarios/CIP\_IEEE\_article.pdf}).
 
 \section{Anexos técnicos}
 \begin{itemize}
 \item Anexo A: matriz QFD completa.
 \begin{figure}[H] \centering \includegraphics[width=0.4\textwidth]{figuras/MATRIZ_QFD.png} \end{figure}
-\item Anexo B: matrices Pugh completas.
-Las matrices se encuentran ya cargadas dentro del documento para mejor comprensión lineal del proyecto
-\item Anexo D: cálculos y simulaciones.
-
-Los parámetros del modelo térmico de primer orden se obtienen a partir del
-coeficiente global de pérdidas térmicas $UA$, la masa activa de fluido y el
-calor específico del agua. Estos parámetros corresponden al modelo del
-proceso y no a los parámetros de sintonía del controlador.
-
-El valor de la ganancia estática del proceso se calcula como:
-
-\begin{equation}
-K = \frac{1}{UA}
-= \frac{1}{4}
-= 0{,}25\ \mathrm{K/W}
-\end{equation}
-
-La constante de tiempo del proceso se determina mediante:
-
-\begin{equation}
-\tau = \frac{m\,c_p}{UA}
-= \frac{20 \times 4186}{4}
-= 20\,930\ \mathrm{s}
-\approx 348{,}8\ \mathrm{min}
-\end{equation}
-
-Por tanto, el modelo teórico de primer orden del primer corte, que después se
-actualizó con los parámetros experimentales (Ecuación~\eqref{eq:modelo_experimental}), queda definido por:
-
-\begin{equation}
-\boxed{
-G(s) = \frac{0{,}25}{20\,930\,s + 1}
-}
-\end{equation}
-
-En consecuencia, los principales parámetros obtenidos para el modelo son:
-
-\begin{equation}
-\boxed{
-K=0{,}25\ \mathrm{K/W},
-\qquad
-\tau=20\,930\ \mathrm{s}\approx348{,}8\ \mathrm{min}
-}
-\end{equation}
-
-\paragraph{Enlace al script de la simulación en lazo abierto}
-
-El script utilizado para realizar la simulación en lazo abierto se encuentra
-disponible en el siguiente enlace:
-
-\begin{center}
-\href{https://mailustabucaedu-my.sharepoint.com/:u:/g/personal/fabianaugusto_ruiz_ustabuca_edu_co/IQA-BS2GA_CMQ4VUrsyvaq6EAYTtpR_JWi9h-BOVhUr7l5k?e=7DXsHx}
-{\textbf{Script de simulación en lazo abierto}}
-\end{center}
-
-
+\item \etiquetaanexo{B}{anx:pugh}Anexo B: matrices Pugh completas, con la justificación de cada selección (al final de este anexo).
+\item Anexo D: script de la simulación en lazo abierto del modelo teórico (Sección~\ref{sec:modelo_dinamico}): \href{https://mailustabucaedu-my.sharepoint.com/:u:/g/personal/fabianaugusto_ruiz_ustabuca_edu_co/IQA-BS2GA_CMQ4VUrsyvaq6EAYTtpR_JWi9h-BOVhUr7l5k?e=7DXsHx}
+{\textbf{Script de simulación en lazo abierto}}.
 \item Anexo F: evidencia del repositorio y del MOOC institucional.
-\item Anexo G: información IP del PLC (primer corte; en el segundo corte se usó la dirección del Anexo~\ref{anx:programa_plc})
-\begin{figure}[H] \centering \includegraphics[width=0.4\textwidth]{figuras/DATOSPLC.png} \end{figure}
-\item Anexo H: información IP del HMI (primer corte)
-\begin{figure}[H] \centering \includegraphics[width=0.4\textwidth]{figuras/DATOSHMI.png} \end{figure}
-\item Anexo I: información IP del PC (primer corte)
-\begin{figure}[H] \centering \includegraphics[width=0.5\textwidth]{figuras/IPPC.png} \end{figure}
-\item \etiquetaanexo{J}{anx:programa_plc}Anexo J: programas del PLC. Se incluyen, como evidencia, las impresiones de TIA Portal de los dos programas del segundo corte (J.1 a J.9) y del programa integrado del tercer corte (J.10 y J.11), descritos en la Sección~\ref{sec:montaje_programacion}:
+\item \etiquetaanexo{J}{anx:programa_plc}Anexo J: programa integrado del PLC (tercer corte), descrito en la Sección~\ref{sec:montaje_programacion}:
 \begin{itemize}
-\item J.1: programa de la secuencia del ciclo CIP, bloque principal OB1 (Ladder v1.2).
-\item J.2: programa de control de temperatura, interrupción cíclica OB30.
-\item J.3: programa de control, bloque principal OB1 (registro de datos con \texttt{DataLog}).
-\item J.4: bloque de datos \texttt{EXP} (DB1), variables del control y del ensayo.
-\item J.5: bloque de datos \texttt{Datalog} (DB2), estructura del registro.
-\item J.6: configuración del controlador \texttt{PID\_Compact\_1} (DB4).
-\item J.7: tabla de variables del PLC del programa de control.
-\item J.8: tabla de observación usada en el ensayo.
-\item J.9: página \textit{Data logs} del servidor web del PLC, con los registros de los ensayos.
-\item J.10: programa integrado, bloque principal OB1 (Ladder v3, tercer corte).
-\item J.11: programa integrado, interrupción cíclica OB30 (control de temperatura v2, tercer corte).
+\item J.1: bloque principal OB1 (Ladder v3), con la secuencia de las tres fases.
+\item J.2: interrupción cíclica OB30 (versión 2), con el control de temperatura.
 \end{itemize}
 \item \etiquetaanexo{K}{anx:arquitectura_com}Anexo K: propuesta de arquitectura de control, HMI y supervisión IoT (segundo corte), elaborada por Juan Camilo Díaz Gamboa. Incluye la topología, el protocolo principal (S7) y su alternativa (Modbus TCP), la cadena de información, los datos por confirmar y las pruebas previstas (Sección~\ref{sec:montaje_comunicaciones}). Los elementos de potencia que aparecen en la propuesta, como el contactor y el relé térmico de la bomba, corresponden a una alternativa preliminar; la etapa de potencia implementada se describe en la Sección~\ref{sec:montaje_instrumentacion}.
 \end{itemize}
 
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.1 Programa de la secuencia (OB1, Ladder v1.2)}}]{anexos/programa_plc/secuencia_OB1_ladder_v1_2.pdf}
-\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/secuencia_OB1_ladder_v1_2.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.2 Programa de control: interrupción cíclica (OB30)}}]{anexos/programa_plc/control_OB30_cyclic_interrupt.pdf}
-\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/control_OB30_cyclic_interrupt.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.3 Programa de control: bloque principal (OB1, registro de datos)}}]{anexos/programa_plc/control_OB1_main_datalog.pdf}
-\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/control_OB1_main_datalog.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.4 Bloque de datos EXP (DB1)}}]{anexos/programa_plc/control_DB1_EXP.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.5 Bloque de datos Datalog (DB2)}}]{anexos/programa_plc/control_DB2_Datalog.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.6 Configuración del controlador PID\_Compact\_1 (DB4)}}]{anexos/programa_plc/control_DB4_PID_Compact.pdf}
-\includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/control_DB4_PID_Compact.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.7 Tabla de variables del PLC (programa de control)}}]{anexos/programa_plc/control_variables_plc.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.8 Tabla de observación del ensayo}}]{anexos/programa_plc/control_tabla_observacion_ensayo.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.9 Registros del servidor web del PLC (Data logs)}}]{anexos/programa_plc/servidor_web_data_logs.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.10 Programa integrado: bloque principal (OB1, Ladder v3)}}]{anexos/programa_plc/integrado_OB1_ladder_v3.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.1 Programa integrado: bloque principal (OB1, Ladder v3)}}]{anexos/programa_plc/integrado_OB1_ladder_v3.pdf}
 \includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/integrado_OB1_ladder_v3.pdf}
-\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.11 Programa integrado: control de temperatura (OB30, v2)}}]{anexos/programa_plc/integrado_OB30_control_v2.pdf}
+\includepdf[pages=1,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}\noindent\textbf{J.2 Programa integrado: control de temperatura (OB30, v2)}}]{anexos/programa_plc/integrado_OB30_control_v2.pdf}
 \includepdf[pages=2-,scale=0.8,offset=0 -0.7cm,pagecommand={\thispagestyle{fancy}}]{anexos/programa_plc/integrado_OB30_control_v2.pdf}
 \includepdf[pages=1,angle=90,scale=0.95,pagecommand={\thispagestyle{fancy}}]{anexos/comunicaciones/propuesta_arquitectura_cip.pdf}
+
+\clearpage
+\subsection*{Anexo B: matrices Pugh completas}
+\input{secciones/anexo_pugh}

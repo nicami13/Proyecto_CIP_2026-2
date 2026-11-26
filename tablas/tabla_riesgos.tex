@@ -22,7 +22,7 @@
 
 \multicolumn{6}{@{}l}{\textit{Térmicos y de calentamiento}} \\
 \addlinespace[2pt]
-R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Corte de E-101 por programa del PLC al superar el umbral de seguridad (por implementar), alarma alta por RTD y límite de consigna (el termostato bimetálico se descartó en este corte) \\
+R-01 & Sobretemperatura del fluido de proceso & 2 & 5 & 10 & Corte de E-101 por programa del PLC al superar el umbral de seguridad, alarma alta por RTD y límite de consigna (el termostato bimetálico se descartó en este corte) \\
 R-02 & Trabajo en seco de la resistencia & 3 & 4 & 12 & Enclavamiento por nivel bajo (LSL-101) como condición de habilitación, programado en el Ladder v3 (\texttt{Perm\_hw}) \\
 R-03 & Falla del SSR en cortocircuito & 2 & 5 & 10 & Pendiente: protección independiente del PLC (el termostato bimetálico no se adquirió por presupuesto); mientras tanto, vigilancia de la temperatura durante el calentamiento \\
 R-04 & Sobrecalentamiento del SSR por disipación insuficiente & 3 & 3 & 9 & Sin disipador adicional en este corte: vigilancia de la temperatura de los SSR durante el calentamiento; disipador por evaluar \\

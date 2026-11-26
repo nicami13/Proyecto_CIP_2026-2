@@ -1,6 +1,6 @@
-\subsection{Control}\label{sec:montaje_control}
+\subsection{Control de temperatura}\label{sec:montaje_control}
 
-Durante este corte se realizó un ensayo de calentamiento y enfriamiento sobre el tanque de mezcla, con el fin de obtener experimentalmente los parámetros de la función de transferencia del sistema térmico presentada en la Sección~\ref{sec:modelo_dinamico}. Con el modelo obtenido se diseñó un controlador PI de temperatura, que se programó en el PLC con el bloque \texttt{PID\_Compact} (Sección~\ref{sec:montaje_programacion}); en el tercer corte se integró en la secuencia del ciclo y su prueba en lazo cerrado está pendiente. A continuación se describen el montaje del ensayo, la adquisición de los datos, el procedimiento experimental, la estimación de los parámetros, el modelo obtenido y el diseño del controlador.
+Durante el segundo corte se realizó un ensayo de calentamiento y enfriamiento sobre el tanque de mezcla, con el fin de obtener experimentalmente los parámetros de la función de transferencia del sistema térmico presentada en la Sección~\ref{sec:modelo_dinamico}. Con el modelo obtenido se diseñó un controlador PI de temperatura, que se programó en el PLC con el bloque \texttt{PID\_Compact} (Sección~\ref{sec:montaje_programacion}); en el tercer corte se integró en la secuencia del ciclo y se probó en lazo cerrado con la consigna de 35\,°C. A continuación se describen el montaje del ensayo, la adquisición de los datos, el procedimiento experimental, la estimación de los parámetros, el modelo obtenido y el diseño del controlador.
 
 \input{secciones/09_5_validacion_modelo}
 
@@ -76,4 +76,4 @@ con $K_i = K_p/T_i = 6{,}667 \times 10^{-3}\,\%/(^{\circ}\mathrm{C}\cdot\mathrm{
 
 \insertarfigura[0.85\textwidth]{control_envolvente.pdf}{Respuesta simulada a la consigna de 35\,°C en las cinco plantas de la envolvente, con anti-windup por acotación, frente a la banda del REQ-13.}{fig:control_envolvente}
 
-Estos resultados son de simulación. El ensayo en lazo cerrado con la consigna de 35\,°C, pendiente, los confirmará o corregirá.
+Estos resultados son de simulación. En la prueba en lazo cerrado sobre el prototipo, con la consigna de 35\,°C, la temperatura se mantuvo dentro de la banda de $\pm 1{,}75$\,°C del REQ-13 durante al menos 5\,min (VAL-03, Sección~\ref{sec:montaje_pruebas}).

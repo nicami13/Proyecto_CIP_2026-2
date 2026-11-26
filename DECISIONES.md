@@ -26,7 +26,8 @@ Registro de las decisiones técnicas y de redacción para actualizar el informe 
 - **Potencia:** 2000 W es el valor **nominal**; **2046 W** (126,3 V y 16,2 A) es el valor **medido** en el ensayo.
 - **No hay termostato.** Tampoco hay **alarma sonora**: REQ-19 y VAL-09 dicen solo "alarma visual".
 - **Prueba de tinta: SÍ se hace**, el 26 de noviembre de 2026 (Karen, 25 de noviembre; reemplaza la decisión del 16 de octubre). Es VAL-13.
-- **El prototipo ya ejecuta el ciclo completo** (Karen, 25 de noviembre). Falta registrar las 3 ejecuciones de VAL-01.
+- **El prototipo ya ejecuta el ciclo completo** (Karen, 25 de noviembre).
+- **Cumplen VAL-01 a VAL-06 y VAL-09 a VAL-12** (Karen, 25 de noviembre, noche): incluye control en lazo cerrado (VAL-03) y supervisión (VAL-10). Ya se corrigieron el traslape de válvulas, el corte a 35 °C y la pausa para vaciar TK-103. Pendientes: VAL-07, VAL-08 y VAL-13 (tinta).
 - **La validación completa** del prototipo frente a los requisitos queda para el **tercer corte**.
 - **Dos carros:** uno con los tanques y la tubería, y otro con el PLC, la HMI y el tablero.
 - **Gestión:** el presupuesto preliminar (primer corte) conserva el termostato como referencia; el texto aclara que no se adquirió. Sigue pendiente (tercer corte) que los 16,2 A medidos superan el breaker de 15 A.

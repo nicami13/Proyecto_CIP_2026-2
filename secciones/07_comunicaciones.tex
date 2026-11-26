@@ -9,69 +9,14 @@
 
 \subsection{Equipos y direccionamiento IP}
 \input{tablas/tabla_nodos_ip}
-{Esta información fue suministrada por el área de comunicaciones de la institución, y se utilizó para la configuración de los equipos de control y visualización. Son accesibles desde el software de programación del PLC (TIA PORTAL), tal como se puede observar en los Anexos G, H e I, donde se muestran las direcciones IP configuradas en el primer corte. La dirección 172.16.140.112 del PLC corresponde a la registrada en su servidor web durante los ensayos del segundo corte (Anexo~\ref{anx:programa_plc}), y la 172.16.141.12, a la configurada en Node-RED en el tercer corte; ambas reemplazan la del Anexo G. Las direcciones de la HMI y del computador corresponden a la configuración del primer corte, y la de la Raspberry Pi aún no está definida, como se describe en la Sección~\ref{sec:montaje_comunicaciones}.}
+{Esta información fue suministrada por el área de comunicaciones de la institución, y se utilizó para la configuración de los equipos de control y visualización. Son accesibles desde el software de programación del PLC (TIA PORTAL), con las direcciones IP configuradas en el primer corte. La dirección 172.16.140.112 del PLC corresponde a la registrada en su servidor web durante los ensayos del segundo corte (Anexo~\ref{anx:programa_plc}), y la 172.16.141.12, a la configurada en Node-RED en el tercer corte; ambas reemplazan la del primer corte. Las direcciones de la HMI y del computador corresponden a la configuración del primer corte, y la de la Raspberry Pi aún no está definida, como se describe en la Sección~\ref{sec:montaje_comunicaciones}.}
 
 \subsection{Selección del protocolo}\label{sec:protocolo}
 \input{tablas/tabla_protocolos}
 {A partir de la comparación de la Tabla~\ref{tab:protocolos}, se seleccionó PROFINET para la comunicación entre el PLC y la HMI, ya que ambos equipos lo soportan de forma nativa y se configura directamente en TIA Portal. Para la supervisión remota se seleccionó el protocolo S7, también nativo del PLC, mediante el cual Node-RED, en la Raspberry Pi, lee las variables del proceso a partir de sus direcciones de memoria; los datos se envían luego por HTTP a la API en AWS. De este modo, el PLC no requiere módulos de comunicación adicionales ni licencias de ejecución, y la Raspberry Pi concentra la conexión con los servicios externos.
 
-En el primer corte se había propuesto Modbus TCP para conectar un gateway ESP32 con el PLC y MQTT, mediante un módulo SIM, para el envío de los datos a AWS \cite{cometa2025modbus,gonzalez2024awsesp32}. Esta propuesta se reemplazó por la arquitectura descrita, cuyo software ya está desarrollado y cuyas pruebas de extremo a extremo sobre el prototipo están pendientes (Sección~\ref{sec:montaje_comunicaciones}).}
-
-\subsection{Mapa inicial de etiquetas}
-La Tabla~\ref{tab:tags_pid} presenta las variables previstas para el lazo de control de temperatura, que se encuentra en desarrollo (Sección~\ref{sec:montaje_control}). Las variables del programa de la secuencia implementado en el segundo corte se presentan en la Sección~\ref{sec:montaje_programacion}.
-
-\input{tablas/tabla_tags}
+En el primer corte se había propuesto Modbus TCP para conectar un gateway ESP32 con el PLC y MQTT, mediante un módulo SIM, para el envío de los datos a AWS \cite{cometa2025modbus,gonzalez2024awsesp32}. Esta propuesta se reemplazó por la arquitectura descrita, que se desarrolló y se verificó sobre el prototipo (Sección~\ref{sec:montaje_comunicaciones}).}
 
 \subsection{Evidencia mínima de comunicación}
 \input{tablas/tabla_prueba_comunicacion}
 La Tabla~\ref{tab:evidencia_comunicacion} presenta la evidencia mínima de comunicación implementada durante el primer corte entre el PLC Siemens S7-1200 CPU 1214C y el panel HMI KTP600 Basic mediante una red Ethernet industrial, utilizando el protocolo PROFINET. Para esta comunicación se configuró la variable \texttt{CONTADOR\_HMI}, de tipo entero (INT), en la dirección \%MW2, permitiendo la transferencia de datos desde el PLC hacia la interfaz HMI para su monitoreo. Adicionalmente, la variable \texttt{C1\_Estado\_HMI} fue vinculada a una barra gráfica en la pantalla del HMI, de modo que el valor recibido desde el PLC se representó visualmente mediante el nivel de llenado de dicho elemento. La programación desarrollada permite comprobar el correcto intercambio de información entre ambos dispositivos, demostrando que los cambios realizados en el PLC son transmitidos y posteriormente visualizados de manera adecuada en la interfaz HMI. Con esto, se valida el funcionamiento de la comunicación industrial mediante PROFINET y la correcta asociación de las variables entre el controlador y el sistema de supervisión.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figuras/HMIACCIONADO.JPG}
-\caption{Accionamiento e interfaz del panel HMI.}
-\label{fig:hmi_accionado}
-\end{figure}
-
-{En esta figura se observa el accionamiento del pulsador como simulación de una entrada analogica en el PLC, sacando una salida analogica en el led indicador y siendo visible dentro del HMI este cambio, como forma de simulación del volumen.}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{figuras/RESETEARESTADO.JPG}
-\caption{Reinicio y reseteo de estados del sistema.}
-\label{fig:resetear_estado}
-\end{figure}
-
-{Reseteo del sistema para volver a contar desde 0, con otra entrada de pulsador, como forma de reinicio del sistema y volver a simular el llenado del tanque.}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{figuras/SIM_TANQUE_LLENO.JPG}
-\caption{Simulación de la condición de tanque lleno.}
-\label{fig:sim_tanque_lleno}
-\end{figure}
-
-{Muestra la condición de tanque lleno, con la activación de la salida del led indicador y el cambio en el HMI, como forma de simulación de la condición de llenado del tanque.}
-
-{El funcionamiento real de la programación realizada para esta simulación se puede observar en las siguientes figuras, donde se observa el código en ladder, la tabla de variables y la conexión de las variables del PLC con el HMI, verificando que existe la comunicación entre ambos equipos y que se puede visualizar el cambio de estado de las variables.}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{TABLADEVARIABLES.png}
-    \caption{Nombre de las variables y su tipo asignado para la simulación.}
-    \label{fig:TABLADEVARIABLES}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{MAIN.png}
-    \caption{Código ladder principal con el que se implementó el funcionamiento de la evidencia.}
-    \label{fig:MAIN}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{HMI.png}
-    \caption{Impresión del HMI con las variables relacionadas.}
-    \label{fig:HMI}
-\end{figure}

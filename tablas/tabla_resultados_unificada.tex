@@ -1,0 +1,34 @@
+\begingroup
+\footnotesize
+\begin{longtable}{L{1.1cm}L{1.2cm}L{5.2cm}L{1.4cm}L{\dimexpr\textwidth-8.9cm-8\tabcolsep\relax}}
+\caption{Pruebas de validación: criterio de aceptación, estado y resultado.}\label{tab:resultados_pruebas}\label{tab:matriz_validacion}\\
+\toprule
+\textbf{VAL} & \textbf{Req.} & \textbf{Prueba y criterio de aceptación} & \textbf{Estado} & \textbf{Resultado}\\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\small \tablename\ \thetable{} -- continuación}\\
+\toprule
+\textbf{VAL} & \textbf{Req.} & \textbf{Prueba y criterio de aceptación} & \textbf{Estado} & \textbf{Resultado}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\small Continúa en la siguiente página}\\
+\endfoot
+\bottomrule
+\endlastfoot
+VAL-01 & REQ-01 & Ciclo completo (preenjuague, lavado y enjuague final) con el vaciado manual de TK-103 como única intervención; 3 de 3 ejecuciones en la secuencia correcta & Cumple & El prototipo ejecutó el ciclo completo en la secuencia correcta en las 3 ejecuciones, con la pausa para el vaciado de TK-103\\
+VAL-02 & REQ-02 & Apertura y cierre de XV-102 y XV-103 en cada fase, sin traslapes, en 3 pruebas & Cumple & Secuencia de las electroválvulas correcta y sin traslapes en las 3 pruebas\\
+VAL-03 & REQ-13 & Temperatura estable en 35\,°C $\pm$1,75\,°C durante al menos 5\,min & Cumple & Con el controlador PI ($K_p = 12$, $T_i = 1800$\,s), la temperatura se mantuvo en la banda de $\pm$1,75\,°C durante al menos 5\,min\\
+VAL-04 & REQ-14 & Corte de E-101 y alarma al superar el umbral de seguridad de 35\,°C & Cumple & El programa cortó la resistencia y activó la alarma al superar 35\,°C\\
+VAL-05 & REQ-09 & Tres activaciones de P-101 con el mismo tiempo; variación del volumen de detergente de 10\,\% o menos & Cumple & Variación del volumen dosificado dentro del 10\,\% en las 3 activaciones\\
+VAL-06 & REQ-06 & Cero fugas visibles en tanques, electroválvulas y bombas durante un ciclo & Cumple & Sin fugas visibles durante el ciclo\\
+VAL-07 & REQ-06 & Volumen suministrado frente al recibido en TK-103 & Pendiente & Sin medición\\
+VAL-08 & REQ-18 & Corte de P-102, E-101 y P-101 en 1\,s o menos al accionar el paro de emergencia & Pendiente & Paro de emergencia en el banco del PLC; conexión en el circuito por documentar\\
+VAL-09 & REQ-19 & Alarma visual ante nivel bajo, sobretemperatura y falla de bomba & Cumple & Alarma visual activada en las 3 condiciones, con los indicadores de alarma y falla de la HMI\\
+VAL-10 & REQ-15, REQ-16 & Variables actualizadas en la HMI y en la interfaz remota, con periodo de 30\,s o menos & Cumple & Variables actualizadas en la HMI y en la interfaz web con periodo de 30\,s o menos; la API registró 5831 lecturas\\
+VAL-11 & REQ-11 & Conmutación de LSL-101 y LSH-101 en 3 pruebas & Cumple & Ambos interruptores conmutaron correctamente en las 3 pruebas\\
+VAL-12 & REQ-01 & Mezcla visualmente homogénea con P-103 en 3 pruebas & Cumple & Mezcla visualmente homogénea en las 3 pruebas\\
+VAL-13 & REQ-05 & Prueba de tinta: sin tinta visible en la tubería y agua del enjuague final clara & Pendiente & Programada para el 26 de noviembre de 2026\\
+--- & Modelo & Ensayo de escalones de potencia sobre E-101 & Ejecutado & 648 datos de 23,5 a 60,1\,°C; $\tau = 88{,}4$\,min y $K = 0{,}0733$\,°C/W (Sección~\ref{sec:montaje_control})\\
+\end{longtable}
+\endgroup

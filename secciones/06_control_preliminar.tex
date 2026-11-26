@@ -20,7 +20,6 @@ En contraste, la solución basada en SSR con conmutación en cruce por cero y co
 
 En términos de control, la variable manipulada puede expresarse como la potencia promedio suministrada a la resistencia, $P_{\mathrm{prom}}$, cuyo valor se encuentra limitado por la potencia nominal del elemento calefactor:
 
-\insertarfigura{potencia_preliminar.pdf}{Circuito de potencia preliminar.}{fig:potencia}
 
 \begin{equation}
 0 \leq P_{\mathrm{prom}} \leq 2000\,\mathrm{W}
@@ -38,7 +37,7 @@ donde $D$ corresponde al ciclo de trabajo, definido como la fracción del perío
 \input{tablas/tabla_variables_control}
 
 \subsection{Diagrama de bloques}
-\insertarfigura{diagrama_bloques_control.pdf}{Diagrama de bloques del sistema térmico.}{fig:bloquescontrol}
+El diagrama de bloques del lazo de temperatura, con el controlador PI y el modelo identificado experimentalmente, se presenta en la Figura~\ref{fig:lazo_control_pi} (Sección~\ref{sec:diseno_pi}).
 
 \subsection{Modelo dinámico preliminar}\label{sec:modelo_dinamico}
 
@@ -76,17 +75,6 @@ G(s)=\frac{0{,}25}{20\,930\,s+1}
 \end{equation}
 
 Este modelo preliminar se contrastó experimentalmente en la Sección~\ref{sec:montaje_control}. Como la diferencia en $UA$ superó el criterio de aceptación, el modelo se actualizó con los parámetros experimentales (Ecuación~\ref{eq:modelo_experimental}).
-
-\subsection{Simulación en lazo abierto}
-\insertarfigura{respuesta_lazo_abierto.pdf}{Respuesta preliminar del modelo en lazo abierto.}{fig:lazoabierto}
-
-\begin{itemize}
-
-\item La diferencia entre las curvas de respuesta constituye la justificación cuantitativa central para emplear un controlador realimentado, en lugar de un ciclo de trabajo fijo en lazo abierto. Asimismo, evidencia la necesidad de incorporar acción integral con mecanismo anti-windup. El controlador debe permitir la saturación deliberada del actuador ($MV \approx 100\,\%$) durante el arranque para acelerar el calentamiento hacia la consigna y, posteriormente, reducir el ciclo de trabajo de manera gradual al aproximarse al valor de referencia, evitando el sobreimpulso.
-
-\item Al aumentar la masa activa hasta $20\,\mathrm{L}$, la constante de tiempo $\tau$ crece proporcionalmente, alcanzando aproximadamente $348{,}8$ minutos. El proceso se vuelve, por tanto, térmicamente más lento, lo que refuerza la necesidad de aprovechar el transitorio mediante la saturación controlada del actuador. Además, se justifica el empleo de una sintonía PI, en lugar de un controlador P, para eliminar el error de estado estacionario producido por la perturbación asociada a la adición de fluido frío entre fases.
-
-\end{itemize}
 
 \subsection{Especificaciones preliminares de desempeño}
 \input{tablas/tabla_especificaciones_control}
