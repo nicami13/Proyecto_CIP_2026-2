@@ -29,7 +29,7 @@ R-04 & Sobrecalentamiento del SSR por disipación insuficiente & 3 & 3 & 9 & Sin
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Hidráulicos}} \\
 \addlinespace[2pt]
-R-05 & Velocidad inferior a 1,5\,m/s: limpieza no efectiva & 5 & 5 & \textbf{25} & Con el caudal máximo de placa de P-102 (30\,L/min), la velocidad en la tubería de 1\textquotedbl{} no supera unos 0,9\,m/s, por lo que el riesgo está presente; la efectividad de la limpieza se verifica con la prueba de tinta (VAL-13) y el caudal real, con un aforo volumétrico \\
+R-05 & Velocidad inferior a 1,5\,m/s: limpieza no efectiva & 5 & 5 & \textbf{25} & Con el caudal máximo de placa de P-102 (30\,L/min), la velocidad en la tubería de 1\textquotedbl{} no supera unos 0,9\,m/s, por lo que el riesgo está presente; la efectividad de la limpieza debía verificarse con la prueba de tinta (VAL-13), que no se realizó, y el caudal real, con un aforo volumétrico. Contingencia: reducir la tubería de impulsión a 3/4\textquotedbl{} (cerca de 1,5\,m/s con el caudal máximo) o usar una bomba de mayor caudal \\
 R-06 & Operación de la bomba contra válvula cerrada & 3 & 4 & 12 & Descarga de P-102 sin válvulas de cierre hacia TK-103 (la válvula de regulación del primer corte se descartó) \\
 R-07 & Cavitación de la bomba & 3 & 3 & 9 & Succión inundada (TK-102 por encima de la succión de P-102) y línea corta \\
 R-08 & Fuga hidráulica en acoples y uniones & 3 & 3 & 9 & Prueba hidrostática a 1,5\texttimes{} la presión de trabajo antes de cada campaña \\
@@ -38,15 +38,15 @@ R-10 & Obstrucción del filtro: caída de caudal & 4 & 2 & 8 & No aplica en este
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Materiales y compatibilidad química}} \\
 \addlinespace[2pt]
-R-11 & Falla del sello mecánico por operar sobre 40\,\textdegree C & 4 & 3 & 12 & Consigna limitada a 35\,\textdegree C, por debajo del límite de 40\,\textdegree C de P-102, y enjuague final sin calentar \\
+R-11 & Falla del sello mecánico por operar sobre 40\,\textdegree C & 4 & 3 & 12 & Consigna de 40\,\textdegree C, igual al límite de P-102 y por encima de los 35\,\textdegree C de placa de P-103 (riesgo aceptado en el prototipo); corte por programa al superar 40\,\textdegree C y enjuague final sin calentar \\
 R-12 & Descincado del impulsor de latón & 3 & 3 & 9 & Detergente pH 8,0--10,5 sin amoniaco ni cáusticos clorados \\
 R-13 & Degradación del tubo peristáltico: dosificación errática & 4 & 2 & 8 & Tubo Norprene, reemplazo cada 500\,h, verificación volumétrica mensual \\
-R-14 & Residuo de detergente en la tubería tras el ciclo & 3 & 4 & 12 & Enjuague final de 20\,L en paso único; la ausencia de residuos se verifica con la prueba de tinta (VAL-13) \\
+R-14 & Residuo de detergente en la tubería tras el ciclo & 3 & 4 & 12 & Enjuague final de 20\,L en paso único; la ausencia de residuos debía verificarse con la prueba de tinta (VAL-13), que no se realizó \\
 \addlinespace
 \multicolumn{6}{@{}l}{\textit{Eléctricos y de control}} \\
 \addlinespace[2pt]
 R-15 & Sobrecarga de los circuitos eléctricos & 3 & 3 & 9 & Circuitos separados: Q1 (15\,A) para la resistencia y Q2 (7\,A) para las demás cargas; los 16,2\,A medidos en la resistencia superan Q1 (pendiente) \\
-R-16 & Descarga eléctrica al operador & 2 & 5 & 10 & DDR 30\,mA, gabinete IP54, puesta a tierra y 24\,V SELV en campo \\
+R-16 & Descarga eléctrica al operador & 2 & 5 & 10 & Puesta a tierra, cerramiento de acrílico del tablero, paro de emergencia y 24\,V SELV en campo; el DDR de 30\,mA y el gabinete IP54 del diseño no se instalaron \\
 R-17 & Lectura de temperatura errónea & 3 & 3 & 9 & Verificación con termómetro patrón en dos puntos, referencia común a 2M \\
 R-18 & Agotamiento de las salidas de relé por ciclado & 3 & 3 & 9 & Proporción de tiempo con periodo de 10\,s: la salida de relé del PLC conmuta el SSR en cada periodo, por lo que su desgaste debe evaluarse \\
 R-19 & Pérdida de red & 3 & 2 & 6 & Control local independiente en el PLC; la interfaz avisa si la API no responde, y el aviso de lecturas antiguas está pendiente \\

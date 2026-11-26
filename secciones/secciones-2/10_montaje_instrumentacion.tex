@@ -24,7 +24,7 @@ XV-103 & Electroválvula de descarga & Electroválvula de solenoide de 24\,V\,DC
 \end{tabularx}
 \end{table}
 
-Según los datos de placa, la temperatura máxima del agua es de 40\,$^{\circ}$C para la bomba de impulsión P-102 y de 35\,$^{\circ}$C para la bomba de agitación P-103. Además, la placa de P-102 indica un ciclo de trabajo de 20\,min de funcionamiento por 15\,min de descanso, con un máximo de 6\,h diarias. Estos límites condicionan la consigna de temperatura y la duración de las fases del ciclo.
+Según los datos de placa, la temperatura máxima del agua es de 40\,$^{\circ}$C para la bomba de impulsión P-102 y de 35\,$^{\circ}$C para la bomba de agitación P-103. Además, la placa de P-102 indica un ciclo de trabajo de 20\,min de funcionamiento por 15\,min de descanso, con un máximo de 6\,h diarias. Estos límites condicionan la consigna de temperatura y la duración de las fases del ciclo. Con la consigna final de 40\,$^{\circ}$C, P-102 trabaja en su límite y P-103 por encima de su placa (riesgo R-11).
 
 \paragraph{Alimentación.} El PLC y la Raspberry Pi se alimentan a 110\,V\,AC desde tomacorrientes conectados a la red a través de un interruptor automático. Los 24\,V\,DC para los sensores, el transmisor de temperatura y los circuitos de mando se toman de la fuente de 24\,V\,DC del banco del PLC (Mean Well DR-120-24, de 24\,V\,DC y 5\,A) y se distribuyen mediante una bornera común de 24\,V\,DC y 0\,V instalada en el tablero. Cada salida de relé del PLC conmuta el positivo (+24\,V) de la bornera hacia la entrada de señal del SSR, del relé auxiliar o de la bobina de la electroválvula correspondiente, cuyo retorno se conecta al común de 0\,V. El sensor de nivel recibe los 24\,V\,DC de la bornera y su salida se conecta a una entrada digital del PLC.
 
