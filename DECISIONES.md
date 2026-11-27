@@ -244,7 +244,7 @@ Los tags siguen **ISA-5.1**: la primera letra es la variable medida o iniciadora
 - **Umbral de seguridad: 35 °C**. Consignas de prueba: 30, 32 y 35 °C.
 - **HV-101**: válvula manual de vaciado de TK-103; **aún no existe** y se debe comprar.
 - Masa de los carros, pruebas VAL-04/08/11/12, registro de la secuencia completa (ya funciona) y prueba de tinta (26 de noviembre), acciones de seguridad y R-03: **pendientes para el tercer corte**.
-- **Video**: https://youtube.com/shorts/MtHrvh1YOZc?si=SyIyqCzNe6HC_9Ia (subsección "Evidencia en video").
+- **Video**: https://youtube.com/shorts/06RrTnZsXGQ?si=WBivvOjXgxNpkbYP (subsección "Evidencia en video").
 - **Laboratorios 3 y 4 de Comunicaciones Industriales** (Fabián y Ferney, con permiso de la docente): inventario de equipos y caracterización del TH200 (0–100 °C, 4,10–20,36 mA; error máx. 1,41 °C con la PT100 real; recuperación de la HMI en 11,57 s). Citados como `ruiz2026lab3` y `ruiz2026lab4` en 8.6 (pruebas) y 8.3 (comunicaciones).
 - Acrílico del banco de relés: **4 láminas de 1 m × 0,5 m**.
 - Motivos de la tabla de cambios confirmados; tanque de plástico por un percance con el tanque metálico.
