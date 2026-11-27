@@ -10,23 +10,9 @@
 
 \item El ensayo en lazo abierto con escalones de potencia permitió identificar experimentalmente el modelo térmico del tanque de mezcla, con una constante de tiempo de 88,4\,min y una ganancia de 0,0733\,$^{\circ}$C/W (Ecuación~\eqref{eq:modelo_experimental}). Con este modelo se diseñó un controlador PI por lugar de las raíces, afinado por simulación con saturación, retardo y anti-windup ($K_p = 12\,\%/^{\circ}\mathrm{C}$, $T_i = 1800\,\mathrm{s}$), que en simulación tiene un sobreimpulso de 0,58\,°C en el peor caso de la envolvente con anti-windup. Se programó en el PLC con el bloque \texttt{PID\_Compact} y modulación de la potencia por proporción de tiempo, y en la prueba en lazo cerrado sobre el prototipo mantuvo la consigna de 40\,°C dentro de la banda del REQ-13 (VAL-03, Sección~\ref{sec:diseno_pi}).
 
-\item Se definió la arquitectura de supervisión remota (Anexo~\ref{anx:arquitectura_com}) y se desarrolló su software, con la API en FastAPI, la base de datos en SQLite y la interfaz web en Streamlit: la Raspberry Pi lee las variables del PLC con Node-RED mediante el protocolo S7 y las envía a una API en AWS, que se consulta desde una interfaz web. El control permanece en el PLC y no depende de esta capa. La cadena completa se verificó con el prototipo, con un periodo de actualización de 30\,s o menos (VAL-10); quedan la dirección IP de la Raspberry Pi y los ajustes pendientes del software (Sección~\ref{sec:montaje_comunicaciones}).
+\item Se definió la arquitectura de supervisión remota (Anexo~\ref{anx:arquitectura_com}) y se desarrolló su software, con la API en FastAPI, la base de datos en SQLite y la interfaz web en Streamlit: la Raspberry Pi lee las variables del PLC con Node-RED mediante el protocolo S7 y las envía a una API en AWS, que se consulta desde una interfaz web. El control permanece en el PLC y no depende de esta capa. La cadena completa se verificó con el prototipo, con un periodo de actualización de 30\,s o menos (VAL-10); la Raspberry Pi no quedó con una dirección IP fija y los ajustes identificados en el software quedan documentados como limitaciones (Sección~\ref{sec:montaje_comunicaciones}).
 
-\item De las trece pruebas de validación se cumplieron diez: el ciclo completo, la secuencia de las electroválvulas, el control de temperatura en lazo cerrado, el corte por sobretemperatura, la dosificación, la estanqueidad, las alarmas, la supervisión, los niveles y la mezcla. Quedan pendientes la medición de volúmenes y el tiempo de corte del paro de emergencia; la prueba de tinta no se realizó, por lo que la efectividad de la limpieza no quedó verificada (Sección~\ref{sec:montaje_pruebas}).
+\item De las trece pruebas de validación se cumplieron diez: el ciclo completo, la secuencia de las electroválvulas, el control de temperatura en lazo cerrado, el corte por sobretemperatura, la dosificación, la estanqueidad, las alarmas, la supervisión, los niveles y la mezcla. No se realizaron la medición de volúmenes, la del tiempo de corte del paro de emergencia ni la prueba de tinta, por lo que la efectividad de la limpieza no quedó verificada (Sección~\ref{sec:montaje_pruebas}).
 
 \end{enumerate}
 
-\section{Trabajo pendiente}
-\noindent Para cerrar el proyecto faltan tres pruebas de validación.
-\par\medskip
-\noindent\textbf{Completar el prototipo:} Se ajustará el tiempo de dosificación de P-101 y se documentarán el conexionado del paro de emergencia y el diagrama de conexiones del PLC.
-\par\medskip
-\noindent\textbf{Programación de la secuencia:} Se ajustarán los tiempos de las fases y se corregirá el GRAFCET según la norma IEC 60848.
-\par\medskip
-\noindent\textbf{Control de temperatura:} Se repetirá la prueba en lazo cerrado con la consigna de diseño para compararla con la simulación y se incorporará al programa integrado el registro de datos con los dos ajustes identificados en su máquina de estados.
-\par\medskip
-\noindent\textbf{Supervisión:} Se confirmará la dirección IP de la Raspberry Pi, se harán los ajustes pendientes del software (Sección~\ref{sec:montaje_comunicaciones}) y se medirán la latencia y la pérdida de lecturas.
-\par\medskip
-\noindent\textbf{Validación experimental:} Se completarán la medición de volúmenes (VAL-07) y la medición del tiempo de corte del paro de emergencia (VAL-08). La prueba de tinta (VAL-13) no se alcanzó a realizar y queda como la prueba que debe demostrar la efectividad de la limpieza; si la remoción resulta insuficiente, se reducirá el diámetro de la tubería de impulsión o se usará una bomba de mayor caudal.
-\par\medskip
-\noindent\textbf{Documentación:} Se cerrará el informe técnico con los resultados, se completará el artículo en inglés y se grabará el video final del proceso, de unos 5\,min.
