@@ -3,7 +3,7 @@
 
 La arquitectura de comunicaciones se definió en el segundo corte y el software de la supervisión remota (la API, la base de datos y la interfaz) ya está desarrollado. En el tercer corte, la cadena completa se verificó con el prototipo (VAL-10). Esta sección presenta la arquitectura, el software desarrollado, el estado de cada parte y las verificaciones realizadas. La propuesta completa, elaborada por el integrante Juan Camilo Díaz Gamboa, se incluye en el Anexo~\ref{anx:arquitectura_com}.
 
-\paragraph{Arquitectura propuesta.} La arquitectura separa la red de control local de la capa de supervisión remota (Figura~\ref{fig:arquitectura_iot}). En el nivel de control, el PLC Siemens S7-1200 CPU 1214C adquiere las señales de campo y acciona los actuadores, de modo que el ciclo de limpieza no depende de ningún equipo externo. El PLC, la HMI KTP600 Basic y la pasarela de supervisión se conectan en estrella a través del switch Siemens CSM 1277, que solo conmuta tramas (capa 2). La Raspberry Pi, con Node-RED, actúa como pasarela entre el PLC y los servicios externos: lee las variables del PLC y las envía a una API, desde donde las consume la interfaz de supervisión remota. Como la Raspberry Pi concentra la conexión con el exterior, el PLC no queda expuesto directamente a Internet \cite{hajda2021security}. En la propuesta, la Raspberry Pi se une a la misma red local por WiFi, mediante un punto de acceso o router conectado al switch en modo puente; la conexión de la Raspberry Pi con la red se verificó con la cadena completa (VAL-10). En la etapa final no se requiere un computador: este solo se usa para programar el PLC y la HMI.
+\paragraph{Arquitectura propuesta.} La arquitectura separa la red de control local de la capa de supervisión remota (Figura~\ref{fig:arquitectura_iot}). En el nivel de control, el PLC Siemens S7-1200 CPU 1214C adquiere las señales de campo y acciona los actuadores, de modo que el ciclo de limpieza no depende de ningún equipo externo. El PLC, la HMI KTP700 Basic PN y la pasarela de supervisión se conectan en estrella a través del switch Siemens CSM 1277, que solo conmuta tramas (capa 2). La Raspberry Pi, con Node-RED, actúa como pasarela entre el PLC y los servicios externos: lee las variables del PLC y las envía a una API, desde donde las consume la interfaz de supervisión remota. Como la Raspberry Pi concentra la conexión con el exterior, el PLC no queda expuesto directamente a Internet \cite{hajda2021security}. En la propuesta, la Raspberry Pi se une a la misma red local por WiFi, mediante un punto de acceso o router conectado al switch en modo puente; la conexión de la Raspberry Pi con la red se verificó con la cadena completa (VAL-10). En la etapa final no se requiere un computador: este solo se usa para programar el PLC y la HMI.
 
 \begin{figure}[H]
 \centering
@@ -15,7 +15,7 @@ La arquitectura de comunicaciones se definió en el segundo corte y el software 
   etiqueta/.style={font=\scriptsize,align=center,fill=white,inner sep=1pt}]
   \node[nodo] (plc) at (0,2.6) {PLC S7-1200\\CPU 1214C};
   \node[nodo] (sw) at (0,0) {Switch\\CSM 1277};
-  \node[nodo] (hmi) at (-4.2,0) {HMI\\KTP600 Basic};
+  \node[nodo] (hmi) at (-4.2,0) {HMI\\KTP700 Basic PN};
   \node[cond] (ap) at (4.2,0) {Punto de acceso\\WiFi\\(condicional)};
   \node[nodo] (rpi) at (8.4,0) {Raspberry Pi\\(Node-RED)};
   \node[nodo] (api) at (8.4,-2.6) {API (FastAPI)\\y SQLite};
